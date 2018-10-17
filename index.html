@@ -84,110 +84,77 @@
 
 <section id="part1">
   <div class="container">
-
     <div class="row">
-      <div class="col-md-8" id="dataviz1">
-        <svg width="700" height="750"></svg>
+      <div class="col-md-8" >
+        <svg id="dataviz_worldmap" width="700" height="750"></svg>
       </div>
       <div class="col-md-4" style='padding-top: 80px'>
-        <h3 style="line-height: 50px"><u>Part 1</u>:<br>How mental disorders are organized.</h3>
+        <h3 style="line-height: 50px"><u>Part 1</u>:<br>What is the World Health Survey</h3>
         <hr>
-        <p>What is the ICD classification? How many groups? How many different disorders? How are they defined?</p>
+        <p>The World Health Survey was implemented by WHO in 2002–2004 in partnership with 70 countries to generate information on the health of adult populations and health systems</p>
         <hr>
-        <p>Radial dendrogram that shows the classification. First step with just the 10 groups. Second with all diseases. Tooltip on each disorder with a definition.</p>
+        <p>The total sample size in these cross-sectional studies includes over 300 000 individuals.</p>
         <hr>
-        <p><u>Data</u>: Already available and cleaned throught the WHO website.</p>
+        <p>How we sampled data</p>
       </div>
     </p>
   </div>
 </section>
 
 
-
-<style>
-
-.node circle {
-  fill: #999;
-}
-
-.node text {
-  font: 10px sans-serif;
-}
-
-.node--internal circle {
-  fill: #555;
-}
-
-.node--internal text {
-  text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
-}
-
-.link {
-  fill: none;
-  stroke: #555;
-  stroke-opacity: 0.4;
-  stroke-width: 1.5px;
-}
-
-</style>
-
+<!-- Load d3.js plugins -->
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
 
 <script>
-var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height"),
-    g = svg.append("g").attr("transform", "translate(" + (width / 2 - 15) + "," + (height / 2 + 25) + ")");
 
-var stratify = d3.stratify()
-    .parentId(function(d) { return d.id.substring(0, d.id.lastIndexOf(".")); });
+// The svg
+var svg = d3.select("#dataviz_worldmap"),
+  width = +svg.attr("width"),
+  height = +svg.attr("height");
 
-var tree = d3.cluster()
-    .size([360, 200])
-    .separation(function(a, b) { return (a.parent == b.parent ? 1 : 2) / a.depth; });
+// Map and projection
+var path = d3.geoPath();
+var projection = d3.geoNaturalEarth()
+  .scale(width / 1.4 / Math.PI)
+  .translate([width / 2, height / 2]);
 
-//d3.csv("https://raw.githubusercontent.com/holtzy/Mental-Disorder-Review/master/DATA/ICD.csv", function(data) {
-d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/miniflare.csv", function(data) {
+// Data and color scale
+var data = d3.map();
+var colorScale = d3.scaleThreshold()
+  .domain([100000, 1000000, 10000000, 30000000, 100000000, 500000000])
+  .range(d3.schemeBlues[7]);
 
-  var root = tree(stratify(data)
-      .sort(function(a, b) { return (a.height - b.height) || a.id.localeCompare(b.id); }));
+// Load external data and boot
+d3.queue()
+  .defer(d3.json, "https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/master/DATA/world.geojson?token=AJx4QRu3RdqmZJMXWMjvBG8BZ2MOzy7Wks5bz9RZwA%3D%3D")
+  .defer(d3.csv, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv", function(d) { data.set(d.code, +d.pop); })
+  .await(ready);
 
-  var link = g.selectAll(".link")
-    .data(root.descendants().slice(1))
+function ready(error, topo) {
+  if (error) throw error;
+
+  // Draw the map
+  svg.append("g")
+    .selectAll("path")
+    .data(topo.features)
     .enter()
     .append("path")
-      .attr("class", "link")
-      .attr("d", function(d) {
-        return "M" + project(d.x, d.y)
-            + "C" + project(d.x, (d.y + d.parent.y) / 2)
-            + " " + project(d.parent.x, (d.y + d.parent.y) / 2)
-            + " " + project(d.parent.x, d.parent.y);
+      // draw each country
+      .attr("d", d3.geoPath()
+        .projection(projection)
+      )
+      // set the color of each country
+      .attr("fill", function (d) {
+        d.total = data.get(d.id) || 0;
+        return colorScale(d.total);
       });
-
-  var node = g.selectAll(".node")
-    .data(root.descendants())
-    .enter().append("g")
-      .attr("class", function(d) { return "node" + (d.children ? " node--internal" : " node--leaf"); })
-      .attr("transform", function(d) { return "translate(" + project(d.x, d.y) + ")"; });
-
-  node.append("circle")
-      .attr("r", 2.5);
-
-  node.append("text")
-      .attr("dy", ".31em")
-      .attr("x", function(d) { return d.x < 180 === !d.children ? 6 : -6; })
-      .style("text-anchor", function(d) { return d.x < 180 === !d.children ? "start" : "end"; })
-      .attr("transform", function(d) { return "rotate(" + (d.x < 180 ? d.x - 90 : d.x + 90) + ")"; })
-      .text(function(d) { return d.id.substring(d.id.lastIndexOf(".") + 1); });
-});
-
-function project(x, y) {
-  var angle = (x - 90) / 180 * Math.PI, radius = y;
-  return [radius * Math.cos(angle), radius * Math.sin(angle)];
-}
-
+    }
 
 </script>
+
+
 
 
 
@@ -201,108 +168,22 @@ function project(x, y) {
 
 <!-- =======================  PART 2 ======================= -->
 
-<section id="part2" class="bg-light" style="padding-top: 0px; padding-bottom: 0px">
+<section id="part2" class="bg-light">
   <div class="container">
 
     <div class="row">
-      <div class="col-md-5" style="padding-top: 200px">
-        <h3 style="line-height: 50px"><u>Part 2</u>:<br>Occurence and impact.</h3>
+      <div class="col-md-5">
+        <h3 style="line-height: 50px"><u>Part 2</u>:<br>Como is pervasive</h3>
         <hr>
-        <p>What are the most common mental disorders? What is the occurence of each? What is their impact?</p>
+        <p>Once more, comorbidity is pervasive: all mental disorders are  highly linked together compared to what we would expect by chance</p>
         <hr>
-        <p>Radial dendrogram becomes a circular barplot with 2 layers; occurence and impact.</p>
+        <p>Kind of dot histogram with animation at start. Possibility to highlight one of the 4 groups.</p>
         <hr>
-        <p><u>Data</u>: data from the <a href="http://www.healthdata.org/gbd">Global Burden of Disease</a></p>
+        <p>Annotation to show where the points are supposed to be in a random situation.</p>
       </div>
       <div class="col-md-7" id="dataviz2"></div>
   </div>
 </section>
-
-
-<script src="LIB/d3-scale-radial.js"></script>
-<script>
-// set the dimensions and margins of the graph
-var margin = {top: 100, right: 0, bottom: 0, left: 0},
-    width = 800 - margin.left - margin.right,
-    height = 800 - margin.top - margin.bottom,
-    innerRadius = 160,
-    outerRadius = Math.min(width, height) / 2;   // the outerRadius goes from the middle of the SVG area to the border
-
-// append the svg object
-var svg = d3.select("#dataviz2")
-  .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + (width / 2 + margin.left) + "," + (height / 2 + margin.top) + ")");
-
-// Scales
-var x = d3.scaleBand()
-    .range([0, 2 * Math.PI])    // X axis goes from 0 to 2pi = all around the circle. If I stop at 1Pi, it will be around a half circle
-    .align(0);                  // This does nothing
-var y = d3.scaleRadial()
-    .range([innerRadius, outerRadius]);   // Domain will be define later.
-
-// Second barplot Scales
-var ybis = d3.scaleRadial()
-    .range([155, 5]);   // Domain will be defined later.
-
-
-d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum.csv", function(data) {
-
-  x.domain(data.map(function(d) { return d.Country; })); // The domain of the X axis is the list of states.
-  y.domain([0, 13000]); // Domain of Y is from 0 to the max seen in the data
-  ybis.domain([0, 13000]);
-
-  // Add the bars
-  svg.append("g")
-    .selectAll("path")
-    .data(data)
-    .enter()
-    .append("path")
-      .attr("fill", "#69b3a2")
-      .attr("class", "yo")
-      .attr("d", d3.arc()     // imagine your doing a part of a donut plot
-          .innerRadius(innerRadius)
-          .outerRadius(function(d) { return y(d['Value']); })
-          .startAngle(function(d) { return x(d.Country); })
-          .endAngle(function(d) { return x(d.Country) + x.bandwidth(); })
-          .padAngle(0.01)
-          .padRadius(innerRadius))
-
-  // Add the labels
-  svg.append("g")
-      .selectAll("g")
-      .data(data)
-      .enter()
-      .append("g")
-        .attr("text-anchor", function(d) { return (x(d.Country) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ? "end" : "start"; })
-        .attr("transform", function(d) { return "rotate(" + ((x(d.Country) + x.bandwidth() / 2) * 180 / Math.PI - 90) + ")"+"translate(" + (y(d['Value'])+10) + ",0)"; })
-      .append("text")
-        .text(function(d){return(d.Country)})
-        .attr("transform", function(d) { return (x(d.Country) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ? "rotate(180)" : "rotate(0)"; })
-        .style("font-size", "11px")
-        .attr("alignment-baseline", "middle")
-
-  // Add the second serie
-  svg.append("g")
-    .selectAll("path")
-    .data(data)
-    .enter()
-    .append("path")
-      .attr("fill", "red")
-      .attr("d", d3.arc()     // imagine your doing a part of a donut plot
-          .innerRadius( function(d) { return ybis(0) })
-          .outerRadius( function(d) { return ybis(d['Value']); })
-          .startAngle(function(d) { console.log("ok") ; return x(d.Country); })
-          .endAngle(function(d) { return x(d.Country) + x.bandwidth(); })
-          .padAngle(0.01)
-          .padRadius(innerRadius))
-
-});
-
-</script>
-
 
 
 
@@ -318,13 +199,13 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
     <div class="row">
       <div class="col-md-7" id="dataviz2">-</div>
       <div class="col-md-5" style="padding-top: 200px">
-        <h3 style="line-height: 50px"><u>Part 3</u>:<br>Comorbidity.</h3>
+        <h3 style="line-height: 50px"><u>Part 3</u>:<br>Links</h3>
         <hr>
-        <p>What is comorbidity? What are the most linked disorders?</p>
+        <p>What link to what</p>
         <hr>
-        <p>Chord diagram IN the circular barplot.</p>
+        <p>Kind of sankey diagram but disorder are organized by group. And collapsible. Arc instead of straight. Lot of transparency to be able to highlight a group.</p>
         <hr>
-        <p><u>Data</u>: data from the Oleguer's publication</p>
+        <p></p>
       </div>
   </div>
 </section>
@@ -342,9 +223,9 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
 
     <div class="row">
       <div class="col-md-5" style="padding-top: 200px">
-        <h3 style="line-height: 50px"><u>Part 4</u>:<br>Heritability.</h3>
+        <h3 style="line-height: 50px"><u>Part 4</u>:<br>Symetry</h3>
         <hr>
-        <p>What is genetic? How much does it explain mental disorders?</p>
+        <p>Could do with a circular layout?</p>
         <hr>
         <p>One more layer on the barplot</p>
         <hr>
@@ -353,6 +234,8 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
       <div class="col-md-7" id="dataviz2">-</div>
   </div>
 </section>
+
+
 
 
 
