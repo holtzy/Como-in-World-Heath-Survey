@@ -108,49 +108,49 @@
 
 
 <script>
-
-// The svg
-var svg1 = d3.select("#dataviz_worldmap"),
-  width = +svg1.attr("width"),
-  height = +svg1.attr("height");
-
-// Map and projection
-var path = d3.geoPath();
-var projection = d3.geoNaturalEarth()
-  .scale(width / 1.4 / Math.PI)
-  .translate([width / 2, height / 2]);
-
-// Data and color scale
-var data = d3.map();
-var colorScale = d3.scaleThreshold()
-  .domain([100000, 1000000, 10000000, 30000000, 100000000, 500000000])
-  .range(d3.schemeBlues[7]);
-
-// Load external data and boot
-d3.queue()
-  .defer(d3.json, "https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/master/DATA/world.geojson?token=AJx4QRu3RdqmZJMXWMjvBG8BZ2MOzy7Wks5bz9RZwA%3D%3D")
-  .defer(d3.csv, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv", function(d) { data.set(d.code, +d.pop); })
-  .await(ready);
-
-function ready(error, topo) {
-  if (error) throw error;
-
-  // Draw the map
-  svg1.append("g")
-    .selectAll("path")
-    .data(topo.features)
-    .enter()
-    .append("path")
-      // draw each country
-      .attr("d", d3.geoPath()
-        .projection(projection)
-      )
-      // set the color of each country
-      .attr("fill", function (d) {
-        d.total = data.get(d.id) || 0;
-        return colorScale(d.total);
-      });
-    }
+//
+// // The svg
+// var svg1 = d3.select("#dataviz_worldmap"),
+//   width = +svg1.attr("width"),
+//   height = +svg1.attr("height");
+//
+// // Map and projection
+// var path = d3.geoPath();
+// var projection = d3.geoNaturalEarth()
+//   .scale(width / 1.4 / Math.PI)
+//   .translate([width / 2, height / 2]);
+//
+// // Data and color scale
+// var data = d3.map();
+// var colorScale = d3.scaleThreshold()
+//   .domain([100000, 1000000, 10000000, 30000000, 100000000, 500000000])
+//   .range(d3.schemeBlues[7]);
+//
+// // Load external data and boot
+// d3.queue()
+//   .defer(d3.json, "https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/master/DATA/world.geojson?token=AJx4QRu3RdqmZJMXWMjvBG8BZ2MOzy7Wks5bz9RZwA%3D%3D")
+//   .defer(d3.csv, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv", function(d) { data.set(d.code, +d.pop); })
+//   .await(ready);
+//
+// function ready(error, topo) {
+//   if (error) throw error;
+//
+//   // Draw the map
+//   svg1.append("g")
+//     .selectAll("path")
+//     .data(topo.features)
+//     .enter()
+//     .append("path")
+//       // draw each country
+//       .attr("d", d3.geoPath()
+//         .projection(projection)
+//       )
+//       // set the color of each country
+//       .attr("fill", function (d) {
+//         d.total = data.get(d.id) || 0;
+//         return colorScale(d.total);
+//       });
+//     }
 
 </script>
 
@@ -181,69 +181,103 @@ function ready(error, topo) {
         <hr>
         <p>Annotation to show where the points are supposed to be in a random situation.</p>
       </div>
-      <center><div class="col-md-12" id="dataviz2"></div><center>
+    </div>
+    <div class="row">
+      <div class="col-md-10 mx-auto">
+        <svg id="dataviz2" width="960" height="400"></svg>
+      </div>
+    </div>
   </div>
 </section>
 
 
 
+<style>
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.axis text {
+  font: 10px sans-serif;
+}
+.cells path {
+  fill: none;
+  pointer-events: all;
+}
+.cells :hover circle {
+  fill: red;
+}
+</style>
+
 <script>
-// set the dimensions and margins of the graph
-var margin = {top: 10, right: 10, bottom: 70, left: 70},
-  width = 900 - margin.left - margin.right,
-  height = 300 - margin.top - margin.bottom;
 
-// append the svg object to the body of the page
-var svg2 = d3.select("#dataviz2")
-.append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
-.append("g")
-  .attr("transform",
-        "translate(" + margin.left + "," + margin.top + ")");
+var svg2 = d3.select("#dataviz2"),
+    margin = {top: 40, right: 40, bottom: 40, left: 40},
+    width = svg2.attr("width") - margin.left - margin.right,
+    height = svg2.attr("height") - margin.top - margin.bottom;
 
-// Add a X axis
-var x = d3.scaleLinear()
-  .domain([0, 13000])
-  .range([0, width]);
-svg2
-  .append("g")
-  .attr("transform", "translate(0," + height + ")")
-  .call(d3.axisBottom(x))
-  .selectAll("text")
-    .attr("transform", "translate(-2,10)rotate(-45)")
-    .style("text-anchor", "end")
+var formatValue = d3.format(",d");
 
-// Read the csv, it has a column called Value and another called Country
-d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum.csv", function(data) {
+var x = d3.scaleLog()
+    .rangeRound([0, width]);
 
-  // Use d3-force algorythm to find a position for each entity
+var g = svg2.append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/master/DATA/data.csv?token=AJx4QeYkATygWA2ROlBzjDr-iUEscLZTks5b197IwA%3D%3D", type, function(error, data) {
+
+  if (error) throw error;
+
+  x.domain(d3.extent(data, function(d) { return d.HR; }));
+
   var simulation = d3.forceSimulation(data)
-      .force("x", d3.forceX(function(d) { return x(d.Value); }).strength(5))
+      .force("x", d3.forceX(function(d) { return x(d.HR); }).strength(1))
       .force("y", d3.forceY(height / 2))
-      .force("collide", d3.forceCollide(6))
+      .force("collide", d3.forceCollide(7))
       .stop();
+
   for (var i = 0; i < 300; ++i) simulation.tick();
 
-  // prepare data
-  var cell = svg2.append("g")
-    .selectAll("g")
-    .data(d3.voronoi()
-      .extent([[-margin.left, -margin.top], [width + margin.right, height + margin.top]])
-      .x(function(d) { return d.x; })
-      .y(function(d) { return d.y; })
-      .polygons(data)
-    )
-    .enter()
-    .append("g");
+  g.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x).ticks(15, ".0s"));
 
-  // Finally append the circles
+  var cell = g.append("g")
+      .attr("class", "cells")
+    .selectAll("g").data(d3.voronoi()
+        .extent([[-margin.left, -margin.top], [width + margin.right, height + margin.top]])
+        .x(function(d) { return d.x; })
+        .y(function(d) { return d.y; })
+      .polygons(data)).enter().append("g");
+
   cell.append("circle")
-        .attr("r", 5)
-        .attr("cx", function(d) { return d.data.x; })
-        .attr("cy", function(d) { return d.data.y; });
+      .attr("r", 5)
+      .attr("cx", function(d) { return d.data.x; })
+      .attr("cy", 0)
+      .style("stroke", "black")
+      .style("fill", "grey")
 
-})
+  cell.selectAll("circle")
+    .transition()
+    .delay(1000)
+    .duration(10000)
+    .attr("cy", function(d) { return d.data.y; })
+
+  cell.append("path")
+      .attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+
+  cell.append("title")
+      .text(function(d) { return "Prior disorder: "+ d.data.`Prior disorder` + "\n" + formatValue(d.data.HR); });
+});
+
+function type(d) {
+  if (!d.HR) return;
+  d.HR = +d.HR;
+  return d;
+}
 
 </script>
 

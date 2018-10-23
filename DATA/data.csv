@@ -1,47 +1,47 @@
-Prior disorder,Later disorder,n,HR,Lower CL,Upper CL
-Major depressive episode,Bipolar disorder,115525,6.6,6.0,7.3
+Prior_disorder,Later_disorder,n,HR,Lower_CL,Upper_CL
+Major depressive episode,Bipolar disorder,115525,6.6,6,7.3
 Major depressive episode,Dysthymia,124565,22.7,20.9,24.6
 Major depressive episode,Panic disorder,145990,4.1,3.7,4.6
-Major depressive episode,Generalized anxiety disorder,145990,6.6,6.2,7.0
+Major depressive episode,Generalized anxiety disorder,145990,6.6,6.2,7
 Major depressive episode,Social phobia,141131,2.3,2.1,2.6
-Major depressive episode,Specific phobia,123628,1.0,0.9,1.3
-Major depressive episode,Agoraphobia,145990,3.4,3.0,3.9
+Major depressive episode,Specific phobia,123628,1,0.9,1.3
+Major depressive episode,Agoraphobia,145990,3.4,3,3.9
 Major depressive episode,PTSD,81939,4.7,4.3,5.1
 Major depressive episode,Obsessive compulsive disorder,25120,2.9,2.1,3.8
 Major depressive episode,Adult separation anxiety disorder,49037,3.8,3.4,4.3
 Major depressive episode,Child separation anxiety disorder,47661,0.8,0.5,1.3
 Major depressive episode,Anorexia nervosa,31561,,,
 Major depressive episode,Bulimia nervosa,31561,2.8,2.2,3.7
-Major depressive episode,Binge eating disorder,31561,2.6,2.3,3.0
-Major depressive episode,Intermittent explosive disorder,86789,3.0,2.6,3.5
+Major depressive episode,Binge eating disorder,31561,2.6,2.3,3
+Major depressive episode,Intermittent explosive disorder,86789,3,2.6,3.5
 Major depressive episode,ADHD,42147,,,
 Major depressive episode,Conduct disorder,33168,2.3,1.6,3.3
 Major depressive episode,Oppositional defiant disorder,30088,1.9,1.4,2.6
-Major depressive episode,Nicotine dependence,43994,2.0,1.8,2.2
+Major depressive episode,Nicotine dependence,43994,2,1.8,2.2
 Major depressive episode,Alcohol abuse,116210,2.4,2.2,2.6
-Major depressive episode,Alcohol dependence,116210,4.0,3.6,4.5
+Major depressive episode,Alcohol dependence,116210,4,3.6,4.5
 Major depressive episode,Drug abuse,90822,3.3,2.9,3.6
 Major depressive episode,Drug dependence,90822,5.1,4.3,5.9
-Bipolar disorder,Major depressive episode,145990,4.4,3.8,5.0
+Bipolar disorder,Major depressive episode,145990,4.4,3.8,5
 Bipolar disorder,Dysthymia,124565,6.4,5.3,7.9
-Bipolar disorder,Panic disorder,145990,4.0,3.1,5.1
+Bipolar disorder,Panic disorder,145990,4,3.1,5.1
 Bipolar disorder,Generalized anxiety disorder,145990,5.2,4.5,6.1
 Bipolar disorder,Social phobia,141131,2.9,2.2,3.8
 Bipolar disorder,Specific phobia,123628,2.3,1.6,3.3
 Bipolar disorder,Agoraphobia,145990,4.8,3.5,6.6
 Bipolar disorder,PTSD,81939,4.4,3.5,5.4
-Bipolar disorder,Obsessive compulsive disorder,25120,7.4,5.0,10.9
-Bipolar disorder,Adult separation anxiety disorder,49037,5.0,4.0,6.2
+Bipolar disorder,Obsessive compulsive disorder,25120,7.4,5,10.9
+Bipolar disorder,Adult separation anxiety disorder,49037,5,4,6.2
 Bipolar disorder,Child separation anxiety disorder,47661,,,
 Bipolar disorder,Anorexia nervosa,31561,,,
-Bipolar disorder,Bulimia nervosa,31561,6.0,3.7,9.7
+Bipolar disorder,Bulimia nervosa,31561,6,3.7,9.7
 Bipolar disorder,Binge eating disorder,31561,4.7,3.7,6.1
-Bipolar disorder,Intermittent explosive disorder,86789,4.0,3.0,5.3
+Bipolar disorder,Intermittent explosive disorder,86789,4,3,5.3
 Bipolar disorder,ADHD,42147,,,
 Bipolar disorder,Conduct disorder,33168,,,
 Bipolar disorder,Oppositional defiant disorder,30088,,,
 Bipolar disorder,Nicotine dependence,43994,2.9,2.4,3.5
-Bipolar disorder,Alcohol abuse,116210,4.3,3.7,5.0
+Bipolar disorder,Alcohol abuse,116210,4.3,3.7,5
 Bipolar disorder,Alcohol dependence,116210,6.5,5.5,7.8
 Bipolar disorder,Drug abuse,90822,3.9,3.1,4.8
 Bipolar disorder,Drug dependence,90822,6.6,5.2,8.4
@@ -50,9 +50,9 @@ Dysthymia,Bipolar disorder,115525,6.5,5.4,7.9
 Dysthymia,Panic disorder,145990,4.4,3.6,5.3
 Dysthymia,Generalized anxiety disorder,145990,8.6,7.6,9.7
 Dysthymia,Social phobia,141131,4.5,3.6,5.7
-Dysthymia,Specific phobia,123628,2.8,2.0,4.0
+Dysthymia,Specific phobia,123628,2.8,2,4
 Dysthymia,Agoraphobia,145990,4.8,3.7,6.3
-Dysthymia,PTSD,81939,6.0,5.0,7.0
+Dysthymia,PTSD,81939,6,5,7
 Dysthymia,Obsessive compulsive disorder,25120,,,
 Dysthymia,Adult separation anxiety disorder,49037,4.2,3.3,5.3
 Dysthymia,Child separation anxiety disorder,47661,,,
@@ -66,14 +66,14 @@ Dysthymia,Oppositional defiant disorder,30088,,,
 Dysthymia,Nicotine dependence,43994,2.3,1.9,2.7
 Dysthymia,Alcohol abuse,116210,3.1,2.6,3.7
 Dysthymia,Alcohol dependence,116210,6.7,5.5,8.2
-Dysthymia,Drug abuse,90822,4.0,3.1,5.1
-Dysthymia,Drug dependence,90822,8.3,6.2,11.0
+Dysthymia,Drug abuse,90822,4,3.1,5.1
+Dysthymia,Drug dependence,90822,8.3,6.2,11
 Panic disorder,Major depressive episode,145990,4.6,4.1,5.1
 Panic disorder,Bipolar disorder,115525,6.3,5.1,7.7
 Panic disorder,Dysthymia,124565,7.3,6.1,8.8
 Panic disorder,Generalized anxiety disorder,145990,6.8,5.9,7.7
 Panic disorder,Social phobia,141131,4.6,3.6,5.7
-Panic disorder,Specific phobia,123628,3.0,2.3,4.0
+Panic disorder,Specific phobia,123628,3,2.3,4
 Panic disorder,Agoraphobia,145990,10.1,8.4,12.2
 Panic disorder,PTSD,81939,4.2,3.4,5.1
 Panic disorder,Obsessive compulsive disorder,25120,5.9,3.7,9.5
@@ -81,26 +81,26 @@ Panic disorder,Adult separation anxiety disorder,49037,4.5,3.5,5.8
 Panic disorder,Child separation anxiety disorder,47661,,,
 Panic disorder,Anorexia nervosa,31561,,,
 Panic disorder,Bulimia nervosa,31561,,,
-Panic disorder,Binge eating disorder,31561,3.0,2.3,3.9
-Panic disorder,Intermittent explosive disorder,86789,4.8,3.8,6.0
+Panic disorder,Binge eating disorder,31561,3,2.3,3.9
+Panic disorder,Intermittent explosive disorder,86789,4.8,3.8,6
 Panic disorder,ADHD,42147,,,
 Panic disorder,Conduct disorder,33168,,,
 Panic disorder,Oppositional defiant disorder,30088,,,
-Panic disorder,Nicotine dependence,43994,2.4,2.0,2.8
+Panic disorder,Nicotine dependence,43994,2.4,2,2.8
 Panic disorder,Alcohol abuse,116210,2.6,2.2,3.2
 Panic disorder,Alcohol dependence,116210,6.7,5.5,8.1
-Panic disorder,Drug abuse,90822,4.0,3.2,5.0
+Panic disorder,Drug abuse,90822,4,3.2,5
 Panic disorder,Drug dependence,90822,6.1,4.5,8.2
-Generalized anxiety disorder,Major depressive episode,145990,6.5,6.1,7.0
+Generalized anxiety disorder,Major depressive episode,145990,6.5,6.1,7
 Generalized anxiety disorder,Bipolar disorder,115525,6.2,5.3,7.1
 Generalized anxiety disorder,Dysthymia,124565,8.7,7.7,9.9
-Generalized anxiety disorder,Panic disorder,145990,4.7,4.0,5.5
+Generalized anxiety disorder,Panic disorder,145990,4.7,4,5.5
 Generalized anxiety disorder,Social phobia,141131,3.2,2.7,3.9
-Generalized anxiety disorder,Specific phobia,123628,1.5,1.1,2.0
+Generalized anxiety disorder,Specific phobia,123628,1.5,1.1,2
 Generalized anxiety disorder,Agoraphobia,145990,3.4,2.7,4.2
-Generalized anxiety disorder,PTSD,81939,5.3,4.7,6.0
+Generalized anxiety disorder,PTSD,81939,5.3,4.7,6
 Generalized anxiety disorder,Obsessive compulsive disorder,25120,2.5,1.8,3.6
-Generalized anxiety disorder,Adult separation anxiety disorder,49037,4.0,3.3,4.7
+Generalized anxiety disorder,Adult separation anxiety disorder,49037,4,3.3,4.7
 Generalized anxiety disorder,Child separation anxiety disorder,47661,,,
 Generalized anxiety disorder,Anorexia nervosa,31561,,,
 Generalized anxiety disorder,Bulimia nervosa,31561,3.5,2.5,4.9
@@ -111,54 +111,54 @@ Generalized anxiety disorder,Conduct disorder,33168,,,
 Generalized anxiety disorder,Oppositional defiant disorder,30088,,,
 Generalized anxiety disorder,Nicotine dependence,43994,2.7,2.4,3.1
 Generalized anxiety disorder,Alcohol abuse,116210,2.5,2.2,2.9
-Generalized anxiety disorder,Alcohol dependence,116210,5.2,4.4,6.0
+Generalized anxiety disorder,Alcohol dependence,116210,5.2,4.4,6
 Generalized anxiety disorder,Drug abuse,90822,3.5,2.9,4.1
 Generalized anxiety disorder,Drug dependence,90822,5.5,4.5,6.7
 Social phobia,Major depressive episode,145990,3.6,3.4,3.8
 Social phobia,Bipolar disorder,115525,4.1,3.7,4.6
 Social phobia,Dysthymia,124565,4.9,4.4,5.5
-Social phobia,Panic disorder,145990,4.5,4.0,5.0
+Social phobia,Panic disorder,145990,4.5,4,5
 Social phobia,Generalized anxiety disorder,145990,5.1,4.7,5.5
 Social phobia,Specific phobia,123628,2.7,2.3,3.2
-Social phobia,Agoraphobia,145990,10.0,8.9,11.3
+Social phobia,Agoraphobia,145990,10,8.9,11.3
 Social phobia,PTSD,81939,3.1,2.7,3.4
 Social phobia,Obsessive compulsive disorder,25120,4.2,3.3,5.3
 Social phobia,Adult separation anxiety disorder,49037,3.3,2.9,3.8
-Social phobia,Child separation anxiety disorder,47661,2.3,1.7,3.0
+Social phobia,Child separation anxiety disorder,47661,2.3,1.7,3
 Social phobia,Anorexia nervosa,31561,,,
 Social phobia,Bulimia nervosa,31561,3.9,3.1,4.9
-Social phobia,Binge eating disorder,31561,3.0,2.6,3.4
+Social phobia,Binge eating disorder,31561,3,2.6,3.4
 Social phobia,Intermittent explosive disorder,86789,3.7,3.2,4.3
 Social phobia,ADHD,42147,2.9,2.2,3.9
 Social phobia,Conduct disorder,33168,2.5,1.9,3.1
 Social phobia,Oppositional defiant disorder,30088,3.4,2.6,4.4
 Social phobia,Nicotine dependence,43994,1.9,1.7,2.1
-Social phobia,Alcohol abuse,116210,2.2,2.0,2.4
+Social phobia,Alcohol abuse,116210,2.2,2,2.4
 Social phobia,Alcohol dependence,116210,3.7,3.4,4.1
-Social phobia,Drug abuse,90822,2.7,2.5,3.0
-Social phobia,Drug dependence,90822,4.0,3.5,4.7
+Social phobia,Drug abuse,90822,2.7,2.5,3
+Social phobia,Drug dependence,90822,4,3.5,4.7
 Specific phobia,Major depressive episode,145990,2.5,2.4,2.6
-Specific phobia,Bipolar disorder,115525,3.6,3.3,4.0
-Specific phobia,Dysthymia,124565,3.3,3.0,3.6
+Specific phobia,Bipolar disorder,115525,3.6,3.3,4
+Specific phobia,Dysthymia,124565,3.3,3,3.6
 Specific phobia,Panic disorder,145990,4.1,3.8,4.5
-Specific phobia,Generalized anxiety disorder,145990,3.0,2.8,3.2
+Specific phobia,Generalized anxiety disorder,145990,3,2.8,3.2
 Specific phobia,Social phobia,141131,5.2,4.8,5.5
 Specific phobia,Agoraphobia,145990,6.8,6.2,7.5
-Specific phobia,PTSD,81939,3.0,2.7,3.3
+Specific phobia,PTSD,81939,3,2.7,3.3
 Specific phobia,Obsessive compulsive disorder,25120,4.1,3.2,5.3
-Specific phobia,Adult separation anxiety disorder,49037,3.4,3.0,3.8
+Specific phobia,Adult separation anxiety disorder,49037,3.4,3,3.8
 Specific phobia,Child separation anxiety disorder,47661,4.6,3.9,5.6
-Specific phobia,Anorexia nervosa,31561,1.7,0.9,3.0
+Specific phobia,Anorexia nervosa,31561,1.7,0.9,3
 Specific phobia,Bulimia nervosa,31561,2.7,2.1,3.4
 Specific phobia,Binge eating disorder,31561,2.4,2.1,2.8
 Specific phobia,Intermittent explosive disorder,86789,2.7,2.4,3.1
 Specific phobia,ADHD,42147,3.7,3.1,4.5
 Specific phobia,Conduct disorder,33168,2.6,2.2,3.1
 Specific phobia,Oppositional defiant disorder,30088,2.8,2.3,3.4
-Specific phobia,Nicotine dependence,43994,1.8,1.6,2.0
-Specific phobia,Alcohol abuse,116210,2.1,2.0,2.3
+Specific phobia,Nicotine dependence,43994,1.8,1.6,2
+Specific phobia,Alcohol abuse,116210,2.1,2,2.3
 Specific phobia,Alcohol dependence,116210,2.8,2.5,3.2
-Specific phobia,Drug abuse,90822,2.2,2.0,2.5
+Specific phobia,Drug abuse,90822,2.2,2,2.5
 Specific phobia,Drug dependence,90822,3.3,2.8,3.8
 Agoraphobia,Major depressive episode,145990,4.2,3.8,4.6
 Agoraphobia,Bipolar disorder,115525,8.6,7.2,10.2
@@ -177,18 +177,18 @@ Agoraphobia,Binge eating disorder,31561,3.7,2.9,4.8
 Agoraphobia,Intermittent explosive disorder,86789,4.9,3.9,6.3
 Agoraphobia,ADHD,42147,,,
 Agoraphobia,Conduct disorder,33168,,,
-Agoraphobia,Oppositional defiant disorder,30088,4.0,2.7,5.8
+Agoraphobia,Oppositional defiant disorder,30088,4,2.7,5.8
 Agoraphobia,Nicotine dependence,43994,2.1,1.7,2.7
-Agoraphobia,Alcohol abuse,116210,2.5,2.0,3.0
+Agoraphobia,Alcohol abuse,116210,2.5,2,3
 Agoraphobia,Alcohol dependence,116210,5.4,4.5,6.4
 Agoraphobia,Drug abuse,90822,3.2,2.5,3.9
 Agoraphobia,Drug dependence,90822,5.8,4.4,7.7
 PTSD,Major depressive episode,145990,5.1,4.7,5.5
 PTSD,Bipolar disorder,115525,4.8,4.2,5.5
-PTSD,Dysthymia,124565,6.0,5.2,6.9
+PTSD,Dysthymia,124565,6,5.2,6.9
 PTSD,Panic disorder,145990,4.3,3.7,5.1
 PTSD,Generalized anxiety disorder,145990,5.2,4.7,5.7
-PTSD,Social phobia,141131,4.0,3.4,4.6
+PTSD,Social phobia,141131,4,3.4,4.6
 PTSD,Specific Phobia,123628,2.6,2.1,3.3
 PTSD,Agoraphobia,145990,3.5,2.8,4.4
 PTSD,Obsessive compulsive disorder,25120,3.4,2.3,5.1
@@ -200,14 +200,14 @@ PTSD,Binge eating disorder,31561,3.4,2.8,4.3
 PTSD,Intermittent explosive disorder,86789,3.8,2.9,4.8
 PTSD,ADHD,42147,,,
 PTSD,Conduct disorder,33168,4.7,3.3,6.8
-PTSD,Oppositional defiant disorder,30088,4.0,2.6,6.0
+PTSD,Oppositional defiant disorder,30088,4,2.6,6
 PTSD,Nicotine dependence,43994,2.6,2.2,3.1
-PTSD,Alcohol abuse,116210,3.0,2.7,3.4
+PTSD,Alcohol abuse,116210,3,2.7,3.4
 PTSD,Alcohol dependence,116210,5.3,4.5,6.2
 PTSD,Drug abuse,90822,3.6,3.1,4.3
 PTSD,Drug dependence,90822,6.2,5.1,7.6
 Obsessive compulsive disorder,Major depressive episode,145990,3.7,3.1,4.3
-Obsessive compulsive disorder,Bipolar disorder,115525,6.0,4.5,8.0
+Obsessive compulsive disorder,Bipolar disorder,115525,6,4.5,8
 Obsessive compulsive disorder,Dysthymia,124565,5.9,4.1,8.6
 Obsessive compulsive disorder,Panic disorder,145990,4.3,2.9,6.5
 Obsessive compulsive disorder,Generalized anxiety disorder,145990,4.6,3.7,5.7
@@ -230,7 +230,7 @@ Obsessive compulsive disorder,Alcohol dependence,116210,4.5,3.2,6.5
 Obsessive compulsive disorder,Drug abuse,90822,2.4,1.6,3.6
 Obsessive compulsive disorder,Drug dependence,90822,3.3,1.9,5.6
 Adult separation anxiety disorder,Major depressive episode,145990,4.4,3.9,4.9
-Adult separation anxiety disorder,Bipolar disorder,115525,6.6,5.4,8.0
+Adult separation anxiety disorder,Bipolar disorder,115525,6.6,5.4,8
 Adult separation anxiety disorder,Dysthymia,124565,5.7,4.6,6.9
 Adult separation anxiety disorder,Panic disorder,145990,3.6,2.8,4.6
 Adult separation anxiety disorder,Generalized anxiety disorder,145990,5.3,4.5,6.1
@@ -241,13 +241,13 @@ Adult separation anxiety disorder,PTSD,81939,4.1,3.3,5.1
 Adult separation anxiety disorder,Obsessive compulsive disorder,25120,4.4,2.8,6.9
 Adult separation anxiety disorder,Child separation anxiety disorder,47661,,,
 Adult separation anxiety disorder,Anorexia nervosa,31561,,,
-Adult separation anxiety disorder,Bulimia nervosa,31561,6.0,3.9,9.2
-Adult separation anxiety disorder,Binge eating disorder,31561,4.0,3.0,5.3
+Adult separation anxiety disorder,Bulimia nervosa,31561,6,3.9,9.2
+Adult separation anxiety disorder,Binge eating disorder,31561,4,3,5.3
 Adult separation anxiety disorder,Intermittent explosive disorder,86789,3.1,2.5,3.9
 Adult separation anxiety disorder,ADHD,42147,,,
 Adult separation anxiety disorder,Conduct disorder,33168,3.2,2.1,4.9
 Adult separation anxiety disorder,Oppositional defiant disorder,30088,3.2,2.1,4.9
-Adult separation anxiety disorder,Nicotine dependence,43994,2.5,2.1,3.0
+Adult separation anxiety disorder,Nicotine dependence,43994,2.5,2.1,3
 Adult separation anxiety disorder,Alcohol abuse,116210,2.8,2.3,3.4
 Adult separation anxiety disorder,Alcohol dependence,116210,4.1,3.2,5.2
 Adult separation anxiety disorder,Drug abuse,90822,2.7,2.1,3.5
@@ -260,18 +260,18 @@ Child separation anxiety disorder,Generalized anxiety disorder,145990,3.8,3.2,4.
 Child separation anxiety disorder,Social phobia,141131,4.3,3.6,5.1
 Child separation anxiety disorder,Specific Phobia,123628,3.4,2.8,4.2
 Child separation anxiety disorder,Agoraphobia,145990,3.7,2.8,4.9
-Child separation anxiety disorder,PTSD,81939,3.6,3.0,4.5
+Child separation anxiety disorder,PTSD,81939,3.6,3,4.5
 Child separation anxiety disorder,Obsessive compulsive disorder,25120,,,
-Child separation anxiety disorder,Adult separation anxiety disorder,49037,10.5,9.0,12.1
+Child separation anxiety disorder,Adult separation anxiety disorder,49037,10.5,9,12.1
 Child separation anxiety disorder,Anorexia nervosa,31561,,,
 Child separation anxiety disorder,Bulimia nervosa,31561,,,
 Child separation anxiety disorder,Binge eating disorder,31561,2.1,1.6,2.7
 Child separation anxiety disorder,Intermittent explosive disorder,86789,3.4,2.7,4.2
 Child separation anxiety disorder,ADHD,42147,5.7,3.9,8.2
-Child separation anxiety disorder,Conduct disorder,33168,3.1,2.4,4.0
+Child separation anxiety disorder,Conduct disorder,33168,3.1,2.4,4
 Child separation anxiety disorder,Oppositional defiant disorder,30088,3.6,2.8,4.6
 Child separation anxiety disorder,Nicotine dependence,43994,2.3,1.9,2.7
-Child separation anxiety disorder,Alcohol abuse,116210,2.4,2.0,2.9
+Child separation anxiety disorder,Alcohol abuse,116210,2.4,2,2.9
 Child separation anxiety disorder,Alcohol dependence,116210,3.1,2.4,3.9
 Child separation anxiety disorder,Drug abuse,90822,2.1,1.6,2.7
 Child separation anxiety disorder,Drug dependence,90822,3.1,2.2,4.3
@@ -300,13 +300,13 @@ Anorexia nervosa,Drug abuse,90822,,,
 Anorexia nervosa,Drug dependence,90822,,,
 Bulimia nervosa,Major depressive episode,145990,3.9,3.1,4.8
 Bulimia nervosa,Bipolar disorder,115525,4.6,3.1,6.6
-Bulimia nervosa,Dysthymia,124565,4.0,2.6,6.1
+Bulimia nervosa,Dysthymia,124565,4,2.6,6.1
 Bulimia nervosa,Panic disorder,145990,3.7,2.4,5.5
 Bulimia nervosa,Generalized anxiety disorder,145990,3.8,2.8,5.1
 Bulimia nervosa,Social phobia,141131,,,
 Bulimia nervosa,Specific Phobia,123628,,,
 Bulimia nervosa,Agoraphobia,145990,,,
-Bulimia nervosa,PTSD,81939,4.7,3.2,7.0
+Bulimia nervosa,PTSD,81939,4.7,3.2,7
 Bulimia nervosa,Obsessive compulsive disorder,25120,,,
 Bulimia nervosa,Adult separation anxiety disorder,49037,6.9,4.5,10.6
 Bulimia nervosa,Child separation anxiety disorder,47661,,,
@@ -325,10 +325,10 @@ Binge eating disorder,Major depressive episode,145990,3.3,2.9,3.8
 Binge eating disorder,Bipolar disorder,115525,4.2,3.2,5.4
 Binge eating disorder,Dysthymia,124565,3.5,2.6,4.6
 Binge eating disorder,Panic disorder,145990,3.1,2.3,4.1
-Binge eating disorder,Generalized anxiety disorder,145990,3.2,2.5,4.0
+Binge eating disorder,Generalized anxiety disorder,145990,3.2,2.5,4
 Binge eating disorder,Social phobia,141131,2.5,1.8,3.5
 Binge eating disorder,Specific Phobia,123628,,,
-Binge eating disorder,Agoraphobia,145990,4.0,2.6,6.0
+Binge eating disorder,Agoraphobia,145990,4,2.6,6
 Binge eating disorder,PTSD,81939,2.4,1.8,3.3
 Binge eating disorder,Obsessive compulsive disorder,25120,,,
 Binge eating disorder,Adult separation anxiety disorder,49037,3.4,2.6,4.5
@@ -341,19 +341,19 @@ Binge eating disorder,Conduct disorder,33168,,,
 Binge eating disorder,Oppositional defiant disorder,30088,,,
 Binge eating disorder,Nicotine dependence,43994,2.3,1.9,2.8
 Binge eating disorder,Alcohol abuse,116210,3.1,2.6,3.7
-Binge eating disorder,Alcohol dependence,116210,4.0,3.1,5.2
+Binge eating disorder,Alcohol dependence,116210,4,3.1,5.2
 Binge eating disorder,Drug abuse,90822,3.5,2.7,4.6
 Binge eating disorder,Drug dependence,90822,4.6,3.4,6.3
 Intermittent explosive disorder,Major depressive episode,145990,3.2,2.9,3.5
-Intermittent explosive disorder,Bipolar disorder,115525,4.7,4.0,5.6
+Intermittent explosive disorder,Bipolar disorder,115525,4.7,4,5.6
 Intermittent explosive disorder,Dysthymia,124565,3.6,2.9,4.5
 Intermittent explosive disorder,Panic disorder,145990,2.9,2.3,3.7
-Intermittent explosive disorder,Generalized anxiety disorder,145990,4.3,3.6,5.0
+Intermittent explosive disorder,Generalized anxiety disorder,145990,4.3,3.6,5
 Intermittent explosive disorder,Social phobia,141131,2.8,2.2,3.4
 Intermittent explosive disorder,Specific Phobia,123628,1.9,1.4,2.8
 Intermittent explosive disorder,Agoraphobia,145990,2.9,2.2,3.9
-Intermittent explosive disorder,PTSD,81939,3.3,2.7,4.0
-Intermittent explosive disorder,Obsessive compulsive disorder,25120,6.4,4.6,9.0
+Intermittent explosive disorder,PTSD,81939,3.3,2.7,4
+Intermittent explosive disorder,Obsessive compulsive disorder,25120,6.4,4.6,9
 Intermittent explosive disorder,Adult separation anxiety disorder,49037,3.5,2.8,4.2
 Intermittent explosive disorder,Child separation anxiety disorder,47661,,,
 Intermittent explosive disorder,Anorexia nervosa,31561,,,
@@ -362,41 +362,41 @@ Intermittent explosive disorder,Binge eating disorder,31561,2.9,2.2,3.7
 Intermittent explosive disorder,ADHD,42147,,,
 Intermittent explosive disorder,Conduct disorder,33168,3.6,2.7,4.8
 Intermittent explosive disorder,Oppositional defiant disorder,30088,3.1,2.2,4.3
-Intermittent explosive disorder,Nicotine dependence,43994,2.0,1.8,2.4
+Intermittent explosive disorder,Nicotine dependence,43994,2,1.8,2.4
 Intermittent explosive disorder,Alcohol abuse,116210,3.1,2.7,3.5
-Intermittent explosive disorder,Alcohol dependence,116210,4.2,3.5,5.0
+Intermittent explosive disorder,Alcohol dependence,116210,4.2,3.5,5
 Intermittent explosive disorder,Drug abuse,90822,2.6,2.1,3.1
 Intermittent explosive disorder,Drug dependence,90822,3.4,2.7,4.4
 ADHD,Major depressive episode,145990,4.4,3.9,4.9
-ADHD,Bipolar disorder,115525,6.0,5.0,7.2
+ADHD,Bipolar disorder,115525,6,5,7.2
 ADHD,Dysthymia,124565,5.4,4.3,6.8
 ADHD,Panic disorder,145990,4.6,3.6,5.7
 ADHD,Generalized anxiety disorder,145990,3.9,3.2,4.6
 ADHD,Social phobia,141131,4.8,4.1,5.7
-ADHD,Specific Phobia,123628,3.1,2.5,4.0
+ADHD,Specific Phobia,123628,3.1,2.5,4
 ADHD,Agoraphobia,145990,4.7,3.5,6.4
 ADHD,PTSD,81939,4.3,3.4,5.5
 ADHD,Obsessive compulsive disorder,25120,,,
 ADHD,Adult separation anxiety disorder,49037,4.4,3.7,5.4
 ADHD,Child separation anxiety disorder,47661,3.8,2.8,5.2
 ADHD,Anorexia nervosa,31561,,,
-ADHD,Bulimia nervosa,31561,6.4,4.0,10.1
+ADHD,Bulimia nervosa,31561,6.4,4,10.1
 ADHD,Binge eating disorder,31561,,,
-ADHD,IED,86789,4.0,3.1,5.0
+ADHD,IED,86789,4,3.1,5
 ADHD,Conduct disorder,33168,6.9,5.4,8.9
 ADHD,Oppositional defiant disorder,30088,9.9,7.7,12.7
 ADHD,Nicotine dependence,43994,2.2,1.9,2.7
-ADHD,Alcohol abuse,116210,3.0,2.5,3.6
-ADHD,Alcohol dependence,116210,3.8,3.0,4.8
-ADHD,Drug abuse,90822,3.0,2.5,3.7
+ADHD,Alcohol abuse,116210,3,2.5,3.6
+ADHD,Alcohol dependence,116210,3.8,3,4.8
+ADHD,Drug abuse,90822,3,2.5,3.7
 ADHD,Drug dependence,90822,4.6,3.5,5.9
 Conduct disorder,Major depressive episode,145990,3.6,3.2,4.1
 Conduct disorder,Bipolar disorder,115525,4.6,3.7,5.6
-Conduct disorder,Dysthymia,124565,4.5,3.4,6.0
+Conduct disorder,Dysthymia,124565,4.5,3.4,6
 Conduct disorder,Panic disorder,145990,4.8,3.7,6.1
 Conduct disorder,Generalized anxiety disorder,145990,3.8,3.2,4.6
-Conduct disorder,Social phobia,141131,3.1,2.4,4.0
-Conduct disorder,Specific Phobia,123628,2.6,2.0,3.4
+Conduct disorder,Social phobia,141131,3.1,2.4,4
+Conduct disorder,Specific Phobia,123628,2.6,2,3.4
 Conduct disorder,Agoraphobia,145990,3.2,2.3,4.5
 Conduct disorder,PTSD,81939,4.2,3.3,5.3
 Conduct disorder,Obsessive compulsive disorder,25120,,,
@@ -405,25 +405,25 @@ Conduct disorder,Child separation anxiety disorder,47661,,,
 Conduct disorder,Anorexia nervosa,31561,,,
 Conduct disorder,Bulimia nervosa,31561,,,
 Conduct disorder,Binge eating disorder,31561,2.5,1.7,3.5
-Conduct disorder,IED,86789,4.0,3.2,5.1
+Conduct disorder,IED,86789,4,3.2,5.1
 Conduct disorder,ADHD,42147,,,
 Conduct disorder,Oppositional defiant disorder,30088,12.3,9.2,16.5
 Conduct disorder,Nicotine dependence,43994,3.1,2.6,3.8
 Conduct disorder,Alcohol abuse,116210,4.4,3.8,5.1
-Conduct disorder,Alcohol dependence,116210,5.6,4.5,7.0
+Conduct disorder,Alcohol dependence,116210,5.6,4.5,7
 Conduct disorder,Drug abuse,90822,5.9,4.9,7.1
-Conduct disorder,Drug dependence,90822,7.6,6.0,9.6
+Conduct disorder,Drug dependence,90822,7.6,6,9.6
 Oppositional defiant disorder,Major depressive episode,145990,3.8,3.4,4.3
 Oppositional defiant disorder,Bipolar disorder,115525,5.4,4.6,6.4
 Oppositional defiant disorder,Dysthymia,124565,5.2,4.1,6.6
-Oppositional defiant disorder,Panic disorder,145990,3.9,3.0,5.2
+Oppositional defiant disorder,Panic disorder,145990,3.9,3,5.2
 Oppositional defiant disorder,Generalized anxiety disorder,145990,3.9,3.3,4.8
 Oppositional defiant disorder,Social phobia,141131,4.3,3.6,5.1
 Oppositional defiant disorder,Specific Phobia,123628,3.1,2.3,4.1
 Oppositional defiant disorder,Agoraphobia,145990,3.5,2.6,4.8
 Oppositional defiant disorder,PTSD,81939,4.3,3.5,5.3
 Oppositional defiant disorder,Obsessive compulsive disorder,25120,,,
-Oppositional defiant disorder,Adult separation anxiety disorder,49037,4.9,4.0,5.9
+Oppositional defiant disorder,Adult separation anxiety disorder,49037,4.9,4,5.9
 Oppositional defiant disorder,Child separation anxiety disorder,47661,3.9,2.4,6.4
 Oppositional defiant disorder,Anorexia nervosa,31561,,,
 Oppositional defiant disorder,Bulimia nervosa,31561,5.4,3.6,8.3
@@ -433,24 +433,24 @@ Oppositional defiant disorder,ADHD,42147,10.4,7.2,14.9
 Oppositional defiant disorder,Conduct disorder,33168,12.3,10.1,14.9
 Oppositional defiant disorder,Nicotine dependence,43994,3.2,2.8,3.6
 Oppositional defiant disorder,Alcohol abuse,116210,4.2,3.7,4.8
-Oppositional defiant disorder,Alcohol dependence,116210,4.9,4.0,6.1
+Oppositional defiant disorder,Alcohol dependence,116210,4.9,4,6.1
 Oppositional defiant disorder,Drug abuse,90822,4.9,4.2,5.8
 Oppositional defiant disorder,Drug dependence,90822,6.1,4.9,7.5
 Nicotine dependence,Major depressive episode,145990,2.6,2.3,2.8
 Nicotine dependence,Bipolar disorder,115525,2.6,2.1,3.1
 Nicotine dependence,Dysthymia,124565,2.3,1.9,2.8
 Nicotine dependence,Panic disorder,145990,1.9,1.5,2.4
-Nicotine dependence,Generalized anxiety disorder,145990,2.5,2.2,3.0
-Nicotine dependence,Social phobia,141131,1.3,1.0,1.8
-Nicotine dependence,Specific Phobia,123628,1.0,0.7,1.5
+Nicotine dependence,Generalized anxiety disorder,145990,2.5,2.2,3
+Nicotine dependence,Social phobia,141131,1.3,1,1.8
+Nicotine dependence,Specific Phobia,123628,1,0.7,1.5
 Nicotine dependence,Agoraphobia,145990,1.5,1.1,2.1
 Nicotine dependence,PTSD,81939,1.8,1.5,2.2
-Nicotine dependence,Obsessive compulsive disorder,25120,2.0,1.4,2.7
-Nicotine dependence,Adult separation anxiety disorder,49037,2.0,1.7,2.4
+Nicotine dependence,Obsessive compulsive disorder,25120,2,1.4,2.7
+Nicotine dependence,Adult separation anxiety disorder,49037,2,1.7,2.4
 Nicotine dependence,Child separation anxiety disorder,47661,,,
 Nicotine dependence,Anorexia nervosa,31561,,,
 Nicotine dependence,Bulimia nervosa,31561,2.5,1.5,4.1
-Nicotine dependence,Binge eating disorder,31561,2.0,1.6,2.7
+Nicotine dependence,Binge eating disorder,31561,2,1.6,2.7
 Nicotine dependence,IED,86789,1.5,1.3,1.9
 Nicotine dependence,ADHD,42147,,,
 Nicotine dependence,Conduct disorder,33168,,,
@@ -463,33 +463,33 @@ Alcohol abuse,Major depressive episode,145990,1.8,1.6,1.9
 Alcohol abuse,Bipolar disorder,115525,3.1,2.7,3.5
 Alcohol abuse,Dysthymia,124565,2.1,1.8,2.4
 Alcohol abuse,Panic disorder,145990,1.9,1.6,2.3
-Alcohol abuse,Generalized anxiety disorder,145990,2.0,1.8,2.2
-Alcohol abuse,Social phobia,141131,1.2,1.0,1.5
-Alcohol abuse,Specific Phobia,123628,1.3,1.0,1.6
+Alcohol abuse,Generalized anxiety disorder,145990,2,1.8,2.2
+Alcohol abuse,Social phobia,141131,1.2,1,1.5
+Alcohol abuse,Specific Phobia,123628,1.3,1,1.6
 Alcohol abuse,Agoraphobia,145990,1.9,1.5,2.3
-Alcohol abuse,PTSD,81939,2.3,2.0,2.7
-Alcohol abuse,Obsessive compulsive disorder,25120,1.4,1.0,2.0
+Alcohol abuse,PTSD,81939,2.3,2,2.7
+Alcohol abuse,Obsessive compulsive disorder,25120,1.4,1,2
 Alcohol abuse,Adult separation anxiety disorder,49037,2.9,2.5,3.4
 Alcohol abuse,Child separation anxiety disorder,47661,,,
 Alcohol abuse,Anorexia nervosa,31561,,,
-Alcohol abuse,Bulimia nervosa,31561,3.0,2.0,4.6
+Alcohol abuse,Bulimia nervosa,31561,3,2,4.6
 Alcohol abuse,Binge eating disorder,31561,2.8,2.3,3.4
 Alcohol abuse,IED,86789,1.9,1.6,2.4
 Alcohol abuse,ADHD,42147,,,
 Alcohol abuse,Conduct disorder,33168,,,
 Alcohol abuse,Oppositional defiant disorder,30088,,,
-Alcohol abuse,Nicotine dependence,43994,3.0,2.8,3.3
-Alcohol abuse,Alcohol dependence,116210,17.5,16.0,19.1
+Alcohol abuse,Nicotine dependence,43994,3,2.8,3.3
+Alcohol abuse,Alcohol dependence,116210,17.5,16,19.1
 Alcohol abuse,Drug abuse,90822,9.4,8.5,10.3
 Alcohol abuse,Drug dependence,90822,11.2,9.8,12.8
 Alcohol dependence,Major depressive episode,145990,2.8,2.5,3.2
 Alcohol dependence,Bipolar disorder,115525,4.4,3.7,5.4
 Alcohol dependence,Dysthymia,124565,3.7,2.9,4.7
-Alcohol dependence,Panic disorder,145990,2.6,2.0,3.5
+Alcohol dependence,Panic disorder,145990,2.6,2,3.5
 Alcohol dependence,Generalized anxiety disorder,145990,3.3,2.8,3.9
-Alcohol dependence,Social phobia,141131,2.2,1.6,3.0
+Alcohol dependence,Social phobia,141131,2.2,1.6,3
 Alcohol dependence,Specific Phobia,123628,2.5,1.7,3.8
-Alcohol dependence,Agoraphobia,145990,3.0,2.1,4.1
+Alcohol dependence,Agoraphobia,145990,3,2.1,4.1
 Alcohol dependence,PTSD,81939,4.4,3.5,5.5
 Alcohol dependence,Obsessive compulsive disorder,25120,,,
 Alcohol dependence,Adult separation anxiety disorder,49037,4.9,3.8,6.3
@@ -503,9 +503,9 @@ Alcohol dependence,Conduct disorder,33168,,,
 Alcohol dependence,Oppositional defiant disorder,30088,,,
 Alcohol dependence,Nicotine dependence,43994,3.6,3.1,4.3
 Alcohol dependence,Alcohol abuse,116210,32.2,27.3,37.9
-Alcohol dependence,Drug abuse,90822,10.7,9.0,12.6
+Alcohol dependence,Drug abuse,90822,10.7,9,12.6
 Alcohol dependence,Drug dependence,90822,17.4,14.2,21.2
-Drug abuse,Major depressive episode,145990,2.7,2.4,3.0
+Drug abuse,Major depressive episode,145990,2.7,2.4,3
 Drug abuse,Bipolar disorder,115525,3.7,3.1,4.5
 Drug abuse,Dysthymia,124565,3.1,2.4,3.9
 Drug abuse,Panic disorder,145990,2.6,2.1,3.2
@@ -527,13 +527,13 @@ Drug abuse,Oppositional defiant disorder,30088,,,
 Drug abuse,Nicotine dependence,43994,3.7,3.3,4.3
 Drug abuse,Alcohol abuse,116210,8.1,7.3,8.9
 Drug abuse,Alcohol dependence,116210,8.6,7.6,9.8
-Drug abuse,Drug dependence,90822,34.0,29.5,39.2
+Drug abuse,Drug dependence,90822,34,29.5,39.2
 Drug dependence,Major depressive episode,145990,3.3,2.8,3.9
 Drug dependence,Bipolar disorder,115525,4.9,3.9,6.2
 Drug dependence,Dysthymia,124565,4.7,3.5,6.4
 Drug dependence,Panic disorder,145990,4.6,3.4,6.2
 Drug dependence,Generalized anxiety disorder,145990,4.5,3.6,5.6
-Drug dependence,Social phobia,141131,2.0,1.3,3.1
+Drug dependence,Social phobia,141131,2,1.3,3.1
 Drug dependence,Specific Phobia,123628,,,
 Drug dependence,Agoraphobia,145990,4.8,3.2,7.4
 Drug dependence,PTSD,81939,4.9,3.8,6.4
@@ -542,7 +542,7 @@ Drug dependence,Adult separation anxiety disorder,49037,4.3,3.1,5.9
 Drug dependence,Child separation anxiety disorder,47661,,,
 Drug dependence,Anorexia nervosa,31561,,,
 Drug dependence,Bulimia nervosa,31561,,,
-Drug dependence,Binge eating disorder,31561,5.0,3.6,7.0
+Drug dependence,Binge eating disorder,31561,5,3.6,7
 Drug dependence,IED,86789,,,
 Drug dependence,ADHD,42147,,,
 Drug dependence,Conduct disorder,33168,,,
