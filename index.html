@@ -110,9 +110,9 @@
 <script>
 
 // The svg
-var svg = d3.select("#dataviz_worldmap"),
-  width = +svg.attr("width"),
-  height = +svg.attr("height");
+var svg1 = d3.select("#dataviz_worldmap"),
+  width = +svg1.attr("width"),
+  height = +svg1.attr("height");
 
 // Map and projection
 var path = d3.geoPath();
@@ -136,7 +136,7 @@ function ready(error, topo) {
   if (error) throw error;
 
   // Draw the map
-  svg.append("g")
+  svg1.append("g")
     .selectAll("path")
     .data(topo.features)
     .enter()
@@ -172,8 +172,8 @@ function ready(error, topo) {
   <div class="container">
 
     <div class="row">
-      <div class="col-md-5">
-        <h3 style="line-height: 50px"><u>Part 2</u>:<br>Como is pervasive</h3>
+      <div class="col-md-7 mx-auto">
+        <h3 style="line-height: 50px"><u>Part 2</u>: Como is pervasive</h3>
         <hr>
         <p>Once more, comorbidity is pervasive: all mental disorders are  highly linked together compared to what we would expect by chance</p>
         <hr>
@@ -181,9 +181,79 @@ function ready(error, topo) {
         <hr>
         <p>Annotation to show where the points are supposed to be in a random situation.</p>
       </div>
-      <div class="col-md-7" id="dataviz2"></div>
+      <center><div class="col-md-12" id="dataviz2"></div><center>
   </div>
 </section>
+
+
+
+<script>
+// set the dimensions and margins of the graph
+var margin = {top: 10, right: 10, bottom: 70, left: 70},
+  width = 900 - margin.left - margin.right,
+  height = 300 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg2 = d3.select("#dataviz2")
+.append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+.append("g")
+  .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")");
+
+// Add a X axis
+var x = d3.scaleLinear()
+  .domain([0, 13000])
+  .range([0, width]);
+svg2
+  .append("g")
+  .attr("transform", "translate(0," + height + ")")
+  .call(d3.axisBottom(x))
+  .selectAll("text")
+    .attr("transform", "translate(-2,10)rotate(-45)")
+    .style("text-anchor", "end")
+
+// Read the csv, it has a column called Value and another called Country
+d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum.csv", function(data) {
+
+  // Use d3-force algorythm to find a position for each entity
+  var simulation = d3.forceSimulation(data)
+      .force("x", d3.forceX(function(d) { return x(d.Value); }).strength(5))
+      .force("y", d3.forceY(height / 2))
+      .force("collide", d3.forceCollide(6))
+      .stop();
+  for (var i = 0; i < 300; ++i) simulation.tick();
+
+  // prepare data
+  var cell = svg2.append("g")
+    .selectAll("g")
+    .data(d3.voronoi()
+      .extent([[-margin.left, -margin.top], [width + margin.right, height + margin.top]])
+      .x(function(d) { return d.x; })
+      .y(function(d) { return d.y; })
+      .polygons(data)
+    )
+    .enter()
+    .append("g");
+
+  // Finally append the circles
+  cell.append("circle")
+        .attr("r", 5)
+        .attr("cx", function(d) { return d.data.x; })
+        .attr("cy", function(d) { return d.data.y; });
+
+})
+
+</script>
+
+
+
+
+
+
+
+
 
 
 
@@ -209,6 +279,17 @@ function ready(error, topo) {
       </div>
   </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
