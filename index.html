@@ -444,30 +444,34 @@ d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/mast
     .range([ 0, width ])
     .domain(myPrior)
     .padding(0.05);
-  svg_heatmap.append("g")
+  var xAxis = svg_heatmap.append("g")
     .style("font-size", 15)
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x).tickSize(0))
-    .selectAll("text")
-      .attr("transform", "translate(-10,0)rotate(-45)")
+  xAxis.select(".domain").remove()
+  xAxis.selectAll("text")
+      .attr("transform", "translate(-10,10)rotate(-45)")
       .style("text-anchor", "end")
       .style("font-size", 11)
       .style("fill", "grey")
-      .select(".domain").remove()
+
 
   // Build Y scales and axis:
   var y = d3.scaleBand()
     .range([ height, 0 ])
     .domain(myLater)
     .padding(0.05);
-  svg_heatmap.append("g")
+  var yAxis = svg_heatmap.append("g")
     .style("font-size", 15)
     .call(d3.axisLeft(y).tickSize(0))
-    .selectAll("text")
-      .style("text-anchor", "end")
-      .style("font-size", 11)
-      .style("fill", "grey")
-      .select(".domain").remove()
+  yAxis.select(".domain").remove()
+  yAxis.selectAll("text")
+    .attr("transform", "translate(-10,0)")
+    .style("text-anchor", "end")
+    .style("font-size", 11)
+    .style("fill", "grey")
+
+
 
   // Build color scale
   var myColor = d3.scaleSequential()
@@ -490,7 +494,7 @@ d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/mast
   }
   var mousemove = function(d) {
     tooltip
-      .html("HR: " + d.HR)
+      .html("Prior disorder: " + d.Prior_disorder + "<br>" + "HR: " +  d.HR)
       .style("left", (d3.mouse(this)[0]+70) + "px")
       .style("top", (d3.mouse(this)[1]) + "px")
   }
