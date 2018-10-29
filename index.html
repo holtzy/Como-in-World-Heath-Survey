@@ -33,6 +33,10 @@
     <!-- D3.JS -->
     <script src="https://d3js.org/d3.v4.min.js"></script>
 
+    <!-- Load d3.js plugins -->
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -65,7 +69,7 @@
     </div>
   </div>
   <div class="arrowlanding">
-    <a class="js-scroll-trigger" href="#intro"><p style="font-size: 40px; color: black">&#xfe40;</p></a>
+    <a class="js-scroll-trigger" href="#map"><p style="font-size: 40px; color: black">&#xfe40;</p></a>
   </div>
 </header>
 
@@ -82,37 +86,41 @@
 
 <!-- =======================  PART 1 ======================= -->
 
-<section id="part1">
+<section id="map" class="bg-light">
   <div class="container">
+    <h3 style="text-align: center">The World Health Survey</h3>
+    <hr style="max-width: 100px">
     <div class="row">
-      <div class="col-md-8" >
-        <svg id="dataviz_worldmap" width="700" height="750"></svg>
+      <div class="col-lg-8 mx-auto" >
+        <div id="dataviz_worldmap" width="700" height="750"></div>
       </div>
-      <div class="col-md-4" style='padding-top: 80px'>
-        <h3 style="line-height: 50px"><u>Part 1</u>:<br>What is the World Health Survey</h3>
-        <hr>
-        <p>The World Health Survey was implemented by WHO in 2002–2004 in partnership with 70 countries to generate information on the health of adult populations and health systems</p>
-        <hr>
-        <p>The total sample size in these cross-sectional studies includes over 300 000 individuals.</p>
-        <hr>
-        <p>How we sampled data</p>
+      <div class="col-lg-4" style='padding-top: 100px'>
+        <p>The <a href="https://www.who.int/healthinfo/survey/en/">World Health Survey</a> was implemented by WHO in 2002–2004 in partnership with 70 countries to generate information on the health of adult populations and health systems</p>
+        <br>
+        <p>About 30 countries were included, with a total sample size over 300 000 individuals. The response rate varied between 40 and 80%, with an average of x%.</p>
       </div>
     </p>
   </div>
 </section>
 
 
-<!-- Load d3.js plugins -->
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
 
 <script>
 
-// The svg
-var svg1 = d3.select("#dataviz_worldmap"),
-  width = +svg1.attr("width"),
-  height = +svg1.attr("height");
+// set the dimensions and margins of the graph
+var margin = {top: 80, right: 25, bottom: 30, left: 40},
+  width = 750 - margin.left - margin.right,
+  height = 450 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg1 = d3.select("#dataviz_worldmap")
+.append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+.append("g")
+  .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")");
 
 // Map and projection
 var path = d3.geoPath();
@@ -123,14 +131,50 @@ var projection = d3.geoNaturalEarth()
 // Data and color scale
 var data = d3.map();
 var colorScale = d3.scaleThreshold()
-  .domain([100000, 1000000, 10000000, 30000000, 100000000, 500000000])
+  .domain([30, 40, 50, 60, 70, 80])
   .range(d3.schemeBlues[7]);
 
 // Load external data and boot
 d3.queue()
-  .defer(d3.json, "https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/master/DATA/world.geojson?token=AJx4QRu3RdqmZJMXWMjvBG8BZ2MOzy7Wks5bz9RZwA%3D%3D")
-  .defer(d3.csv, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv", function(d) { data.set(d.code, +d.pop); })
+  .defer(d3.json, "https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/master/DATA/world.geojson?token=AJx4QYAwlc9wgU9WlmS_GZmBsRiVt-PTks5b29BLwA%3D%3D")
+  .defer(d3.csv, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_map.csv", function(d) { data.set(d.code, {response_rate: +d.response_rate, country: d.country, sample_size1: d.sample_size1}); })
   .await(ready);
+
+
+  var tooltip = d3.select("#dataviz_worldmap")
+      .append("div")
+      .style("opacity", 0)
+      .attr("class", "tooltip")
+      .style("background-color", "black")
+      .style("background-opacity", "0.1")
+      .style("border", "none")
+      .style("border-radius", "5px")
+      .style("padding", "15px")
+      .style("min-width", 200)
+
+    // Three function that change the tooltip when user hover / move / leave a cell
+    var mouseover = function(d) {
+      if (d.myDetail.response_rate == null) { return }
+      tooltip
+        .style("opacity", 1)
+      d3.select(this)
+        .style("stroke", "black")
+        .style("opacity", 1)
+    }
+    var mousemove = function(d) {
+      tooltip
+        .html("<b>"+d.myDetail.country+"</b>" + "<br>" + d.myDetail.sample_size1 + " individuals and " + d.myDetail.response_rate + "% response rate" )
+        .style("left", (d3.mouse(this)[0]+70) + "px")
+        .style("top", (d3.mouse(this)[1]) + "px")
+    }
+    var mouseleave = function(d) {
+      tooltip
+        .style("opacity", 0)
+      d3.select(this)
+        .style("stroke", "none")
+        .style("opacity", 0.8)
+    }
+
 
 function ready(error, topo) {
   if (error) throw error;
@@ -147,10 +191,15 @@ function ready(error, topo) {
       )
       // set the color of each country
       .attr("fill", function (d) {
-        d.total = data.get(d.id) || 0;
-        return colorScale(d.total);
-      });
-    }
+        d.myDetail= data.get(d.id) || 0;
+        var valForChoro = d.myDetail.response_rate || 0
+        return colorScale(valForChoro);
+      })
+      .on("mouseover", mouseover)
+      .on("mousemove", mousemove)
+      .on("mouseleave", mouseleave)
+
+}
 
 </script>
 
@@ -166,26 +215,24 @@ function ready(error, topo) {
 
 
 
+
+
+
+
 <!-- =======================  PART 2 ======================= -->
 
-<section id="part2" class="bg-light">
+<section id="part2">
   <div class="container">
 
     <div class="row">
       <div class="col-md-7 mx-auto" style="text-align: center">
         <h3>Como is pervasive</h3>
-        <hr>
-        <p id=beeswarmText>First we could remember briefly what is comorbidity is, and what is a <u>Hazard Ratio</u></p>
-        <button id="step1">Step1</button>
-        <button id="step2">Step2</button>
-        <button id="step3">Step3</button>
-        <button id="step4">Step4</button>
+        <hr style="max-width: 100px">
+        <p>First we could remember briefly what is comorbidity is, and what is a <u>Hazard Ratio</u></p>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-10 mx-auto">
-        <svg id="dataviz2" width="960" height="400"></svg>
-      </div>
+      <div class="col-md-10 mx-auto" id="dataviz2"></div>
     </div>
   </div>
 </section>
@@ -213,10 +260,19 @@ function ready(error, topo) {
 
 <script>
 
-var svg2 = d3.select("#dataviz2"),
-    margin = {top: 40, right: 40, bottom: 40, left: 40},
-    width = svg2.attr("width") - margin.left - margin.right,
-    height = svg2.attr("height") - margin.top - margin.bottom;
+// set the dimensions and margins of the graph
+var margin = {top: 80, right: 25, bottom: 30, left: 40},
+  width = 950 - margin.left - margin.right,
+  height = 550 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg2 = d3.select("#dataviz2")
+.append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+.append("g")
+  .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")");
 
 var formatValue = d3.format(".1f");
 
@@ -230,120 +286,89 @@ d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/mast
 
   if (error) throw error;
 
-  x.domain(d3.extent(data, function(d) { return d.HR; }));
+  // compute X scale and add axis
+  var x = d3.scaleLog()
+      .rangeRound([0, width])
+      .domain(d3.extent(data, function(d) { return d.HR; }));
+  g.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + 320 + ")")
+      .call(d3.axisBottom(x).ticks(15, ".0s"));
 
+  // compute dot location
   var simulation = d3.forceSimulation(data)
       .force("x", d3.forceX(function(d) { return x(d.HR); }).strength(1))
       .force("y", d3.forceY(height / 2))
-      .force("collide", d3.forceCollide(7))
+      .force("collide", d3.forceCollide(8))
       .stop();
-
   for (var i = 0; i < 150; ++i) simulation.tick();
-
-  g.append("g")
-      .attr("class", "axis axis--x")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x).ticks(15, ".0s"));
 
   var cell = g.append("g")
       .attr("class", "cells")
-    .selectAll("g").data(d3.voronoi()
+      .selectAll("g").data(d3.voronoi()
         .extent([[-margin.left, -margin.top], [width + margin.right, height + margin.top]])
         .x(function(d) { return d.x; })
         .y(function(d) { return d.y; })
       .polygons(data)).enter().append("g");
 
+
+  var tooltip = d3.select("#dataviz2")
+      .append("div")
+      .style("opacity", 0)
+      .attr("class", "tooltip")
+      .style("background-color", "black")
+      .style("background-opacity", "0.1")
+      .style("border", "none")
+      .style("border-radius", "5px")
+      .style("padding", "15px")
+      .style("min-width", 200)
+      .style("text-align", "left")
+
+    // Three function that change the tooltip when user hover / move / leave a cell
+    var mouseover = function(d) {
+      tooltip
+        .style("opacity", 1)
+      d3.select(this)
+        .style("stroke", "black")
+        .style("opacity", 1)
+    }
+    var mousemove = function(d) {
+      tooltip
+        .html("Prior disorder: "+ d.data.Prior_disorder + "<br>" + "Later disorder: "+ d.data.Later_disorder + "<br>" + "Hazard ratio: " + formatValue(d.data.HR))
+        .style("left", (d3.mouse(this)[0]+70) + "px")
+        .style("top", (d3.mouse(this)[1]) + "px")
+    }
+    var mouseleave = function(d) {
+      tooltip
+        .style("opacity", 0)
+      d3.select(this)
+        .style("stroke", "black")
+        .style("opacity", 0.5)
+    }
+
   cell.append("circle")
       .attr("r", 5)
       .attr("cx", function(d) { return d.data.x; })
-      .attr("cy", height)
-      .style("stroke", "transparent")
-      .style("fill", "transparent")
-
-  cell.append("path")
-      .attr("d", function(d) { return "M" + d.join("L") + "Z"; });
-
-  cell.append("title")
-      .text(function(d) { return "Prior disorder: "+ d.data.Prior_disorder + "\n" + "Later disorder: "+ d.data.Later_disorder + "\n" + "Hazard ratio: " + formatValue(d.data.HR); });
-
-
-
-  // ----- STEP 1 : SHOW HR = 1 ------
-  d3.select("#step1").on("click", function(){
-    // Change text
-    d3.select("#beeswarmText")
-      .transition()
-      .duration(1000)
-      .text("If two disorders are not related, we expect to observe a hazard ratio close to one. If the Hazard ratio is over 1, it means that having a first disorder increases chances to get the second disorder.")
-    // Add abline at HR = 1 but with no height
-    cell
-      .append("line")
-      .attr("x1", x(1))
-      .attr("x2", x(1))
-      .attr("y1", height)
-      .attr("y2", height)
-      .style("stroke", "red")
-
-    cell
-      .selectAll("line")
-      .transition()
-      .duration(5000)
-      .attr("y1", 0)
-
-  })
-
-  // ----- STEP 2 : SHOW ALL POINTS ------
-  d3.select("#step2").on("click", function(){
-    // Change text
-    d3.select("#beeswarmText")
-      .transition()
-      .duration(1000)
-      .text("We've studied the relationship between 500 pairs of diseases and estimated their hazard ratio. We found that 98% of them are significantly over 1. Comorbidity is pervasive: having a mental disorder almost always increase patient probability to develop another one.")
-    // circles appear
-    cell.selectAll("circle")
-      .transition()
-      .duration(3000)
       .attr("cy", function(d) { return d.data.y; })
       .style("stroke", "black")
       .style("fill", "#69b3a2")
       .style("opacity", "0.5")
-  })
+      .on("mouseover", mouseover)
+      .on("mousemove", mousemove)
+      .on("mouseleave", mouseleave)
+
+  // cell.append("path")
+  //     .attr("d", function(d) { return "M" + d.join("L") + "Z"; });
 
 
-  // ----- STEP 3 : HIGHLIGHT HIGH VALUES ------
-  d3.select("#step3").on("click", function(){
-    // Change text
-    d3.select("#beeswarmText")
-      .transition()
-      .duration(1000)
-      .text("It is interesting to notice that some pairs have incredibly high hazard ratios. For instance, Bulimia and Binge eating disorder are almost always observed together.")
-
-    cell.selectAll("circle")
-      .transition()
-      .duration(3000)
-      .attr("r", function(d) { if (d.data.HR > 20) {return 13} else { return 5 } })
-      .style("stroke", "black")
-      .style("fill", function(d) { if (d.data.HR > 20) {return "red"} else { return "grey" } })
-      .style("opacity", function(d) { if (d.data.HR > 20) {return 0.8} else { return 0.2 } })
-  })
-
-
-  // ----- STEP 4 : HIGHLIGHT LOW VALUES ------
-  d3.select("#step4").on("click", function(){
-    // Change text
-    d3.select("#beeswarmText")
-      .transition()
-      .duration(1000)
-      .text("Only 3 pairs of disorder present hazard ratio equal or lower to 1. For instance, major depressive disorder and child separation anxiety disorder have a HR of 0.8.")
-
-    cell.selectAll("circle")
-      .transition()
-      .duration(3000)
-      .attr("r", function(d) { if (d.data.HR <= 1) {return 13} else { return 5 } })
-      .style("stroke", "black")
-      .style("fill", function(d) { if (d.data.HR <= 1) {return "green"} else { return "grey" } })
-      .style("opacity", function(d) { if (d.data.HR <= 1) {return 0.8} else { return 0.2 } })
-  })
+  // SHOW HR = 1 ------
+  cell
+      .append("line")
+      .attr("x1", x(1))
+      .attr("x2", x(1))
+      .attr("y1", 0)
+      .attr("y2", height)
+      .style("stroke", "red")
 
 });
 
@@ -371,14 +396,14 @@ function type(d) {
 
 
 
-<!-- =======================  PART 3 ======================= -->
+<!-- =======================  PART : HEATMAP ======================= -->
 
-<section id="part2" class="bg" style="padding-top: 50px; padding-bottom: 250px">
+<section id="part2" class="bg-light" style="padding-top: 50px; padding-bottom: 250px">
   <div class="container">
 
     <div class="row">
-      <div class="col-md-7" id="dataviz2">-</div>
-      <div class="col-md-5" style="padding-top: 200px">
+      <div class="col-md-8" id="dataviz_heatmap">-</div>
+      <div class="col-md-4" style="padding-top: 200px">
         <h3 style="line-height: 50px"><u>Part 3</u>:<br>Links</h3>
         <hr>
         <p>What link to what</p>
@@ -392,6 +417,113 @@ function type(d) {
 
 
 
+<script>
+// set the dimensions and margins of the graph
+var margin = {top: 80, right: 25, bottom: 120, left: 120},
+  width = 700 - margin.left - margin.right,
+  height = 700 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg_heatmap = d3.select("#dataviz_heatmap")
+.append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+.append("g")
+  .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")");
+
+//Read the data
+d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/master/DATA/data.csv?token=AJx4QeYkATygWA2ROlBzjDr-iUEscLZTks5b197IwA%3D%3D", function(data) {
+
+  // Labels of row and columns -> unique identifier of the column called 'group' and 'variable'
+  var myPrior = d3.map(data, function(d){return d.Prior_disorder;}).keys()
+  var myLater = d3.map(data, function(d){return d.Later_disorder;}).keys()
+
+  // Build X scales and axis:
+  var x = d3.scaleBand()
+    .range([ 0, width ])
+    .domain(myPrior)
+    .padding(0.05);
+  svg_heatmap.append("g")
+    .style("font-size", 15)
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x).tickSize(0))
+    .selectAll("text")
+      .attr("transform", "translate(-10,0)rotate(-45)")
+      .style("text-anchor", "end")
+      .style("font-size", 11)
+      .style("fill", "grey")
+      .select(".domain").remove()
+
+  // Build Y scales and axis:
+  var y = d3.scaleBand()
+    .range([ height, 0 ])
+    .domain(myLater)
+    .padding(0.05);
+  svg_heatmap.append("g")
+    .style("font-size", 15)
+    .call(d3.axisLeft(y).tickSize(0))
+    .selectAll("text")
+      .style("text-anchor", "end")
+      .style("font-size", 11)
+      .style("fill", "grey")
+      .select(".domain").remove()
+
+  // Build color scale
+  var myColor = d3.scaleSequential()
+    .interpolator(d3.interpolateInferno)
+    .domain([0,10])
+
+  // create a tooltip
+  var tooltip = d3.select("#dataviz_heatmap")
+    .append("div")
+      .style("opacity", 0)
+      .attr("class", "tooltip")
+
+
+  // Three function that change the tooltip when user hover / move / leave a cell
+  var mouseover = function(d) {
+    tooltip
+      .style("opacity", 1)
+    d3.select(this)
+      .style("opacity", 1)
+  }
+  var mousemove = function(d) {
+    tooltip
+      .html("HR: " + d.HR)
+      .style("left", (d3.mouse(this)[0]+70) + "px")
+      .style("top", (d3.mouse(this)[1]) + "px")
+  }
+  var mouseleave = function(d) {
+    tooltip
+      .style("opacity", 0)
+    d3.select(this)
+      .style("stroke", "none")
+      .style("opacity", 0.8)
+  }
+
+  // add the squares
+  svg_heatmap.selectAll()
+    .data(data, function(d) {return d.Prior_disorder+':'+d.Later_disorder;})
+    .enter()
+    .append("rect")
+      .attr("x", function(d) { return x(d.Prior_disorder) })
+      .attr("y", function(d) { return y(d.Later_disorder) })
+      .attr("rx", 4)
+      .attr("ry", 4)
+      .attr("width", x.bandwidth() )
+      .attr("height", y.bandwidth() )
+      .style("fill", function(d) { return myColor(d.HR)} )
+      .style("stroke-width", 4)
+      .style("stroke", "none")
+      .style("opacity", 0.8)
+    .on("mouseover", mouseover)
+    .on("mousemove", mousemove)
+    .on("mouseleave", mouseleave)
+})
+
+
+</script>
 
 
 
@@ -406,10 +538,9 @@ function type(d) {
 
 
 
+<!-- =======================  PART 4 ======================= -->
 
-<!-- =======================  PART 3 ======================= -->
-
-<section id="part2" class="bg-light" style="padding-top: 50px; padding-bottom: 250px">
+<section id="part2" class="bg" style="padding-top: 50px; padding-bottom: 250px">
   <div class="container">
 
     <div class="row">
