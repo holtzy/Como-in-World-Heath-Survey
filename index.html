@@ -84,7 +84,7 @@
 
 
 
-<!-- =======================  PART 1 ======================= -->
+<!-- =======================  SECTION MAP ======================= -->
 
 <section id="map" class="bg-light">
   <div class="container">
@@ -219,20 +219,20 @@ function ready(error, topo) {
 
 
 
-<!-- =======================  PART 2 ======================= -->
+<!-- =======================  SECTION DOTPLOT ======================= -->
 
 <section id="part2">
   <div class="container">
 
-    <div class="row">
+    <div class="row" style="background-color: green">
       <div class="col-md-7 mx-auto" style="text-align: center">
         <h3>Como is pervasive</h3>
         <hr style="max-width: 100px">
-        <p>First we could remember briefly what is comorbidity is, and what is a <u>Hazard Ratio</u></p>
+        <p>We estimated hazard ratios between each pair of disorders. Note that most of the estimates are over 1, meaning that being diagnosed with one of the disorders increased the risk of a subsequent diagnosis with each of the other disorders.</p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-10 mx-auto" id="dataviz2"></div>
+    <div class="row" style="background-color: red">
+      <div class="col-md-12 mx-auto" id="dataviz_dotplot"></div>
     </div>
   </div>
 </section>
@@ -261,12 +261,12 @@ function ready(error, topo) {
 <script>
 
 // set the dimensions and margins of the graph
-var margin = {top: 80, right: 25, bottom: 30, left: 40},
-  width = 950 - margin.left - margin.right,
+var margin = {top: 80, right: 25, bottom: 30, left: 25},
+  width = 1550 - margin.left - margin.right,
   height = 550 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-var svg2 = d3.select("#dataviz2")
+var svg_dotplot = d3.select("#dataviz_dotplot")
 .append("svg")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
@@ -279,7 +279,7 @@ var formatValue = d3.format(".1f");
 var x = d3.scaleLog()
     .rangeRound([0, width]);
 
-var g = svg2.append("g")
+var g = svg_dotplot.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/master/DATA/data.csv?token=AJx4QeYkATygWA2ROlBzjDr-iUEscLZTks5b197IwA%3D%3D", type, function(error, data) {
@@ -297,8 +297,8 @@ d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/mast
 
   // compute dot location
   var simulation = d3.forceSimulation(data)
-      .force("x", d3.forceX(function(d) { return x(d.HR); }).strength(1))
-      .force("y", d3.forceY(height / 2))
+      .force("xPosition", d3.forceX(function(d) { return x(d.HR); }).strength(1))
+      .force("yPosition", d3.forceY(height/3))
       .force("collide", d3.forceCollide(8))
       .stop();
   for (var i = 0; i < 150; ++i) simulation.tick();
@@ -311,40 +311,32 @@ d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/mast
         .y(function(d) { return d.y; })
       .polygons(data)).enter().append("g");
 
-
-  var tooltip = d3.select("#dataviz2")
+  var tooltip = d3.select("#dataviz_dotplot")
       .append("div")
       .style("opacity", 0)
       .attr("class", "tooltip")
-      .style("background-color", "black")
-      .style("background-opacity", "0.1")
-      .style("border", "none")
-      .style("border-radius", "5px")
-      .style("padding", "15px")
-      .style("min-width", 200)
-      .style("text-align", "left")
 
-    // Three function that change the tooltip when user hover / move / leave a cell
-    var mouseover = function(d) {
-      tooltip
-        .style("opacity", 1)
-      d3.select(this)
-        .style("stroke", "black")
-        .style("opacity", 1)
-    }
-    var mousemove = function(d) {
-      tooltip
-        .html("Prior disorder: "+ d.data.Prior_disorder + "<br>" + "Later disorder: "+ d.data.Later_disorder + "<br>" + "Hazard ratio: " + formatValue(d.data.HR))
-        .style("left", (d3.mouse(this)[0]+70) + "px")
-        .style("top", (d3.mouse(this)[1]) + "px")
-    }
-    var mouseleave = function(d) {
-      tooltip
-        .style("opacity", 0)
-      d3.select(this)
-        .style("stroke", "black")
-        .style("opacity", 0.5)
-    }
+  // Three function that change the tooltip when user hover / move / leave a cell
+  var mouseover = function(d) {
+    tooltip
+      .style("opacity", 1)
+    d3.select(this)
+      .style("stroke", "black")
+      .style("opacity", 1)
+  }
+  var mousemove = function(d) {
+    tooltip
+      .html("Prior disorder: "+ d.data.Prior_disorder + "<br>" + "Later disorder: "+ d.data.Later_disorder + "<br>" + "Hazard ratio: " + formatValue(d.data.HR))
+      .style("left", (d3.mouse(this)[0]+70) + "px")
+      .style("top", (d3.mouse(this)[1]) + "px")
+  }
+  var mouseleave = function(d) {
+    tooltip
+      .style("opacity", 0)
+    d3.select(this)
+      .style("stroke", "black")
+      .style("opacity", 0.5)
+  }
 
   cell.append("circle")
       .attr("r", 5)
@@ -356,10 +348,6 @@ d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/mast
       .on("mouseover", mouseover)
       .on("mousemove", mousemove)
       .on("mouseleave", mouseleave)
-
-  // cell.append("path")
-  //     .attr("d", function(d) { return "M" + d.join("L") + "Z"; });
-
 
   // SHOW HR = 1 ------
   cell
@@ -396,13 +384,13 @@ function type(d) {
 
 
 
-<!-- =======================  PART : HEATMAP ======================= -->
+<!-- =======================  SECTION HEATMAP ======================= -->
 
-<section id="part2" class="bg-light" style="padding-top: 50px; padding-bottom: 250px">
+<section id="part2" class="bg-light">
   <div class="container">
 
     <div class="row">
-      <div class="col-md-8" id="dataviz_heatmap">-</div>
+      <div class="col-md-8" id="dataviz_heatmap"></div>
       <div class="col-md-4" style="padding-top: 200px">
         <h3 style="line-height: 50px"><u>Part 3</u>:<br>Links</h3>
         <hr>
@@ -419,7 +407,7 @@ function type(d) {
 
 <script>
 // set the dimensions and margins of the graph
-var margin = {top: 80, right: 25, bottom: 120, left: 120},
+var margin = {top: 80, right: 25, bottom: 150, left: 180},
   width = 700 - margin.left - margin.right,
   height = 700 - margin.top - margin.bottom;
 
@@ -471,8 +459,6 @@ d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/mast
     .style("font-size", 11)
     .style("fill", "grey")
 
-
-
   // Build color scale
   var myColor = d3.scaleSequential()
     .interpolator(d3.interpolateInferno)
@@ -484,7 +470,6 @@ d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/mast
       .style("opacity", 0)
       .attr("class", "tooltip")
 
-
   // Three function that change the tooltip when user hover / move / leave a cell
   var mouseover = function(d) {
     tooltip
@@ -494,13 +479,13 @@ d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/mast
   }
   var mousemove = function(d) {
     tooltip
-      .html("Prior disorder: " + d.Prior_disorder + "<br>" + "HR: " +  d.HR)
+      .html("Prior disorder: ") // + d.Prior_disorder + "<br>" + "HR: " +  d.HR)
       .style("left", (d3.mouse(this)[0]+70) + "px")
       .style("top", (d3.mouse(this)[1]) + "px")
   }
   var mouseleave = function(d) {
     tooltip
-      .style("opacity", 1)
+      .style("opacity", 0)
     d3.select(this)
       .style("stroke", "none")
       .style("opacity", 0.8)
@@ -542,25 +527,147 @@ d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/mast
 
 
 
-<!-- =======================  PART 4 ======================= -->
 
-<section id="part2" class="bg" style="padding-top: 50px; padding-bottom: 250px">
+
+
+
+
+<!-- =======================  SECTION BARPLOT ======================= -->
+
+<section id="symetry" class="bg">
   <div class="container">
 
     <div class="row">
-      <div class="col-md-5" style="padding-top: 200px">
-        <h3 style="line-height: 50px"><u>Part 4</u>:<br>Symetry</h3>
-        <hr>
-        <p>Could do with a circular layout?</p>
-        <hr>
-        <p>One more layer on the barplot</p>
-        <hr>
-        <p><u>Data</u>: Ben Neales Lab from LD score regression?</p>
+      <div class="col-md-3 my-auto">
+        <h3>symmetrical and asymmetrical patterns</h3>
+        <hr style="max-width: 100px">
+        <p>In these graphs, we wish to explore the bidirectional association between pairs of disorders.</p>
+        <p>The results suggest that most temporally ordered disorder pairs have a bidirectional relationship - there is an increased risk of disorder regardless of temporal order.</p>
+        <p>However, some disorder pairs appeared to be quite symmetrical – we call these ‘mirror phenotypes’ – where it seems the risk of developing either disorder are similar regardless of which disorder comes first.</p>
       </div>
-      <div class="col-md-7" id="dataviz2">-</div>
+      <div class="col-md-9" id="dataviz_barplot"></div>
   </div>
 </section>
 
+
+
+
+<script>
+// set the dimensions and margins of the graph
+var margin = {top: 80, right: 25, bottom: 150, left: 180},
+  propMiddle = 0.35,  // proportion of the width for the text in the middle
+  width = 800 - margin.left - margin.right,
+  height = 900 - margin.top - margin.bottom,
+  lengthMiddle = width * propMiddle
+
+// append the svg object to the body of the page
+var svg_barplot = d3.select("#dataviz_barplot")
+.append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+.append("g")
+  .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")");
+
+// Draw the first X axis
+var x1 = d3.scaleLinear()
+    .range([0, width/2 - lengthMiddle/2])
+    .domain([20, 0])
+svg_barplot.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x1))
+  .append("text")
+    .attr("x", 0)
+    .attr("y", 40)
+    .attr("fill", "#000")
+    .attr("text-anchor", "start")
+    .attr("font-weight", "bold")
+    .text("Hazard ratio");
+
+// Draw the first X axis
+var x2 = d3.scaleLinear()
+    .range([width/2 + lengthMiddle/2, width ])
+    .domain([0, 20])
+svg_barplot.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x2))
+  .append("text")
+    .attr("x", width)
+    .attr("y", 40)
+    .attr("fill", "#000")
+    .attr("text-anchor", "end")
+    .attr("font-weight", "bold")
+    .text("Hazard ratio");
+
+//Read the data
+d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/master/DATA/data.csv?token=AJx4QeYkATygWA2ROlBzjDr-iUEscLZTks5b197IwA%3D%3D", function(data) {
+
+  // Labels of row and columns -> unique identifier of the column called 'group' and 'variable'
+  var myPrior = d3.map(data, function(d){return d.Prior_disorder;}).keys()
+  var myLater = d3.map(data, function(d){return d.Later_disorder;}).keys()
+
+  // Set range and domain for Y axis
+  var y = d3.scaleBand()
+      .domain(myPrior)
+      .range([height, 0])
+      .padding([0.13])
+
+  // Draw disorder names in the middle
+  svg_barplot.selectAll(".textMiddle")
+    .data(myPrior)
+    .enter()
+    .append("text")
+      .attr("x", width/2)
+      .attr("y", function(d) { return( y(d)+y.bandwidth()/2 ) })
+      .text(function(d){ return d })
+      .attr("text-anchor", "middle")
+      .style("font-size", "12px")
+      .attr("dominant-baseline", "central")
+
+  // Add bars graph left
+  svg_barplot.selectAll(".barleft")
+    .data(data.filter(function(d){return d.Prior_disorder == "Alcohol abuse";}))
+    .enter()
+    .append("rect")
+      .attr("x", function(d) { return x1(d.HR) } )
+      .attr("y", function(d) { return y(d.Later_disorder); })
+      .attr("width", function(d) { return  x1(0) - x1(d.HR)  })
+      .attr("height", y.bandwidth())
+      .attr("rx", 2)
+
+  // Add bars graph right
+  svg_barplot.selectAll(".barright")
+    .data(data.filter(function(d){return d.Later_disorder == "Alcohol abuse";}))
+    .enter()
+    .append("rect")
+      .attr("x", function(d) { return x2(0) } )
+      .attr("y", function(d) { return y(d.Prior_disorder); })
+      .attr("width", function(d) { return  x2(d.HR)-x2(0)  })
+      .attr("height", y.bandwidth())
+      .attr("rx", 2)
+
+
+})
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======================= NEXT =============================== -->
+
+<section id="todo" class="bg-light">
+</section>
 
 
 
@@ -571,7 +678,7 @@ d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/mast
 
 
 
-  <section id="contact"  style="padding-top: 4%; padding-bottom: 4%; background-color: white">
+  <section id="contact">
      <div class="container">
        <div class="row">
          <div class="col-lg-4 text-center" style="margin-top: 40px; margin-bottom: 40px;">
@@ -614,8 +721,8 @@ d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/mast
           <div class="col-md-4">
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
-                <a href="https://twitter.com/R_Graph_Gallery">
-                  <i class="fa fa-twitter"></i>
+                <a href="https://www.nbepi.com">
+                  <i class="fa fa-home"></i>
                 </a>
               </li>
               <li class="list-inline-item">
