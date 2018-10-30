@@ -1,0 +1,64 @@
+
+// set the dimensions and margins of the graph
+var margin = {top: 80, right: 25, bottom: 30, left: 25},
+  width = 1150 - margin.left - margin.right,
+  height = 550 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg_dotplot = d3.select("#dataviz_dotplot")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// compute X scale and add axis
+var x = d3.scaleLog()
+    .rangeRound([0, width])
+    .domain([1, 200]);
+svg_dotplot.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x));
+
+d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/master/DATA/data.csv?token=AJx4QeYkATygWA2ROlBzjDr-iUEscLZTks5b197IwA%3D%3D", type, function(error, data) {
+
+  if (error) throw error;
+
+  // compute dot location
+  var simulation = d3.forceSimulation(data)
+    //.force('charge', d3.forceManyBody().strength(1))    // This forceManyBody attracts elements one another if positive. Bigger = stronger attraction
+    .force('x', d3.forceX().x( function(d) { return x(d.HR); })) // This make a force to the good x position
+    //.force('y', d3.forceY().y(height/2)) // This make a force to the center of the Y
+    .force('collision', d3.forceCollide().radius(19)) // This prevent collision between circle
+    .on('tick', ticked);
+
+
+  function ticked() {
+    var u = svg_dotplot
+      .selectAll('circle')
+      .data(data);
+
+    u.enter()
+      .append('circle')
+      .attr('r', 5)
+      .style('fill', "blue")
+      .merge(u)
+      .attr('cx', function(d) {
+        return d.x;
+      })
+      .attr('cy', function(d) {
+        return d.y;
+      })
+
+    u.exit().remove();
+  }
+
+
+});
+
+function type(d) {
+  if (!d.HR) return;
+  d.HR = +d.HR;
+  return d;
+}

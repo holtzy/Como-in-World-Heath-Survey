@@ -1,0 +1,134 @@
+
+<style>
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.axis text {
+  font: 10px sans-serif;
+}
+.cells path {
+  fill: none;
+  pointer-events: all;
+}
+.cells :hover circle {
+  fill: red;
+}
+</style>
+
+
+
+
+<script>
+
+// set the dimensions and margins of the graph
+var margin = {top: 80, right: 25, bottom: 30, left: 25},
+  width = 1550 - margin.left - margin.right,
+  height = 550 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg_dotplot = d3.select("#dataviz_dotplot")
+.append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+.append("g")
+  .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")");
+
+var formatValue = d3.format(".1f");
+
+var x = d3.scaleLog()
+    .rangeRound([0, width]);
+
+var g = svg_dotplot.append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/master/DATA/data.csv?token=AJx4QeYkATygWA2ROlBzjDr-iUEscLZTks5b197IwA%3D%3D", type, function(error, data) {
+
+  if (error) throw error;
+
+  // compute X scale and add axis
+  var x = d3.scaleLog()
+      .rangeRound([0, width])
+      .domain(d3.extent(data, function(d) { return d.HR; }));
+  g.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + 320 + ")")
+      .call(d3.axisBottom(x).ticks(15, ".0s"));
+
+  // compute dot location
+  var simulation = d3.forceSimulation(data)
+      .force("xPosition", d3.forceX(function(d) { return x(d.HR); }).strength(1))
+      .force("yPosition", d3.forceY(height/3))
+      .force("collide", d3.forceCollide(8))
+      .stop();
+  for (var i = 0; i < 150; ++i) simulation.tick();
+
+  var cell = g.append("g")
+      .attr("class", "cells")
+      .selectAll("g").data(d3.voronoi()
+        .extent([[-margin.left, -margin.top], [width + margin.right, height + margin.top]])
+        .x(function(d) { return d.x; })
+        .y(function(d) { return d.y; })
+      .polygons(data)).enter().append("g");
+
+  var tooltip = d3.select("#dataviz_dotplot")
+      .append("div")
+      .style("opacity", 0)
+      .attr("class", "tooltip")
+
+  // Three function that change the tooltip when user hover / move / leave a cell
+  var mouseover = function(d) {
+    tooltip
+      .style("opacity", 1)
+    d3.select(this)
+      .style("stroke", "black")
+      .style("opacity", 1)
+  }
+  var mousemove = function(d) {
+    tooltip
+      .html("Prior disorder: "+ d.data.Prior_disorder + "<br>" + "Later disorder: "+ d.data.Later_disorder + "<br>" + "Hazard ratio: " + formatValue(d.data.HR))
+      .style("left", (d3.mouse(this)[0]+70) + "px")
+      .style("top", (d3.mouse(this)[1]) + "px")
+  }
+  var mouseleave = function(d) {
+    tooltip
+      .style("opacity", 0)
+    d3.select(this)
+      .style("stroke", "black")
+      .style("opacity", 0.5)
+  }
+
+  cell.append("circle")
+      .attr("r", 5)
+      .attr("cx", function(d) { return d.data.x; })
+      .attr("cy", function(d) { return d.data.y; })
+      .style("stroke", "black")
+      .style("fill", "#69b3a2")
+      .style("opacity", "0.5")
+      .on("mouseover", mouseover)
+      .on("mousemove", mousemove)
+      .on("mouseleave", mouseleave)
+
+  // SHOW HR = 1 ------
+  cell
+      .append("line")
+      .attr("x1", x(1))
+      .attr("x2", x(1))
+      .attr("y1", 0)
+      .attr("y2", height)
+      .style("stroke", "red")
+
+});
+
+function type(d) {
+  if (!d.HR) return;
+  d.HR = +d.HR;
+  return d;
+}
+
+
+
+</script>
