@@ -60,39 +60,18 @@
 
 
 
-<style>
-.left_arrow,
-.right_arrow {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 50%;
-    margin-top: -10px; /* half the height of the arrows */
-    font-size: 40px;
-}
-
-.left_arrow {
-    left: -200px; /* the width of the arrows to keep them outside */
-}
-
-.right_arrow {
-    right: -200px; /* the width of the arrows to keep them outside */
-}
-</style>
-
-
 <!-- =======================  SECTION BARPLOT ======================= -->
 
 <section id="symetry" class="bg">
   <div class="container" style="position: relative;">
 
-    <a href="beeswarm.html" class="left_arrow">&lt;</a>
-    <a href="#" class="right_arrow">&gt;</a>
+    <a href="beeswarm.html" class="left_arrow"><span class="left"></span></a>
+    <a href="heatmap.html" class="right_arrow"><span class="right"></span></a>
 
     <div class="row">
       <div class="col-md-3 my-auto">
-        <h3>symmetrical and asymmetrical patterns</h3>
-        <hr style="max-width: 100px">
+        <h3>Symmetrical and Asymmetrical patterns</h3>
+        <hr>
         <p>In these graphs, we wish to explore the bidirectional association between pairs of disorders.</p>
         <p>The results suggest that most temporally ordered disorder pairs have a bidirectional relationship - there is an increased risk of disorder regardless of temporal order.</p>
         <p>However, some disorder pairs appeared to be quite symmetrical – we call these ‘mirror phenotypes’ – where it seems the risk of developing either disorder are similar regardless of which disorder comes first.</p>
@@ -221,11 +200,18 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
       .merge(u1)
       .transition()
       .duration(1000)
-        .attr("x", function(d) { return x1(d.HR) } )
+        .attr("x", function(d) { return x1(0) } )
         .attr("y", function(d) { return y(d.Later_disorder); })
-        .attr("width", function(d) { return  x1(0) - x1(d.HR)  })
+        .attr("width", function(d) { return  0  })
         .attr("height", y.bandwidth())
         .attr("rx", 2)
+        .attr("opacity", 0.7)
+        .attr("fill", "#69b3a2")
+      .transition()
+      .duration(1000)
+        .attr("x", function(d) { return x1(d.HR) } )
+        .attr("width", function(d) { return  x1(0) - x1(d.HR)  })
+
 
     u1.exit()
       .remove()
@@ -240,11 +226,17 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
       .merge(u2)
       .transition()
       .duration(1000)
-      .attr("x", function(d) { return x2(0) } )
+        .attr("x", function(d) { return x2(0) } )
         .attr("y", function(d) { return y(d.Prior_disorder); })
-        .attr("width", function(d) { return  x2(d.HR)-x2(0)  })
+        .attr("width", function(d) { return  0 })
         .attr("height", y.bandwidth())
         .attr("rx", 2)
+        .attr("opacity", 0.7)
+        .attr("fill", "#69b3a2")
+      .transition()
+      .duration(1000)
+        .attr("width", function(d) { return  x2(d.HR)-x2(0)  })
+
 
     u2.exit()
       .remove()
