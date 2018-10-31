@@ -45,7 +45,6 @@
 
 
 
-
 <!-- =======================  MENU AND SIDE ARROW ======================= -->
 
 
@@ -55,8 +54,8 @@
   </div>
 </nav>
 
-<a class="btn btn-primary leftLink" href="heatmap.html">&#x2039; Heatmap</a>
-<a class="btn btn-primary rightLink" href="">Next &#x203A;</a>
+<a class="btn btn-primary leftLink" href="beeswarm.html">&#x2039; Distribution</a>
+<a class="btn btn-primary rightLink" href="barplot.html">Symmetry &#x203A;</a>
 
 
 
@@ -71,29 +70,21 @@
 
 
 
+<!-- =======================  SECTION HEATMAP ======================= -->
 
+<!-- =======================  SECTION DOTPLOT ======================= -->
 
-
-<!-- =======================  SECTION BARPLOT ======================= -->
-
-<section id="symetry" class="bg">
-  <div class="container" style="position: relative;">
-
-    <a href="beeswarm.html" class="left_arrow"><span class="left"></span></a>
-    <a href="heatmap.html" class="right_arrow"><span class="right"></span></a>
+<section id="part2">
+  <div class="container">
 
     <div class="row">
-      <div class="col-md-3 my-auto">
-        <h3>Symmetrical and Asymmetrical patterns</h3>
-        <hr>
-        <p>In these graphs, we wish to explore the bidirectional association between pairs of disorders.</p>
-        <p>The results suggest that most temporally ordered disorder pairs have a bidirectional relationship - there is an increased risk of disorder regardless of temporal order.</p>
-        <p>However, some disorder pairs appeared to be quite symmetrical – we call these ‘mirror phenotypes’ – where it seems the risk of developing either disorder are similar regardless of which disorder comes first.</p>
+      <div class="col-md-7 mx-auto" style="text-align: center">
+        <h3>Como is pervasive</h3>
+        <hr style="max-width: 100px">
+        <p>We estimated hazard ratios between each pair of disorders. Note that most of the estimates are over 1, meaning that being diagnosed with one of the disorders increased the risk of a subsequent diagnosis with each of the other disorders.</p>
       </div>
-      <div class="col-md-9">
-        <center><div id="dropdown"></div></center>
-        <div id="dataviz_barplot"></div>
-      </div>
+    </div>
+      <center><div id="dataviz_heatmap"></div></center>
   </div>
 </section>
 
@@ -102,22 +93,18 @@
 
 <script>
 // set the dimensions and margins of the graph
-var margin = {top: 80, right: 0, bottom: 150, left: 0},
-  propMiddle = 0.3,  // proportion of the width for the text in the middle
+var margin = {top: 80, right: 25, bottom: 150, left: 180},
   width = 800 - margin.left - margin.right,
-  height = 900 - margin.top - margin.bottom,
-  lengthMiddle = width * propMiddle
+  height = 800 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-var svg_barplot = d3.select("#dataviz_barplot")
+var svg_heatmap = d3.select("#dataviz_heatmap")
 .append("svg")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
 .append("g")
   .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
-
-
 
 //Read the data
 d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QBI/data.csv", function(data) {
@@ -126,147 +113,96 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
   var myPrior = d3.map(data, function(d){return d.Prior_disorder;}).keys()
   var myLater = d3.map(data, function(d){return d.Later_disorder;}).keys()
 
-  // Create the dropdown button with all possibilities
-  var select = d3.select("#dropdown")
-      .append('select')
-      .attr('id','dropdown-disorder')
-      .selectAll('option')
-  	  .data(myPrior).enter()
-  	  .append('option')
-      .text(function (d) { return d; })
-      .attr("value", function (d) { return d; });
+  // Build X scales and axis:
+  var x = d3.scaleBand()
+    .range([ 0, width ])
+    .domain(myPrior)
+    .padding(0.05);
+  var xAxis = svg_heatmap.append("g")
+    .style("font-size", 15)
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x).tickSize(0))
+  xAxis.select(".domain").remove()
+  xAxis.selectAll("text")
+      .attr("transform", "translate(-10,10)rotate(-45)")
+      .style("text-anchor", "end")
+      .style("font-size", 11)
+      .style("fill", "grey")
 
-  // Initialize the first X axis
-  var x1 = d3.scaleLinear()
-      .range([0, width/2 - lengthMiddle/2])
-  var x1Axis = svg_barplot.append("g")
-      .attr("transform", "translate(0," + height + ")")
 
-  // Initialize the second X axis
-  var x2 = d3.scaleLinear()
-      .range([width/2 + lengthMiddle/2, width ])
-  var x2Axis = svg_barplot.append("g")
-      .attr("transform", "translate(0," + height + ")")
-
-  // Add axis labels
-  x1Axis
-    .append("text")
-      .attr("x", 0)
-      .attr("y", 40)
-      .attr("fill", "#000")
-      .attr("text-anchor", "start")
-      .attr("font-weight", "bold")
-      .text("Hazard ratio");
-  x2Axis
-    .append("text")
-      .attr("x", width)
-      .attr("y", 40)
-      .attr("fill", "#000")
-      .attr("text-anchor", "end")
-      .attr("font-weight", "bold")
-      .text("Hazard ratio");
-
-  // Set range and domain for Y axis
+  // Build Y scales and axis:
   var y = d3.scaleBand()
-      .domain(myPrior)
-      .range([height, 0])
-      .padding([0.13])
+    .range([ height, 0 ])
+    .domain(myLater)
+    .padding(0.05);
+  var yAxis = svg_heatmap.append("g")
+    .style("font-size", 15)
+    .call(d3.axisLeft(y).tickSize(0))
+  yAxis.select(".domain").remove()
+  yAxis.selectAll("text")
+    .attr("transform", "translate(-10,0)")
+    .style("text-anchor", "end")
+    .style("font-size", 11)
+    .style("fill", "grey")
 
-  // Draw disorder names in the middle
-  svg_barplot.selectAll(".textMiddle")
-    .data(myPrior)
-    .enter()
-    .append("text")
-      .attr("x", width/2)
-      .attr("y", function(d) { return( y(d)+y.bandwidth()/2 ) })
-      .text(function(d){ return d })
-      .attr("text-anchor", "middle")
-      .style("font-size", "12px")
-      .attr("dominant-baseline", "central")
+  // Build color scale
+  var myColor = d3.scaleSequential()
+    .interpolator(d3.interpolateInferno)
+    .domain([0,10])
 
-  // A function that create / update the plot for a given variable:
-  function update(variable) {
+  // create a tooltip
+  var tooltip = d3.select("#dataviz_heatmap")
+    .append("div")
+      .style("opacity", 0)
+      .attr("class", "tooltip")
 
-    // get the data
-    var don1 = data.filter(function(d){return d.Prior_disorder == variable;})
-    var don2 = data.filter(function(d){return d.Later_disorder == variable;})
-
-    // biggest HR?
-    var a = d3.max(don1, function(d) { return +d.HR; })
-    var b = d3.max(don2, function(d) { return +d.HR; })
-    var HRmax = Math.max(a,b)
-
-    // Update x1 axis
-    x1.domain([HRmax, 0])
-    x1Axis.transition().duration(1000).call(d3.axisBottom(x1).ticks(5))
-
-    // Update x2 axis
-    x2.domain([0, HRmax])
-    x2Axis.transition().duration(1000).call(d3.axisBottom(x2).ticks(5))
-
-    // Add bars graph left
-    var u1 = svg_barplot.selectAll(".barleft")
-      .data(don1)
-
-    u1.enter()
-      .append("rect")
-      .attr("class", "barleft")
-      .merge(u1)
-      .transition()
-      .duration(1000)
-        .attr("x", function(d) { return x1(0) } )
-        .attr("y", function(d) { return y(d.Later_disorder); })
-        .attr("width", function(d) { return  0  })
-        .attr("height", y.bandwidth())
-        .attr("rx", 2)
-        .attr("opacity", 0.7)
-        .attr("fill", "#69b3a2")
-      .transition()
-      .duration(1000)
-        .attr("x", function(d) { return x1(d.HR) } )
-        .attr("width", function(d) { return  x1(0) - x1(d.HR)  })
-
-
-    u1.exit()
-      .remove()
-
-    //Add bars graph right
-    var u2 = svg_barplot.selectAll(".barright")
-      .data(don2)
-
-    u2.enter()
-      .append("rect")
-      .attr("class", "barright")
-      .merge(u2)
-      .transition()
-      .duration(1000)
-        .attr("x", function(d) { return x2(0) } )
-        .attr("y", function(d) { return y(d.Prior_disorder); })
-        .attr("width", function(d) { return  0 })
-        .attr("height", y.bandwidth())
-        .attr("rx", 2)
-        .attr("opacity", 0.7)
-        .attr("fill", "#69b3a2")
-      .transition()
-      .duration(1000)
-        .attr("width", function(d) { return  x2(d.HR)-x2(0)  })
-
-
-    u2.exit()
-      .remove()
-
+  // Three function that change the tooltip when user hover / move / leave a cell
+  var mouseover = function(d) {
+    tooltip
+      .style("opacity", 1)
+    d3.select(this)
+      .style("opacity", 1)
+  }
+  var mousemove = function(d) {
+    tooltip
+      .html("Prior disorder: ") // + d.Prior_disorder + "<br>" + "HR: " +  d.HR)
+      .style("left", (d3.mouse(this)[0]+900) + "px")
+      .style("top", (d3.mouse(this)[1]+400) + "px")
+  }
+  var mouseleave = function(d) {
+    tooltip
+      .style("opacity", 0)
+    d3.select(this)
+      .style("stroke", "none")
+      .style("opacity", 0.8)
   }
 
-  // Initialize with Alcohol abuse
-  update("Alcohol abuse")
+  // add the squares
+  svg_heatmap.selectAll()
+    .data(data, function(d) {return d.Prior_disorder+':'+d.Later_disorder;})
+    .enter()
+    .append("rect")
+      .attr("x", function(d) { return x(d.Prior_disorder) })
+      .attr("y", function(d) { return y(d.Later_disorder) })
+      .attr("rx", 0)
+      .attr("ry", 0)
+      .attr("width", 0 )
+      .attr("height", 0 )
+      .style("fill", function(d) { return myColor(d.HR)} )
+      .style("stroke-width", 4)
+      .style("stroke", "none")
+      .style("opacity", 0.8)
+    .on("mouseover", mouseover)
+    .on("mousemove", mousemove)
+    .on("mouseleave", mouseleave)
 
-  // Add a listener to the button for selection and run the update function if needed
-  d3.select("#dropdown-disorder")
-    .on("change",function(d){
-      var selected = d3.select("#dropdown-disorder").node().value;
-      update(selected)
-  })
-
+  svg_heatmap
+      .selectAll("rect")
+      .transition()
+      .duration(1000)
+      .delay(function(d,i){ return i*3 })
+      .attr("width", x.bandwidth() )
+      .attr("height", y.bandwidth() )
 })
 
 
@@ -277,6 +213,55 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
 
 
 
+
+
+
+
+
+
+
+
+
+<!-- ======================= NEXT =============================== -->
+
+<section id="todo" class="bg-light">
+</section>
+
+
+
+
+
+
+<!-- ======================= LOGO SECTION =============================== -->
+
+
+
+  <section id="contact">
+     <div class="container">
+       <div class="row">
+         <div class="col-lg-4 text-center" style="margin-top: 40px; margin-bottom: 40px;">
+          <br>
+          <a href="http://www.au.dk/en/"><img class="img-fluid d-block mx-auto" src="img/aarhus_university_logo.png" alt=""></a>
+         </div>
+         <div class="col-lg-4 text-center">
+           <a href="https://dg.dk/en/"><img class="img-fluid d-block mx-auto" src="img/DNRF.png" alt=""></a>
+         </div>
+         <div class="col-lg-4 text-center"s tyle="margin-top: 40px; margin-bottom: 40px;">
+          <br>
+          <a href="https://www.uq.edu.au"><img class="img-fluid d-block mx-auto" src="img/UQlogo.png" alt=""></a>
+         </div>
+         <div class="col-lg-4 offset-lg-2 text-center" style="margin-top: 40px; margin-bottom: 40px;">
+          <br>
+          <a href="http://econ.au.dk/the-national-centre-for-register-based-research/niels-bohr-professorship/"><img class="img-fluid d-block mx-auto" src="img/NBPlogo.jpg" alt="" style="width: 60%"></a>
+         </div>
+         <div class="col-lg-4 text-center" style="margin-top: 40px; margin-bottom: 40px;">
+          <br>
+          <a href="https://www.harvard.edu"><img class="img-fluid d-block mx-auto" src="img/harvard.png" alt="" style="width: 80%"></a>
+         </div>
+        </div>
+       </div>
+    </div>
+  </section>
 
 
 

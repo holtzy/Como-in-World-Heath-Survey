@@ -48,6 +48,20 @@
 
 
 
+<!-- =======================  MENU AND SIDE ARROW ======================= -->
+
+
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a href="index.html">&larr; Home</a>
+  </div>
+</nav>
+
+<a class="btn btn-primary leftLink" href="map.html">&#x2039; Map</a>
+<a class="btn btn-primary rightLink" href="heatmap.html">Heatmap &#x203A;</a>
+
+
+
 
 
 
@@ -89,7 +103,7 @@
 // set the dimensions and margins of the graph
 var margin = {top: 80, right: 25, bottom: 30, left: 25},
   width = 980 - margin.left - margin.right,
-  height = 800 - margin.top - margin.bottom;
+  height = 700 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg_dotplot = d3.select("#dataviz_dotplot")
@@ -103,7 +117,7 @@ var svg_dotplot = d3.select("#dataviz_dotplot")
 var formatValue = d3.format(".1f");
 
 
-d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/master/DATA/data.csv?token=AJx4QQCNtCTQx2oH2q9JBUCmYDl3RBlWks5b4RoPwA%3D%3D", type, function(error, data) {
+d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QBI/data.csv", type, function(error, data) {
 
   if (error) throw error;
 
@@ -118,11 +132,11 @@ d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/mast
 
   // compute dot location
   var simulation = d3.forceSimulation(data)
-      .force("xPosition", d3.forceX(function(d) { return x(d.HR); }).strength(75))
+      .force("xPosition", d3.forceX(function(d) { return x(d.HR); }).strength(2))
       .force("yPosition", d3.forceY(height/2))
       .force("collide", d3.forceCollide(10))
       .stop();
-  for (var i = 0; i < 290; ++i) simulation.tick();
+  for (var i = 0; i < 250; ++i) simulation.tick();
 
   // Compute a voronoid hoverlay to improve hover interaction
   var cell = svg_dotplot.append("g")
@@ -132,6 +146,16 @@ d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/mast
         .x(function(d) { return d.x; })
         .y(function(d) { return d.y; })
       .polygons(data)).enter().append("g");
+
+  // SHOW HR = 1 ------
+  cell
+      .append("line")
+      .attr("x1", x(1))
+      .attr("x2", x(1))
+      .attr("y1", 0)
+      .attr("y2", height)
+      .style("stroke", "red")
+      .style("opacity", 0.4)
 
   // Create tooltip
   var tooltip = d3.select("#dataviz_dotplot")
@@ -176,14 +200,6 @@ d3.csv("https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/mast
       .on("mousemove", mousemove)
       .on("mouseleave", mouseleave)
 
-  // SHOW HR = 1 ------
-  cell
-      .append("line")
-      .attr("x1", x(1))
-      .attr("x2", x(1))
-      .attr("y1", 0)
-      .attr("y2", height)
-      .style("stroke", "red")
 
 });
 
@@ -198,53 +214,6 @@ function type(d) {
 </script>
 
 
-
-
-
-
-
-
-
-<!-- ======================= NEXT =============================== -->
-
-<section id="todo" class="bg-light">
-</section>
-
-
-
-
-
-
-<!-- ======================= LOGO SECTION =============================== -->
-
-
-
-  <section id="contact">
-     <div class="container">
-       <div class="row">
-         <div class="col-lg-4 text-center" style="margin-top: 40px; margin-bottom: 40px;">
-          <br>
-          <a href="http://www.au.dk/en/"><img class="img-fluid d-block mx-auto" src="img/aarhus_university_logo.png" alt=""></a>
-         </div>
-         <div class="col-lg-4 text-center">
-           <a href="https://dg.dk/en/"><img class="img-fluid d-block mx-auto" src="img/DNRF.png" alt=""></a>
-         </div>
-         <div class="col-lg-4 text-center"s tyle="margin-top: 40px; margin-bottom: 40px;">
-          <br>
-          <a href="https://www.uq.edu.au"><img class="img-fluid d-block mx-auto" src="img/UQlogo.png" alt=""></a>
-         </div>
-         <div class="col-lg-4 offset-lg-2 text-center" style="margin-top: 40px; margin-bottom: 40px;">
-          <br>
-          <a href="http://econ.au.dk/the-national-centre-for-register-based-research/niels-bohr-professorship/"><img class="img-fluid d-block mx-auto" src="img/NBPlogo.jpg" alt="" style="width: 60%"></a>
-         </div>
-         <div class="col-lg-4 text-center" style="margin-top: 40px; margin-bottom: 40px;">
-          <br>
-          <a href="https://www.harvard.edu"><img class="img-fluid d-block mx-auto" src="img/harvard.png" alt="" style="width: 80%"></a>
-         </div>
-        </div>
-       </div>
-    </div>
-  </section>
 
 
 

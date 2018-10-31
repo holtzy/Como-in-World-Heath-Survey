@@ -9,7 +9,7 @@ p {
 }
 
 a {
-  color: #69b3a2;
+  color: #DE4938;
 }
 
 a:hover {
@@ -17,7 +17,7 @@ a:hover {
 }
 
 .text-primary {
-  color: #69b3a2 !important;
+  color: #DE4938 !important;
 }
 
 h1,
@@ -87,6 +87,121 @@ u {
 
 
 
+/* -------------------- BUTTON NEXT PREVIOUS POST ------------------ */
+
+.leftLink {
+  left: 30px;
+  color: red;
+  position: fixed;
+  top: 50%;
+}
+.rightLink {
+  right: 30px;
+  color: red;
+  position: fixed;
+  top: 50%;
+}
+
+
+
+
+/* -------------------- ID PORTOFOLIO = For graph pages ------------------ */
+
+#portfolio .portfolio-item {
+  right: 0;
+  margin: 0 0 15px;
+}
+
+#portfolio .portfolio-item .portfolio-link {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 2px;
+  border-width: 3px !important;
+  border-color: #F5F5F5 !important;
+  border: solid;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all ease 1s;
+  -moz-transition: all ease 1s;
+  transition: all ease 1s;
+  opacity: 0;
+  background: #EE3A3E;
+  border-radius: 2%;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
+  opacity: 0.8;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
+  font-size: 22px;
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  height: 20px;
+  margin-top: -12px;
+  text-align: center;
+  color: white;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
+  margin-top: -12px;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
+  margin: 0;
+}
+
+#portfolio .portfolio-item .portfolio-caption {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 25px;
+  text-align: center;
+  background-color: 'none';
+}
+
+#portfolio .portfolio-item .portfolio-caption h4 {
+  margin: 0;
+  text-transform: none;
+}
+
+#portfolio .portfolio-item .portfolio-caption p {
+  font-size: 16px;
+  font-style: italic;
+  margin: 0;
+  font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#portfolio * {
+  z-index: 2;
+}
+
+@media (min-width: 767px) {
+  #portfolio .portfolio-item {
+    margin: 0 0 30px;
+  }
+}
+
+#portfolio .explanation_portfolio{
+  font-size: 17px;
+  margin: 20px;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -105,14 +220,14 @@ u {
 
 .btn-primary {
   background-color: transparent;
-  border-color: #69b3a2;
-  color: #69b3a2;
-  border-width: medium;
+  border-color: #DE4938;
+  color: #DE4938;
+  border-width: small;
 }
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
-  background-color: #69b3a2 !important;
-  border-color: #69b3a2 !important;
+  background-color: #DE4938 !important;
+  border-color: #DE4938 !important;
   color: white;
 }
 
@@ -123,34 +238,34 @@ u {
 
 .btn-secondary {
   background-color: transparent;
-  border-color: #69b3a2;
-  color: #69b3a2;
+  border-color: #DE4938;
+  color: #DE4938;
   border-width: small;
 }
 
 .btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover {
-  background-color: #69b3a2 !important;
-  border-color: #69b3a2 !important;
+  background-color: #DE4938 !important;
+  border-color: #DE4938 !important;
   color: white;
 }
 
 .btn-secondary:active, .btn-secondary:focus {
-  background-color: #69b3a2 !important;
+  background-color: #DE4938 !important;
 }
 
 .btn-secondary:not(:disabled):not(.disabled).active {
-  background-color: #69b3a2 !important;
-  border-color: #69b3a2 !important;
+  background-color: #DE4938 !important;
+  border-color: #DE4938 !important;
   color: white;
 }
 
 ::-moz-selection {
-  background: #69b3a2;
+  background: #DE4938;
   text-shadow: none;
 }
 
 ::selection {
-  background: #69b3a2;
+  background: #DE4938;
   text-shadow: none;
 }
 
@@ -178,13 +293,13 @@ img::-moz-selection {
   text-transform: uppercase;
   color: white;
   border: 0;
-  background-color: #69b3a2;
+  background-color: #DE4938;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 /* Color of 'from data to viz' on the top left */
 #mainNav .navbar-brand {
-  color: #69b3a2;
+  color: #DE4938;
   font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
 }
 
@@ -205,9 +320,9 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #69b3a2;
+  color: #DE4938;
   background-color: white;
-  border-bottom: 3px solid #69b3a2;
+  border-bottom: 3px solid #DE4938;
 }
 
 

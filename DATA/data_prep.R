@@ -4,6 +4,5 @@
 library(beeswarm)
 data <- read.table("data.csv", header=T, sep=",")
 data$pair <- paste(data$Prior_disorder, data$Later_disorder, sep="-")
-beeswarm(log(data$HR), method="center", cex=1, corral="none")
-
-data
+a = beeswarm(log(data$HR), method="center", cex=1, corral="none", draw=F)
+a

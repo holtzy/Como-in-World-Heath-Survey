@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Comorbidity in the World Health Survey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Comorbidity in the World Health Survey">
+    <meta name="keywords" content="Mental, Disorders, Schizophrenia">
+    <meta name="author" content="Yan Holtz et al.">
+
+    <!-- Control appearance when share by social media -->
+    <meta property="og:title" content="Comorbidity in the World Health Survey" />
+    <meta property="og:image" content="img/TODO" />
+    <meta property="og:description" content="Comorbidity in the World Health Survey" />
+    <meta property='og:url' content="TODO.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- D3.JS -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- Load d3.js plugins -->
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+</head>
+
+<body id="page-top">
+
+
+
+
+
+
+
+
+
+<!-- =======================  MENU AND SIDE ARROW ======================= -->
+
+
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a href="index.html">&larr; Home</a>
+  </div>
+</nav>
+
+<a class="btn btn-primary leftLink" href="index.html">&#x2039; Home</a>
+<a class="btn btn-primary rightLink" href="beeswarm.html">Distribution &#x203A;</a>
+
+
+
+
+
+
+
+
+
+<!-- =======================  SECTION MAP ======================= -->
+
+<section id="map" class="bg">
+  <div class="container">
+    <h3 style="text-align: center">The World Health Survey</h3>
+    <hr style="max-width: 100px">
+    <div class="row justify-content-md-center">
+      <div class="col-lg-5" style="text-align: right">
+        <p>The <a href="https://www.who.int/healthinfo/survey/en/">World Health Survey</a> was implemented by WHO in 2002–2004 in partnership with 70 countries to generate information on the health of adult populations and health systems</p>
+      </div>
+      <div class="col-lg-5">
+        <p>About 30 countries were included, with a total sample size over 300 000 individuals. The response rate varied between 40 and 80%, with an average of x%.</p>
+      </div>
+    </div>
+    <center><div id="dataviz_worldmap" width="700" height="750"></div></center>
+  </div>
+
+
+
+</section>
+
+
+
+
+
+
+<!-- =======================  D3 MAP ======================= -->
+
+<script>
+// set the dimensions and margins of the graph
+var margin = {top: 80, right: 25, bottom: 30, left: 40},
+  width = 900 - margin.left - margin.right,
+  height = 650 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg1 = d3.select("#dataviz_worldmap")
+.append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+.append("g")
+  .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")");
+
+// Map and projection
+var path = d3.geoPath();
+var projection = d3.geoNaturalEarth()
+  .scale(width / 1.4 / Math.PI)
+  .translate([width / 2, height / 2]);
+
+// Data and color scale
+var data = d3.map();
+var colorScale = d3.scaleThreshold()
+  .domain([30, 40, 50, 60, 70, 80])
+  .range(d3.schemeBlues[7]);
+
+// Load external data and boot
+d3.queue()
+  .defer(d3.json, "https://raw.githubusercontent.com/holtzy/Como-in-World-Heath-Survey/master/DATA/world.geojson?token=AJx4QYAwlc9wgU9WlmS_GZmBsRiVt-PTks5b29BLwA%3D%3D")
+  .defer(d3.csv, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_map.csv", function(d) { data.set(d.code, {response_rate: +d.response_rate, country: d.country, sample_size1: d.sample_size1}); })
+  .await(ready);
+
+
+  var tooltip = d3.select("#dataviz_worldmap")
+      .append("div")
+      .style("opacity", 0)
+      .attr("class", "tooltip")
+      .style("background-color", "black")
+      .style("background-opacity", "0.1")
+      .style("border", "none")
+      .style("border-radius", "5px")
+      .style("padding", "15px")
+      .style("min-width", 200)
+
+    // Three function that change the tooltip when user hover / move / leave a cell
+    var mouseover = function(d) {
+      if (d.myDetail.response_rate == null) { return }
+      tooltip
+        .style("opacity", 1)
+      d3.select(this)
+        .style("stroke", "black")
+        .style("opacity", 1)
+    }
+    var mousemove = function(d) {
+      tooltip
+        .html("<b>"+d.myDetail.country+"</b>" + "<br>" + d.myDetail.sample_size1 + " individuals and " + d.myDetail.response_rate + "% response rate" )
+        .style("left", (d3.mouse(this)[0]+500) + "px")
+        .style("top", (d3.mouse(this)[1]+500) + "px")
+    }
+    //
+    //.style("left", (d3.event.pageX-34) + "px")
+    //.style("top", (d3.event.pageY-12) + "px")
+    var mouseleave = function(d) {
+      tooltip
+        .style("opacity", 0)
+      d3.select(this)
+        .style("stroke", "none")
+        .style("opacity", 0.8)
+    }
+
+
+function ready(error, topo) {
+  if (error) throw error;
+
+  // Draw the map
+  svg1.append("g")
+    .selectAll("path")
+    .data(topo.features)
+    .enter()
+    .append("path")
+      // draw each country
+      .attr("d", d3.geoPath()
+        .projection(projection)
+      )
+      // set the color of each country
+      .attr("fill", colorScale(0))
+      .on("mouseover", mouseover)
+      .on("mousemove", mousemove)
+      .on("mouseleave", mouseleave)
+
+  svg1
+    .selectAll("path")
+    .transition()
+    .duration(3000)
+    .attr("fill", function (d) {
+      d.myDetail= data.get(d.id) || 0;
+      var valForChoro = d.myDetail.response_rate || 0
+      return colorScale(valForChoro);
+    })
+
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======================= FOOTER SECTION ================================ -->
+    <footer class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright">Copyright &copy; The <a href="https://www.nbepi.com">Como project</a> 2018</span>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="https://www.nbepi.com">
+                  <i class="fa fa-home"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://github.com/holtzy">
+                  <i class="fa fa-github"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.linkedin.com/in/yan-holtz-2477534a/">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline quicklinks">
+              <li class="list-inline-item">
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">Terms of Use</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+<!-- ======================================================================= -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======================== JAVASCRIPT SECTION =========================== -->
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/agency.min.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script src="js/tree.js"></script>
+
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+
+
+
+
+
+
+
+
+<!-- ======================================================================= -->
+  </body>
+
+</html>
