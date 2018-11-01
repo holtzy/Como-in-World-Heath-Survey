@@ -81,15 +81,16 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-md-7 mx-auto" style="text-align: center">
+      <div class="col-md-3 mx-auto" id="dataviz_dotplot"></div>
+      <div class="col-md-7 mx-auto" style="text-align: right">
         <h3>Como is pervasive</h3>
-        <hr style="max-width: 100px">
-        <p>We estimated hazard ratios between each pair of disorders. Note that most of the estimates are over 1, meaning that being diagnosed with one of the disorders increased the risk of a subsequent diagnosis with each of the other disorders.</p>
+        <hr>
+        <p>We estimated <u>hazard ratios</u> between each pair of disorders. Most of the estimates are <u>over 1</u>, meaning that being diagnosed with one of the disorders increased the risk of a subsequent diagnosis with each of the other disorders.</p>
+        <p><u>Note</u>: A few extreme hazard ratio were observed<br>between disorders intrinsically linked together. <span id="fullScale">Show them</span>.</p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12 mx-auto" id="dataviz_dotplot"></div>
-    </div>
+
+
   </div>
 </section>
 
@@ -101,9 +102,9 @@
 <script>
 
 // set the dimensions and margins of the graph
-var margin = {top: 80, right: 25, bottom: 30, left: 25},
+var margin = {top: 80, right: 25, bottom: 50, left: 25},
   width = 980 - margin.left - margin.right,
-  height = 1200 - margin.top - margin.bottom;
+  height = 750 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg_dotplot = d3.select("#dataviz_dotplot")
@@ -114,101 +115,125 @@ var svg_dotplot = d3.select("#dataviz_dotplot")
   .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
 
-var formatValue = d3.format(".1f");
 
+d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QBI/data_test.csv", type, function(data) {
 
-d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QBI/data.csv", type, function(error, data) {
-
-  if (error) throw error;
 
   // compute X scale and add axis
-  var x = d3.scaleLog()
-      .rangeRound([0, width])
-      .domain(d3.extent(data, function(d) { return d.HR; }));
-  svg_dotplot.append("g")
+  var x = d3.scaleLinear()
+      .range([0,width])
+      //.rangeRound([0, width])
+      //.domain(d3.extent(data, function(d) { return +d.HR; }));
+      .domain([0,10]);
+  var xAxis = svg_dotplot.append("g")
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x).ticks(15, ".0s"));
+      .call(d3.axisBottom(x).ticks(10, ".0s"));
+  xAxis.append("text")
+    .attr("x", width)
+    .attr("y", 40)
+    .attr("fill", "#000")
+    .attr("text-anchor", "end")
+    .attr("font-size", "14px")
+    .text("Hazard ratio");
 
-  // compute dot location
-  var simulation = d3.forceSimulation(data)
-      .force("xPosition", d3.forceX(function(d) { return x( Math.round(d.HR,0)); }).strength(4))
-      .force("yPosition", d3.forceY(height/2))
-      .force("collide", d3.forceCollide(10))
-      .stop();
-  for (var i = 0; i < 250; ++i) simulation.tick();
 
-  // Compute a voronoid hoverlay to improve hover interaction
-  var cell = svg_dotplot.append("g")
-      .attr("class", "cells")
-      .selectAll("g").data(d3.voronoi()
-        .extent([[-margin.left, -margin.top], [width + margin.right, height + margin.top]])
-        .x(function(d) { return d.x; })
-        .y(function(d) { return d.y; })
-      .polygons(data)).enter().append("g");
+  // compute Y scale
+  var y = d3.scaleLinear()
+      .range([height, 0])
+      .domain(d3.extent(data, function(d) { return +d.yPrim; }));
 
-  // SHOW HR = 1 ------
-  cell
-      .append("line")
-      .attr("x1", x(1))
-      .attr("x2", x(1))
-      .attr("y1", 0)
-      .attr("y2", height)
-      .style("stroke", "red")
-      .style("opacity", 0.4)
+  // Build color scale
+  var myColor = d3.scaleSequential()
+    .interpolator(d3.interpolateInferno)
+    .domain([0,20])
+
+  //SHOW HR = 1 ------
+  var verticalLine = svg_dotplot
+    .append("line")
+    .attr("y1", 0)
+    .attr("y2", height)
+    .style("stroke", "red")
+    .style("opacity", 0.4)
 
   // Create tooltip
   var tooltip = d3.select("#dataviz_dotplot")
       .append("div")
       .style("opacity", 0)
+      .style("font-size", "16px")
       .attr("class", "tooltip")
 
   // Three function that change the tooltip when user hover / move / leave a cell
   var mouseover = function(d) {
     tooltip
+      .transition()
+      .duration(200)
       .style("opacity", 1)
-  }
+    tooltip
+      .style("left", (d3.mouse(this)[0]+70) + "px")
+      .style("top", (d3.mouse(this)[1]) + "px")
+      .html("<span style='color:grey'>Prior disorder: </span>" + d.Prior_disorder + "<br>" + "<span style='color:grey'>Later disorder: </span>" + d.Later_disorder + "<br>" + "HR: " + d.HR + " [" + d.Lower_CL + "-" + d.Upper_CL + "]") // + d.Prior_disorder + "<br>" + "HR: " +  d.HR)
+    }
   var mousemove = function(d) {
     tooltip
-      .html("Prior disorder: "+ d.data.Prior_disorder + "<br>" + "Later disorder: "+ d.data.Later_disorder + "<br>" + "Hazard ratio: " + formatValue(d.data.HR))
       .style("left", (d3.mouse(this)[0]+70) + "px")
       .style("top", (d3.mouse(this)[1]) + "px")
   }
   var mouseleave = function(d) {
     tooltip
-      .style("opacity", 0)
-    d3.select(this)
-      .style("stroke", "black")
+      .transition()
+      .duration(200)
       .style("opacity", 0)
   }
 
-  // Add the circles
-  cell.append("circle")
-      .attr("r", 8)
-      .attr("cx", function(d) { return d.data.x; })
-      .attr("cy", function(d) { return d.data.y; })
-      .style("stroke", "black")
-      .style("fill", "#69b3a2")
-      .style("opacity", "0.5")
 
-  // Add the path: border of the voronoid shapes used to increase tooltip responsivness
-  cell.append("path")
-      .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
-      .style("fill", "none")
-      .style("pointer-events", "all")
-      .on("mouseover", mouseover)
-      .on("mousemove", mousemove)
-      .on("mouseleave", mouseleave)
+  // UPDATE FUNCTION
+  function update(myYlim) {
 
+    // Update the scale
+    x.domain([0,myYlim])
+    xAxis.transition().duration(1000).call(d3.axisBottom(x).ticks(10, ".0s"));
+    xAxis.select(".domain").remove()
+
+    // Update vertical line
+    verticalLine
+      .transition()
+      .duration(1000)
+      .attr("x1", x(1))
+      .attr("x2", x(1))
+
+    // Update the circle
+    var u1 = svg_dotplot.selectAll(".circle")
+      .data(data)
+
+    u1.enter()
+      .append("circle")
+      .merge(u1)
+      .transition()
+      .duration(1000)
+        .attr("r", 7)
+        .attr("cx", function(d) { return x(+d.HR_rounded); })
+        .attr("cy", function(d) { return y(+d.yPrim) })
+        .style("fill", function(d){ return myColor(d.HR)})
+        .style("opacity", "0.5")
+      // .on("mouseover", mouseover)
+      // .on("mousemove", mousemove)
+      // .on("mouseleave", mouseleave)
+  }
+
+  // Initialize
+  update(20)
 
 });
 
+
+// Function to read data properly -> Probably useless
 function type(d) {
   if (!d.HR) return;
-  d.HR = +d.HR;
+  d.HR_rounded = +d.HR_rounded;
+  d.yPrim = +d.yPrim;
   return d;
 }
-
 
 
 </script>
@@ -391,3 +416,140 @@ function type(d) {
   </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+//
+// // set the dimensions and margins of the graph
+// var margin = {top: 80, right: 25, bottom: 30, left: 25},
+//   width = 980 - margin.left - margin.right,
+//   height = 1200 - margin.top - margin.bottom;
+//
+// // append the svg object to the body of the page
+// var svg_dotplot = d3.select("#dataviz_dotplot")
+// .append("svg")
+//   .attr("width", width + margin.left + margin.right)
+//   .attr("height", height + margin.top + margin.bottom)
+// .append("g")
+//   .attr("transform",
+//         "translate(" + margin.left + "," + margin.top + ")");
+//
+// var formatValue = d3.format(".1f");
+//
+//
+// d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QBI/data.csv", type, function(error, data) {
+//
+//   if (error) throw error;
+//
+//   // compute X scale and add axis
+//   var x = d3.scaleLog()
+//       .rangeRound([0, width])
+//       .domain(d3.extent(data, function(d) { return d.HR; }));
+//   svg_dotplot.append("g")
+//       .attr("class", "axis axis--x")
+//       .attr("transform", "translate(0," + height + ")")
+//       .call(d3.axisBottom(x).ticks(15, ".0s"));
+//
+//   // compute dot location
+//   var simulation = d3.forceSimulation(data)
+//       .force("xPosition", d3.forceX(function(d) { return x( Math.round(d.HR,0)); }).strength(4))
+//       .force("yPosition", d3.forceY(height/2))
+//       .force("collide", d3.forceCollide(10))
+//       .stop();
+//   for (var i = 0; i < 250; ++i) simulation.tick();
+//
+//   // Compute a voronoid hoverlay to improve hover interaction
+//   var cell = svg_dotplot.append("g")
+//       .attr("class", "cells")
+//       .selectAll("g").data(d3.voronoi()
+//         .extent([[-margin.left, -margin.top], [width + margin.right, height + margin.top]])
+//         .x(function(d) { return d.x; })
+//         .y(function(d) { return d.y; })
+//       .polygons(data)).enter().append("g");
+//
+//   // SHOW HR = 1 ------
+//   cell
+//       .append("line")
+//       .attr("x1", x(1))
+//       .attr("x2", x(1))
+//       .attr("y1", 0)
+//       .attr("y2", height)
+//       .style("stroke", "red")
+//       .style("opacity", 0.4)
+//
+//   // Create tooltip
+//   var tooltip = d3.select("#dataviz_dotplot")
+//       .append("div")
+//       .style("opacity", 0)
+//       .attr("class", "tooltip")
+//
+//   // Three function that change the tooltip when user hover / move / leave a cell
+//   var mouseover = function(d) {
+//     tooltip
+//       .style("opacity", 1)
+//   }
+//   var mousemove = function(d) {
+//     tooltip
+//       .html("Prior disorder: "+ d.data.Prior_disorder + "<br>" + "Later disorder: "+ d.data.Later_disorder + "<br>" + "Hazard ratio: " + formatValue(d.data.HR))
+//       .style("left", (d3.mouse(this)[0]+70) + "px")
+//       .style("top", (d3.mouse(this)[1]) + "px")
+//   }
+//   var mouseleave = function(d) {
+//     tooltip
+//       .style("opacity", 0)
+//     d3.select(this)
+//       .style("stroke", "black")
+//       .style("opacity", 0)
+//   }
+//
+//   // Add the circles
+//   cell.append("circle")
+//       .attr("r", 8)
+//       .attr("cx", function(d) { return d.data.x; })
+//       .attr("cy", function(d) { return d.data.y; })
+//       .style("stroke", "black")
+//       .style("fill", "#69b3a2")
+//       .style("opacity", "0.5")
+//
+//   // Add the path: border of the voronoid shapes used to increase tooltip responsivness
+//   cell.append("path")
+//       .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
+//       .style("fill", "none")
+//       .style("pointer-events", "all")
+//       .on("mouseover", mouseover)
+//       .on("mousemove", mousemove)
+//       .on("mouseleave", mouseleave)
+//
+//
+// });
+//
+// function type(d) {
+//   if (!d.HR) return;
+//   d.HR = +d.HR;
+//   return d;
+// }
+
+
+
+</script>

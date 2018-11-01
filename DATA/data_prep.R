@@ -12,7 +12,7 @@ a
 data <- read.table("data.csv", header=T, sep=",")
 don = data %>% 
   arrange(HR) %>% 
-  mutate(HR_rounded = round(HR/0.2)*0.2 ) %>% 
+  mutate(HR_rounded = round(HR/0.3)*0.3 ) %>% 
   mutate(y=ave(HR_rounded, HR_rounded, FUN=seq_along))
 don %>% head
 # Max tot
@@ -32,9 +32,10 @@ ggplot(don, aes(x=HR_rounded, y=yPrim) ) +
   ylab('Number of pair of mental disorder') +
   scale_x_log10()
 
+# Write result
+write.table(don, file='data_test.csv', row.names=F, quote=F, sep=",")
 
-
-
+don
 
 
 
