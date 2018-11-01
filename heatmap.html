@@ -84,7 +84,13 @@
         <p>We estimated hazard ratios between each pair of disorders. Note that most of the estimates are over 1, meaning that being diagnosed with one of the disorders increased the risk of a subsequent diagnosis with each of the other disorders.</p>
       </div>
     </div>
-      <center><div id="dataviz_heatmap"></div></center>
+
+    <div class="row">
+      <div class="col-md-12">
+        <center><div id="dataviz_heatmap"></div></center>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -129,7 +135,6 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
       .style("font-size", 11)
       .style("fill", "grey")
 
-
   // Build Y scales and axis:
   var y = d3.scaleBand()
     .range([ height, 0 ])
@@ -155,26 +160,29 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
     .append("div")
       .style("opacity", 0)
       .attr("class", "tooltip")
+      .style("font-size", "16px")
 
   // Three function that change the tooltip when user hover / move / leave a cell
   var mouseover = function(d) {
     tooltip
+      .transition()
+      .duration(200)
       .style("opacity", 1)
-    d3.select(this)
-      .style("opacity", 1)
+    tooltip
+        .html("<span style='color:grey'>Prior disorder: </span>" + d.Prior_disorder + "<br>" + "<span style='color:grey'>Later disorder: </span>" + d.Later_disorder + "<br>" + "HR: " + d.HR + " [" + d.Lower_CL + "-" + d.Upper_CL + "]") // + d.Prior_disorder + "<br>" + "HR: " +  d.HR)
+        .style("left", (d3.mouse(this)[0]+150) + "px")
+        .style("top", (d3.mouse(this)[1]+100) + "px")
   }
   var mousemove = function(d) {
     tooltip
-      .html("Prior disorder: ") // + d.Prior_disorder + "<br>" + "HR: " +  d.HR)
-      .style("left", (d3.mouse(this)[0]+900) + "px")
-      .style("top", (d3.mouse(this)[1]+400) + "px")
+      .style("left", (d3.mouse(this)[0]+150) + "px")
+      .style("top", (d3.mouse(this)[1]+100) + "px")
   }
   var mouseleave = function(d) {
     tooltip
+      .transition()
+      .duration(200)
       .style("opacity", 0)
-    d3.select(this)
-      .style("stroke", "none")
-      .style("opacity", 0.8)
   }
 
   // add the squares
@@ -196,6 +204,7 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
     .on("mousemove", mousemove)
     .on("mouseleave", mouseleave)
 
+  // Animation at start
   svg_heatmap
       .selectAll("rect")
       .transition()
@@ -203,6 +212,7 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
       .delay(function(d,i){ return i*3 })
       .attr("width", x.bandwidth() )
       .attr("height", y.bandwidth() )
+
 })
 
 
@@ -212,56 +222,6 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
 
 
 
-
-
-
-
-
-
-
-
-
-
-<!-- ======================= NEXT =============================== -->
-
-<section id="todo" class="bg-light">
-</section>
-
-
-
-
-
-
-<!-- ======================= LOGO SECTION =============================== -->
-
-
-
-  <section id="contact">
-     <div class="container">
-       <div class="row">
-         <div class="col-lg-4 text-center" style="margin-top: 40px; margin-bottom: 40px;">
-          <br>
-          <a href="http://www.au.dk/en/"><img class="img-fluid d-block mx-auto" src="img/aarhus_university_logo.png" alt=""></a>
-         </div>
-         <div class="col-lg-4 text-center">
-           <a href="https://dg.dk/en/"><img class="img-fluid d-block mx-auto" src="img/DNRF.png" alt=""></a>
-         </div>
-         <div class="col-lg-4 text-center"s tyle="margin-top: 40px; margin-bottom: 40px;">
-          <br>
-          <a href="https://www.uq.edu.au"><img class="img-fluid d-block mx-auto" src="img/UQlogo.png" alt=""></a>
-         </div>
-         <div class="col-lg-4 offset-lg-2 text-center" style="margin-top: 40px; margin-bottom: 40px;">
-          <br>
-          <a href="http://econ.au.dk/the-national-centre-for-register-based-research/niels-bohr-professorship/"><img class="img-fluid d-block mx-auto" src="img/NBPlogo.jpg" alt="" style="width: 60%"></a>
-         </div>
-         <div class="col-lg-4 text-center" style="margin-top: 40px; margin-bottom: 40px;">
-          <br>
-          <a href="https://www.harvard.edu"><img class="img-fluid d-block mx-auto" src="img/harvard.png" alt="" style="width: 80%"></a>
-         </div>
-        </div>
-       </div>
-    </div>
-  </section>
 
 
 

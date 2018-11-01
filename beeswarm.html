@@ -103,7 +103,7 @@
 // set the dimensions and margins of the graph
 var margin = {top: 80, right: 25, bottom: 30, left: 25},
   width = 980 - margin.left - margin.right,
-  height = 700 - margin.top - margin.bottom;
+  height = 1200 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg_dotplot = d3.select("#dataviz_dotplot")
@@ -132,7 +132,7 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
 
   // compute dot location
   var simulation = d3.forceSimulation(data)
-      .force("xPosition", d3.forceX(function(d) { return x(d.HR); }).strength(2))
+      .force("xPosition", d3.forceX(function(d) { return x( Math.round(d.HR,0)); }).strength(4))
       .force("yPosition", d3.forceY(height/2))
       .force("collide", d3.forceCollide(10))
       .stop();
