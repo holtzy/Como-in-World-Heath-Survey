@@ -8,6 +8,7 @@ data$pair <- paste(data$Prior_disorder, data$Later_disorder, sep="-")
 a = beeswarm(log(data$HR), method="center", cex=1, corral="none", draw=F)
 a
 
+
 # Step 1: compute position for dotplot histogram
 data <- read.table("data.csv", header=T, sep=",")
 don = data %>% 
@@ -33,7 +34,7 @@ ggplot(don, aes(x=HR_rounded, y=yPrim) ) +
   scale_x_log10()
 
 # Write result
-write.table(don, file='data_test.csv', row.names=F, quote=F, sep=",")
+write.table(don, file='/Users/y.holtz/Documents/d3-graph-gallery/DATA/QBI/data_test.csv', row.names=F, quote=F, sep=",")
 
 don
 
