@@ -1,5 +1,43 @@
+# ----------
 # A script that takes data from Carmen and transform it for the web application
+# Run
+# ----------
+
 library(tidyverse)
+
+
+
+
+
+# ----------
+# Preparation for Sankey plot
+# ----------
+
+data <- read.table("data.csv", header=T, sep=",")
+
+# Add space to outcome to make it different
+tmp <- data %>% mutate( Later_disorder = paste( Later_disorder, " ", sep=""))
+
+# Save it
+write.table(tmp, file="data_sankey.csv", quote=F, row.names=F, sep=",")
+
+# Make a data frame with nodes
+#nodes = data.frame( ID = c(as.character(unique(tmp$Prior_disorder)), as.character(unique(tmp$Later_disorder)) ) ) %>%
+
+# Make a data frame with the links
+#tmp$from <- match(tmp$Prior_disorder, nodes$ID)-1
+#tmp$to <- match(tmp$Later_disorder, nodes$ID)-1
+# Export to JSON
+
+
+
+
+
+
+
+# ----------
+# Preparation for histogram
+# ----------
 
 # Step 1: compute position for beeswarm plot
 library(beeswarm)
@@ -8,12 +46,11 @@ data$pair <- paste(data$Prior_disorder, data$Later_disorder, sep="-")
 a = beeswarm(log(data$HR), method="center", cex=1, corral="none", draw=F)
 a
 
-
 # Step 1: compute position for dotplot histogram
 data <- read.table("data.csv", header=T, sep=",")
-don = data %>% 
-  arrange(HR) %>% 
-  mutate(HR_rounded = round(HR/0.3)*0.3 ) %>% 
+don = data %>%
+  arrange(HR) %>%
+  mutate(HR_rounded = round(HR/0.3)*0.3 ) %>%
   mutate(y=ave(HR_rounded, HR_rounded, FUN=seq_along))
 don %>% head
 # Max tot
@@ -37,6 +74,3 @@ ggplot(don, aes(x=HR_rounded, y=yPrim) ) +
 write.table(don, file='/Users/y.holtz/Documents/d3-graph-gallery/DATA/QBI/data_test.csv', row.names=F, quote=F, sep=",")
 
 don
-
-
-
