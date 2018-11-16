@@ -105,11 +105,22 @@
 <style>
 .link {
   fill: none;
-  stroke: blue;
+  stroke: #888888;
   stroke-opacity: .1;
 }
 .link:hover {
   stroke-opacity: 1;
+}
+
+.node rect {
+ cursor: move;
+ fill-opacity: .9;
+ shape-rendering: crispEdges;
+}
+
+.node text {
+ pointer-events: none;
+ text-shadow: 0 1px 0 #fff;
 }
 </style>
 
@@ -141,6 +152,7 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
 
   //var tokeep = ["Drug dependence", "Alcohol abuse", "Social phobia"]
   //var data = data.filter(function(d,i){return tokeep.indexOf(d.Prior_disorder) >= 0 })
+  var data = data.filter(function(d){return myGroup(d.Prior_disorder) == "Mood disorder" })
   var data = data.sort(function(a,b) { return d3.ascending(myGroup(a.Prior_disorder) , myGroup(b.Prior_disorder)) ||  d3.ascending(myGroup(a.Later_disorder) , myGroup(b.Later_disorder))})
 
 //set up a data structure in same style as original example but empty
@@ -183,7 +195,7 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
 
   // Initialize the sankey diagram
   var sankey = d3.sankey()
-      .nodeWidth(16)
+      .nodeWidth(10)
       .nodePadding(4)
       .size([width, height])
       .nodes(graph.nodes)
@@ -204,13 +216,17 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
   link.append("title")
         .text(function(d) { return "Prior disorder: " + d.source.name + "\n" + "Later disorder: " + d.target.name + "\n" + "Hazard Ratio: " + d.value });
 
+        svg.append("circle")
+          .attr("cx", 10)
+          .attr("cy", 10)
+          .attr("r", 100)
+
   // add in the nodes
   var node = svg.append("g").selectAll(".node")
       .data(graph.nodes)
     .enter().append("g")
       .attr("class", "node")
-      .attr("transform", function(d) {
-		  return "translate(" + d.x + "," + d.y + ")"; })
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
       .call(d3.drag()
         .subject(function(d) {
           return d;
@@ -220,14 +236,23 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
         })
         .on("drag", dragmove));
 
+
+
+
+
+
+
   // add the rectangles for the nodes
   node.append("rect")
       .attr("height", function(d) { return d.dy; })
       .attr("width", sankey.nodeWidth())
       .style("fill", function(d) { return d.color = myColor(myGroup(d.name)) })
       .style("stroke", function(d) {return d3.rgb(d.color).darker(2); })
+      .style("stroke-width", "0px")
     .append("title")
-      .text(function(d) { return d.name + "\n" + d.value });
+      .text(function(d) { return d.name + "\n" + d.value })
+
+
 
   // add in the title for the nodes
   node.append("text")
@@ -251,8 +276,13 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
                   0, Math.min(height - d.dy, d3.event.y))
                  ) + ")");
     sankey.relayout();
-    link.attr("d", path);
+    link.attr("d", sankey.link() );
   }
+
+  // function highlightLinks() {
+  //   console.log("ok")
+  // }
+
 });
 
 </script>
