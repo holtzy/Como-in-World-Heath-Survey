@@ -89,9 +89,9 @@
       <div class="col-md-3 my-auto">
         <h3>Visualizing flows</h3>
         <hr>
-        <p>In these graphs, we wish to explore the <u>bidirectional association</u> between pairs of disorders.</p>
-        <p>The results suggest that most temporally ordered disorder pairs have a bidirectional relationship - there is an increased risk of disorder regardless of temporal order.</p>
-        <p>However, some disorder pairs appeared to be quite symmetrical – we call these ‘mirror phenotypes’ – where it seems the risk of developing either disorder are similar regardless of which disorder comes first.</p>
+        <p>This Sankey diagram shows the associations between all possible combinations of mental disorders. Prior-disorders are represented on the left, while later-disorders are on the right</p>
+        <p>Click on a disorder to reveal how it is linked with other prior / later disorders. Hover a connection to get the exact values.</p>
+        <p>Note that you can filter to see other later or prior disorders.</p>
       </div>
       <div class="col-md-9">
         <center><div id="dropdown"></div></center>
@@ -112,16 +112,6 @@
   stroke-opacity: 1;
 }
 
-.node rect {
- cursor: move;
- fill-opacity: .9;
- shape-rendering: crispEdges;
-}
-
-.node text {
- pointer-events: none;
- text-shadow: 0 1px 0 #fff;
-}
 </style>
 
 
@@ -129,7 +119,7 @@
 <script>
 
 // set the dimensions and margins of the graph
-var margin = {top: 0, right: 200, bottom: 10, left: 200},
+var margin = {top: 60, right: 200, bottom: 10, left: 200},
     width = 850 - margin.left - margin.right,
     height = 1080 - margin.top - margin.bottom;
 
@@ -141,149 +131,159 @@ var svg = d3.select("#dataviz_sankey").append("svg")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
+// Append the 2 buttons on top of the Sankey diagram
+var selectPrior = d3.select("#dataviz_sankey")
+  .append('select')
+  	.attr('class','select')
+    //.on('change', updateChart )
 
-// load the data
-d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_sankey.csv", function(error, data) {
+var optionsPrior = selectPrior
+   .selectAll('optionPrior')
+ 	 .data(allGroup).enter()
+	.append('option')
+    .text(function (d) { return d; })
+    .attr("value", function (d) { return d; })
 
 
-  // --------------------------- //
-  // STEP 1: REFORMAT DATA
-  // --------------------------- //
+  // load the data
+  d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_sankey.csv", function(data) {
 
-  //var tokeep = ["Drug dependence", "Alcohol abuse", "Social phobia"]
-  //var data = data.filter(function(d,i){return tokeep.indexOf(d.Prior_disorder) >= 0 })
-  var data = data.filter(function(d){return myGroup(d.Prior_disorder) == "Mood disorder" })
-  var data = data.sort(function(a,b) { return d3.ascending(myGroup(a.Prior_disorder) , myGroup(b.Prior_disorder)) ||  d3.ascending(myGroup(a.Later_disorder) , myGroup(b.Later_disorder))})
 
-//set up a data structure in same style as original example but empty
-  graph = {"nodes" : [], "links" : []};
 
-  // Fill it reading csv lines one by one:
-  data
-  .forEach(function (d) {
-    graph.nodes.push({ "name": d.Prior_disorder });
-    graph.nodes.push({ "name": d.Later_disorder });
-    graph.links.push({ "source": d.Prior_disorder,
-                       "target": d.Later_disorder,
-                       "value": +d.HR });
-   });
+    // A function that build the sankey
+    function updateChart(data){
 
-  // return only the distinct / unique nodes
-  graph.nodes = d3.keys(d3.nest()
-    .key(function (d) { return d.name; })
-    .object(graph.nodes));
+    // --------------------------- //
+    // STEP 1: REFORMAT DATA
+    // --------------------------- //
 
-  // loop through each link replacing the text with its index from node
-  graph.links.forEach(function (d, i) {
-     graph.links[i].source = graph.nodes.indexOf(graph.links[i].source);
-     graph.links[i].target = graph.nodes.indexOf(graph.links[i].target);
+    //var tokeep = ["Drug dependence", "Alcohol abuse", "Social phobia"]
+    //var data = data.filter(function(d,i){return tokeep.indexOf(d.Prior_disorder) >= 0 })
+
+    // Recover the selected group
+    var selectValue = selectPrior.property("value")
+    console.log(selectValue)
+
+    // Filter: input is a specific group
+    var data = data.filter(function(d){console.log(d) ; return myGroup(d.Prior_disorder) == selectValue  })
+
+    // Sort data: group by group
+    var data = data.sort(function(a,b) { return d3.ascending(myGroup(a.Prior_disorder) , myGroup(b.Prior_disorder)) ||  d3.ascending(myGroup(a.Later_disorder) , myGroup(b.Later_disorder))})
+
+    //set up a data structure in same style as original example but empty
+    graph = {"nodes" : [], "links" : []};
+
+    // Fill it reading csv lines one by one:
+    data
+    .forEach(function (d) {
+      graph.nodes.push({ "name": d.Prior_disorder });
+      graph.nodes.push({ "name": d.Later_disorder });
+      graph.links.push({ "source": d.Prior_disorder,
+                         "target": d.Later_disorder,
+                         "value": +d.HR });
+     });
+
+    // return only the distinct / unique nodes
+    graph.nodes = d3.keys(d3.nest()
+      .key(function (d) { return d.name; })
+      .object(graph.nodes));
+
+    // loop through each link replacing the text with its index from node
+    graph.links.forEach(function (d, i) {
+       graph.links[i].source = graph.nodes.indexOf(graph.links[i].source);
+       graph.links[i].target = graph.nodes.indexOf(graph.links[i].target);
+    });
+
+    // now loop through each nodes to make nodes an array of objects
+    // rather than an array of strings
+    graph.nodes.forEach(function (d, i) {
+      graph.nodes[i] = { "name": d };
+    });
+
+
+
+
+
+    // --------------------------- //
+    // STEP 2: CREATE CHART
+    // --------------------------- //
+
+    // Initialize the sankey diagram
+    var sankey = d3.sankey()
+        .nodeWidth(10)
+        .nodePadding(4)
+        .size([width, height])
+        .nodes(graph.nodes)
+        .links(graph.links)
+        .layout(0) // Number of iteration to decide node position. If 0 -> keep initial order
+
+    // add in the links
+    var link = svg.append("g").selectAll(".link")
+        .data(graph.links)
+      .enter()
+      .append("path")
+        .attr("class", "link")
+        .attr("d", sankey.link() )
+        .style("stroke-width", function(d) { return Math.max(1, d.dy); })
+        .sort(function(a, b) { return b.dy - a.dy; })
+        //.on("click", highlightLinks)
+
+    // Tooltip of links
+    link.append("title")
+          .text(function(d) { return "Prior disorder: " + d.source.name + "\n" + "Later disorder: " + d.target.name + "\n" + "Hazard Ratio: " + d.value });
+
+    // add in the nodes
+    var node = svg.append("g").selectAll(".node")
+        .data(graph.nodes)
+      .enter().append("g")
+        .attr("class", "node")
+        .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+
+    // add the rectangles for the nodes
+    node.append("rect")
+        .attr("height", function(d) { return d.dy; })
+        .attr("width", sankey.nodeWidth())
+        .style("fill", function(d) { return d.color = myColor(myGroup(d.name)) })
+        .style("stroke", function(d) {return d3.rgb(d.color).darker(2); })
+        .style("stroke-width", "0px")
+        .on("click", highlightLinks)
+
+    // add in the title for the nodes
+    node.append("text")
+        .attr("x", 20)
+        .attr("y", function(d) { return d.dy / 2; })
+        .attr("dy", ".35em")
+        .attr("text-anchor", "start")
+        .attr("transform", null)
+        .text(function(d) { return d.name; })
+      .filter(function(d) { return d.x < width / 2; })
+        .attr("x", -20 + sankey.nodeWidth())
+        .attr("text-anchor", "end");
+
+    // A function that highlights the link of a group
+    function highlightLinks(d) {
+      //selected = d3.select(this).attr("id")
+      //console.log(selected)
+      link.style("stroke-opacity", function(l) {
+          if (l.source.name == d.name || l.target.name == d.name) {
+              return 0.6;
+          }
+          else
+              return 0.02;
+      });
+    }
+
+    // Close the updateChart function
+    }
+
+    // Initialize chart
+    updateChart(data)
+
+
+  // Close the read csv
   });
 
-  // now loop through each nodes to make nodes an array of objects
-  // rather than an array of strings
-  graph.nodes.forEach(function (d, i) {
-    graph.nodes[i] = { "name": d };
-  });
 
-
-
-
-
-  // --------------------------- //
-  // STEP 2: CREATE CHART
-  // --------------------------- //
-
-  // Initialize the sankey diagram
-  var sankey = d3.sankey()
-      .nodeWidth(10)
-      .nodePadding(4)
-      .size([width, height])
-      .nodes(graph.nodes)
-      .links(graph.links)
-      .layout(0) // Number of iteration to decide node position. If 0 -> keep initial order
-
-  // add in the links
-  var link = svg.append("g").selectAll(".link")
-      .data(graph.links)
-    .enter()
-    .append("path")
-      .attr("class", "link")
-      .attr("d", sankey.link() )
-      .style("stroke-width", function(d) { return Math.max(1, d.dy); })
-      .sort(function(a, b) { return b.dy - a.dy; });
-
-  // Tooltip of links
-  link.append("title")
-        .text(function(d) { return "Prior disorder: " + d.source.name + "\n" + "Later disorder: " + d.target.name + "\n" + "Hazard Ratio: " + d.value });
-
-        svg.append("circle")
-          .attr("cx", 10)
-          .attr("cy", 10)
-          .attr("r", 100)
-
-  // add in the nodes
-  var node = svg.append("g").selectAll(".node")
-      .data(graph.nodes)
-    .enter().append("g")
-      .attr("class", "node")
-      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
-      .call(d3.drag()
-        .subject(function(d) {
-          return d;
-        })
-        .on("start", function() {
-          this.parentNode.appendChild(this);
-        })
-        .on("drag", dragmove));
-
-
-
-
-
-
-
-  // add the rectangles for the nodes
-  node.append("rect")
-      .attr("height", function(d) { return d.dy; })
-      .attr("width", sankey.nodeWidth())
-      .style("fill", function(d) { return d.color = myColor(myGroup(d.name)) })
-      .style("stroke", function(d) {return d3.rgb(d.color).darker(2); })
-      .style("stroke-width", "0px")
-    .append("title")
-      .text(function(d) { return d.name + "\n" + d.value })
-
-
-
-  // add in the title for the nodes
-  node.append("text")
-      .attr("x", 20)
-      .attr("y", function(d) { return d.dy / 2; })
-      .attr("dy", ".35em")
-      .attr("text-anchor", "start")
-      .attr("transform", null)
-      .text(function(d) { return d.name; })
-    .filter(function(d) { return d.x < width / 2; })
-      .attr("x", -20 + sankey.nodeWidth())
-      .attr("text-anchor", "end");
-
-  // the function for moving the nodes
-  function dragmove(d) {
-    d3.select(this)
-      .attr("transform",
-            "translate("
-               + d.x + ","
-               + (d.y = Math.max(
-                  0, Math.min(height - d.dy, d3.event.y))
-                 ) + ")");
-    sankey.relayout();
-    link.attr("d", sankey.link() );
-  }
-
-  // function highlightLinks() {
-  //   console.log("ok")
-  // }
-
-});
 
 </script>
 
