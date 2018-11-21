@@ -37,6 +37,9 @@
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
+    <!-- general environment -->
+    <script src="js/general_variable.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -44,15 +47,40 @@
 
 
 
+  <!-- =======================  MAIN MENU ON TOP ======================= -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+      <a href="index.html">HOME</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="map.html">Map</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="beeswarm.html">Distribution</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="heatmap.html">Heatmap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="barplot.html">Symmetry</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sankey.html">Sankey</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-<!-- =======================  MENU AND SIDE ARROW ======================= -->
 
 
-<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-  <div class="container">
-    <a href="index.html">&larr; Home</a>
-  </div>
-</nav>
+
+<!-- =======================  SIDE ARROW ======================= -->
 
 <a class="btn btn-primary leftLink" href="beeswarm.html">&#x2039; Distribution</a>
 <a class="btn btn-primary rightLink" href="barplot.html">Symmetry &#x203A;</a>
@@ -99,9 +127,9 @@
 
 <script>
 // set the dimensions and margins of the graph
-var margin = {top: 80, right: 25, bottom: 150, left: 180},
-  width = 800 - margin.left - margin.right,
-  height = 800 - margin.top - margin.bottom;
+var margin = {top: 80, right: 25, bottom: 180, left: 210},
+  width = 840 - margin.left - margin.right,
+  height = 840 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg_heatmap = d3.select("#dataviz_heatmap")
@@ -115,45 +143,30 @@ var svg_heatmap = d3.select("#dataviz_heatmap")
 //Read the data
 d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QBI/data.csv", function(data) {
 
-  // Labels of row and columns -> unique identifier of the column called 'group' and 'variable'
-  var myPrior = d3.map(data, function(d){return d.Prior_disorder;}).keys()
-  var myLater = d3.map(data, function(d){return d.Later_disorder;}).keys()
-
   // Build X scales and axis:
   var x = d3.scaleBand()
     .range([ 0, width ])
-    .domain(myPrior)
+    .domain(allDisorder)
     .padding(0.05);
-  var xAxis = svg_heatmap.append("g")
-    .style("font-size", 15)
-    .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x).tickSize(0))
-  xAxis.select(".domain").remove()
-  xAxis.selectAll("text")
-      .attr("transform", "translate(-10,10)rotate(-45)")
-      .style("text-anchor", "end")
-      .style("font-size", 11)
-      .style("fill", "grey")
 
   // Build Y scales and axis:
   var y = d3.scaleBand()
     .range([ height, 0 ])
-    .domain(myLater)
+    .domain(allDisorder)
     .padding(0.05);
-  var yAxis = svg_heatmap.append("g")
-    .style("font-size", 15)
-    .call(d3.axisLeft(y).tickSize(0))
-  yAxis.select(".domain").remove()
-  yAxis.selectAll("text")
-    .attr("transform", "translate(-10,0)")
-    .style("text-anchor", "end")
-    .style("font-size", 11)
-    .style("fill", "grey")
 
   // Build color scale
-  var myColor = d3.scaleSequential()
+  var myColor2 = d3.scaleSequential()
     .interpolator(d3.interpolateInferno)
     .domain([0,10])
+
+  // A scale to add padding between groups
+  var myPadding = d3.scaleOrdinal()
+    .domain(allGroup)
+    .range([0, 10, 20, 30]);
+  var myPaddingY = d3.scaleOrdinal()
+    .domain(allGroup)
+    .range([30, 20, 10, 0]);
 
   // create a tooltip
   var tooltip = d3.select("#dataviz_heatmap")
@@ -185,18 +198,43 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
       .style("opacity", 0)
   }
 
+  // add the X Labels
+  var xLabels = svg_heatmap.selectAll("Xlabels")
+    .data(allDisorder)
+    .enter()
+    .append("text")
+      .text(function(d){ return d})
+      .attr("x", 0)
+      .attr("y", 0)
+      .style("font-size", 12)
+      .style("text-anchor", "end")
+      .style("fill", function(d){ return( myColor(myGroup(d)) ) })
+      .attr("transform", function(d){ return( "translate(" + (x(d) + myPadding(myGroup(d)) + 18) + "," + (height+41) + ")rotate(-45)")})
+
+  // add the Y Labels
+  svg_heatmap.selectAll("Ylabels")
+    .data(allDisorder)
+    .enter()
+    .append("text")
+      .text(function(d){ return d})
+      .attr("x", -10 )
+      .attr("y", function(d) { return (y(d) + myPaddingY(myGroup(d)) + 15) })
+      .style("font-size", 12)
+      .style("text-anchor", "end")
+      .style("fill", function(d){ return( myColor(myGroup(d)) ) })
+
   // add the squares
   svg_heatmap.selectAll()
     .data(data, function(d) {return d.Prior_disorder+':'+d.Later_disorder;})
     .enter()
     .append("rect")
-      .attr("x", function(d) { return x(d.Prior_disorder) })
-      .attr("y", function(d) { return y(d.Later_disorder) })
+      .attr("x", function(d) { return (x(d.Prior_disorder) + myPadding(myGroup(d.Prior_disorder))) })
+      .attr("y", function(d) { console.log(d.Later_disorder) ; console.log(y(d.Later_disorder)) ; return (y(d.Later_disorder) + myPaddingY(myGroup(d.Later_disorder))) })
       .attr("rx", 0)
       .attr("ry", 0)
       .attr("width", 0 )
       .attr("height", 0 )
-      .style("fill", function(d) { return myColor(d.HR)} )
+      .style("fill", function(d) { return myColor2(d.HR)} )
       .style("stroke-width", 4)
       .style("stroke", "none")
       .style("opacity", 0.8)
@@ -301,14 +339,8 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Contact form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
     <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
-    <script src="js/portfolio.js"></script>
-    <script src="js/tree.js"></script>
 
     <!-- Load d3.js -->
     <script src="https://d3js.org/d3.v4.min.js"></script>

@@ -4,6 +4,21 @@
 # ----------
 
 library(tidyverse)
+setwd("/Users/y.holtz/Dropbox/QBI/22_WORLD_HEALTH_SURVEY/Como-in-World-Heath-Survey/DATA")
+
+
+# ----------
+# General changes necessary for all charts
+# ----------
+
+data <- read.table("data.csv", header=T, sep=",")
+
+# Replace IED by Intermittent explosive disorder
+data <- data %>% mutate(Later_disorder = gsub("IED", "Intermittent explosive disorder", Later_disorder))
+
+# Save
+write.table(data, file="data_clean.csv", quote=F, row.names=F, sep=",")
+
 
 
 
@@ -33,6 +48,34 @@ write.table(tmp, file="data_sankey.csv", quote=F, row.names=F, sep=",")
 
 
 
+
+# ----------
+# Preparation for symmetry chart
+# ----------
+
+# Read data
+data <- read.table("data.csv", header=T, sep=",")
+
+# Watch an example
+couple = c("Alcohol dependence", "Drug dependence")
+data %>% filter(Later_disorder %in% couple & Prior_disorder %in% couple)
+
+# Merge with opposite direction
+tmp <- merge(data, data, by.x=c("Prior_disorder", "Later_disorder"), by.y=c("Later_disorder", "Prior_disorder")) %>%
+  mutate(coefVar = (HR.y - HR.x) / max(c(HR.y, HR.x)) * 100)
+tmp %>% filter(Later_disorder %in% couple & Prior_disorder %in% couple)
+
+# Clean
+dataReady <- tmp %>% select(-7, -8, -9, -10)
+colnames(dataReady) <- c(colnames(data), "coefvar")
+dataReady %>% head()
+
+# Highest one?
+dataReady %>% arrange(coefvar) %>% head()
+dataReady %>% arrange(coefvar) %>% tail()
+
+# Export
+write.table(dataReady, file="data_bar.csv", quote=F, row.names=F, sep=",")
 
 
 # ----------

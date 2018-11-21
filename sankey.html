@@ -48,17 +48,46 @@
 
 
 
-<!-- =======================  MENU AND SIDE ARROW ======================= -->
+
+  <!-- =======================  MAIN MENU ON TOP ======================= -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+      <a href="index.html">HOME</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="map.html">Map</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="beeswarm.html">Distribution</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="heatmap.html">Heatmap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="barplot.html">Symmetry</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="sankey.html">Sankey</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 
-<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-  <div class="container">
-    <a href="index.html">&larr; Home</a>
-  </div>
-</nav>
 
-<a class="btn btn-primary leftLink" href="heatmap.html">&#x2039; Heatmap</a>
-<a class="btn btn-primary rightLink" href="">Next &#x203A;</a>
+
+
+
+  <!-- =======================  MENU AND SIDE ARROW ======================= -->
+
+  <a class="btn btn-primary leftLink" href="heatmap.html">&#x2039; Heatmap</a>
+  <a class="btn btn-primary rightLink" href="">Next &#x203A;</a>
 
 
 
@@ -78,12 +107,14 @@
 
 <!-- =======================  SECTION BARPLOT ======================= -->
 
-<section id="symetry" class="bg" style="padding-top: 70px">
+<section id="symetry" class="bg">
 
   <div class="container" style="position: relative;">
 
     <a href="beeswarm.html" class="left_arrow"><span class="left"></span></a>
     <a href="heatmap.html" class="right_arrow"><span class="right"></span></a>
+
+
 
     <div class="row">
       <div class="col-md-3 my-auto">
@@ -94,7 +125,6 @@
         <p>Note that you can filter to see other later or prior disorders.</p>
       </div>
       <div class="col-md-9">
-        <center><div id="dropdown"></div></center>
         <div id="dataviz_sankey"></div>
       </div>
   </div>
@@ -111,12 +141,32 @@
 .link:hover {
   stroke-opacity: 1;
 }
-
+.groupChoice {
+  border: #DE4938;
+  border-bottom: solid;
+  border-top: none;
+  background-color: white;
+  width: 220px;
+  margin-left: 100px;
+  color: #DE4938;
+}
 </style>
 
 
 
 <script>
+
+// Append the button to select prior disorder
+var selectPrior = d3.select("#dataviz_sankey")
+  .append('select')
+  .attr("class", "groupChoice")
+var optionsPrior = selectPrior
+   .selectAll('optionPrior')
+ 	 .data(allGroup)
+   .enter()
+	 .append('option')
+      .text(function (d) { return d; })
+      .attr("value", function (d) { return d; })
 
 // set the dimensions and margins of the graph
 var margin = {top: 60, right: 200, bottom: 10, left: 200},
@@ -131,41 +181,24 @@ var svg = d3.select("#dataviz_sankey").append("svg")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-// Append the 2 buttons on top of the Sankey diagram
-var selectPrior = d3.select("#dataviz_sankey")
-  .append('select')
-  	.attr('class','select')
-    //.on('change', updateChart )
-
-var optionsPrior = selectPrior
-   .selectAll('optionPrior')
- 	 .data(allGroup).enter()
-	.append('option')
-    .text(function (d) { return d; })
-    .attr("value", function (d) { return d; })
 
 
-  // load the data
-  d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_sankey.csv", function(data) {
+// load the data
+d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_sankey.csv", function(data) {
 
 
+  // ------------------------------------------------------------------------ //
+  // STEP 1: A FUNCTION THAT PREPARES DATA : FILTERING + SANKEY FORMAT
+  // ------------------------------------------------------------------------ //
+  function prepareData(data){
 
-    // A function that build the sankey
-    function updateChart(data){
-
-    // --------------------------- //
-    // STEP 1: REFORMAT DATA
-    // --------------------------- //
-
-    //var tokeep = ["Drug dependence", "Alcohol abuse", "Social phobia"]
-    //var data = data.filter(function(d,i){return tokeep.indexOf(d.Prior_disorder) >= 0 })
+    console.log("start data preparation")
 
     // Recover the selected group
     var selectValue = selectPrior.property("value")
-    console.log(selectValue)
 
     // Filter: input is a specific group
-    var data = data.filter(function(d){console.log(d) ; return myGroup(d.Prior_disorder) == selectValue  })
+    var data = data.filter(function(d){ return myGroup(d.Prior_disorder) == selectValue  })
 
     // Sort data: group by group
     var data = data.sort(function(a,b) { return d3.ascending(myGroup(a.Prior_disorder) , myGroup(b.Prior_disorder)) ||  d3.ascending(myGroup(a.Later_disorder) , myGroup(b.Later_disorder))})
@@ -200,84 +233,112 @@ var optionsPrior = selectPrior
       graph.nodes[i] = { "name": d };
     });
 
+    console.log("data prep OK")
+
+    // Return the graph object
+    return graph
+
+  }
+
 
 
 
 
     // --------------------------- //
-    // STEP 2: CREATE CHART
+    // STEP 2: A FUNCTION THAT BUILD THE SANKEY DIAGRAM
     // --------------------------- //
 
-    // Initialize the sankey diagram
-    var sankey = d3.sankey()
-        .nodeWidth(10)
-        .nodePadding(4)
-        .size([width, height])
-        .nodes(graph.nodes)
-        .links(graph.links)
-        .layout(0) // Number of iteration to decide node position. If 0 -> keep initial order
+    function createChart(graph){
 
-    // add in the links
-    var link = svg.append("g").selectAll(".link")
-        .data(graph.links)
-      .enter()
-      .append("path")
-        .attr("class", "link")
-        .attr("d", sankey.link() )
-        .style("stroke-width", function(d) { return Math.max(1, d.dy); })
-        .sort(function(a, b) { return b.dy - a.dy; })
-        //.on("click", highlightLinks)
+      console.log("start chart initialization")
 
-    // Tooltip of links
-    link.append("title")
-          .text(function(d) { return "Prior disorder: " + d.source.name + "\n" + "Later disorder: " + d.target.name + "\n" + "Hazard Ratio: " + d.value });
+      // Start by removing previous chart? --> Would be better with a transition, but can't figure out how to do it.
+      svg.selectAll("rect").remove()
+      svg.selectAll("path").remove()
+      svg.selectAll("text").remove()
 
-    // add in the nodes
-    var node = svg.append("g").selectAll(".node")
-        .data(graph.nodes)
-      .enter().append("g")
-        .attr("class", "node")
-        .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+      // Initialize the sankey diagram
+      var sankey = d3.sankey()
+          .nodeWidth(10)
+          .nodePadding(4)
+          .size([width, height])
+          .nodes(graph.nodes)
+          .links(graph.links)
+          .layout(0) // Number of iteration to decide node position. If 0 -> keep initial order
 
-    // add the rectangles for the nodes
-    node.append("rect")
-        .attr("height", function(d) { return d.dy; })
-        .attr("width", sankey.nodeWidth())
-        .style("fill", function(d) { return d.color = myColor(myGroup(d.name)) })
-        .style("stroke", function(d) {return d3.rgb(d.color).darker(2); })
-        .style("stroke-width", "0px")
-        .on("click", highlightLinks)
+      // add in the links
+      var link = svg.append("g").selectAll(".link")
+          .data(graph.links)
+        .enter()
+        .append("path")
+          .attr("class", "link")
+          .attr("d", sankey.link() )
+          .style("stroke-width", function(d) { return Math.max(1, d.dy); })
+          .sort(function(a, b) { return b.dy - a.dy; })
 
-    // add in the title for the nodes
-    node.append("text")
-        .attr("x", 20)
-        .attr("y", function(d) { return d.dy / 2; })
-        .attr("dy", ".35em")
-        .attr("text-anchor", "start")
-        .attr("transform", null)
-        .text(function(d) { return d.name; })
-      .filter(function(d) { return d.x < width / 2; })
-        .attr("x", -20 + sankey.nodeWidth())
-        .attr("text-anchor", "end");
+      // Tooltip of links
+      link.append("title")
+            .text(function(d) { return "Prior disorder: " + d.source.name + "\n" + "Later disorder: " + d.target.name + "\n" + "Hazard Ratio: " + d.value });
 
-    // A function that highlights the link of a group
-    function highlightLinks(d) {
-      //selected = d3.select(this).attr("id")
-      //console.log(selected)
-      link.style("stroke-opacity", function(l) {
-          if (l.source.name == d.name || l.target.name == d.name) {
-              return 0.6;
-          }
-          else
-              return 0.02;
-      });
+      // add in the nodes
+      var node = svg.append("g").selectAll(".node")
+          .data(graph.nodes)
+        .enter().append("g")
+          .attr("class", "node")
+          .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+
+      // add the rectangles for the nodes
+      node.append("rect")
+          .attr("height", function(d) { return d.dy; })
+          .attr("width", sankey.nodeWidth())
+          .style("fill", function(d) { return d.color = myColor(myGroup(d.name)) })
+          .style("stroke", function(d) {return d3.rgb(d.color).darker(2); })
+          .style("stroke-width", "0px")
+          .on("click", highlightLinks)
+          .on("mouseover", function(d) {d3.select(this).style("cursor", "pointer")})
+
+      // add in the title for the nodes
+      node.append("text")
+          .attr("x", 20)
+          .attr("y", function(d) { return d.dy / 2; })
+          .attr("dy", ".35em")
+          .attr("text-anchor", "start")
+          .attr("transform", null)
+          .text(function(d) { return d.name; })
+          .on("click", highlightLinks)
+          .on("mouseover", function(d) {d3.select(this).style("cursor", "pointer")})
+        .filter(function(d) { return d.x < width / 2; })
+          .attr("x", -20 + sankey.nodeWidth())
+          .attr("text-anchor", "end")
+
+      // A function that highlights the link of a group
+      function highlightLinks(d) {
+        link.style("stroke-opacity", function(l) {
+            if (l.source.name == d.name || l.target.name == d.name) { return 0.6; } else {return 0.02} ;
+        });
+      }
+
+      console.log("chart initialization ok")
+
+    // Close the createChart function
     }
 
-    // Close the updateChart function
-    }
+
+
+
+    // ----------------------------------------------------------------------- //
+    // STEP 3: RUN THE FUNCTIONS
+    // ----------------------------------------------------------------------- //
 
     // Initialize chart
-    updateChart(data)
+    graph = prepareData(data)
+    createChart(graph)
+
+    // Event listener to the button --> updateChart
+    selectPrior.on("change", function(){
+      graph = prepareData(data)
+      createChart(graph)
+    })
 
 
   // Close the read csv

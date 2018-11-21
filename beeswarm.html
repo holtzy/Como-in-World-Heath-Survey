@@ -47,16 +47,42 @@
 
 
 
-
-<!-- =======================  MENU AND SIDE ARROW ======================= -->
-
-
+<!-- =======================  MAIN MENU ON TOP ======================= -->
 <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
   <div class="container">
-    <a href="index.html">&larr; Home</a>
+    <a href="index.html">HOME</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav text-uppercase ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="map.html">Map</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="beeswarm.html">Distribution</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="heatmap.html">Heatmap</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="barplot.html">Symmetry</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sankey.html">Sankey</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
+
+
+
+
+
+<!-- =======================  SIDE ARROW ======================= -->
 <a class="btn btn-primary leftLink" href="map.html">&#x2039; Map</a>
 <a class="btn btn-primary rightLink" href="heatmap.html">Heatmap &#x203A;</a>
 
@@ -165,10 +191,11 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
 
   // Three function that change the tooltip when user hover / move / leave a cell
   var mouseover = function(d) {
+    console.log("yoo");
     tooltip
       .transition()
       .duration(200)
-      .style("opacity", 1)
+      .style("opacity", 1);
     tooltip
       .style("left", (d3.mouse(this)[0]+70) + "px")
       .style("top", (d3.mouse(this)[1]) + "px")
@@ -208,6 +235,9 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
 
     u1.enter()
       .append("circle")
+      .on("mouseover", mouseover)
+      .on("mousemove", mousemove)
+      .on("mouseleave", mouseleave)
       .merge(u1)
       .transition()
       .duration(1000)
@@ -216,9 +246,6 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
         .attr("cy", function(d) { return y(+d.yPrim) })
         .style("fill", function(d){ return myColor(d.HR)})
         .style("opacity", "0.5")
-      // .on("mouseover", mouseover)
-      // .on("mousemove", mousemove)
-      // .on("mouseleave", mouseleave)
   }
 
   // Initialize
@@ -392,14 +419,8 @@ function type(d) {
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Contact form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
     <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
-    <script src="js/portfolio.js"></script>
-    <script src="js/tree.js"></script>
 
     <!-- Load d3.js -->
     <script src="https://d3js.org/d3.v4.min.js"></script>

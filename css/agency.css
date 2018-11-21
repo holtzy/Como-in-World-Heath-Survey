@@ -102,6 +102,10 @@ u {
   top: 50%;
 }
 
+@media (max-width: 1400px) {
+  .leftLink { display: none  }
+  .rightLink { display: none  }
+}
 
 
 
