@@ -100,16 +100,14 @@
 
 <!-- =======================  SECTION HEATMAP ======================= -->
 
-<!-- =======================  SECTION DOTPLOT ======================= -->
-
 <section id="part2">
   <div class="container">
 
     <div class="row">
       <div class="col-md-7 mx-auto" style="text-align: center">
-        <h3>Como is pervasive</h3>
+        <h3>Links between groups</h3>
         <hr style="max-width: 100px">
-        <p>We estimated hazard ratios between each pair of disorders. Note that most of the estimates are over 1, meaning that being diagnosed with one of the disorders increased the risk of a subsequent diagnosis with each of the other disorders.</p>
+        <p>The following heatmap allows to highlight relationships <u>between</u> the four main groups of our analysis. For instance, it appears that comorbidity is very strong between substance-use disorders. </p>
       </div>
     </div>
 
@@ -127,8 +125,8 @@
 
 <script>
 // set the dimensions and margins of the graph
-var margin = {top: 80, right: 25, bottom: 180, left: 210},
-  width = 840 - margin.left - margin.right,
+var margin = {top: 80, right: 210, bottom: 180, left: 210},
+  width = 1040 - margin.left - margin.right,
   height = 840 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -141,9 +139,9 @@ var svg_heatmap = d3.select("#dataviz_heatmap")
         "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
-d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QBI/data.csv", function(data) {
+d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QBI/data_clean.csv", function(data) {
 
-  
+
   // Build X scales and axis:
   var x = d3.scaleBand()
     .range([ 0, width ])

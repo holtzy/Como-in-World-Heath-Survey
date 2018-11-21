@@ -86,8 +86,7 @@
 
   <!-- =======================  MENU AND SIDE ARROW ======================= -->
 
-  <a class="btn btn-primary leftLink" href="heatmap.html">&#x2039; Heatmap</a>
-  <a class="btn btn-primary rightLink" href="">Next &#x203A;</a>
+  <a class="btn btn-primary leftLink" href="barplot.html">&#x2039; barplot</a>
 
 
 
@@ -105,7 +104,7 @@
 
 
 
-<!-- =======================  SECTION BARPLOT ======================= -->
+<!-- =======================  SECTION SANKEY ======================= -->
 
 <section id="symetry" class="bg">
 
@@ -120,7 +119,7 @@
       <div class="col-md-3 my-auto">
         <h3>Visualizing flows</h3>
         <hr>
-        <p>This Sankey diagram shows the associations between all possible combinations of mental disorders. Prior-disorders are represented on the left, while later-disorders are on the right</p>
+        <p>This Sankey diagram shows the associations between all possible combinations of mental disorders. <u>Prior-disorders</u> are represented on the left, while <u>later-disorders</u> are on the right</p>
         <p>Click on a disorder to reveal how it is linked with other prior / later disorders. Hover a connection to get the exact values.</p>
         <p>Note that you can filter to see other later or prior disorders.</p>
       </div>
@@ -169,7 +168,7 @@ var optionsPrior = selectPrior
       .attr("value", function (d) { return d; })
 
 // set the dimensions and margins of the graph
-var margin = {top: 60, right: 200, bottom: 10, left: 200},
+var margin = {top: 60, right: 200, bottom: 150, left: 200},
     width = 850 - margin.left - margin.right,
     height = 1080 - margin.top - margin.bottom;
 
@@ -180,6 +179,7 @@ var svg = d3.select("#dataviz_sankey").append("svg")
   .append("g")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
+
 
 
 
@@ -256,6 +256,35 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
       svg.selectAll("rect").remove()
       svg.selectAll("path").remove()
       svg.selectAll("text").remove()
+
+      // Explain HR = 1
+      svg
+        .append("text")
+          .attr("class", "textExplanation")
+          .attr("text-anchor", "middle")
+          .style("fill", "#B8B8B8")
+          .attr("x", width/2)
+          .attr("y", height + 40)
+          .attr("width", 90)
+          .html("Click on a disorder to highlight")
+      svg
+        .append("text")
+          .attr("class", "textExplanation")
+          .attr("text-anchor", "middle")
+          .style("fill", "#B8B8B8")
+          .attr("x", width/2)
+          .attr("y", height + 40 + 20)
+          .attr("width", 90)
+          .html("it. Hover connection to get exact")
+      svg
+        .append("text")
+          .attr("class", "textExplanation")
+          .attr("text-anchor", "middle")
+          .style("fill", "#B8B8B8")
+          .attr("x", width/2)
+          .attr("y", height + 40 + 20*2)
+          .attr("width", 90)
+          .html("values.")
 
       // Initialize the sankey diagram
       var sankey = d3.sankey()

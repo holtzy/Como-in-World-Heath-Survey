@@ -107,12 +107,12 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-md-3 mx-auto" id="dataviz_dotplot"></div>
-      <div class="col-md-7 mx-auto" style="text-align: right">
+      <div class="col-md-3 mx-auto" id="dataviz_dotplot" style="padding-top: 100px"></div>
+      <div class="col-md-7 mx-auto" style="text-align: right; height: 400px">
         <h3>Como is pervasive</h3>
         <hr>
         <p>We estimated <u>hazard ratios</u> between each pair of disorders. Most of the estimates are <u>over 1</u>, meaning that being diagnosed with one of the disorders increased the risk of a subsequent diagnosis with each of the other disorders.</p>
-        <p><u>Note</u>: A few extreme hazard ratio were observed<br>between disorders intrinsically linked together. <span id="fullScale">Show them</span>.</p>
+        <p><u>Note</u>: A few extreme hazard ratio were observed<br>between disorders intrinsically linked together. <span style="color: #DE4938" id="showExtreme">Show them</span>.</p>
       </div>
     </div>
 
@@ -128,8 +128,8 @@
 <script>
 
 // set the dimensions and margins of the graph
-var margin = {top: 80, right: 25, bottom: 50, left: 25},
-  width = 980 - margin.left - margin.right,
+var margin = {top: 80, right: 25, bottom: 50, left: 175},
+  width = 1180 - margin.left - margin.right,
   height = 750 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -142,19 +142,24 @@ var svg_dotplot = d3.select("#dataviz_dotplot")
         "translate(" + margin.left + "," + margin.top + ")");
 
 
-d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QBI/data_test.csv", type, function(data) {
+d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QBI/data_test.csv", function(data) {
 
+
+
+  // ------------------------------------------------------------------------ //
+  // BACKGROUND CHART INITIALIZATION
+  // ------------------------------------------------------------------------ //
 
   // compute X scale and add axis
   var x = d3.scaleLinear()
       .range([0,width])
-      //.rangeRound([0, width])
-      //.domain(d3.extent(data, function(d) { return +d.HR; }));
-      .domain([0,10]);
+      .domain([0,20])
   var xAxis = svg_dotplot.append("g")
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x).ticks(10, ".0s"));
+
+  // Add X axis title
   xAxis.append("text")
     .attr("x", width)
     .attr("y", 40)
@@ -162,7 +167,6 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
     .attr("text-anchor", "end")
     .attr("font-size", "14px")
     .text("Hazard ratio");
-
 
   // compute Y scale
   var y = d3.scaleLinear()
@@ -174,13 +178,52 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
     .interpolator(d3.interpolateInferno)
     .domain([0,20])
 
-  //SHOW HR = 1 ------
+  // SHOW HR = 1 ------
   var verticalLine = svg_dotplot
     .append("line")
-    .attr("y1", 0)
-    .attr("y2", height)
-    .style("stroke", "red")
-    .style("opacity", 0.4)
+      .attr("y1", 0)
+      .attr("y2", height)
+      .attr("x1", x(1) )
+      .attr("x2", x(1) )
+      .style("stroke", "red")
+      .style("stroke-width", 1.7)
+      .style("opacity", 0.4)
+
+  // Explain HR = 1
+  svg_dotplot
+    .append("text")
+      .attr("class", "textExplanation")
+      .attr("text-anchor", "end")
+      .style("fill", "#B8B8B8")
+      .attr("x", x(1)-9)
+      .attr("y", 20)
+      .attr("width", 90)
+      .html("Without any comorbidity one would")
+  svg_dotplot
+    .append("text")
+      .attr("class", "textExplanation")
+      .attr("text-anchor", "end")
+      .style("fill", "#B8B8B8")
+      .attr("x", x(1)-9)
+      .attr("y", 20+20)
+      .attr("width", 90)
+      .html("expect a hazar ratio of 1, represented")
+  svg_dotplot
+    .append("text")
+      .attr("class", "textExplanation")
+      .attr("text-anchor", "end")
+      .style("fill", "#B8B8B8")
+      .attr("x", x(1)-9)
+      .attr("y", 20+20*2)
+      .attr("width", 90)
+      .html("by this verticla bar")
+
+
+
+
+  // ------------------------------------------------------------------------ //
+  // TOOLTIP CREATION
+  // ------------------------------------------------------------------------ //
 
   // Create tooltip
   var tooltip = d3.select("#dataviz_dotplot")
@@ -191,20 +234,19 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
 
   // Three function that change the tooltip when user hover / move / leave a cell
   var mouseover = function(d) {
-    console.log("yoo");
     tooltip
       .transition()
       .duration(200)
       .style("opacity", 1);
     tooltip
       .style("left", (d3.mouse(this)[0]+70) + "px")
-      .style("top", (d3.mouse(this)[1]) + "px")
+      .style("top", (d3.mouse(this)[1]+30) + "px")
       .html("<span style='color:grey'>Prior disorder: </span>" + d.Prior_disorder + "<br>" + "<span style='color:grey'>Later disorder: </span>" + d.Later_disorder + "<br>" + "HR: " + d.HR + " [" + d.Lower_CL + "-" + d.Upper_CL + "]") // + d.Prior_disorder + "<br>" + "HR: " +  d.HR)
     }
   var mousemove = function(d) {
     tooltip
       .style("left", (d3.mouse(this)[0]+70) + "px")
-      .style("top", (d3.mouse(this)[1]) + "px")
+      .style("top", (d3.mouse(this)[1]+30) + "px")
   }
   var mouseleave = function(d) {
     tooltip
@@ -213,6 +255,31 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
       .style("opacity", 0)
   }
 
+
+  // ------------------------------------------------------------------------ //
+  // INITIALIZE CHART WITH DOTS AT Y=0
+  // ------------------------------------------------------------------------ //
+
+  svg_dotplot.selectAll(".circle")
+    .data(data)
+    .enter()
+      .append("circle")
+        .attr("class", "circle")
+        .attr("r", 7)
+        .attr("cx", function(d) { return x(+d.HR_rounded); })
+        .attr("cy", function(d) { return y(10) })
+        .style("fill", function(d){ return myColor(d.HR)})
+        .style("opacity", "0.9")
+        .style("stroke", function(d){if(d.HR>20){return "black"}else{return "none"} } )
+        .style("stroke-width", "3px")
+      .on("mouseover", mouseover)
+      .on("mousemove", mousemove)
+      .on("mouseleave", mouseleave)
+
+
+  // ------------------------------------------------------------------------ //
+  // A FUNCTION TO CHANGE THE X LIMIT
+  // ------------------------------------------------------------------------ //
 
   // UPDATE FUNCTION
   function update(myYlim) {
@@ -230,37 +297,41 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
       .attr("x2", x(1))
 
     // Update the circle
-    var u1 = svg_dotplot.selectAll(".circle")
-      .data(data)
-
-    u1.enter()
-      .append("circle")
-      .on("mouseover", mouseover)
-      .on("mousemove", mousemove)
-      .on("mouseleave", mouseleave)
-      .merge(u1)
+    svg_dotplot
+      .selectAll(".circle")
       .transition()
-      .duration(1000)
-        .attr("r", 7)
+      .delay(500)
+      .duration(2000)
         .attr("cx", function(d) { return x(+d.HR_rounded); })
         .attr("cy", function(d) { return y(+d.yPrim) })
-        .style("fill", function(d){ return myColor(d.HR)})
-        .style("opacity", "0.5")
   }
 
   // Initialize
   update(20)
 
+  // If reader clicks on 'show extreme' --> Change axis limit
+  var mode = "normal"
+  d3.select("#showExtreme")
+    .on("click", function(){
+      if( mode == "normal"){
+        update(200)
+        d3.selectAll(".textExplanation").transition().duration(1000).style("display", "none")
+        d3.select("#showExtreme").text("back to normal")
+        mode = "extreme"
+      } else {
+        mode = "normal"
+        update(20)
+        d3.selectAll(".textExplanation").transition().delay(1000).style("display", "block")
+        d3.select("#showExtreme").text("Show them")
+      }
+    })
+
+
+
 });
 
 
-// Function to read data properly -> Probably useless
-function type(d) {
-  if (!d.HR) return;
-  d.HR_rounded = +d.HR_rounded;
-  d.yPrim = +d.yPrim;
-  return d;
-}
+
 
 
 </script>

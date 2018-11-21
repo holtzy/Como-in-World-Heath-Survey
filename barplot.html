@@ -82,7 +82,7 @@
 
 <!-- =======================  MENU AND SIDE ARROW ======================= -->
 <a class="btn btn-primary leftLink" href="heatmap.html">&#x2039; Heatmap</a>
-<a class="btn btn-primary rightLink" href="">Next &#x203A;</a>
+<a class="btn btn-primary rightLink" href="sankey.html">Sankey &#x203A;</a>
 
 
 
@@ -150,10 +150,10 @@
 // ------------------- //
 
 // set the dimensions and margins of the graph
-var margin = {top: 80, right: 0, bottom: 50, left: 0},
+var margin = {top: 80, right: 0, bottom: 90, left: 0},
   propMiddle = 0.27,  // proportion of the width for the text in the middle
   width = 800 - margin.left - margin.right,
-  height = 700 - margin.top - margin.bottom,
+  height = 740 - margin.top - margin.bottom,
   lengthMiddle = width * propMiddle
 
 // append the svg object to the body of the page
@@ -391,6 +391,24 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/QB
       .attr("text-anchor", "start")
       .style("fill", "grey")
       .style("font-style", "italic");
+
+  // Add the explanation in grey
+  svg_barplot
+    .append("text")
+      .attr("x", width/2 )
+      .attr("y", height + 50)
+      .text( "Click any of the disorder name" )
+      .style("font-size", "12px")
+      .attr("text-anchor", "middle")
+      .style("fill", "#B8B8B8")
+  svg_barplot
+    .append("text")
+      .attr("x", width/2 )
+      .attr("y", height + 50 + 20)
+      .text( "above to study it in detail." )
+      .style("font-size", "12px")
+      .attr("text-anchor", "middle")
+      .style("fill", "#B8B8B8")
 
   // Add the title
   var myTitle = svg_barplot

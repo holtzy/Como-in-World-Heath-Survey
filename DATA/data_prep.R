@@ -16,6 +16,9 @@ data <- read.table("data.csv", header=T, sep=",")
 # Replace IED by Intermittent explosive disorder
 data <- data %>% mutate(Later_disorder = gsub("IED", "Intermittent explosive disorder", Later_disorder))
 
+# Upper case in specific phobia..
+data <- data %>% mutate(Later_disorder = gsub("Specific Phobia", "Specific phobia", Later_disorder))
+
 # Save
 write.table(data, file="data_clean.csv", quote=F, row.names=F, sep=",")
 
