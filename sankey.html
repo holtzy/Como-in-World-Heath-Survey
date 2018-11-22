@@ -192,8 +192,6 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
   // ------------------------------------------------------------------------ //
   function prepareData(data){
 
-    console.log("start data preparation")
-
     // Recover the selected group
     var selectValue = selectPrior.property("value")
 
@@ -232,8 +230,6 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
     graph.nodes.forEach(function (d, i) {
       graph.nodes[i] = { "name": d };
     });
-
-    console.log("data prep OK")
 
     // Return the graph object
     return graph
