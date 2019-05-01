@@ -110,31 +110,26 @@ svg_dotplot
 // Create tooltip
 var tooltip = d3.select("#dataviz_dotplot")
     .append("div")
-    .style("opacity", 0)
+    .style("display", "none")
+    .style("opacity", 1)
     .style("font-size", "16px")
     .attr("class", "tooltip")
 
 // Three function that change the tooltip when user hover / move / leave a cell
 var mouseover = function(d) {
   tooltip
-    .transition()
-    .duration(200)
-    .style("opacity", 1);
+    .style("display", "block");
   tooltip
-    .style("left", (d3.mouse(this)[0]+70) + "px")
-    .style("top", (d3.mouse(this)[1]+30) + "px")
     .html("<span style='color:grey'>Prior disorder: </span>" + d.Prior_disorder + "<br>" + "<span style='color:grey'>Later disorder: </span>" + d.Later_disorder + "<br>" + "HR: " + d.HR + " [" + d.Lower + "-" + d.Upper + "]") // + d.Prior_disorder + "<br>" + "HR: " +  d.HR)
   }
 var mousemove = function(d) {
   tooltip
     .style("left", (d3.mouse(this)[0]+70) + "px")
-    .style("top", (d3.mouse(this)[1]+30) + "px")
+    .style("top", (d3.mouse(this)[1]-120) + "px")
 }
 var mouseleave = function(d) {
   tooltip
-    .transition()
-    .duration(200)
-    .style("opacity", 0)
+    .style("display", "none")
 }
 
 
