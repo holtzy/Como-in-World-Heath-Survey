@@ -4,7 +4,7 @@
 # ----------
 
 library(tidyverse)
-setwd("/Users/y.holtz/Dropbox/QBI/22_WORLD_HEALTH_SURVEY/Como-in-World-Heath-Survey/DATA")
+setwd("~/Desktop/Como-in-World-Heath-Survey/DATA")
 
 
 # ----------
@@ -79,6 +79,10 @@ dataReady %>% arrange(coefvar) %>% tail()
 
 # Export
 write.table(dataReady, file="data_bar.csv", quote=F, row.names=F, sep=",")
+
+
+
+
 
 
 # ----------
