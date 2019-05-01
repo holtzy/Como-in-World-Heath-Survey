@@ -33,7 +33,7 @@ levels(data$Later.disorder) #26
 # ----------
 
 # Compute position for dotplot histogram
-bin <- 0.3
+bin <- 1
 don <- data %>%
   filter(Model == "A" & Sex == "All") %>%
   arrange(HR) %>%
