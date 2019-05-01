@@ -1,5 +1,6 @@
 # ----------
 # A script that takes data from Carmen and transform it for the web application
+# Run
 # ----------
 
 library(tidyverse)
@@ -7,11 +8,10 @@ setwd("~/Desktop/Como-in-World-Heath-Survey/DATA")
 
 
 # ----------
-# Load data + General changes necessary for all charts
+# General changes necessary for all charts
 # ----------
 
-# Load data
-data <- read.table("COMO_W_longformat_Yan_02Apr19.csv", header=T, sep=",")
+data <- read.table("data.csv", header=T, sep=",")
 
 # Replace IED by Intermittent explosive disorder
 data <- data %>% mutate(Later_disorder = gsub("IED", "Intermittent explosive disorder", Later_disorder))
@@ -19,36 +19,8 @@ data <- data %>% mutate(Later_disorder = gsub("IED", "Intermittent explosive dis
 # Upper case in specific phobia..
 data <- data %>% mutate(Later_disorder = gsub("Specific Phobia", "Specific phobia", Later_disorder))
 
-# List of Prior and Later disorder:
-levels(data$Prior.disorder) #24
-levels(data$Later.disorder) #26
-
-
-
-
-
-
-# ----------
-# Preparation for dotplot histogram
-# ----------
-
-# Compute position for dotplot histogram
-bin <- 0.3
-don <- data %>%
-  filter(Model == "A" & Sex == "All") %>%
-  arrange(HR) %>%
-  mutate(HR_rounded = round(HR/bin)*bin ) %>%
-  mutate(y=ave(HR_rounded, HR_rounded, FUN=seq_along))
-
-# Write result at a .js object
-tosave <- paste("dataHistogram = ", toJSON(don))
-fileConn<-file("dataHistogram.js")
-writeLines(tosave, fileConn)
-close(fileConn)
-
-
-
-
+# Save
+write.table(data, file="data_clean.csv", quote=F, row.names=F, sep=",")
 
 
 
@@ -58,6 +30,8 @@ close(fileConn)
 # ----------
 # Preparation for Sankey plot
 # ----------
+
+data <- read.table("data.csv", header=T, sep=",")
 
 # Add space to outcome to make it different
 tmp <- data %>% mutate( Later_disorder = paste( Later_disorder, " ", sep=""))
@@ -108,3 +82,45 @@ write.table(dataReady, file="data_bar.csv", quote=F, row.names=F, sep=",")
 
 
 
+
+
+
+# ----------
+# Preparation for histogram
+# ----------
+
+# Step 1: compute position for beeswarm plot
+library(beeswarm)
+data <- read.table("data.csv", header=T, sep=",")
+data$pair <- paste(data$Prior_disorder, data$Later_disorder, sep="-")
+a = beeswarm(log(data$HR), method="center", cex=1, corral="none", draw=F)
+a
+
+# Step 1: compute position for dotplot histogram
+data <- read.table("data.csv", header=T, sep=",")
+don = data %>%
+  arrange(HR) %>%
+  mutate(HR_rounded = round(HR/0.3)*0.3 ) %>%
+  mutate(y=ave(HR_rounded, HR_rounded, FUN=seq_along))
+don %>% head
+# Max tot
+milieu = round( max( don$y, na.rm=T) / 2 ) + 0.5
+
+# Max of each category?
+tmp <- don %>% group_by(HR_rounded) %>% summarize(nbObs=n())
+tmp
+don <- merge(don, tmp, by.x="HR_rounded", by.y="HR_rounded")
+don
+don <- don %>% mutate( yPrim = milieu - round(nbObs/2) + y )
+don %>% head(100)
+
+ggplot(don, aes(x=HR_rounded, y=yPrim) ) +
+  geom_point( size=2, color="blue" ) +
+  xlab('Hazard Ratio') +
+  ylab('Number of pair of mental disorder') +
+  scale_x_log10()
+
+# Write result
+write.table(don, file='/Users/y.holtz/Documents/d3-graph-gallery/DATA/QBI/data_test.csv', row.names=F, quote=F, sep=",")
+
+don

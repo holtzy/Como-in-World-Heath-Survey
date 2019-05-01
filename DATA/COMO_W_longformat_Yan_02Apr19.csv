@@ -1,0 +1,3313 @@
+Prior disorder,Later disorder,Sex,Model,HR,Lower,Upper
+MDE,Bipolar disorder,All,A,20.4,18.4,22.7
+MDE,Dysthymia,All,A,60.5,55.1,66.4
+MDE,Panic disorder,All,A,17.9,16.2,19.7
+MDE,GAD,All,A,23.5,22.2,24.8
+MDE,Social phobia,All,A,15.9,14.9,17
+MDE,Specific phobia,All,A,12.4,11.8,13
+MDE,Agoraphobia,All,A,16.8,15.1,18.6
+MDE,PTSD,All,A,19.1,17.7,20.5
+MDE,OCD,All,A,12.7,10.6,15.3
+MDE,Adult SAD,All,A,15,13.4,16.8
+MDE,Child SAD,All,A,13.6,11.8,15.8
+MDE,Anorexia nervosa,All,A,,,
+MDE,Bulimia nervosa,All,A,12.3,9.7,15.5
+MDE,Binge eating disorder,All,A,10.2,9.1,11.6
+MDE,IED,All,A,12.9,11.6,14.3
+MDE,ADHD,All,A,,,
+MDE,Conduct disorder,All,A,12.1,10.1,14.4
+MDE,ODD,All,A,11.6,10.1,13.5
+MDE,Nicotine dependence,All,A,8.1,7.5,8.7
+MDE,Alcohol abuse,All,A,8.8,8.3,9.3
+MDE,Alcohol dependence,All,A,15.8,14.4,17.4
+MDE,Drug abuse,All,A,11,10.1,12
+MDE,Drug dependence,All,A,16.6,14.5,19
+MDE,Bipolar disorder,All,B,10.7,9.1,12.6
+MDE,Dysthymia,All,B,45.9,40.5,51.9
+MDE,Panic disorder,All,B,9.6,8.3,11
+MDE,GAD,All,B,15,13.8,16.3
+MDE,Social phobia,All,B,8.6,7.8,9.5
+MDE,Specific phobia,All,B,8.2,7.6,8.7
+MDE,Agoraphobia,All,B,6.7,5.8,7.7
+MDE,PTSD,All,B,12.6,11.3,14
+MDE,OCD,All,B,6.4,4.9,8.3
+MDE,Adult SAD,All,B,6,5,7.2
+MDE,Child SAD,All,B,5.6,4.3,7.1
+MDE,Anorexia nervosa,All,B,,,
+MDE,Bulimia nervosa,All,B,4,3.1,5.1
+MDE,Binge eating disorder,All,B,5.1,4.3,5.9
+MDE,IED,All,B,7.3,6.2,8.5
+MDE,ADHD,All,B,,,
+MDE,Conduct disorder,All,B,3.5,2.7,4.4
+MDE,ODD,All,B,3.8,3.1,4.6
+MDE,Nicotine dependence,All,B,4.9,4.4,5.5
+MDE,Alcohol abuse,All,B,5.3,4.9,5.7
+MDE,Alcohol dependence,All,B,7.1,6,8.3
+MDE,Drug abuse,All,B,5.7,5,6.4
+MDE,Drug dependence,All,B,6.7,5.2,8.5
+MDE,Bipolar disorder,F,A,17.5,14.9,20.5
+MDE,Dysthymia,F,A,87.5,75.6,101.5
+MDE,Panic disorder,F,A,27.1,22.6,32.6
+MDE,GAD,F,A,36.4,32.8,40.5
+MDE,Social phobia,F,A,20.6,18.7,22.7
+MDE,Specific phobia,F,A,23.4,21.4,25.5
+MDE,Agoraphobia,F,A,30.8,25.6,37
+MDE,PTSD,F,A,37.3,32.9,42.4
+MDE,OCD,F,A,,,
+MDE,Adult SAD,F,A,18.7,15.4,22.7
+MDE,Child SAD,F,A,,,
+MDE,Anorexia nervosa,F,A,,,
+MDE,Bulimia nervosa,F,A,30.8,18.8,50.5
+MDE,Binge eating disorder,F,A,18.2,15,22
+MDE,IED,F,A,9.4,7.9,11.1
+MDE,ADHD,F,A,,,
+MDE,Conduct disorder,F,A,4.7,3.6,6.2
+MDE,ODD,F,A,8.3,6.5,10.5
+MDE,Nicotine dependence,F,A,5.4,4.9,6
+MDE,Alcohol abuse,F,A,2.6,2.3,2.8
+MDE,Alcohol dependence,F,A,4.5,3.8,5.2
+MDE,Drug abuse,F,A,4.9,4.2,5.6
+MDE,Drug dependence,F,A,6.9,5.5,8.5
+MDE,Bipolar disorder,M,A,24.5,21.4,28.1
+MDE,Dysthymia,M,A,79.4,70,90.1
+MDE,Panic disorder,M,A,24.8,21.8,28.2
+MDE,GAD,M,A,32.4,29.9,35.1
+MDE,Social phobia,M,A,20,18.4,21.8
+MDE,Specific phobia,M,A,15.9,14.7,17.3
+MDE,Agoraphobia,M,A,21.5,18.4,25.1
+MDE,PTSD,M,A,25,22.3,27.9
+MDE,OCD,M,A,,,
+MDE,Adult SAD,M,A,17.5,15.1,20.3
+MDE,Child SAD,M,A,,,
+MDE,Anorexia nervosa,M,A,,,
+MDE,Bulimia nervosa,M,A,,,
+MDE,Binge eating disorder,M,A,12.4,10,15.3
+MDE,IED,M,A,15,13.1,17.2
+MDE,ADHD,M,A,,,
+MDE,Conduct disorder,M,A,,,
+MDE,ODD,M,A,,,
+MDE,Nicotine dependence,M,A,8,7.1,8.9
+MDE,Alcohol abuse,M,A,9,8.4,9.6
+MDE,Alcohol dependence,M,A,16.9,15.1,18.8
+MDE,Drug abuse,M,A,11.8,10.6,13.1
+MDE,Drug dependence,M,A,18.6,15.9,21.8
+MDE,Bipolar disorder,F,B,9.3,7.6,11.4
+MDE,Dysthymia,F,B,65.7,55.6,77.7
+MDE,Panic disorder,F,B,14.4,11.6,17.8
+MDE,GAD,F,B,23.1,20.4,26.1
+MDE,Social phobia,F,B,10.8,9.6,12.1
+MDE,Specific phobia,F,B,15.6,14.1,17.2
+MDE,Agoraphobia,F,B,11.7,9.4,14.4
+MDE,PTSD,F,B,25.9,22.4,30
+MDE,OCD,F,B,,,
+MDE,Adult SAD,F,B,7.7,6.1,9.7
+MDE,Child SAD,F,B,,,
+MDE,Anorexia nervosa,F,B,,,
+MDE,Bulimia nervosa,F,B,9.2,5.4,15.6
+MDE,Binge eating disorder,F,B,8.6,6.8,10.9
+MDE,IED,F,B,5.5,4.5,6.8
+MDE,ADHD,F,B,,,
+MDE,Conduct disorder,F,B,1.6,1.1,2.3
+MDE,ODD,F,B,3.5,2.7,4.6
+MDE,Nicotine dependence,F,B,3.5,3.1,3.9
+MDE,Alcohol abuse,F,B,1.7,1.5,1.9
+MDE,Alcohol dependence,F,B,2.4,2,3
+MDE,Drug abuse,F,B,2.9,2.5,3.5
+MDE,Drug dependence,F,B,3.2,2.4,4.3
+MDE,Bipolar disorder,M,B,12.3,10.1,15
+MDE,Dysthymia,M,B,59.8,51,70
+MDE,Panic disorder,M,B,12.8,10.6,15.6
+MDE,GAD,M,B,20.2,18.1,22.6
+MDE,Social phobia,M,B,10.8,9.5,12.1
+MDE,Specific phobia,M,B,10,9,11.1
+MDE,Agoraphobia,M,B,8.5,6.9,10.5
+MDE,PTSD,M,B,14.6,12.4,17.1
+MDE,OCD,M,B,,,
+MDE,Adult SAD,M,B,6.4,5.1,8
+MDE,Child SAD,M,B,,,
+MDE,Anorexia nervosa,M,B,,,
+MDE,Bulimia nervosa,M,B,,,
+MDE,Binge eating disorder,M,B,6.1,4.7,8
+MDE,IED,M,B,8,6.7,9.6
+MDE,ADHD,M,B,,,
+MDE,Conduct disorder,M,B,,,
+MDE,ODD,M,B,,,
+MDE,Nicotine dependence,M,B,4.6,4,5.3
+MDE,Alcohol abuse,M,B,5.1,4.7,5.6
+MDE,Alcohol dependence,M,B,6.9,5.8,8.2
+MDE,Drug abuse,M,B,5.5,4.7,6.4
+MDE,Drug dependence,M,B,6.8,5.2,8.8
+Bipolar disorder,MDE,All,A,16.2,14.9,17.5
+Bipolar disorder,Dysthymia,All,A,27.8,23.9,32.3
+Bipolar disorder,Panic disorder,All,A,18.3,15.5,21.7
+Bipolar disorder,GAD,All,A,19.6,17.5,22
+Bipolar disorder,Social phobia,All,A,16.9,15,19
+Bipolar disorder,Specific phobia,All,A,15.2,13.7,16.8
+Bipolar disorder,Agoraphobia,All,A,26.7,22.7,31.5
+Bipolar disorder,PTSD,All,A,20.8,18.1,24
+Bipolar disorder,OCD,All,A,23.5,18.2,30.4
+Bipolar disorder,Adult SAD,All,A,17.8,14.5,21.8
+Bipolar disorder,Child SAD,All,A,,,
+Bipolar disorder,Anorexia nervosa,All,A,,,
+Bipolar disorder,Bulimia nervosa,All,A,25.6,16.6,39.4
+Bipolar disorder,Binge eating disorder,All,A,15.5,12.6,19.2
+Bipolar disorder,IED,All,A,17.4,14.6,20.8
+Bipolar disorder,ADHD,All,A,,,
+Bipolar disorder,Conduct disorder,All,A,,,
+Bipolar disorder,ODD,All,A,,,
+Bipolar disorder,Nicotine dependence,All,A,9.9,8.5,11.4
+Bipolar disorder,Alcohol abuse,All,A,14.1,12.8,15.5
+Bipolar disorder,Alcohol dependence,All,A,23.8,20.7,27.2
+Bipolar disorder,Drug abuse,All,A,14.5,12.4,17
+Bipolar disorder,Drug dependence,All,A,25.2,20.8,30.4
+Bipolar disorder,MDE,All,B,5,4,6.3
+Bipolar disorder,Dysthymia,All,B,3.5,2.1,6
+Bipolar disorder,Panic disorder,All,B,2,1.2,3.4
+Bipolar disorder,GAD,All,B,3.6,2.4,5.4
+Bipolar disorder,Social phobia,All,B,2.9,2.1,4.1
+Bipolar disorder,Specific phobia,All,B,4.9,3.8,6.3
+Bipolar disorder,Agoraphobia,All,B,2,1.4,3.1
+Bipolar disorder,PTSD,All,B,3.8,2.5,5.7
+Bipolar disorder,OCD,All,B,6.4,3.3,12.3
+Bipolar disorder,Adult SAD,All,B,1.5,1.1,2.1
+Bipolar disorder,Child SAD,All,B,,,
+Bipolar disorder,Anorexia nervosa,All,B,,,
+Bipolar disorder,Bulimia nervosa,All,B,3.5,1.4,8.6
+Bipolar disorder,Binge eating disorder,All,B,2.9,1.8,4.5
+Bipolar disorder,IED,All,B,2.9,1.8,4.7
+Bipolar disorder,ADHD,All,B,,,
+Bipolar disorder,Conduct disorder,All,B,,,
+Bipolar disorder,ODD,All,B,,,
+Bipolar disorder,Nicotine dependence,All,B,3.5,2.6,4.8
+Bipolar disorder,Alcohol abuse,All,B,6.2,5,7.8
+Bipolar disorder,Alcohol dependence,All,B,5.1,3.3,7.8
+Bipolar disorder,Drug abuse,All,B,3.4,2.2,5.1
+Bipolar disorder,Drug dependence,All,B,4.5,2.5,8
+Bipolar disorder,MDE,F,A,25.3,22.6,28.4
+Bipolar disorder,Dysthymia,F,A,46,36.9,57.2
+Bipolar disorder,Panic disorder,F,A,29.2,22.7,37.7
+Bipolar disorder,GAD,F,A,33.5,28.4,39.6
+Bipolar disorder,Social phobia,F,A,22.3,19.3,25.8
+Bipolar disorder,Specific phobia,F,A,29.4,25.8,33.5
+Bipolar disorder,Agoraphobia,F,A,51.6,39.2,67.9
+Bipolar disorder,PTSD,F,A,46.4,38.1,56.5
+Bipolar disorder,OCD,F,A,,,
+Bipolar disorder,Adult SAD,F,A,24.4,19.1,31.1
+Bipolar disorder,Child SAD,F,A,,,
+Bipolar disorder,Anorexia nervosa,F,A,,,
+Bipolar disorder,Bulimia nervosa,F,A,,,
+Bipolar disorder,Binge eating disorder,F,A,28.9,21.6,38.5
+Bipolar disorder,IED,F,A,16.2,12.5,21
+Bipolar disorder,ADHD,F,A,,,
+Bipolar disorder,Conduct disorder,F,A,,,
+Bipolar disorder,ODD,F,A,,,
+Bipolar disorder,Nicotine dependence,F,A,7.2,6,8.7
+Bipolar disorder,Alcohol abuse,F,A,5.3,4.5,6.3
+Bipolar disorder,Alcohol dependence,F,A,11,8.8,13.8
+Bipolar disorder,Drug abuse,F,A,7.4,5.8,9.4
+Bipolar disorder,Drug dependence,F,A,13.8,10,19.1
+Bipolar disorder,MDE,M,A,17.9,16,20.1
+Bipolar disorder,Dysthymia,M,A,29.5,23.3,37.2
+Bipolar disorder,Panic disorder,M,A,19.6,15.4,25
+Bipolar disorder,GAD,M,A,20.8,17.4,24.8
+Bipolar disorder,Social phobia,M,A,,,
+Bipolar disorder,Specific phobia,M,A,,,
+Bipolar disorder,Agoraphobia,M,A,,,
+Bipolar disorder,PTSD,M,A,21.2,16.9,26.5
+Bipolar disorder,OCD,M,A,,,
+Bipolar disorder,Adult SAD,M,A,16.6,12.5,22.1
+Bipolar disorder,Child SAD,M,A,,,
+Bipolar disorder,Anorexia nervosa,M,A,,,
+Bipolar disorder,Bulimia nervosa,M,A,,,
+Bipolar disorder,Binge eating disorder,M,A,14.6,10.4,20.4
+Bipolar disorder,IED,M,A,15.1,11.8,19.3
+Bipolar disorder,ADHD,M,A,,,
+Bipolar disorder,Conduct disorder,M,A,,,
+Bipolar disorder,ODD,M,A,,,
+Bipolar disorder,Nicotine dependence,M,A,8.2,6.8,9.8
+Bipolar disorder,Alcohol abuse,M,A,12.4,11.2,13.8
+Bipolar disorder,Alcohol dependence,M,A,20.4,17.3,23.9
+Bipolar disorder,Drug abuse,M,A,13.6,11.3,16.4
+Bipolar disorder,Drug dependence,M,A,22.9,18.2,28.8
+Bipolar disorder,MDE,F,B,6.5,5,8.5
+Bipolar disorder,Dysthymia,F,B,5,2.9,8.8
+Bipolar disorder,Panic disorder,F,B,2.7,1.6,4.7
+Bipolar disorder,GAD,F,B,5.2,3.4,8
+Bipolar disorder,Social phobia,F,B,3,2.1,4.2
+Bipolar disorder,Specific phobia,F,B,8.8,6.6,11.7
+Bipolar disorder,Agoraphobia,F,B,3.3,2,5.5
+Bipolar disorder,PTSD,F,B,8,5.2,12.4
+Bipolar disorder,OCD,F,B,,,
+Bipolar disorder,Adult SAD,F,B,1.7,1.2,2.4
+Bipolar disorder,Child SAD,F,B,,,
+Bipolar disorder,Anorexia nervosa,F,B,,,
+Bipolar disorder,Bulimia nervosa,F,B,,,
+Bipolar disorder,Binge eating disorder,F,B,4.3,2.6,7.1
+Bipolar disorder,IED,F,B,2.4,1.4,4
+Bipolar disorder,ADHD,F,B,,,
+Bipolar disorder,Conduct disorder,F,B,,,
+Bipolar disorder,ODD,F,B,,,
+Bipolar disorder,Nicotine dependence,F,B,2.3,1.6,3.2
+Bipolar disorder,Alcohol abuse,F,B,2.2,1.6,3
+Bipolar disorder,Alcohol dependence,F,B,2.2,1.4,3.5
+Bipolar disorder,Drug abuse,F,B,1.7,1,2.7
+Bipolar disorder,Drug dependence,F,B,2.4,1.2,4.7
+Bipolar disorder,MDE,M,B,6.6,5.3,8.4
+Bipolar disorder,Dysthymia,M,B,4.6,2.6,7.9
+Bipolar disorder,Panic disorder,M,B,2.8,1.7,4.8
+Bipolar disorder,GAD,M,B,4.8,3.1,7.4
+Bipolar disorder,Social phobia,M,B,,,
+Bipolar disorder,Specific phobia,M,B,,,
+Bipolar disorder,Agoraphobia,M,B,,,
+Bipolar disorder,PTSD,M,B,4.3,2.8,6.6
+Bipolar disorder,OCD,M,B,,,
+Bipolar disorder,Adult SAD,M,B,1.7,1.1,2.6
+Bipolar disorder,Child SAD,M,B,,,
+Bipolar disorder,Anorexia nervosa,M,B,,,
+Bipolar disorder,Bulimia nervosa,M,B,,,
+Bipolar disorder,Binge eating disorder,M,B,3.6,2.1,6.2
+Bipolar disorder,IED,M,B,2.7,1.6,4.7
+Bipolar disorder,ADHD,M,B,,,
+Bipolar disorder,Conduct disorder,M,B,,,
+Bipolar disorder,ODD,M,B,,,
+Bipolar disorder,Nicotine dependence,M,B,3.3,2.3,4.6
+Bipolar disorder,Alcohol abuse,M,B,5.7,4.6,7.2
+Bipolar disorder,Alcohol dependence,M,B,4.6,3,7.1
+Bipolar disorder,Drug abuse,M,B,3.2,2.1,5
+Bipolar disorder,Drug dependence,M,B,4.2,2.3,7.4
+Dysthymia,MDE,All,A,28.6,26.9,30.4
+Dysthymia,Bipolar disorder,All,A,24.6,20.6,29.4
+Dysthymia,Panic disorder,All,A,22.9,19.2,27.3
+Dysthymia,GAD,All,A,29.8,26.9,32.9
+Dysthymia,Social phobia,All,A,20.5,18.4,22.8
+Dysthymia,Specific phobia,All,A,13.7,12.4,15.1
+Dysthymia,Agoraphobia,All,A,22,18.4,26.3
+Dysthymia,PTSD,All,A,23.2,20.3,26.6
+Dysthymia,OCD,All,A,,,
+Dysthymia,Adult SAD,All,A,18.9,14.6,24.5
+Dysthymia,Child SAD,All,A,,,
+Dysthymia,Anorexia nervosa,All,A,,,
+Dysthymia,Bulimia nervosa,All,A,,,
+Dysthymia,Binge eating disorder,All,A,13.7,10.7,17.6
+Dysthymia,IED,All,A,15.9,12.7,19.9
+Dysthymia,ADHD,All,A,,,
+Dysthymia,Conduct disorder,All,A,,,
+Dysthymia,ODD,All,A,,,
+Dysthymia,Nicotine dependence,All,A,8,7,9.2
+Dysthymia,Alcohol abuse,All,A,9.6,8.6,10.8
+Dysthymia,Alcohol dependence,All,A,24,20.8,27.7
+Dysthymia,Drug abuse,All,A,12.7,10.4,15.4
+Dysthymia,Drug dependence,All,A,28,22.3,35.2
+Dysthymia,MDE,All,B,15.7,13.9,17.7
+Dysthymia,Bipolar disorder,All,B,6.4,3.6,11.3
+Dysthymia,Panic disorder,All,B,4.8,3.2,7.2
+Dysthymia,GAD,All,B,13.9,11.2,17.2
+Dysthymia,Social phobia,All,B,8.2,6.4,10.5
+Dysthymia,Specific phobia,All,B,6.6,5.3,8.1
+Dysthymia,Agoraphobia,All,B,2.7,1.6,4.6
+Dysthymia,PTSD,All,B,9.8,7.6,12.7
+Dysthymia,OCD,All,B,,,
+Dysthymia,Adult SAD,All,B,4.5,2,10.3
+Dysthymia,Child SAD,All,B,,,
+Dysthymia,Anorexia nervosa,All,B,,,
+Dysthymia,Bulimia nervosa,All,B,,,
+Dysthymia,Binge eating disorder,All,B,5.5,3,10
+Dysthymia,IED,All,B,5,3.1,8.1
+Dysthymia,ADHD,All,B,,,
+Dysthymia,Conduct disorder,All,B,,,
+Dysthymia,ODD,All,B,,,
+Dysthymia,Nicotine dependence,All,B,2.4,1.7,3.4
+Dysthymia,Alcohol abuse,All,B,3.6,2.7,4.8
+Dysthymia,Alcohol dependence,All,B,7,4.5,10.9
+Dysthymia,Drug abuse,All,B,3.5,2,6
+Dysthymia,Drug dependence,All,B,5.5,2.5,12
+Dysthymia,MDE,F,A,42.8,39.6,46.4
+Dysthymia,Bipolar disorder,F,A,21.5,16.9,27.5
+Dysthymia,Panic disorder,F,A,33,26.9,40.6
+Dysthymia,GAD,F,A,46.9,41.2,53.4
+Dysthymia,Social phobia,F,A,26.1,22.7,30
+Dysthymia,Specific phobia,F,A,25.2,22.4,28.3
+Dysthymia,Agoraphobia,F,A,44.6,35.1,56.8
+Dysthymia,PTSD,F,A,44.3,36.7,53.6
+Dysthymia,OCD,F,A,,,
+Dysthymia,Adult SAD,F,A,26.4,19.9,35
+Dysthymia,Child SAD,F,A,,,
+Dysthymia,Anorexia nervosa,F,A,,,
+Dysthymia,Bulimia nervosa,F,A,,,
+Dysthymia,Binge eating disorder,F,A,22.4,16.7,29.9
+Dysthymia,IED,F,A,12.1,8.9,16.3
+Dysthymia,ADHD,F,A,,,
+Dysthymia,Conduct disorder,F,A,,,
+Dysthymia,ODD,F,A,,,
+Dysthymia,Nicotine dependence,F,A,5.2,4.4,6.2
+Dysthymia,Alcohol abuse,F,A,3.1,2.5,3.7
+Dysthymia,Alcohol dependence,F,A,6.9,5.5,8.7
+Dysthymia,Drug abuse,F,A,5.4,4.2,7
+Dysthymia,Drug dependence,F,A,11,8,15.1
+Dysthymia,MDE,M,A,39.6,35.8,43.9
+Dysthymia,Bipolar disorder,M,A,26.7,20.5,34.6
+Dysthymia,Panic disorder,M,A,34,26,44.3
+Dysthymia,GAD,M,A,42.4,35.9,50
+Dysthymia,Social phobia,M,A,24.1,20,29.1
+Dysthymia,Specific phobia,M,A,,,
+Dysthymia,Agoraphobia,M,A,,,
+Dysthymia,PTSD,M,A,31.6,25.3,39.5
+Dysthymia,OCD,M,A,,,
+Dysthymia,Adult SAD,M,A,23.4,15.4,35.4
+Dysthymia,Child SAD,M,A,,,
+Dysthymia,Anorexia nervosa,M,A,,,
+Dysthymia,Bulimia nervosa,M,A,,,
+Dysthymia,Binge eating disorder,M,A,,,
+Dysthymia,IED,M,A,,,
+Dysthymia,ADHD,M,A,,,
+Dysthymia,Conduct disorder,M,A,,,
+Dysthymia,ODD,M,A,,,
+Dysthymia,Nicotine dependence,M,A,7,5.6,8.7
+Dysthymia,Alcohol abuse,M,A,8.7,7.5,10.1
+Dysthymia,Alcohol dependence,M,A,24.4,20.6,28.9
+Dysthymia,Drug abuse,M,A,12.9,10,16.7
+Dysthymia,Drug dependence,M,A,30.1,22.8,39.7
+Dysthymia,MDE,F,B,23.1,20.1,26.5
+Dysthymia,Bipolar disorder,F,B,5.4,3,9.7
+Dysthymia,Panic disorder,F,B,7.3,4.6,11.5
+Dysthymia,GAD,F,B,21.3,17,26.8
+Dysthymia,Social phobia,F,B,9.6,7.4,12.4
+Dysthymia,Specific phobia,F,B,12,9.7,14.8
+Dysthymia,Agoraphobia,F,B,5.2,2.9,9.5
+Dysthymia,PTSD,F,B,19.4,14.2,26.4
+Dysthymia,OCD,F,B,,,
+Dysthymia,Adult SAD,F,B,6,2.7,13.5
+Dysthymia,Child SAD,F,B,,,
+Dysthymia,Anorexia nervosa,F,B,,,
+Dysthymia,Bulimia nervosa,F,B,,,
+Dysthymia,Binge eating disorder,F,B,8.7,4.7,16
+Dysthymia,IED,F,B,3.5,2.2,5.7
+Dysthymia,ADHD,F,B,,,
+Dysthymia,Conduct disorder,F,B,,,
+Dysthymia,ODD,F,B,,,
+Dysthymia,Nicotine dependence,F,B,1.5,1,2.1
+Dysthymia,Alcohol abuse,F,B,1.2,0.8,1.7
+Dysthymia,Alcohol dependence,F,B,2.3,1.4,3.7
+Dysthymia,Drug abuse,F,B,1.5,0.8,2.6
+Dysthymia,Drug dependence,F,B,2.4,1,5.5
+Dysthymia,MDE,M,B,22.8,19.4,26.8
+Dysthymia,Bipolar disorder,M,B,7.1,3.8,13.4
+Dysthymia,Panic disorder,M,B,6.4,3.9,10.4
+Dysthymia,GAD,M,B,21.1,16.2,27.6
+Dysthymia,Social phobia,M,B,11.1,8.2,15.1
+Dysthymia,Specific phobia,M,B,,,
+Dysthymia,Agoraphobia,M,B,,,
+Dysthymia,PTSD,M,B,12.7,9.1,17.8
+Dysthymia,OCD,M,B,,,
+Dysthymia,Adult SAD,M,B,6.2,2.4,16.2
+Dysthymia,Child SAD,M,B,,,
+Dysthymia,Anorexia nervosa,M,B,,,
+Dysthymia,Bulimia nervosa,M,B,,,
+Dysthymia,Binge eating disorder,M,B,,,
+Dysthymia,IED,M,B,,,
+Dysthymia,ADHD,M,B,,,
+Dysthymia,Conduct disorder,M,B,,,
+Dysthymia,ODD,M,B,,,
+Dysthymia,Nicotine dependence,M,B,2.1,1.4,3.4
+Dysthymia,Alcohol abuse,M,B,3.1,2.3,4.3
+Dysthymia,Alcohol dependence,M,B,6.8,4.2,10.8
+Dysthymia,Drug abuse,M,B,3.6,2,6.4
+Dysthymia,Drug dependence,M,B,5.6,2.5,12.6
+Panic disorder,MDE,All,A,14.9,13.8,16.1
+Panic disorder,Bipolar disorder,All,A,21.2,17.4,25.8
+Panic disorder,Dysthymia,All,A,29.3,24.4,35.1
+Panic disorder,GAD,All,A,22.2,20.1,24.6
+Panic disorder,Social phobia,All,A,18.8,16.8,21.1
+Panic disorder,Specific phobia,All,A,16.6,15.2,18.1
+Panic disorder,Agoraphobia,All,A,39,33.7,45.1
+Panic disorder,PTSD,All,A,19.4,16.4,23
+Panic disorder,OCD,All,A,16.4,11.7,22.9
+Panic disorder,Adult SAD,All,A,16.4,13.3,20.1
+Panic disorder,Child SAD,All,A,,,
+Panic disorder,Anorexia nervosa,All,A,,,
+Panic disorder,Bulimia nervosa,All,A,,,
+Panic disorder,Binge eating disorder,All,A,13.6,10.7,17.4
+Panic disorder,IED,All,A,12.7,10.6,15.3
+Panic disorder,ADHD,All,A,,,
+Panic disorder,Conduct disorder,All,A,,,
+Panic disorder,ODD,All,A,,,
+Panic disorder,Nicotine dependence,All,A,8.1,7.1,9.4
+Panic disorder,Alcohol abuse,All,A,9.8,8.7,11
+Panic disorder,Alcohol dependence,All,A,23.2,19.3,27.8
+Panic disorder,Drug abuse,All,A,13.1,10.9,15.7
+Panic disorder,Drug dependence,All,A,21.2,16.7,26.9
+Panic disorder,MDE,All,B,8.6,7.5,9.9
+Panic disorder,Bipolar disorder,All,B,6.2,3.7,10.4
+Panic disorder,Dysthymia,All,B,10.3,6.9,15.3
+Panic disorder,GAD,All,B,10.3,8.3,12.6
+Panic disorder,Social phobia,All,B,6.2,4.5,8.5
+Panic disorder,Specific phobia,All,B,9,7.6,10.7
+Panic disorder,Agoraphobia,All,B,11.6,7.5,17.7
+Panic disorder,PTSD,All,B,8.9,6.1,13
+Panic disorder,OCD,All,B,7,3.4,14.4
+Panic disorder,Adult SAD,All,B,3,1.6,5.8
+Panic disorder,Child SAD,All,B,,,
+Panic disorder,Anorexia nervosa,All,B,,,
+Panic disorder,Bulimia nervosa,All,B,,,
+Panic disorder,Binge eating disorder,All,B,5.8,3.3,10.3
+Panic disorder,IED,All,B,4.5,2.5,8.3
+Panic disorder,ADHD,All,B,,,
+Panic disorder,Conduct disorder,All,B,,,
+Panic disorder,ODD,All,B,,,
+Panic disorder,Nicotine dependence,All,B,3.3,2.3,4.6
+Panic disorder,Alcohol abuse,All,B,5.5,4.4,6.8
+Panic disorder,Alcohol dependence,All,B,8.2,5.3,12.7
+Panic disorder,Drug abuse,All,B,4.5,2.9,7
+Panic disorder,Drug dependence,All,B,3.5,1.5,8.1
+Panic disorder,MDE,F,A,23.1,21.2,25.2
+Panic disorder,Bipolar disorder,F,A,18.9,14.4,24.7
+Panic disorder,Dysthymia,F,A,44.3,36.9,53.2
+Panic disorder,GAD,F,A,36.9,32.2,42.3
+Panic disorder,Social phobia,F,A,23.1,20,26.6
+Panic disorder,Specific phobia,F,A,31,27.5,34.9
+Panic disorder,Agoraphobia,F,A,66.1,53.3,81.8
+Panic disorder,PTSD,F,A,39,32.5,46.8
+Panic disorder,OCD,F,A,,,
+Panic disorder,Adult SAD,F,A,24.6,19.2,31.5
+Panic disorder,Child SAD,F,A,,,
+Panic disorder,Anorexia nervosa,F,A,,,
+Panic disorder,Bulimia nervosa,F,A,,,
+Panic disorder,Binge eating disorder,F,A,22.9,16.7,31.5
+Panic disorder,IED,F,A,10.1,7.7,13.2
+Panic disorder,ADHD,F,A,,,
+Panic disorder,Conduct disorder,F,A,,,
+Panic disorder,ODD,F,A,,,
+Panic disorder,Nicotine dependence,F,A,5.7,4.9,6.8
+Panic disorder,Alcohol abuse,F,A,3.3,2.8,4
+Panic disorder,Alcohol dependence,F,A,8.2,6.3,10.7
+Panic disorder,Drug abuse,F,A,6.5,5.1,8.2
+Panic disorder,Drug dependence,F,A,10.1,7.3,13.8
+Panic disorder,MDE,M,A,19.6,17.2,22.2
+Panic disorder,Bipolar disorder,M,A,23.2,17.2,31.4
+Panic disorder,Dysthymia,M,A,43.7,32.4,59
+Panic disorder,GAD,M,A,28,23.5,33.2
+Panic disorder,Social phobia,M,A,22.5,18.6,27.2
+Panic disorder,Specific phobia,M,A,,,
+Panic disorder,Agoraphobia,M,A,,,
+Panic disorder,PTSD,M,A,24.6,17.6,34.5
+Panic disorder,OCD,M,A,,,
+Panic disorder,Adult SAD,M,A,,,
+Panic disorder,Child SAD,M,A,,,
+Panic disorder,Anorexia nervosa,M,A,,,
+Panic disorder,Bulimia nervosa,M,A,,,
+Panic disorder,Binge eating disorder,M,A,,,
+Panic disorder,IED,M,A,,,
+Panic disorder,ADHD,M,A,,,
+Panic disorder,Conduct disorder,M,A,,,
+Panic disorder,ODD,M,A,,,
+Panic disorder,Nicotine dependence,M,A,6.5,5.3,8
+Panic disorder,Alcohol abuse,M,A,8.5,7.3,9.9
+Panic disorder,Alcohol dependence,M,A,21.9,17.4,27.6
+Panic disorder,Drug abuse,M,A,12.3,9.6,15.7
+Panic disorder,Drug dependence,M,A,21.3,15.8,28.6
+Panic disorder,MDE,F,B,13.3,11.6,15.3
+Panic disorder,Bipolar disorder,F,B,5.5,3.3,9.2
+Panic disorder,Dysthymia,F,B,15.1,10.6,21.5
+Panic disorder,GAD,F,B,17,13.6,21.3
+Panic disorder,Social phobia,F,B,7.3,5.5,9.6
+Panic disorder,Specific phobia,F,B,17.2,14.2,20.9
+Panic disorder,Agoraphobia,F,B,19.5,12.1,31.6
+Panic disorder,PTSD,F,B,17.5,12.4,24.9
+Panic disorder,OCD,F,B,,,
+Panic disorder,Adult SAD,F,B,4.4,2.3,8.5
+Panic disorder,Child SAD,F,B,,,
+Panic disorder,Anorexia nervosa,F,B,,,
+Panic disorder,Bulimia nervosa,F,B,,,
+Panic disorder,Binge eating disorder,F,B,9.7,5.3,17.8
+Panic disorder,IED,F,B,3.6,1.9,6.7
+Panic disorder,ADHD,F,B,,,
+Panic disorder,Conduct disorder,F,B,,,
+Panic disorder,ODD,F,B,,,
+Panic disorder,Nicotine dependence,F,B,2.3,1.6,3.2
+Panic disorder,Alcohol abuse,F,B,1.9,1.4,2.4
+Panic disorder,Alcohol dependence,F,B,2.9,1.9,4.4
+Panic disorder,Drug abuse,F,B,2.4,1.5,3.7
+Panic disorder,Drug dependence,F,B,1.7,0.7,4.2
+Panic disorder,MDE,M,B,11.2,9.3,13.5
+Panic disorder,Bipolar disorder,M,B,6.8,3.7,12.3
+Panic disorder,Dysthymia,M,B,16,9.7,26.5
+Panic disorder,GAD,M,B,12.9,9.8,16.8
+Panic disorder,Social phobia,M,B,7.8,5.2,11.8
+Panic disorder,Specific phobia,M,B,,,
+Panic disorder,Agoraphobia,M,B,,,
+Panic disorder,PTSD,M,B,11.6,6.5,20.5
+Panic disorder,OCD,M,B,,,
+Panic disorder,Adult SAD,M,B,,,
+Panic disorder,Child SAD,M,B,,,
+Panic disorder,Anorexia nervosa,M,B,,,
+Panic disorder,Bulimia nervosa,M,B,,,
+Panic disorder,Binge eating disorder,M,B,,,
+Panic disorder,IED,M,B,,,
+Panic disorder,ADHD,M,B,,,
+Panic disorder,Conduct disorder,M,B,,,
+Panic disorder,ODD,M,B,,,
+Panic disorder,Nicotine dependence,M,B,2.7,1.8,3.9
+Panic disorder,Alcohol abuse,M,B,4.7,3.7,6.1
+Panic disorder,Alcohol dependence,M,B,7.7,4.7,12.6
+Panic disorder,Drug abuse,M,B,4.1,2.5,6.5
+Panic disorder,Drug dependence,M,B,3.4,1.4,8.2
+GAD,MDE,All,A,19.2,18.3,20.2
+GAD,Bipolar disorder,All,A,19.8,17.3,22.8
+GAD,Dysthymia,All,A,33.9,29.9,38.4
+GAD,Panic disorder,All,A,19,16.9,21.3
+GAD,Social phobia,All,A,19.4,17.8,21
+GAD,Specific phobia,All,A,12.7,11.8,13.7
+GAD,Agoraphobia,All,A,17.5,15.3,20
+GAD,PTSD,All,A,22.8,20.3,25.7
+GAD,OCD,All,A,11.5,9.3,14.2
+GAD,Adult SAD,All,A,16.9,14.5,19.8
+GAD,Child SAD,All,A,,,
+GAD,Anorexia nervosa,All,A,,,
+GAD,Bulimia nervosa,All,A,15.3,11.1,21.2
+GAD,Binge eating disorder,All,A,12.5,10.5,15
+GAD,IED,All,A,15.7,13.6,18.1
+GAD,ADHD,All,A,,,
+GAD,Conduct disorder,All,A,,,
+GAD,ODD,All,A,,,
+GAD,Nicotine dependence,All,A,9.5,8.6,10.5
+GAD,Alcohol abuse,All,A,9.2,8.4,10
+GAD,Alcohol dependence,All,A,19.9,17.3,22.9
+GAD,Drug abuse,All,A,11.9,10.4,13.7
+GAD,Drug dependence,All,A,19.4,16.1,23.5
+GAD,MDE,All,B,11.8,10.9,12.8
+GAD,Bipolar disorder,All,B,7,5.3,9.4
+GAD,Dysthymia,All,B,14,11.1,17.7
+GAD,Panic disorder,All,B,7,5.6,8.8
+GAD,Social phobia,All,B,8.8,7.5,10.3
+GAD,Specific phobia,All,B,6.8,6,7.7
+GAD,Agoraphobia,All,B,4.3,3.2,5.7
+GAD,PTSD,All,B,12.9,10.5,15.8
+GAD,OCD,All,B,3.7,2.4,5.7
+GAD,Adult SAD,All,B,3.7,2.5,5.7
+GAD,Child SAD,All,B,,,
+GAD,Anorexia nervosa,All,B,,,
+GAD,Bulimia nervosa,All,B,3.2,1.9,5.2
+GAD,Binge eating disorder,All,B,4.6,3.3,6.4
+GAD,IED,All,B,6.4,4.7,8.8
+GAD,ADHD,All,B,,,
+GAD,Conduct disorder,All,B,,,
+GAD,ODD,All,B,,,
+GAD,Nicotine dependence,All,B,5.2,4.4,6.2
+GAD,Alcohol abuse,All,B,5.2,4.5,6.1
+GAD,Alcohol dependence,All,B,7,5.1,9.6
+GAD,Drug abuse,All,B,4.4,3.3,5.9
+GAD,Drug dependence,All,B,4.7,3.1,7.3
+GAD,MDE,F,A,29.7,27.7,31.7
+GAD,Bipolar disorder,F,A,18.6,15.3,22.6
+GAD,Dysthymia,F,A,58.3,49.3,68.8
+GAD,Panic disorder,F,A,30.1,24.9,36.4
+GAD,Social phobia,F,A,25.1,22.3,28.4
+GAD,Specific phobia,F,A,24.4,21.9,27.2
+GAD,Agoraphobia,F,A,35.1,28.3,43.5
+GAD,PTSD,F,A,42.8,36.7,49.8
+GAD,OCD,F,A,13.1,9.2,18.5
+GAD,Adult SAD,F,A,21.9,17,28.1
+GAD,Child SAD,F,A,,,
+GAD,Anorexia nervosa,F,A,,,
+GAD,Bulimia nervosa,F,A,46.5,28.5,75.9
+GAD,Binge eating disorder,F,A,20.3,15.9,25.9
+GAD,IED,F,A,12.4,10,15.4
+GAD,ADHD,F,A,,,
+GAD,Conduct disorder,F,A,,,
+GAD,ODD,F,A,,,
+GAD,Nicotine dependence,F,A,6.1,5.4,7
+GAD,Alcohol abuse,F,A,2.8,2.5,3.2
+GAD,Alcohol dependence,F,A,6.5,5.2,8
+GAD,Drug abuse,F,A,5.3,4.4,6.5
+GAD,Drug dependence,F,A,7.9,6.1,10.3
+GAD,MDE,M,A,26.4,24.4,28.6
+GAD,Bipolar disorder,M,A,23.4,18.8,29.1
+GAD,Dysthymia,M,A,47.5,38.9,58
+GAD,Panic disorder,M,A,23.5,19.5,28.3
+GAD,Social phobia,M,A,23.3,20.6,26.5
+GAD,Specific phobia,M,A,,,
+GAD,Agoraphobia,M,A,22.2,17.9,27.5
+GAD,PTSD,M,A,31.9,26.3,38.7
+GAD,OCD,M,A,,,
+GAD,Adult SAD,M,A,20.5,16.2,26
+GAD,Child SAD,M,A,,,
+GAD,Anorexia nervosa,M,A,,,
+GAD,Bulimia nervosa,M,A,,,
+GAD,Binge eating disorder,M,A,,,
+GAD,IED,M,A,,,
+GAD,ADHD,M,A,,,
+GAD,Conduct disorder,M,A,,,
+GAD,ODD,M,A,,,
+GAD,Nicotine dependence,M,A,9.2,8.1,10.5
+GAD,Alcohol abuse,M,A,8.8,7.8,9.9
+GAD,Alcohol dependence,M,A,20.4,17.2,24.3
+GAD,Drug abuse,M,A,12.3,10.3,14.8
+GAD,Drug dependence,M,A,22,17.3,27.9
+GAD,MDE,F,B,18.5,16.9,20.3
+GAD,Bipolar disorder,F,B,6.6,5,8.8
+GAD,Dysthymia,F,B,23.1,18.2,29.3
+GAD,Panic disorder,F,B,10.8,8.3,14.1
+GAD,Social phobia,F,B,11,9.3,13.1
+GAD,Specific phobia,F,B,13,11.2,15.1
+GAD,Agoraphobia,F,B,8.3,5.8,11.8
+GAD,PTSD,F,B,24.5,19.6,30.7
+GAD,OCD,F,B,4.2,2.5,7
+GAD,Adult SAD,F,B,4.7,2.9,7.8
+GAD,Child SAD,F,B,,,
+GAD,Anorexia nervosa,F,B,,,
+GAD,Bulimia nervosa,F,B,9.2,4.3,19.8
+GAD,Binge eating disorder,F,B,7.1,4.7,10.6
+GAD,IED,F,B,5.3,3.7,7.5
+GAD,ADHD,F,B,,,
+GAD,Conduct disorder,F,B,,,
+GAD,ODD,F,B,,,
+GAD,Nicotine dependence,F,B,3.5,2.9,4.3
+GAD,Alcohol abuse,F,B,1.7,1.4,2.1
+GAD,Alcohol dependence,F,B,2.5,1.9,3.5
+GAD,Drug abuse,F,B,2.4,1.7,3.3
+GAD,Drug dependence,F,B,2.5,1.5,4
+GAD,MDE,M,B,15.6,13.9,17.6
+GAD,Bipolar disorder,M,B,8,5.5,11.8
+GAD,Dysthymia,M,B,20.5,14.6,28.7
+GAD,Panic disorder,M,B,8.8,6.4,12.2
+GAD,Social phobia,M,B,10.9,8.8,13.6
+GAD,Specific phobia,M,B,,,
+GAD,Agoraphobia,M,B,5.4,3.6,7.9
+GAD,PTSD,M,B,17.1,12.7,23
+GAD,OCD,M,B,,,
+GAD,Adult SAD,M,B,4.3,2.8,6.7
+GAD,Child SAD,M,B,,,
+GAD,Anorexia nervosa,M,B,,,
+GAD,Bulimia nervosa,M,B,,,
+GAD,Binge eating disorder,M,B,,,
+GAD,IED,M,B,,,
+GAD,ADHD,M,B,,,
+GAD,Conduct disorder,M,B,,,
+GAD,ODD,M,B,,,
+GAD,Nicotine dependence,M,B,4.7,3.8,5.8
+GAD,Alcohol abuse,M,B,4.8,4,5.7
+GAD,Alcohol dependence,M,B,6.8,4.8,9.6
+GAD,Drug abuse,M,B,4,2.9,5.6
+GAD,Drug dependence,M,B,4.6,2.9,7.2
+Social phobia,MDE,All,A,15.8,15,16.5
+Social phobia,Bipolar disorder,All,A,19.5,17.3,21.9
+Social phobia,Dysthymia,All,A,24.9,22.2,27.8
+Social phobia,Panic disorder,All,A,21.3,19,23.8
+Social phobia,GAD,All,A,24.5,22.8,26.4
+Social phobia,Specific phobia,All,A,18.8,17.6,20.2
+Social phobia,Agoraphobia,All,A,43.1,38.6,48
+Social phobia,PTSD,All,A,18,16.3,19.9
+Social phobia,OCD,All,A,18,14.7,22.1
+Social phobia,Adult SAD,All,A,16.3,14.5,18.4
+Social phobia,Child SAD,All,A,14.6,12.4,17.3
+Social phobia,Anorexia nervosa,All,A,,,
+Social phobia,Bulimia nervosa,All,A,20,15.8,25.3
+Social phobia,Binge eating disorder,All,A,14.4,12.5,16.5
+Social phobia,IED,All,A,16.3,14.3,18.6
+Social phobia,ADHD,All,A,16.1,13.2,19.8
+Social phobia,Conduct disorder,All,A,11,9,13.4
+Social phobia,ODD,All,A,16,13.3,19.2
+Social phobia,Nicotine dependence,All,A,9,8.2,9.9
+Social phobia,Alcohol abuse,All,A,10.4,9.7,11.1
+Social phobia,Alcohol dependence,All,A,17.7,16,19.7
+Social phobia,Drug abuse,All,A,12.1,10.8,13.4
+Social phobia,Drug dependence,All,A,18.5,15.9,21.6
+Social phobia,MDE,All,B,12,11.3,12.8
+Social phobia,Bipolar disorder,All,B,11.2,9.3,13.4
+Social phobia,Dysthymia,All,B,15.3,12.9,18.1
+Social phobia,Panic disorder,All,B,13.3,11.2,15.9
+Social phobia,GAD,All,B,18.6,16.9,20.5
+Social phobia,Specific phobia,All,B,14.8,13.6,16.1
+Social phobia,Agoraphobia,All,B,25.7,21.6,30.5
+Social phobia,PTSD,All,B,13.1,11.5,14.9
+Social phobia,OCD,All,B,10.1,7.5,13.7
+Social phobia,Adult SAD,All,B,8.1,6.5,10.1
+Social phobia,Child SAD,All,B,6.8,5.2,8.8
+Social phobia,Anorexia nervosa,All,B,,,
+Social phobia,Bulimia nervosa,All,B,11.4,7.4,17.5
+Social phobia,Binge eating disorder,All,B,10.2,8.3,12.6
+Social phobia,IED,All,B,11.7,9.7,14.2
+Social phobia,ADHD,All,B,6.5,4.5,9.5
+Social phobia,Conduct disorder,All,B,4.1,2.7,6.2
+Social phobia,ODD,All,B,7.4,5.4,10
+Social phobia,Nicotine dependence,All,B,6,5.2,6.9
+Social phobia,Alcohol abuse,All,B,7.9,7.2,8.7
+Social phobia,Alcohol dependence,All,B,12.6,10.9,14.5
+Social phobia,Drug abuse,All,B,8.4,7.2,9.8
+Social phobia,Drug dependence,All,B,12,9.5,15.1
+Social phobia,MDE,F,A,25.8,24.2,27.5
+Social phobia,Bipolar disorder,F,A,19.6,16.6,23.2
+Social phobia,Dysthymia,F,A,42.7,36,50.7
+Social phobia,Panic disorder,F,A,34.3,29,40.6
+Social phobia,GAD,F,A,41.1,36.9,45.9
+Social phobia,Specific phobia,F,A,33.9,30.8,37.2
+Social phobia,Agoraphobia,F,A,78.3,66.1,92.8
+Social phobia,PTSD,F,A,37.7,32.5,43.6
+Social phobia,OCD,F,A,19.7,14.6,26.5
+Social phobia,Adult SAD,F,A,20.9,17,25.7
+Social phobia,Child SAD,F,A,22.5,17.5,28.8
+Social phobia,Anorexia nervosa,F,A,,,
+Social phobia,Bulimia nervosa,F,A,66.5,42.3,104.5
+Social phobia,Binge eating disorder,F,A,23.7,19.2,29.2
+Social phobia,IED,F,A,12.9,10.6,15.6
+Social phobia,ADHD,F,A,,,
+Social phobia,Conduct disorder,F,A,5.1,3.7,7.2
+Social phobia,ODD,F,A,12.5,9.4,16.5
+Social phobia,Nicotine dependence,F,A,6.2,5.5,7
+Social phobia,Alcohol abuse,F,A,3.5,3.1,4
+Social phobia,Alcohol dependence,F,A,6.1,5.2,7.1
+Social phobia,Drug abuse,F,A,5.5,4.5,6.6
+Social phobia,Drug dependence,F,A,7.8,6.1,9.9
+Social phobia,MDE,M,A,18.4,17.2,19.8
+Social phobia,Bipolar disorder,M,A,19.6,16.6,23.2
+Social phobia,Dysthymia,M,A,29.7,25.3,35
+Social phobia,Panic disorder,M,A,26.6,22.8,31.1
+Social phobia,GAD,M,A,30.8,27.7,34.4
+Social phobia,Specific phobia,M,A,23.3,21.1,25.8
+Social phobia,Agoraphobia,M,A,58.9,50.4,68.9
+Social phobia,PTSD,M,A,22.1,19,25.8
+Social phobia,OCD,M,A,20.9,15.8,27.7
+Social phobia,Adult SAD,M,A,18.2,15.3,21.6
+Social phobia,Child SAD,M,A,,,
+Social phobia,Anorexia nervosa,M,A,,,
+Social phobia,Bulimia nervosa,M,A,,,
+Social phobia,Binge eating disorder,M,A,14.7,11.6,18.7
+Social phobia,IED,M,A,16,13.6,18.8
+Social phobia,ADHD,M,A,,,
+Social phobia,Conduct disorder,M,A,11.4,9,14.5
+Social phobia,ODD,M,A,17.1,13.6,21.5
+Social phobia,Nicotine dependence,M,A,7.8,6.9,8.7
+Social phobia,Alcohol abuse,M,A,9.4,8.7,10.2
+Social phobia,Alcohol dependence,M,A,17.1,15.1,19.3
+Social phobia,Drug abuse,M,A,12.1,10.6,13.7
+Social phobia,Drug dependence,M,A,19.6,16.3,23.5
+Social phobia,MDE,F,B,19.2,17.7,20.8
+Social phobia,Bipolar disorder,F,B,10.5,8.5,12.9
+Social phobia,Dysthymia,F,B,24.9,20,31.1
+Social phobia,Panic disorder,F,B,20.3,16.3,25.2
+Social phobia,GAD,F,B,30.1,26.6,34.1
+Social phobia,Specific phobia,F,B,26.3,23.6,29.2
+Social phobia,Agoraphobia,F,B,43.9,35.9,53.6
+Social phobia,PTSD,F,B,27.3,22.9,32.6
+Social phobia,OCD,F,B,10.2,7.3,14.2
+Social phobia,Adult SAD,F,B,9.5,6.9,13
+Social phobia,Child SAD,F,B,9.6,6.8,13.7
+Social phobia,Anorexia nervosa,F,B,,,
+Social phobia,Bulimia nervosa,F,B,38.1,20.1,72
+Social phobia,Binge eating disorder,F,B,16.6,12.5,22.1
+Social phobia,IED,F,B,8.8,6.9,11.2
+Social phobia,ADHD,F,B,,,
+Social phobia,Conduct disorder,F,B,1.8,1.1,2.9
+Social phobia,ODD,F,B,5.9,4,8.7
+Social phobia,Nicotine dependence,F,B,4,3.4,4.8
+Social phobia,Alcohol abuse,F,B,2.7,2.3,3.1
+Social phobia,Alcohol dependence,F,B,4.2,3.4,5.2
+Social phobia,Drug abuse,F,B,3.7,3,4.7
+Social phobia,Drug dependence,F,B,5.1,3.7,7
+Social phobia,MDE,M,B,14.5,13.3,15.8
+Social phobia,Bipolar disorder,M,B,12,9.7,14.9
+Social phobia,Dysthymia,M,B,19.5,15.9,23.9
+Social phobia,Panic disorder,M,B,17.9,14.6,21.9
+Social phobia,GAD,M,B,24.4,21.6,27.5
+Social phobia,Specific phobia,M,B,18.6,16.7,20.8
+Social phobia,Agoraphobia,M,B,37.8,30.7,46.5
+Social phobia,PTSD,M,B,16.1,13.5,19.2
+Social phobia,OCD,M,B,12.8,8.8,18.7
+Social phobia,Adult SAD,M,B,10,7.9,12.6
+Social phobia,Child SAD,M,B,,,
+Social phobia,Anorexia nervosa,M,B,,,
+Social phobia,Bulimia nervosa,M,B,,,
+Social phobia,Binge eating disorder,M,B,10.8,8.2,14.3
+Social phobia,IED,M,B,12,9.8,14.8
+Social phobia,ADHD,M,B,,,
+Social phobia,Conduct disorder,M,B,4.3,2.8,6.7
+Social phobia,ODD,M,B,7.6,5.4,10.8
+Social phobia,Nicotine dependence,M,B,5.4,4.7,6.3
+Social phobia,Alcohol abuse,M,B,7.2,6.6,8
+Social phobia,Alcohol dependence,M,B,12.2,10.5,14.3
+Social phobia,Drug abuse,M,B,8.5,7.2,10
+Social phobia,Drug dependence,M,B,12.6,9.8,16.1
+Specific phobia,MDE,All,A,13,12.4,13.6
+Specific phobia,Bipolar disorder,All,A,19,17.1,21.2
+Specific phobia,Dysthymia,All,A,18.9,16.9,21
+Specific phobia,Panic disorder,All,A,21.8,19.9,23.9
+Specific phobia,GAD,All,A,16.2,15.1,17.4
+Specific phobia,Social phobia,All,A,22.5,21,24.2
+Specific phobia,Agoraphobia,All,A,34.1,30.9,37.6
+Specific phobia,PTSD,All,A,16.7,15.3,18.3
+Specific phobia,OCD,All,A,20.2,15.5,26.2
+Specific phobia,Adult SAD,All,A,18.3,16.4,20.4
+Specific phobia,Child SAD,All,A,17.4,14.9,20.4
+Specific phobia,Anorexia nervosa,All,A,8.9,4.9,16.5
+Specific phobia,Bulimia nervosa,All,A,15.2,12,19.4
+Specific phobia,Binge eating disorder,All,A,12.8,11.1,14.8
+Specific phobia,IED,All,A,13.5,12.1,15.1
+Specific phobia,ADHD,All,A,13.2,11.2,15.5
+Specific phobia,Conduct disorder,All,A,11.9,9.9,14.2
+Specific phobia,ODD,All,A,13.1,10.9,15.8
+Specific phobia,Nicotine dependence,All,A,9.4,8.6,10.3
+Specific phobia,Alcohol abuse,All,A,10.6,9.8,11.4
+Specific phobia,Alcohol dependence,All,A,14.5,13,16.2
+Specific phobia,Drug abuse,All,A,10.8,9.6,12.2
+Specific phobia,Drug dependence,All,A,15.2,13,17.8
+Specific phobia,MDE,All,B,12.1,11.5,12.7
+Specific phobia,Bipolar disorder,All,B,16.9,14.9,19.1
+Specific phobia,Dysthymia,All,B,16.1,14.3,18.2
+Specific phobia,Panic disorder,All,B,19.9,17.8,22.1
+Specific phobia,GAD,All,B,14.6,13.5,15.8
+Specific phobia,Social phobia,All,B,20.5,19,22.1
+Specific phobia,Agoraphobia,All,B,30.8,27.5,34.5
+Specific phobia,PTSD,All,B,15.4,14,17.1
+Specific phobia,OCD,All,B,19.1,14.4,25.4
+Specific phobia,Adult SAD,All,B,15.9,13.9,18.2
+Specific phobia,Child SAD,All,B,15.9,13.4,18.8
+Specific phobia,Anorexia nervosa,All,B,8.8,4.6,16.8
+Specific phobia,Bulimia nervosa,All,B,11.9,9,15.9
+Specific phobia,Binge eating disorder,All,B,11,9.3,13
+Specific phobia,IED,All,B,12.2,10.7,14
+Specific phobia,ADHD,All,B,10.4,8.6,12.6
+Specific phobia,Conduct disorder,All,B,9.5,7.7,11.8
+Specific phobia,ODD,All,B,10.8,8.7,13.3
+Specific phobia,Nicotine dependence,All,B,8.8,8,9.7
+Specific phobia,Alcohol abuse,All,B,9.6,8.8,10.4
+Specific phobia,Alcohol dependence,All,B,12.3,10.8,14.1
+Specific phobia,Drug abuse,All,B,9.5,8.2,10.9
+Specific phobia,Drug dependence,All,B,12.5,10.4,15
+Specific phobia,MDE,F,A,21.5,20.2,22.9
+Specific phobia,Bipolar disorder,F,A,17.9,15.5,20.7
+Specific phobia,Dysthymia,F,A,31.1,26.4,36.6
+Specific phobia,Panic disorder,F,A,36.3,31.6,41.8
+Specific phobia,GAD,F,A,27.7,24.9,30.9
+Specific phobia,Social phobia,F,A,26,23.6,28.7
+Specific phobia,Agoraphobia,F,A,60.5,51.8,70.7
+Specific phobia,PTSD,F,A,37.8,33.2,43.1
+Specific phobia,OCD,F,A,17.5,13.4,22.9
+Specific phobia,Adult SAD,F,A,21.1,17.8,24.9
+Specific phobia,Child SAD,F,A,24.3,18.6,31.7
+Specific phobia,Anorexia nervosa,F,A,,,
+Specific phobia,Bulimia nervosa,F,A,41,27.4,61.4
+Specific phobia,Binge eating disorder,F,A,19.2,15.7,23.6
+Specific phobia,IED,F,A,9.9,8.4,11.8
+Specific phobia,ADHD,F,A,8.8,6.8,11.3
+Specific phobia,Conduct disorder,F,A,5,3.9,6.6
+Specific phobia,ODD,F,A,8.7,6.8,11.1
+Specific phobia,Nicotine dependence,F,A,5.7,5.1,6.3
+Specific phobia,Alcohol abuse,F,A,2.8,2.4,3.1
+Specific phobia,Alcohol dependence,F,A,3.8,3.2,4.5
+Specific phobia,Drug abuse,F,A,4.6,3.8,5.4
+Specific phobia,Drug dependence,F,A,6,4.8,7.6
+Specific phobia,MDE,M,A,16.6,15.3,18
+Specific phobia,Bipolar disorder,M,A,20.3,17.3,23.9
+Specific phobia,Dysthymia,M,A,25.1,20.6,30.6
+Specific phobia,Panic disorder,M,A,29.9,25.3,35.4
+Specific phobia,GAD,M,A,20.6,18.3,23.3
+Specific phobia,Social phobia,M,A,29.1,26.3,32.3
+Specific phobia,Agoraphobia,M,A,50.6,43.7,58.7
+Specific phobia,PTSD,M,A,18.9,16,22.3
+Specific phobia,OCD,M,A,31.2,22.9,42.6
+Specific phobia,Adult SAD,M,A,26,22.3,30.3
+Specific phobia,Child SAD,M,A,23,18.1,29.4
+Specific phobia,Anorexia nervosa,M,A,,,
+Specific phobia,Bulimia nervosa,M,A,32,22.2,46.2
+Specific phobia,Binge eating disorder,M,A,18.9,15.1,23.6
+Specific phobia,IED,M,A,14.7,12.6,17.2
+Specific phobia,ADHD,M,A,12.9,10.1,16.4
+Specific phobia,Conduct disorder,M,A,12.8,10,16.3
+Specific phobia,ODD,M,A,15.4,12.1,19.5
+Specific phobia,Nicotine dependence,M,A,9.1,8,10.3
+Specific phobia,Alcohol abuse,M,A,10.6,9.6,11.6
+Specific phobia,Alcohol dependence,M,A,15.3,13.4,17.5
+Specific phobia,Drug abuse,M,A,11.2,9.5,13.2
+Specific phobia,Drug dependence,M,A,16.7,13.6,20.4
+Specific phobia,MDE,F,B,20.2,19,21.5
+Specific phobia,Bipolar disorder,F,B,16.1,13.8,18.8
+Specific phobia,Dysthymia,F,B,26.7,22.6,31.5
+Specific phobia,Panic disorder,F,B,33.4,28.9,38.8
+Specific phobia,GAD,F,B,25.2,22.5,28.2
+Specific phobia,Social phobia,F,B,24,21.7,26.6
+Specific phobia,Agoraphobia,F,B,55,46.7,64.9
+Specific phobia,PTSD,F,B,35.5,31.1,40.6
+Specific phobia,OCD,F,B,16.6,12.6,21.9
+Specific phobia,Adult SAD,F,B,19,15.8,22.8
+Specific phobia,Child SAD,F,B,22.5,17.3,29.4
+Specific phobia,Anorexia nervosa,F,B,,,
+Specific phobia,Bulimia nervosa,F,B,32.5,21.8,48.5
+Specific phobia,Binge eating disorder,F,B,16.8,13.5,20.9
+Specific phobia,IED,F,B,9.2,7.7,10.9
+Specific phobia,ADHD,F,B,7.8,6,10
+Specific phobia,Conduct disorder,F,B,4.5,3.4,5.9
+Specific phobia,ODD,F,B,7.6,5.8,9.8
+Specific phobia,Nicotine dependence,F,B,5.4,4.8,6
+Specific phobia,Alcohol abuse,F,B,2.6,2.3,2.9
+Specific phobia,Alcohol dependence,F,B,3.3,2.7,4
+Specific phobia,Drug abuse,F,B,4.1,3.4,4.9
+Specific phobia,Drug dependence,F,B,4.9,3.8,6.4
+Specific phobia,MDE,M,B,15.2,13.9,16.6
+Specific phobia,Bipolar disorder,M,B,17.7,14.7,21.2
+Specific phobia,Dysthymia,M,B,21.2,17.3,26.1
+Specific phobia,Panic disorder,M,B,26.8,22.2,32.2
+Specific phobia,GAD,M,B,18.2,15.9,20.8
+Specific phobia,Social phobia,M,B,25.9,23.2,29
+Specific phobia,Agoraphobia,M,B,45.4,38.5,53.6
+Specific phobia,PTSD,M,B,16.6,13.9,19.9
+Specific phobia,OCD,M,B,29.9,21.4,41.7
+Specific phobia,Adult SAD,M,B,21.9,18.1,26.4
+Specific phobia,Child SAD,M,B,20.8,16.1,27
+Specific phobia,Anorexia nervosa,M,B,,,
+Specific phobia,Bulimia nervosa,M,B,24.5,15.9,37.8
+Specific phobia,Binge eating disorder,M,B,15.8,12.3,20.3
+Specific phobia,IED,M,B,13.1,10.9,15.8
+Specific phobia,ADHD,M,B,9.2,7,12.1
+Specific phobia,Conduct disorder,M,B,9.7,7.4,12.9
+Specific phobia,ODD,M,B,12.1,9.4,15.6
+Specific phobia,Nicotine dependence,M,B,8.4,7.3,9.6
+Specific phobia,Alcohol abuse,M,B,9.4,8.5,10.5
+Specific phobia,Alcohol dependence,M,B,12.8,10.9,15.1
+Specific phobia,Drug abuse,M,B,9.6,8,11.5
+Specific phobia,Drug dependence,M,B,13.7,11,17.2
+Agoraphobia,MDE,All,A,15.2,14.1,16.5
+Agoraphobia,Bipolar disorder,All,A,33,27.8,39.1
+Agoraphobia,Dysthymia,All,A,29.7,25.3,34.9
+Agoraphobia,Panic disorder,All,A,45.8,39.9,52.5
+Agoraphobia,GAD,All,A,24.3,21.6,27.3
+Agoraphobia,Social phobia,All,A,40.6,37.2,44.2
+Agoraphobia,Specific Phobia,All,A,24.9,22.9,27.1
+Agoraphobia,PTSD,All,A,20.9,17.9,24.4
+Agoraphobia,OCD,All,A,20.7,15.5,27.7
+Agoraphobia,Adult SAD,All,A,20.3,16.7,24.7
+Agoraphobia,Child SAD,All,A,,,
+Agoraphobia,Anorexia nervosa,All,A,,,
+Agoraphobia,Bulimia nervosa,All,A,19.8,12.9,30.3
+Agoraphobia,Binge eating disorder,All,A,17.4,13.5,22.4
+Agoraphobia,IED,All,A,16.4,13.2,20.4
+Agoraphobia,ADHD,All,A,,,
+Agoraphobia,Conduct disorder,All,A,,,
+Agoraphobia,ODD,All,A,14.6,11.3,18.8
+Agoraphobia,Nicotine dependence,All,A,8.3,7,9.8
+Agoraphobia,Alcohol abuse,All,A,10.4,9,12
+Agoraphobia,Alcohol dependence,All,A,23.9,20.2,28.3
+Agoraphobia,Drug abuse,All,A,13.2,11.1,15.6
+Agoraphobia,Drug dependence,All,A,23,18.2,28.9
+Agoraphobia,MDE,All,B,9.3,8.2,10.6
+Agoraphobia,Bipolar disorder,All,B,15.1,10.2,22.4
+Agoraphobia,Dysthymia,All,B,11.2,7.7,16.3
+Agoraphobia,Panic disorder,All,B,24.9,18.7,33.4
+Agoraphobia,GAD,All,B,13.7,11.3,16.7
+Agoraphobia,Social phobia,All,B,22.8,19.4,26.7
+Agoraphobia,Specific Phobia,All,B,16.2,14.2,18.5
+Agoraphobia,PTSD,All,B,11.2,8.2,15.3
+Agoraphobia,OCD,All,B,10.2,5.7,18.2
+Agoraphobia,Adult SAD,All,B,6.6,3.7,11.7
+Agoraphobia,Child SAD,All,B,,,
+Agoraphobia,Anorexia nervosa,All,B,,,
+Agoraphobia,Bulimia nervosa,All,B,7.1,2.5,20.3
+Agoraphobia,Binge eating disorder,All,B,9.9,6.2,16
+Agoraphobia,IED,All,B,8.5,5.8,12.5
+Agoraphobia,ADHD,All,B,,,
+Agoraphobia,Conduct disorder,All,B,,,
+Agoraphobia,ODD,All,B,3.5,1.4,8.9
+Agoraphobia,Nicotine dependence,All,B,4,2.6,6
+Agoraphobia,Alcohol abuse,All,B,6.5,5.2,8.1
+Agoraphobia,Alcohol dependence,All,B,13.4,9.7,18.3
+Agoraphobia,Drug abuse,All,B,6.7,4.6,9.8
+Agoraphobia,Drug dependence,All,B,8.3,4.5,15.2
+Agoraphobia,MDE,F,A,24.8,22.6,27.2
+Agoraphobia,Bipolar disorder,F,A,33.1,26.4,41.6
+Agoraphobia,Dysthymia,F,A,53.9,43.9,66.2
+Agoraphobia,Panic disorder,F,A,74.1,61.2,89.9
+Agoraphobia,GAD,F,A,39.6,34.2,45.9
+Agoraphobia,Social phobia,F,A,50.8,45.1,57.3
+Agoraphobia,Specific Phobia,F,A,44.7,40.3,49.7
+Agoraphobia,PTSD,F,A,45.9,37.3,56.5
+Agoraphobia,OCD,F,A,22.9,15.8,33.1
+Agoraphobia,Adult SAD,F,A,24.1,18.9,30.7
+Agoraphobia,Child SAD,F,A,,,
+Agoraphobia,Anorexia nervosa,F,A,,,
+Agoraphobia,Bulimia nervosa,F,A,,,
+Agoraphobia,Binge eating disorder,F,A,28.3,20.9,38.3
+Agoraphobia,IED,F,A,13.5,10.3,17.6
+Agoraphobia,ADHD,F,A,,,
+Agoraphobia,Conduct disorder,F,A,,,
+Agoraphobia,ODD,F,A,,,
+Agoraphobia,Nicotine dependence,F,A,5.3,4.4,6.4
+Agoraphobia,Alcohol abuse,F,A,2.9,2.4,3.6
+Agoraphobia,Alcohol dependence,F,A,7.7,5.7,10.4
+Agoraphobia,Drug abuse,F,A,4.8,3.5,6.6
+Agoraphobia,Drug dependence,F,A,8.2,5.3,12.5
+Agoraphobia,MDE,M,A,20.1,17.2,23.4
+Agoraphobia,Bipolar disorder,M,A,32.6,25.4,41.9
+Agoraphobia,Dysthymia,M,A,36,26.3,49.4
+Agoraphobia,Panic disorder,M,A,66.7,54.3,82
+Agoraphobia,GAD,M,A,34.4,28.1,42.1
+Agoraphobia,Social phobia,M,A,52.7,45.5,60.9
+Agoraphobia,Specific Phobia,M,A,,,
+Agoraphobia,PTSD,M,A,25.9,19.5,34.4
+Agoraphobia,OCD,M,A,,,
+Agoraphobia,Adult SAD,M,A,29.5,21.3,40.9
+Agoraphobia,Child SAD,M,A,,,
+Agoraphobia,Anorexia nervosa,M,A,,,
+Agoraphobia,Bulimia nervosa,M,A,,,
+Agoraphobia,Binge eating disorder,M,A,,,
+Agoraphobia,IED,M,A,,,
+Agoraphobia,ADHD,M,A,,,
+Agoraphobia,Conduct disorder,M,A,,,
+Agoraphobia,ODD,M,A,,,
+Agoraphobia,Nicotine dependence,M,A,7,5.2,9.3
+Agoraphobia,Alcohol abuse,M,A,10,8.4,11.9
+Agoraphobia,Alcohol dependence,M,A,23.6,19.3,28.9
+Agoraphobia,Drug abuse,M,A,14.9,12.4,18.1
+Agoraphobia,Drug dependence,M,A,27.1,20.9,35.3
+Agoraphobia,MDE,F,B,15,13,17.3
+Agoraphobia,Bipolar disorder,F,B,14.4,9.2,22.4
+Agoraphobia,Dysthymia,F,B,19,12.7,28.5
+Agoraphobia,Panic disorder,F,B,38.4,27.5,53.6
+Agoraphobia,GAD,F,B,21.6,17.2,27
+Agoraphobia,Social phobia,F,B,27.4,23.1,32.6
+Agoraphobia,Specific Phobia,F,B,28.5,24.6,33
+Agoraphobia,PTSD,F,B,24.6,17.3,34.9
+Agoraphobia,OCD,F,B,10.3,5.3,20.4
+Agoraphobia,Adult SAD,F,B,7.2,4,12.8
+Agoraphobia,Child SAD,F,B,,,
+Agoraphobia,Anorexia nervosa,F,B,,,
+Agoraphobia,Bulimia nervosa,F,B,,,
+Agoraphobia,Binge eating disorder,F,B,14.8,9.4,23.5
+Agoraphobia,IED,F,B,6.9,4.6,10.3
+Agoraphobia,ADHD,F,B,,,
+Agoraphobia,Conduct disorder,F,B,,,
+Agoraphobia,ODD,F,B,,,
+Agoraphobia,Nicotine dependence,F,B,2.4,1.6,3.6
+Agoraphobia,Alcohol abuse,F,B,1.7,1.3,2.3
+Agoraphobia,Alcohol dependence,F,B,3.9,2.7,5.6
+Agoraphobia,Drug abuse,F,B,2.6,1.7,4.1
+Agoraphobia,Drug dependence,F,B,3,1.5,6
+Agoraphobia,MDE,M,B,12.3,10.2,14.9
+Agoraphobia,Bipolar disorder,M,B,16,10.7,24
+Agoraphobia,Dysthymia,M,B,15.4,9.9,23.9
+Agoraphobia,Panic disorder,M,B,38,27.6,52.4
+Agoraphobia,GAD,M,B,19.9,15.3,25.8
+Agoraphobia,Social phobia,M,B,30.8,25.1,37.7
+Agoraphobia,Specific Phobia,M,B,,,
+Agoraphobia,PTSD,M,B,13.9,9.5,20.3
+Agoraphobia,OCD,M,B,,,
+Agoraphobia,Adult SAD,M,B,10.5,5.4,20.7
+Agoraphobia,Child SAD,M,B,,,
+Agoraphobia,Anorexia nervosa,M,B,,,
+Agoraphobia,Bulimia nervosa,M,B,,,
+Agoraphobia,Binge eating disorder,M,B,,,
+Agoraphobia,IED,M,B,,,
+Agoraphobia,ADHD,M,B,,,
+Agoraphobia,Conduct disorder,M,B,,,
+Agoraphobia,ODD,M,B,,,
+Agoraphobia,Nicotine dependence,M,B,3.7,2.3,6
+Agoraphobia,Alcohol abuse,M,B,6.4,5,8.1
+Agoraphobia,Alcohol dependence,M,B,13.8,9.8,19.6
+Agoraphobia,Drug abuse,M,B,7.4,4.9,11.1
+Agoraphobia,Drug dependence,M,B,9.7,5.1,18.3
+PTSD,MDE,All,A,17.2,16.4,18.2
+PTSD,Bipolar disorder,All,A,18.8,16.5,21.3
+PTSD,Dysthymia,All,A,25.5,22.8,28.6
+PTSD,Panic disorder,All,A,20.5,17.8,23.7
+PTSD,GAD,All,A,22.5,20.8,24.4
+PTSD,Social phobia,All,A,17,15.5,18.5
+PTSD,Specific Phobia,All,A,14.3,13.2,15.6
+PTSD,Agoraphobia,All,A,16.7,14.1,19.8
+PTSD,OCD,All,A,12.7,9,17.8
+PTSD,Adult SAD,All,A,17.2,14.8,19.9
+PTSD,Child SAD,All,A,15.4,11.9,19.8
+PTSD,Anorexia nervosa,All,A,,,
+PTSD,Bulimia nervosa,All,A,18.1,13.3,24.7
+PTSD,Binge eating disorder,All,A,12.9,10.8,15.5
+PTSD,IED,All,A,14.1,11.8,16.9
+PTSD,ADHD,All,A,,,
+PTSD,Conduct disorder,All,A,15.4,12.5,19.1
+PTSD,ODD,All,A,15.1,12.2,18.6
+PTSD,Nicotine dependence,All,A,9.4,8.4,10.5
+PTSD,Alcohol abuse,All,A,10.8,9.9,11.8
+PTSD,Alcohol dependence,All,A,20.7,18.1,23.7
+PTSD,Drug abuse,All,A,13.1,11.5,14.8
+PTSD,Drug dependence,All,A,21.4,18.3,25.2
+PTSD,MDE,All,B,10.6,9.7,11.6
+PTSD,Bipolar disorder,All,B,5.6,4.1,7.8
+PTSD,Dysthymia,All,B,8.8,6.8,11.4
+PTSD,Panic disorder,All,B,8.7,6.7,11.2
+PTSD,GAD,All,B,11.6,10,13.5
+PTSD,Social phobia,All,B,7.7,6.5,9.1
+PTSD,Specific Phobia,All,B,8,6.9,9.3
+PTSD,Agoraphobia,All,B,4.3,3.1,6
+PTSD,OCD,All,B,7.6,4.3,13.5
+PTSD,Adult SAD,All,B,3.8,2.8,5.3
+PTSD,Child SAD,All,B,6,3.4,10.7
+PTSD,Anorexia nervosa,All,B,,,
+PTSD,Bulimia nervosa,All,B,4.6,2.3,9.4
+PTSD,Binge eating disorder,All,B,5,3.4,7.2
+PTSD,IED,All,B,6.5,4.6,9.3
+PTSD,ADHD,All,B,,,
+PTSD,Conduct disorder,All,B,3.1,1.8,5.4
+PTSD,ODD,All,B,5.1,3,8.8
+PTSD,Nicotine dependence,All,B,5.6,4.6,6.7
+PTSD,Alcohol abuse,All,B,6.1,5.2,7.2
+PTSD,Alcohol dependence,All,B,7.5,5.5,10.2
+PTSD,Drug abuse,All,B,5.7,4.5,7.2
+PTSD,Drug dependence,All,B,7,4.8,10.2
+PTSD,MDE,F,A,28.3,26.5,30.3
+PTSD,Bipolar disorder,F,A,19.8,16.2,24.2
+PTSD,Dysthymia,F,A,44.3,37.2,52.7
+PTSD,Panic disorder,F,A,34,27.9,41.5
+PTSD,GAD,F,A,36.2,32.2,40.8
+PTSD,Social phobia,F,A,21.9,19.4,24.7
+PTSD,Specific Phobia,F,A,29.3,26.1,32.8
+PTSD,Agoraphobia,F,A,35,28.3,43.2
+PTSD,OCD,F,A,10.1,7.1,14.4
+PTSD,Adult SAD,F,A,22.9,18.1,29
+PTSD,Child SAD,F,A,,,
+PTSD,Anorexia nervosa,F,A,,,
+PTSD,Bulimia nervosa,F,A,42,19.6,89.7
+PTSD,Binge eating disorder,F,A,22,16.4,29.7
+PTSD,IED,F,A,11.1,8.9,13.9
+PTSD,ADHD,F,A,,,
+PTSD,Conduct disorder,F,A,,,
+PTSD,ODD,F,A,13.3,9.9,17.9
+PTSD,Nicotine dependence,F,A,6,5.2,6.8
+PTSD,Alcohol abuse,F,A,3.5,3.1,4.1
+PTSD,Alcohol dependence,F,A,6.7,5.4,8.3
+PTSD,Drug abuse,F,A,5.9,4.9,7.1
+PTSD,Drug dependence,F,A,8.4,6.6,10.7
+PTSD,MDE,M,A,23.6,21.3,26.2
+PTSD,Bipolar disorder,M,A,20.7,16.8,25.5
+PTSD,Dysthymia,M,A,38,31.1,46.5
+PTSD,Panic disorder,M,A,29.9,23.4,38.2
+PTSD,GAD,M,A,33.3,29.2,38
+PTSD,Social phobia,M,A,22.8,19.8,26.2
+PTSD,Specific Phobia,M,A,,,
+PTSD,Agoraphobia,M,A,,,
+PTSD,OCD,M,A,,,
+PTSD,Adult SAD,M,A,23.3,18.1,30.1
+PTSD,Child SAD,M,A,,,
+PTSD,Anorexia nervosa,M,A,,,
+PTSD,Bulimia nervosa,M,A,,,
+PTSD,Binge eating disorder,M,A,14.1,10,19.8
+PTSD,IED,M,A,,,
+PTSD,ADHD,M,A,,,
+PTSD,Conduct disorder,M,A,,,
+PTSD,ODD,M,A,,,
+PTSD,Nicotine dependence,M,A,9,7.5,10.9
+PTSD,Alcohol abuse,M,A,10.1,8.9,11.3
+PTSD,Alcohol dependence,M,A,22.2,18.7,26.4
+PTSD,Drug abuse,M,A,14.3,12,17
+PTSD,Drug dependence,M,A,26,21.3,31.7
+PTSD,MDE,F,B,17.3,15.7,19
+PTSD,Bipolar disorder,F,B,5.8,4.1,8.3
+PTSD,Dysthymia,F,B,14.6,11,19.5
+PTSD,Panic disorder,F,B,14,10.4,18.7
+PTSD,GAD,F,B,18.6,15.6,22.1
+PTSD,Social phobia,F,B,9.6,8,11.6
+PTSD,Specific Phobia,F,B,16.5,13.9,19.6
+PTSD,Agoraphobia,F,B,8.6,6,12.2
+PTSD,OCD,F,B,6.3,3.5,11.2
+PTSD,Adult SAD,F,B,5,3.5,7.3
+PTSD,Child SAD,F,B,,,
+PTSD,Anorexia nervosa,F,B,,,
+PTSD,Bulimia nervosa,F,B,10.8,3.9,30.1
+PTSD,Binge eating disorder,F,B,8.3,5.3,12.9
+PTSD,IED,F,B,5.4,3.9,7.7
+PTSD,ADHD,F,B,,,
+PTSD,Conduct disorder,F,B,,,
+PTSD,ODD,F,B,5.1,2.5,10
+PTSD,Nicotine dependence,F,B,3.4,2.8,4.3
+PTSD,Alcohol abuse,F,B,2.1,1.8,2.6
+PTSD,Alcohol dependence,F,B,2.7,2,3.6
+PTSD,Drug abuse,F,B,2.8,2.1,3.6
+PTSD,Drug dependence,F,B,3.3,2.2,4.8
+PTSD,MDE,M,B,14.8,12.7,17.2
+PTSD,Bipolar disorder,M,B,6.1,4.1,8.9
+PTSD,Dysthymia,M,B,13.6,9.6,19.4
+PTSD,Panic disorder,M,B,13.2,9.5,18.4
+PTSD,GAD,M,B,17.1,13.8,21.1
+PTSD,Social phobia,M,B,10.8,8.8,13.2
+PTSD,Specific Phobia,M,B,,,
+PTSD,Agoraphobia,M,B,,,
+PTSD,OCD,M,B,,,
+PTSD,Adult SAD,M,B,5,3.2,7.6
+PTSD,Child SAD,M,B,,,
+PTSD,Anorexia nervosa,M,B,,,
+PTSD,Bulimia nervosa,M,B,,,
+PTSD,Binge eating disorder,M,B,5.7,3.4,9.7
+PTSD,IED,M,B,,,
+PTSD,ADHD,M,B,,,
+PTSD,Conduct disorder,M,B,,,
+PTSD,ODD,M,B,,,
+PTSD,Nicotine dependence,M,B,5.5,4.2,7.2
+PTSD,Alcohol abuse,M,B,5.5,4.5,6.7
+PTSD,Alcohol dependence,M,B,7.4,5.2,10.6
+PTSD,Drug abuse,M,B,5.8,4.3,7.8
+PTSD,Drug dependence,M,B,7.4,4.8,11.6
+OCD,MDE,All,A,12.3,10.6,14.3
+OCD,Bipolar disorder,All,A,21,15.9,27.9
+OCD,Dysthymia,All,A,20.9,13.6,32.1
+OCD,Panic disorder,All,A,15.9,11.7,21.6
+OCD,GAD,All,A,16.7,13.7,20.3
+OCD,Social phobia,All,A,15.5,12.6,19.2
+OCD,Specific Phobia,All,A,,,
+OCD,Agoraphobia,All,A,16.2,12.6,20.8
+OCD,PTSD,All,A,15.5,10.6,22.6
+OCD,Adult SAD,All,A,16,12.2,20.8
+OCD,Child SAD,All,A,,,
+OCD,Anorexia nervosa,All,A,,,
+OCD,Bulimia nervosa,All,A,,,
+OCD,Binge eating disorder,All,A,10.9,7,16.9
+OCD,IED,All,A,15.1,12.2,18.7
+OCD,ADHD,All,A,,,
+OCD,Conduct disorder,All,A,,,
+OCD,ODD,All,A,,,
+OCD,Nicotine dependence,All,A,6.6,4.7,9.1
+OCD,Alcohol abuse,All,A,8.3,6.6,10.4
+OCD,Alcohol dependence,All,A,16.8,11.4,24.8
+OCD,Drug abuse,All,A,9,6.5,12.4
+OCD,Drug dependence,All,A,12,7.8,18.4
+OCD,MDE,All,B,7.2,5.8,9
+OCD,Bipolar disorder,All,B,9.6,4.9,18.8
+OCD,Dysthymia,All,B,9.3,4.8,18
+OCD,Panic disorder,All,B,7.3,3.4,15.6
+OCD,GAD,All,B,10.6,7.2,15.6
+OCD,Social phobia,All,B,7.7,5,11.9
+OCD,Specific Phobia,All,B,,,
+OCD,Agoraphobia,All,B,3.2,1.6,6.5
+OCD,PTSD,All,B,10.6,5.6,20.2
+OCD,Adult SAD,All,B,5.3,2.1,13.5
+OCD,Child SAD,All,B,,,
+OCD,Anorexia nervosa,All,B,,,
+OCD,Bulimia nervosa,All,B,,,
+OCD,Binge eating disorder,All,B,4.6,1.8,11.8
+OCD,IED,All,B,5.6,3.1,10.4
+OCD,ADHD,All,B,,,
+OCD,Conduct disorder,All,B,,,
+OCD,ODD,All,B,,,
+OCD,Nicotine dependence,All,B,3.2,1.8,5.6
+OCD,Alcohol abuse,All,B,3.8,2.8,5
+OCD,Alcohol dependence,All,B,8.4,4.4,16
+OCD,Drug abuse,All,B,4.4,2.3,8.6
+OCD,Drug dependence,All,B,5,1.5,16.7
+OCD,MDE,F,A,17.1,14.4,20.2
+OCD,Bipolar disorder,F,A,22,14.4,33.5
+OCD,Dysthymia,F,A,,,
+OCD,Panic disorder,F,A,,,
+OCD,GAD,F,A,26.9,19.8,36.4
+OCD,Social phobia,F,A,19.4,14.3,26.2
+OCD,Specific Phobia,F,A,,,
+OCD,Agoraphobia,F,A,35.9,25.2,51.1
+OCD,PTSD,F,A,24.2,17.3,34.1
+OCD,Adult SAD,F,A,17.1,12.4,23.7
+OCD,Child SAD,F,A,,,
+OCD,Anorexia nervosa,F,A,,,
+OCD,Bulimia nervosa,F,A,,,
+OCD,Binge eating disorder,F,A,12.9,7.8,21.5
+OCD,IED,F,A,,,
+OCD,ADHD,F,A,,,
+OCD,Conduct disorder,F,A,,,
+OCD,ODD,F,A,,,
+OCD,Nicotine dependence,F,A,3.7,2.3,5.8
+OCD,Alcohol abuse,F,A,2.4,1.7,3.4
+OCD,Alcohol dependence,F,A,,,
+OCD,Drug abuse,F,A,,,
+OCD,Drug dependence,F,A,,,
+OCD,MDE,M,A,17.3,13.7,21.9
+OCD,Bipolar disorder,M,A,,,
+OCD,Dysthymia,M,A,,,
+OCD,Panic disorder,M,A,,,
+OCD,GAD,M,A,20.4,15.2,27.5
+OCD,Social phobia,M,A,,,
+OCD,Specific Phobia,M,A,,,
+OCD,Agoraphobia,M,A,,,
+OCD,PTSD,M,A,,,
+OCD,Adult SAD,M,A,,,
+OCD,Child SAD,M,A,,,
+OCD,Anorexia nervosa,M,A,,,
+OCD,Bulimia nervosa,M,A,,,
+OCD,Binge eating disorder,M,A,,,
+OCD,IED,M,A,,,
+OCD,ADHD,M,A,,,
+OCD,Conduct disorder,M,A,,,
+OCD,ODD,M,A,,,
+OCD,Nicotine dependence,M,A,6.4,4.1,9.8
+OCD,Alcohol abuse,M,A,7.8,5.9,10.2
+OCD,Alcohol dependence,M,A,17.1,11,26.8
+OCD,Drug abuse,M,A,,,
+OCD,Drug dependence,M,A,,,
+OCD,MDE,F,B,9.5,7.3,12.3
+OCD,Bipolar disorder,F,B,10.5,4.7,23.3
+OCD,Dysthymia,F,B,,,
+OCD,Panic disorder,F,B,,,
+OCD,GAD,F,B,15.7,9.5,26
+OCD,Social phobia,F,B,9,5.2,15.7
+OCD,Specific Phobia,F,B,,,
+OCD,Agoraphobia,F,B,6.4,2.6,15.7
+OCD,PTSD,F,B,16.3,9.4,28.5
+OCD,Adult SAD,F,B,5.4,2.2,13.1
+OCD,Child SAD,F,B,,,
+OCD,Anorexia nervosa,F,B,,,
+OCD,Bulimia nervosa,F,B,,,
+OCD,Binge eating disorder,F,B,5.9,2,17.8
+OCD,IED,F,B,,,
+OCD,ADHD,F,B,,,
+OCD,Conduct disorder,F,B,,,
+OCD,ODD,F,B,,,
+OCD,Nicotine dependence,F,B,1.7,0.7,4
+OCD,Alcohol abuse,F,B,0.9,0.6,1.5
+OCD,Alcohol dependence,F,B,,,
+OCD,Drug abuse,F,B,,,
+OCD,Drug dependence,F,B,,,
+OCD,MDE,M,B,10.7,8.3,13.7
+OCD,Bipolar disorder,M,B,,,
+OCD,Dysthymia,M,B,,,
+OCD,Panic disorder,M,B,,,
+OCD,GAD,M,B,14.4,9.8,21.2
+OCD,Social phobia,M,B,,,
+OCD,Specific Phobia,M,B,,,
+OCD,Agoraphobia,M,B,,,
+OCD,PTSD,M,B,,,
+OCD,Adult SAD,M,B,,,
+OCD,Child SAD,M,B,,,
+OCD,Anorexia nervosa,M,B,,,
+OCD,Bulimia nervosa,M,B,,,
+OCD,Binge eating disorder,M,B,,,
+OCD,IED,M,B,,,
+OCD,ADHD,M,B,,,
+OCD,Conduct disorder,M,B,,,
+OCD,ODD,M,B,,,
+OCD,Nicotine dependence,M,B,3.3,2,5.4
+OCD,Alcohol abuse,M,B,3.7,2.8,5
+OCD,Alcohol dependence,M,B,8.6,4.5,16.4
+OCD,Drug abuse,M,B,,,
+OCD,Drug dependence,M,B,,,
+Adult SAD,MDE,All,A,13.7,12.7,14.8
+Adult SAD,Bipolar disorder,All,A,20.2,17.2,23.8
+Adult SAD,Dysthymia,All,A,21.8,18.2,26
+Adult SAD,Panic disorder,All,A,15.2,12.6,18.3
+Adult SAD,GAD,All,A,18.6,16.5,21.1
+Adult SAD,Social phobia,All,A,13.6,12.1,15.3
+Adult SAD,Specific Phobia,All,A,13.9,12.6,15.3
+Adult SAD,Agoraphobia,All,A,18.1,15.3,21.3
+Adult SAD,PTSD,All,A,14.9,12.9,17.1
+Adult SAD,OCD,All,A,13.1,10.2,16.7
+Adult SAD,Child SAD,All,A,,,
+Adult SAD,Anorexia nervosa,All,A,,,
+Adult SAD,Bulimia nervosa,All,A,19.5,13.6,28
+Adult SAD,Binge eating disorder,All,A,12.1,9.4,15.4
+Adult SAD,IED,All,A,12.7,11.1,14.6
+Adult SAD,ADHD,All,A,,,
+Adult SAD,Conduct disorder,All,A,16,12.8,20
+Adult SAD,ODD,All,A,16.1,13,19.9
+Adult SAD,Nicotine dependence,All,A,9.2,8.1,10.4
+Adult SAD,Alcohol abuse,All,A,10,8.8,11.4
+Adult SAD,Alcohol dependence,All,A,13.7,11.5,16.2
+Adult SAD,Drug abuse,All,A,9.5,8,11.4
+Adult SAD,Drug dependence,All,A,14,11.3,17.4
+Adult SAD,MDE,All,B,5.4,4.4,6.7
+Adult SAD,Bipolar disorder,All,B,3.9,2.3,6.5
+Adult SAD,Dysthymia,All,B,3.9,2.2,6.8
+Adult SAD,Panic disorder,All,B,2.9,1.7,5.3
+Adult SAD,GAD,All,B,5.8,4,8.6
+Adult SAD,Social phobia,All,B,2.5,1.8,3.4
+Adult SAD,Specific Phobia,All,B,6.3,5,7.9
+Adult SAD,Agoraphobia,All,B,2.3,1.4,3.7
+Adult SAD,PTSD,All,B,2.9,1.8,4.8
+Adult SAD,OCD,All,B,2.4,1.2,4.8
+Adult SAD,Child SAD,All,B,,,
+Adult SAD,Anorexia nervosa,All,B,,,
+Adult SAD,Bulimia nervosa,All,B,3.2,1.4,7.6
+Adult SAD,Binge eating disorder,All,B,3.3,1.9,5.9
+Adult SAD,IED,All,B,1.7,1.2,2.2
+Adult SAD,ADHD,All,B,,,
+Adult SAD,Conduct disorder,All,B,1.5,1.1,2.2
+Adult SAD,ODD,All,B,1.4,1,1.9
+Adult SAD,Nicotine dependence,All,B,2.4,1.8,3.1
+Adult SAD,Alcohol abuse,All,B,1.8,1.3,2.6
+Adult SAD,Alcohol dependence,All,B,1.9,1.2,3.1
+Adult SAD,Drug abuse,All,B,1.4,0.8,2.2
+Adult SAD,Drug dependence,All,B,1.8,1,3.3
+Adult SAD,MDE,F,A,20.7,18.7,22.9
+Adult SAD,Bipolar disorder,F,A,18.5,14.9,23
+Adult SAD,Dysthymia,F,A,40.4,32.1,50.8
+Adult SAD,Panic disorder,F,A,28,22,35.6
+Adult SAD,GAD,F,A,30.1,25.3,35.9
+Adult SAD,Social phobia,F,A,16.1,14,18.5
+Adult SAD,Specific Phobia,F,A,22.8,20.2,25.8
+Adult SAD,Agoraphobia,F,A,28.2,21.7,36.8
+Adult SAD,PTSD,F,A,30.7,24.9,37.7
+Adult SAD,OCD,F,A,,,
+Adult SAD,Child SAD,F,A,,,
+Adult SAD,Anorexia nervosa,F,A,,,
+Adult SAD,Bulimia nervosa,F,A,,,
+Adult SAD,Binge eating disorder,F,A,19.1,13.5,26.9
+Adult SAD,IED,F,A,10,8.1,12.4
+Adult SAD,ADHD,F,A,,,
+Adult SAD,Conduct disorder,F,A,,,
+Adult SAD,ODD,F,A,,,
+Adult SAD,Nicotine dependence,F,A,6.1,5.3,7.2
+Adult SAD,Alcohol abuse,F,A,2.5,2.1,3
+Adult SAD,Alcohol dependence,F,A,3.8,3,4.9
+Adult SAD,Drug abuse,F,A,3,2.3,3.9
+Adult SAD,Drug dependence,F,A,,,
+Adult SAD,MDE,M,A,18.1,15.9,20.6
+Adult SAD,Bipolar disorder,M,A,22.2,17.7,28
+Adult SAD,Dysthymia,M,A,,,
+Adult SAD,Panic disorder,M,A,,,
+Adult SAD,GAD,M,A,22.4,18.2,27.6
+Adult SAD,Social phobia,M,A,16.5,13.5,20.3
+Adult SAD,Specific Phobia,M,A,,,
+Adult SAD,Agoraphobia,M,A,,,
+Adult SAD,PTSD,M,A,17.4,13.3,22.7
+Adult SAD,OCD,M,A,,,
+Adult SAD,Child SAD,M,A,,,
+Adult SAD,Anorexia nervosa,M,A,,,
+Adult SAD,Bulimia nervosa,M,A,,,
+Adult SAD,Binge eating disorder,M,A,,,
+Adult SAD,IED,M,A,,,
+Adult SAD,ADHD,M,A,,,
+Adult SAD,Conduct disorder,M,A,,,
+Adult SAD,ODD,M,A,,,
+Adult SAD,Nicotine dependence,M,A,8.1,6.7,9.8
+Adult SAD,Alcohol abuse,M,A,10.1,8.7,11.8
+Adult SAD,Alcohol dependence,M,A,14.1,11.5,17.3
+Adult SAD,Drug abuse,M,A,11,9,13.6
+Adult SAD,Drug dependence,M,A,15.5,12,20
+Adult SAD,MDE,F,B,8.2,6.5,10.5
+Adult SAD,Bipolar disorder,F,B,3.4,2.1,5.7
+Adult SAD,Dysthymia,F,B,6.8,3.7,12.7
+Adult SAD,Panic disorder,F,B,5.3,2.9,9.5
+Adult SAD,GAD,F,B,9.1,6,13.8
+Adult SAD,Social phobia,F,B,2.8,2.1,3.9
+Adult SAD,Specific Phobia,F,B,10.3,8.1,13.2
+Adult SAD,Agoraphobia,F,B,3.3,1.9,5.8
+Adult SAD,PTSD,F,B,6.3,3.9,10.3
+Adult SAD,OCD,F,B,,,
+Adult SAD,Child SAD,F,B,,,
+Adult SAD,Anorexia nervosa,F,B,,,
+Adult SAD,Bulimia nervosa,F,B,,,
+Adult SAD,Binge eating disorder,F,B,5.1,2.6,10
+Adult SAD,IED,F,B,1.4,1,2
+Adult SAD,ADHD,F,B,,,
+Adult SAD,Conduct disorder,F,B,,,
+Adult SAD,ODD,F,B,,,
+Adult SAD,Nicotine dependence,F,B,1.7,1.3,2.3
+Adult SAD,Alcohol abuse,F,B,0.6,0.4,0.9
+Adult SAD,Alcohol dependence,F,B,0.7,0.4,1.1
+Adult SAD,Drug abuse,F,B,0.7,0.4,1.1
+Adult SAD,Drug dependence,F,B,,,
+Adult SAD,MDE,M,B,7,5.4,9
+Adult SAD,Bipolar disorder,M,B,4.3,2.3,7.9
+Adult SAD,Dysthymia,M,B,,,
+Adult SAD,Panic disorder,M,B,,,
+Adult SAD,GAD,M,B,7.4,4.7,11.6
+Adult SAD,Social phobia,M,B,3.1,2,4.8
+Adult SAD,Specific Phobia,M,B,,,
+Adult SAD,Agoraphobia,M,B,,,
+Adult SAD,PTSD,M,B,3,1.5,6
+Adult SAD,OCD,M,B,,,
+Adult SAD,Child SAD,M,B,,,
+Adult SAD,Anorexia nervosa,M,B,,,
+Adult SAD,Bulimia nervosa,M,B,,,
+Adult SAD,Binge eating disorder,M,B,,,
+Adult SAD,IED,M,B,,,
+Adult SAD,ADHD,M,B,,,
+Adult SAD,Conduct disorder,M,B,,,
+Adult SAD,ODD,M,B,,,
+Adult SAD,Nicotine dependence,M,B,1.9,1.4,2.6
+Adult SAD,Alcohol abuse,M,B,1.6,1.1,2.4
+Adult SAD,Alcohol dependence,M,B,1.8,1.1,3.1
+Adult SAD,Drug abuse,M,B,1.3,0.7,2.3
+Adult SAD,Drug dependence,M,B,1.9,0.9,3.7
+Child SAD,MDE,All,A,15.1,13.7,16.5
+Child SAD,Bipolar disorder,All,A,22.3,18,27.7
+Child SAD,Dysthymia,All,A,25.9,21.5,31.2
+Child SAD,Panic disorder,All,A,22.4,18.3,27.3
+Child SAD,GAD,All,A,19.5,16.7,22.8
+Child SAD,Social phobia,All,A,18.8,16.4,21.5
+Child SAD,Specific Phobia,All,A,16.8,15,18.8
+Child SAD,Agoraphobia,All,A,21,17,25.9
+Child SAD,PTSD,All,A,18.9,16,22.3
+Child SAD,OCD,All,A,,,
+Child SAD,Adult SAD,All,A,46.2,40.4,52.8
+Child SAD,Anorexia nervosa,All,A,,,
+Child SAD,Bulimia nervosa,All,A,,,
+Child SAD,Binge eating disorder,All,A,10.2,7.8,13.5
+Child SAD,IED,All,A,15.7,13,18.9
+Child SAD,ADHD,All,A,20.2,15.2,26.7
+Child SAD,Conduct disorder,All,A,15.3,12,19.3
+Child SAD,ODD,All,A,16.9,13.3,21.5
+Child SAD,Nicotine dependence,All,A,10.9,9.3,12.7
+Child SAD,Alcohol abuse,All,A,11.8,10,13.9
+Child SAD,Alcohol dependence,All,A,15.9,12.8,19.7
+Child SAD,Drug abuse,All,A,10.6,8.5,13.2
+Child SAD,Drug dependence,All,A,17.4,12.6,24.1
+Child SAD,MDE,All,B,12.2,10.6,14.1
+Child SAD,Bipolar disorder,All,B,13.4,9.2,19.7
+Child SAD,Dysthymia,All,B,15.8,11.1,22.4
+Child SAD,Panic disorder,All,B,16.3,11.4,23.4
+Child SAD,GAD,All,B,14.8,11.7,18.7
+Child SAD,Social phobia,All,B,14,11.1,17.6
+Child SAD,Specific Phobia,All,B,14,12.3,16
+Child SAD,Agoraphobia,All,B,8.3,5.1,13.6
+Child SAD,PTSD,All,B,11.9,8.6,16.3
+Child SAD,OCD,All,B,,,
+Child SAD,Adult SAD,All,B,35.6,29.7,42.8
+Child SAD,Anorexia nervosa,All,B,,,
+Child SAD,Bulimia nervosa,All,B,,,
+Child SAD,Binge eating disorder,All,B,4.2,1.9,9.3
+Child SAD,IED,All,B,13.4,10.4,17.3
+Child SAD,ADHD,All,B,10.3,6.2,17
+Child SAD,Conduct disorder,All,B,7.9,5.1,12.5
+Child SAD,ODD,All,B,9.8,6.4,15
+Child SAD,Nicotine dependence,All,B,8.1,6.4,10.3
+Child SAD,Alcohol abuse,All,B,9.4,7.2,12.1
+Child SAD,Alcohol dependence,All,B,11.2,7.7,16.3
+Child SAD,Drug abuse,All,B,7.3,4.8,11
+Child SAD,Drug dependence,All,B,10.6,5.8,19.4
+Child SAD,MDE,F,A,23.4,20.6,26.5
+Child SAD,Bipolar disorder,F,A,19.7,15.3,25.5
+Child SAD,Dysthymia,F,A,45,34.2,59.2
+Child SAD,Panic disorder,F,A,37.3,29.1,47.9
+Child SAD,GAD,F,A,33.7,27.9,40.6
+Child SAD,Social phobia,F,A,23.6,20.2,27.5
+Child SAD,Specific Phobia,F,A,30,25.9,34.7
+Child SAD,Agoraphobia,F,A,37.3,28.2,49.4
+Child SAD,PTSD,F,A,39.6,32,48.8
+Child SAD,OCD,F,A,,,
+Child SAD,Adult SAD,F,A,60.3,50.8,71.4
+Child SAD,Anorexia nervosa,F,A,,,
+Child SAD,Bulimia nervosa,F,A,,,
+Child SAD,Binge eating disorder,F,A,15.4,10.5,22.7
+Child SAD,IED,F,A,10.1,7.7,13.2
+Child SAD,ADHD,F,A,,,
+Child SAD,Conduct disorder,F,A,5.8,4.1,8.2
+Child SAD,ODD,F,A,12,8.6,16.7
+Child SAD,Nicotine dependence,F,A,7.4,5.9,9.2
+Child SAD,Alcohol abuse,F,A,3.2,2.5,4.1
+Child SAD,Alcohol dependence,F,A,4.3,3.2,5.8
+Child SAD,Drug abuse,F,A,4.6,3.1,7
+Child SAD,Drug dependence,F,A,,,
+Child SAD,MDE,M,A,19.7,16.6,23.4
+Child SAD,Bipolar disorder,M,A,23.5,16.8,32.9
+Child SAD,Dysthymia,M,A,,,
+Child SAD,Panic disorder,M,A,,,
+Child SAD,GAD,M,A,21.8,16.4,29.1
+Child SAD,Social phobia,M,A,20.9,16.6,26.4
+Child SAD,Specific Phobia,M,A,22.1,18.2,26.7
+Child SAD,Agoraphobia,M,A,,,
+Child SAD,PTSD,M,A,,,
+Child SAD,OCD,M,A,,,
+Child SAD,Adult SAD,M,A,54.2,44.5,66
+Child SAD,Anorexia nervosa,M,A,,,
+Child SAD,Bulimia nervosa,M,A,,,
+Child SAD,Binge eating disorder,M,A,,,
+Child SAD,IED,M,A,17.9,13.9,22.9
+Child SAD,ADHD,M,A,,,
+Child SAD,Conduct disorder,M,A,17.3,12.9,23.2
+Child SAD,ODD,M,A,18.7,13.9,25.3
+Child SAD,Nicotine dependence,M,A,8.6,6.6,11.1
+Child SAD,Alcohol abuse,M,A,11.3,9.2,13.9
+Child SAD,Alcohol dependence,M,A,16,12.1,21.1
+Child SAD,Drug abuse,M,A,10.4,7.6,14.3
+Child SAD,Drug dependence,M,A,,,
+Child SAD,MDE,F,B,18.6,15.7,22
+Child SAD,Bipolar disorder,F,B,10.7,7,16.4
+Child SAD,Dysthymia,F,B,27.5,18.5,40.8
+Child SAD,Panic disorder,F,B,26.7,18.2,39.2
+Child SAD,GAD,F,B,25.6,19.5,33.5
+Child SAD,Social phobia,F,B,16.8,13,21.8
+Child SAD,Specific Phobia,F,B,24.8,21,29.2
+Child SAD,Agoraphobia,F,B,13.3,7.4,23.8
+Child SAD,PTSD,F,B,24.2,17.2,34.1
+Child SAD,OCD,F,B,,,
+Child SAD,Adult SAD,F,B,45.4,36.6,56.3
+Child SAD,Anorexia nervosa,F,B,,,
+Child SAD,Bulimia nervosa,F,B,,,
+Child SAD,Binge eating disorder,F,B,6.8,2.9,15.9
+Child SAD,IED,F,B,8.4,5.8,12.2
+Child SAD,ADHD,F,B,,,
+Child SAD,Conduct disorder,F,B,2.7,1.6,4.6
+Child SAD,ODD,F,B,6.5,3.5,11.8
+Child SAD,Nicotine dependence,F,B,5.3,4,7.1
+Child SAD,Alcohol abuse,F,B,2.4,1.7,3.4
+Child SAD,Alcohol dependence,F,B,2.7,1.7,4.2
+Child SAD,Drug abuse,F,B,3,1.9,4.8
+Child SAD,Drug dependence,F,B,,,
+Child SAD,MDE,M,B,16.4,13.4,20
+Child SAD,Bipolar disorder,M,B,15.7,10.1,24.4
+Child SAD,Dysthymia,M,B,,,
+Child SAD,Panic disorder,M,B,,,
+Child SAD,GAD,M,B,16.4,12,22.4
+Child SAD,Social phobia,M,B,16.5,12.3,22.1
+Child SAD,Specific Phobia,M,B,19,15.7,23.1
+Child SAD,Agoraphobia,M,B,,,
+Child SAD,PTSD,M,B,,,
+Child SAD,OCD,M,B,,,
+Child SAD,Adult SAD,M,B,43.1,34.1,54.4
+Child SAD,Anorexia nervosa,M,B,,,
+Child SAD,Bulimia nervosa,M,B,,,
+Child SAD,Binge eating disorder,M,B,,,
+Child SAD,IED,M,B,15.3,11.3,20.9
+Child SAD,ADHD,M,B,,,
+Child SAD,Conduct disorder,M,B,9.5,5.7,15.6
+Child SAD,ODD,M,B,11.4,7.5,17.5
+Child SAD,Nicotine dependence,M,B,6.8,5.1,9.1
+Child SAD,Alcohol abuse,M,B,9.1,6.9,12.1
+Child SAD,Alcohol dependence,M,B,11.8,7.8,17.8
+Child SAD,Drug abuse,M,B,7.4,4.5,12.1
+Child SAD,Drug dependence,M,B,,,
+Anorexia nervosa,MDE,All,A,,,
+Anorexia nervosa,Bipolar disorder,All,A,,,
+Anorexia nervosa,Dysthymia,All,A,,,
+Anorexia nervosa,Panic disorder,All,A,,,
+Anorexia nervosa,GAD,All,A,,,
+Anorexia nervosa,Social phobia,All,A,,,
+Anorexia nervosa,Specific Phobia,All,A,,,
+Anorexia nervosa,Agoraphobia,All,A,,,
+Anorexia nervosa,PTSD,All,A,,,
+Anorexia nervosa,OCD,All,A,,,
+Anorexia nervosa,Adult SAD,All,A,,,
+Anorexia nervosa,Child SAD,All,A,,,
+Anorexia nervosa,Bulimia nervosa,All,A,,,
+Anorexia nervosa,Binge eating disorder,All,A,17.4,10.7,28.2
+Anorexia nervosa,IED,All,A,,,
+Anorexia nervosa,ADHD,All,A,,,
+Anorexia nervosa,Conduct disorder,All,A,,,
+Anorexia nervosa,ODD,All,A,,,
+Anorexia nervosa,Nicotine dependence,All,A,,,
+Anorexia nervosa,Alcohol abuse,All,A,,,
+Anorexia nervosa,Alcohol dependence,All,A,,,
+Anorexia nervosa,Drug abuse,All,A,,,
+Anorexia nervosa,Drug dependence,All,A,,,
+Anorexia nervosa,MDE,All,B,,,
+Anorexia nervosa,Bipolar disorder,All,B,,,
+Anorexia nervosa,Dysthymia,All,B,,,
+Anorexia nervosa,Panic disorder,All,B,,,
+Anorexia nervosa,GAD,All,B,,,
+Anorexia nervosa,Social phobia,All,B,,,
+Anorexia nervosa,Specific Phobia,All,B,,,
+Anorexia nervosa,Agoraphobia,All,B,,,
+Anorexia nervosa,PTSD,All,B,,,
+Anorexia nervosa,OCD,All,B,,,
+Anorexia nervosa,Adult SAD,All,B,,,
+Anorexia nervosa,Child SAD,All,B,,,
+Anorexia nervosa,Bulimia nervosa,All,B,,,
+Anorexia nervosa,Binge eating disorder,All,B,5.9,1.4,24.7
+Anorexia nervosa,IED,All,B,,,
+Anorexia nervosa,ADHD,All,B,,,
+Anorexia nervosa,Conduct disorder,All,B,,,
+Anorexia nervosa,ODD,All,B,,,
+Anorexia nervosa,Nicotine dependence,All,B,,,
+Anorexia nervosa,Alcohol abuse,All,B,,,
+Anorexia nervosa,Alcohol dependence,All,B,,,
+Anorexia nervosa,Drug abuse,All,B,,,
+Anorexia nervosa,Drug dependence,All,B,,,
+Anorexia nervosa,MDE,F,A,,,
+Anorexia nervosa,Bipolar disorder,F,A,,,
+Anorexia nervosa,Dysthymia,F,A,,,
+Anorexia nervosa,Panic disorder,F,A,,,
+Anorexia nervosa,GAD,F,A,,,
+Anorexia nervosa,Social phobia,F,A,,,
+Anorexia nervosa,Specific Phobia,F,A,,,
+Anorexia nervosa,Agoraphobia,F,A,,,
+Anorexia nervosa,PTSD,F,A,,,
+Anorexia nervosa,OCD,F,A,,,
+Anorexia nervosa,Adult SAD,F,A,,,
+Anorexia nervosa,Child SAD,F,A,,,
+Anorexia nervosa,Bulimia nervosa,F,A,,,
+Anorexia nervosa,Binge eating disorder,F,A,,,
+Anorexia nervosa,IED,F,A,,,
+Anorexia nervosa,ADHD,F,A,,,
+Anorexia nervosa,Conduct disorder,F,A,,,
+Anorexia nervosa,ODD,F,A,,,
+Anorexia nervosa,Nicotine dependence,F,A,,,
+Anorexia nervosa,Alcohol abuse,F,A,,,
+Anorexia nervosa,Alcohol dependence,F,A,,,
+Anorexia nervosa,Drug abuse,F,A,,,
+Anorexia nervosa,Drug dependence,F,A,,,
+Anorexia nervosa,MDE,M,A,,,
+Anorexia nervosa,Bipolar disorder,M,A,,,
+Anorexia nervosa,Dysthymia,M,A,,,
+Anorexia nervosa,Panic disorder,M,A,,,
+Anorexia nervosa,GAD,M,A,,,
+Anorexia nervosa,Social phobia,M,A,,,
+Anorexia nervosa,Specific Phobia,M,A,,,
+Anorexia nervosa,Agoraphobia,M,A,,,
+Anorexia nervosa,PTSD,M,A,,,
+Anorexia nervosa,OCD,M,A,,,
+Anorexia nervosa,Adult SAD,M,A,,,
+Anorexia nervosa,Child SAD,M,A,,,
+Anorexia nervosa,Bulimia nervosa,M,A,,,
+Anorexia nervosa,Binge eating disorder,M,A,,,
+Anorexia nervosa,IED,M,A,,,
+Anorexia nervosa,ADHD,M,A,,,
+Anorexia nervosa,Conduct disorder,M,A,,,
+Anorexia nervosa,ODD,M,A,,,
+Anorexia nervosa,Nicotine dependence,M,A,,,
+Anorexia nervosa,Alcohol abuse,M,A,,,
+Anorexia nervosa,Alcohol dependence,M,A,,,
+Anorexia nervosa,Drug abuse,M,A,,,
+Anorexia nervosa,Drug dependence,M,A,,,
+Anorexia nervosa,MDE,F,B,,,
+Anorexia nervosa,Bipolar disorder,F,B,,,
+Anorexia nervosa,Dysthymia,F,B,,,
+Anorexia nervosa,Panic disorder,F,B,,,
+Anorexia nervosa,GAD,F,B,,,
+Anorexia nervosa,Social phobia,F,B,,,
+Anorexia nervosa,Specific Phobia,F,B,,,
+Anorexia nervosa,Agoraphobia,F,B,,,
+Anorexia nervosa,PTSD,F,B,,,
+Anorexia nervosa,OCD,F,B,,,
+Anorexia nervosa,Adult SAD,F,B,,,
+Anorexia nervosa,Child SAD,F,B,,,
+Anorexia nervosa,Bulimia nervosa,F,B,,,
+Anorexia nervosa,Binge eating disorder,F,B,,,
+Anorexia nervosa,IED,F,B,,,
+Anorexia nervosa,ADHD,F,B,,,
+Anorexia nervosa,Conduct disorder,F,B,,,
+Anorexia nervosa,ODD,F,B,,,
+Anorexia nervosa,Nicotine dependence,F,B,,,
+Anorexia nervosa,Alcohol abuse,F,B,,,
+Anorexia nervosa,Alcohol dependence,F,B,,,
+Anorexia nervosa,Drug abuse,F,B,,,
+Anorexia nervosa,Drug dependence,F,B,,,
+Anorexia nervosa,MDE,M,B,,,
+Anorexia nervosa,Bipolar disorder,M,B,,,
+Anorexia nervosa,Dysthymia,M,B,,,
+Anorexia nervosa,Panic disorder,M,B,,,
+Anorexia nervosa,GAD,M,B,,,
+Anorexia nervosa,Social phobia,M,B,,,
+Anorexia nervosa,Specific Phobia,M,B,,,
+Anorexia nervosa,Agoraphobia,M,B,,,
+Anorexia nervosa,PTSD,M,B,,,
+Anorexia nervosa,OCD,M,B,,,
+Anorexia nervosa,Adult SAD,M,B,,,
+Anorexia nervosa,Child SAD,M,B,,,
+Anorexia nervosa,Bulimia nervosa,M,B,,,
+Anorexia nervosa,Binge eating disorder,M,B,,,
+Anorexia nervosa,IED,M,B,,,
+Anorexia nervosa,ADHD,M,B,,,
+Anorexia nervosa,Conduct disorder,M,B,,,
+Anorexia nervosa,ODD,M,B,,,
+Anorexia nervosa,Nicotine dependence,M,B,,,
+Anorexia nervosa,Alcohol abuse,M,B,,,
+Anorexia nervosa,Alcohol dependence,M,B,,,
+Anorexia nervosa,Drug abuse,M,B,,,
+Anorexia nervosa,Drug dependence,M,B,,,
+Bulimia nervosa,MDE,All,A,12.7,10.5,15.4
+Bulimia nervosa,Bipolar disorder,All,A,18.6,13,26.5
+Bulimia nervosa,Dysthymia,All,A,18,12.9,25.2
+Bulimia nervosa,Panic disorder,All,A,14.8,10,22
+Bulimia nervosa,GAD,All,A,14.5,11.4,18.3
+Bulimia nervosa,Social phobia,All,A,,,
+Bulimia nervosa,Specific Phobia,All,A,,,
+Bulimia nervosa,Agoraphobia,All,A,,,
+Bulimia nervosa,PTSD,All,A,19.5,14.9,25.5
+Bulimia nervosa,OCD,All,A,,,
+Bulimia nervosa,Adult SAD,All,A,23.3,16,33.9
+Bulimia nervosa,Child SAD,All,A,,,
+Bulimia nervosa,Anorexia Nervosa,All,A,,,
+Bulimia nervosa,Binge eating disorder,All,A,110.8,98.4,124.8
+Bulimia nervosa,IED,All,A,,,
+Bulimia nervosa,ADHD,All,A,,,
+Bulimia nervosa,Conduct disorder,All,A,,,
+Bulimia nervosa,ODD,All,A,,,
+Bulimia nervosa,Nicotine dependence,All,A,11.3,8.4,15.2
+Bulimia nervosa,Alcohol abuse,All,A,17.2,13.3,22.3
+Bulimia nervosa,Alcohol dependence,All,A,28.3,20.5,38.9
+Bulimia nervosa,Drug abuse,All,A,20,14.5,27.7
+Bulimia nervosa,Drug dependence,All,A,,,
+Bulimia nervosa,MDE,All,B,5.1,3,8.9
+Bulimia nervosa,Bipolar disorder,All,B,1.3,0.3,6
+Bulimia nervosa,Dysthymia,All,B,1.7,0.6,5.1
+Bulimia nervosa,Panic disorder,All,B,1.2,0.3,4.5
+Bulimia nervosa,GAD,All,B,2.8,1,7.8
+Bulimia nervosa,Social phobia,All,B,,,
+Bulimia nervosa,Specific Phobia,All,B,,,
+Bulimia nervosa,Agoraphobia,All,B,,,
+Bulimia nervosa,PTSD,All,B,3.1,1,9.8
+Bulimia nervosa,OCD,All,B,,,
+Bulimia nervosa,Adult SAD,All,B,1.7,0.5,6.1
+Bulimia nervosa,Child SAD,All,B,,,
+Bulimia nervosa,Anorexia Nervosa,All,B,,,
+Bulimia nervosa,Binge eating disorder,All,B,62.3,48.5,80.2
+Bulimia nervosa,IED,All,B,,,
+Bulimia nervosa,ADHD,All,B,,,
+Bulimia nervosa,Conduct disorder,All,B,,,
+Bulimia nervosa,ODD,All,B,,,
+Bulimia nervosa,Nicotine dependence,All,B,2.6,0.8,8.6
+Bulimia nervosa,Alcohol abuse,All,B,1.5,0.5,4.4
+Bulimia nervosa,Alcohol dependence,All,B,8.1,1.9,35.2
+Bulimia nervosa,Drug abuse,All,B,7.4,2.2,25
+Bulimia nervosa,Drug dependence,All,B,,,
+Bulimia nervosa,MDE,F,A,19.2,15.9,23.3
+Bulimia nervosa,Bipolar disorder,F,A,15.6,10,24.4
+Bulimia nervosa,Dysthymia,F,A,,,
+Bulimia nervosa,Panic disorder,F,A,,,
+Bulimia nervosa,GAD,F,A,24.1,18.6,31.3
+Bulimia nervosa,Social phobia,F,A,,,
+Bulimia nervosa,Specific Phobia,F,A,,,
+Bulimia nervosa,Agoraphobia,F,A,,,
+Bulimia nervosa,PTSD,F,A,35.5,26.9,46.9
+Bulimia nervosa,OCD,F,A,,,
+Bulimia nervosa,Adult SAD,F,A,,,
+Bulimia nervosa,Child SAD,F,A,,,
+Bulimia nervosa,Anorexia Nervosa,F,A,,,
+Bulimia nervosa,Binge eating disorder,F,A,169,144.7,197.5
+Bulimia nervosa,IED,F,A,,,
+Bulimia nervosa,ADHD,F,A,,,
+Bulimia nervosa,Conduct disorder,F,A,,,
+Bulimia nervosa,ODD,F,A,,,
+Bulimia nervosa,Nicotine dependence,F,A,6.5,4.4,9.4
+Bulimia nervosa,Alcohol abuse,F,A,4.7,3.6,6.2
+Bulimia nervosa,Alcohol dependence,F,A,7.1,4.9,10.3
+Bulimia nervosa,Drug abuse,F,A,6.9,4.9,9.6
+Bulimia nervosa,Drug dependence,F,A,,,
+Bulimia nervosa,MDE,M,A,,,
+Bulimia nervosa,Bipolar disorder,M,A,,,
+Bulimia nervosa,Dysthymia,M,A,,,
+Bulimia nervosa,Panic disorder,M,A,,,
+Bulimia nervosa,GAD,M,A,,,
+Bulimia nervosa,Social phobia,M,A,,,
+Bulimia nervosa,Specific Phobia,M,A,,,
+Bulimia nervosa,Agoraphobia,M,A,,,
+Bulimia nervosa,PTSD,M,A,,,
+Bulimia nervosa,OCD,M,A,,,
+Bulimia nervosa,Adult SAD,M,A,,,
+Bulimia nervosa,Child SAD,M,A,,,
+Bulimia nervosa,Anorexia Nervosa,M,A,,,
+Bulimia nervosa,Binge eating disorder,M,A,,,
+Bulimia nervosa,IED,M,A,,,
+Bulimia nervosa,ADHD,M,A,,,
+Bulimia nervosa,Conduct disorder,M,A,,,
+Bulimia nervosa,ODD,M,A,,,
+Bulimia nervosa,Nicotine dependence,M,A,,,
+Bulimia nervosa,Alcohol abuse,M,A,,,
+Bulimia nervosa,Alcohol dependence,M,A,,,
+Bulimia nervosa,Drug abuse,M,A,,,
+Bulimia nervosa,Drug dependence,M,A,,,
+Bulimia nervosa,MDE,F,B,8.5,5,14.3
+Bulimia nervosa,Bipolar disorder,F,B,1.2,0.3,5.7
+Bulimia nervosa,Dysthymia,F,B,,,
+Bulimia nervosa,Panic disorder,F,B,,,
+Bulimia nervosa,GAD,F,B,5.2,1.8,14.5
+Bulimia nervosa,Social phobia,F,B,,,
+Bulimia nervosa,Specific Phobia,F,B,,,
+Bulimia nervosa,Agoraphobia,F,B,,,
+Bulimia nervosa,PTSD,F,B,6.2,2,18.5
+Bulimia nervosa,OCD,F,B,,,
+Bulimia nervosa,Adult SAD,F,B,,,
+Bulimia nervosa,Child SAD,F,B,,,
+Bulimia nervosa,Anorexia Nervosa,F,B,,,
+Bulimia nervosa,Binge eating disorder,F,B,99.2,77.1,127.6
+Bulimia nervosa,IED,F,B,,,
+Bulimia nervosa,ADHD,F,B,,,
+Bulimia nervosa,Conduct disorder,F,B,,,
+Bulimia nervosa,ODD,F,B,,,
+Bulimia nervosa,Nicotine dependence,F,B,1.2,0.4,3.5
+Bulimia nervosa,Alcohol abuse,F,B,0.4,0.2,1.1
+Bulimia nervosa,Alcohol dependence,F,B,2.3,0.7,7.5
+Bulimia nervosa,Drug abuse,F,B,3,1.1,8.5
+Bulimia nervosa,Drug dependence,F,B,,,
+Bulimia nervosa,MDE,M,B,,,
+Bulimia nervosa,Bipolar disorder,M,B,,,
+Bulimia nervosa,Dysthymia,M,B,,,
+Bulimia nervosa,Panic disorder,M,B,,,
+Bulimia nervosa,GAD,M,B,,,
+Bulimia nervosa,Social phobia,M,B,,,
+Bulimia nervosa,Specific Phobia,M,B,,,
+Bulimia nervosa,Agoraphobia,M,B,,,
+Bulimia nervosa,PTSD,M,B,,,
+Bulimia nervosa,OCD,M,B,,,
+Bulimia nervosa,Adult SAD,M,B,,,
+Bulimia nervosa,Child SAD,M,B,,,
+Bulimia nervosa,Anorexia Nervosa,M,B,,,
+Bulimia nervosa,Binge eating disorder,M,B,,,
+Bulimia nervosa,IED,M,B,,,
+Bulimia nervosa,ADHD,M,B,,,
+Bulimia nervosa,Conduct disorder,M,B,,,
+Bulimia nervosa,ODD,M,B,,,
+Bulimia nervosa,Nicotine dependence,M,B,,,
+Bulimia nervosa,Alcohol abuse,M,B,,,
+Bulimia nervosa,Alcohol dependence,M,B,,,
+Bulimia nervosa,Drug abuse,M,B,,,
+Bulimia nervosa,Drug dependence,M,B,,,
+Binge eating disorder,MDE,All,A,11.9,10.7,13.1
+Binge eating disorder,Bipolar disorder,All,A,15.5,12.7,19.1
+Binge eating disorder,Dysthymia,All,A,16.9,13.9,20.6
+Binge eating disorder,Panic disorder,All,A,13.1,10.6,16.2
+Binge eating disorder,GAD,All,A,13.7,11.7,15.9
+Binge eating disorder,Social phobia,All,A,13.9,12.1,15.9
+Binge eating disorder,Specific Phobia,All,A,,,
+Binge eating disorder,Agoraphobia,All,A,16.9,13.4,21.4
+Binge eating disorder,PTSD,All,A,12,10.3,14.1
+Binge eating disorder,OCD,All,A,,,
+Binge eating disorder,Adult SAD,All,A,13.7,11.1,17
+Binge eating disorder,Child SAD,All,A,,,
+Binge eating disorder,Anorexia nervosa,All,A,,,
+Binge eating disorder,Bulimia nervosa,All,A,59,44.6,77.9
+Binge eating disorder,IED,All,A,13.3,10.2,17.3
+Binge eating disorder,ADHD,All,A,,,
+Binge eating disorder,Conduct disorder,All,A,,,
+Binge eating disorder,ODD,All,A,,,
+Binge eating disorder,Nicotine dependence,All,A,8.8,7.6,10.3
+Binge eating disorder,Alcohol abuse,All,A,12.4,11.1,13.9
+Binge eating disorder,Alcohol dependence,All,A,19,16,22.7
+Binge eating disorder,Drug abuse,All,A,13.8,11.6,16.5
+Binge eating disorder,Drug dependence,All,A,20.5,15.9,26.4
+Binge eating disorder,MDE,All,B,4.4,3.4,5.7
+Binge eating disorder,Bipolar disorder,All,B,2.3,1.2,4.5
+Binge eating disorder,Dysthymia,All,B,2.2,1.2,4
+Binge eating disorder,Panic disorder,All,B,2.1,1.1,3.9
+Binge eating disorder,GAD,All,B,2.6,1.6,4
+Binge eating disorder,Social phobia,All,B,2.7,1.9,3.8
+Binge eating disorder,Specific Phobia,All,B,,,
+Binge eating disorder,Agoraphobia,All,B,1.9,1.1,3.3
+Binge eating disorder,PTSD,All,B,1.7,1.1,2.7
+Binge eating disorder,OCD,All,B,,,
+Binge eating disorder,Adult SAD,All,B,1.9,1.1,3.4
+Binge eating disorder,Child SAD,All,B,,,
+Binge eating disorder,Anorexia nervosa,All,B,,,
+Binge eating disorder,Bulimia nervosa,All,B,11.7,4.9,28.1
+Binge eating disorder,IED,All,B,2.2,0.9,5.5
+Binge eating disorder,ADHD,All,B,,,
+Binge eating disorder,Conduct disorder,All,B,,,
+Binge eating disorder,ODD,All,B,,,
+Binge eating disorder,Nicotine dependence,All,B,2.6,1.6,4
+Binge eating disorder,Alcohol abuse,All,B,3.2,2.3,4.5
+Binge eating disorder,Alcohol dependence,All,B,2.5,1.3,4.6
+Binge eating disorder,Drug abuse,All,B,2.6,1.4,4.6
+Binge eating disorder,Drug dependence,All,B,2.1,1,4.4
+Binge eating disorder,MDE,F,A,19.6,17.5,21.8
+Binge eating disorder,Bipolar disorder,F,A,13.7,10.3,18.2
+Binge eating disorder,Dysthymia,F,A,28.3,21.8,36.6
+Binge eating disorder,Panic disorder,F,A,21,16.2,27.3
+Binge eating disorder,GAD,F,A,22.5,18.6,27.1
+Binge eating disorder,Social phobia,F,A,,,
+Binge eating disorder,Specific Phobia,F,A,,,
+Binge eating disorder,Agoraphobia,F,A,,,
+Binge eating disorder,PTSD,F,A,24.5,19.8,30.4
+Binge eating disorder,OCD,F,A,,,
+Binge eating disorder,Adult SAD,F,A,18.8,14.5,24.3
+Binge eating disorder,Child SAD,F,A,,,
+Binge eating disorder,Anorexia nervosa,F,A,,,
+Binge eating disorder,Bulimia nervosa,F,A,,,
+Binge eating disorder,IED,F,A,,,
+Binge eating disorder,ADHD,F,A,,,
+Binge eating disorder,Conduct disorder,F,A,,,
+Binge eating disorder,ODD,F,A,,,
+Binge eating disorder,Nicotine dependence,F,A,5.1,4.2,6.2
+Binge eating disorder,Alcohol abuse,F,A,3.9,3.3,4.7
+Binge eating disorder,Alcohol dependence,F,A,6.1,4.7,7.9
+Binge eating disorder,Drug abuse,F,A,5.8,4.5,7.5
+Binge eating disorder,Drug dependence,F,A,7.6,5.3,10.8
+Binge eating disorder,MDE,M,A,14.5,12,17.5
+Binge eating disorder,Bipolar disorder,M,A,,,
+Binge eating disorder,Dysthymia,M,A,,,
+Binge eating disorder,Panic disorder,M,A,,,
+Binge eating disorder,GAD,M,A,19.4,14.3,26.2
+Binge eating disorder,Social phobia,M,A,,,
+Binge eating disorder,Specific Phobia,M,A,,,
+Binge eating disorder,Agoraphobia,M,A,,,
+Binge eating disorder,PTSD,M,A,,,
+Binge eating disorder,OCD,M,A,,,
+Binge eating disorder,Adult SAD,M,A,,,
+Binge eating disorder,Child SAD,M,A,,,
+Binge eating disorder,Anorexia nervosa,M,A,,,
+Binge eating disorder,Bulimia nervosa,M,A,,,
+Binge eating disorder,IED,M,A,,,
+Binge eating disorder,ADHD,M,A,,,
+Binge eating disorder,Conduct disorder,M,A,,,
+Binge eating disorder,ODD,M,A,,,
+Binge eating disorder,Nicotine dependence,M,A,8.7,6.9,10.9
+Binge eating disorder,Alcohol abuse,M,A,11.2,9.5,13.1
+Binge eating disorder,Alcohol dependence,M,A,18.9,14.7,24.2
+Binge eating disorder,Drug abuse,M,A,15,11.5,19.5
+Binge eating disorder,Drug dependence,M,A,,,
+Binge eating disorder,MDE,F,B,7.4,5.6,9.6
+Binge eating disorder,Bipolar disorder,F,B,2,1,4.1
+Binge eating disorder,Dysthymia,F,B,3.5,1.8,6.8
+Binge eating disorder,Panic disorder,F,B,3.4,1.8,6.5
+Binge eating disorder,GAD,F,B,4.1,2.5,6.4
+Binge eating disorder,Social phobia,F,B,,,
+Binge eating disorder,Specific Phobia,F,B,,,
+Binge eating disorder,Agoraphobia,F,B,,,
+Binge eating disorder,PTSD,F,B,3.6,2.2,5.9
+Binge eating disorder,OCD,F,B,,,
+Binge eating disorder,Adult SAD,F,B,2.6,1.4,4.9
+Binge eating disorder,Child SAD,F,B,,,
+Binge eating disorder,Anorexia nervosa,F,B,,,
+Binge eating disorder,Bulimia nervosa,F,B,,,
+Binge eating disorder,IED,F,B,,,
+Binge eating disorder,ADHD,F,B,,,
+Binge eating disorder,Conduct disorder,F,B,,,
+Binge eating disorder,ODD,F,B,,,
+Binge eating disorder,Nicotine dependence,F,B,1.4,0.9,2.1
+Binge eating disorder,Alcohol abuse,F,B,1.1,0.7,1.6
+Binge eating disorder,Alcohol dependence,F,B,1,0.5,1.8
+Binge eating disorder,Drug abuse,F,B,1.3,0.7,2.4
+Binge eating disorder,Drug dependence,F,B,1,0.5,2.1
+Binge eating disorder,MDE,M,B,5.4,3.9,7.4
+Binge eating disorder,Bipolar disorder,M,B,,,
+Binge eating disorder,Dysthymia,M,B,,,
+Binge eating disorder,Panic disorder,M,B,,,
+Binge eating disorder,GAD,M,B,4.1,2.3,7.1
+Binge eating disorder,Social phobia,M,B,,,
+Binge eating disorder,Specific Phobia,M,B,,,
+Binge eating disorder,Agoraphobia,M,B,,,
+Binge eating disorder,PTSD,M,B,,,
+Binge eating disorder,OCD,M,B,,,
+Binge eating disorder,Adult SAD,M,B,,,
+Binge eating disorder,Child SAD,M,B,,,
+Binge eating disorder,Anorexia nervosa,M,B,,,
+Binge eating disorder,Bulimia nervosa,M,B,,,
+Binge eating disorder,IED,M,B,,,
+Binge eating disorder,ADHD,M,B,,,
+Binge eating disorder,Conduct disorder,M,B,,,
+Binge eating disorder,ODD,M,B,,,
+Binge eating disorder,Nicotine dependence,M,B,2.6,1.5,4.5
+Binge eating disorder,Alcohol abuse,M,B,2.7,1.9,4
+Binge eating disorder,Alcohol dependence,M,B,2.1,1.1,4.2
+Binge eating disorder,Drug abuse,M,B,2.4,1.3,4.6
+Binge eating disorder,Drug dependence,M,B,,,
+IED,MDE,All,A,12.3,11.4,13.3
+IED,Bipolar disorder,All,A,,,
+IED,Dysthymia,All,A,,,
+IED,Panic disorder,All,A,13,11,15.3
+IED,GAD,All,A,17.5,15.4,20
+IED,Social phobia,All,A,13.4,12,14.9
+IED,Specific Phobia,All,A,11.1,10,12.4
+IED,Agoraphobia,All,A,14.9,12.3,18
+IED,PTSD,All,A,13.8,11.7,16.4
+IED,OCD,All,A,19.1,14.6,24.8
+IED,Adult SAD,All,A,12.9,11,15.1
+IED,Child SAD,All,A,,,
+IED,Anorexia nervosa,All,A,,,
+IED,Bulimia nervosa,All,A,,,
+IED,Binge eating disorder,All,A,11.3,8.8,14.6
+IED,ADHD,All,A,,,
+IED,Conduct disorder,All,A,14.3,11.5,17.8
+IED,ODD,All,A,12.9,10.5,15.8
+IED,Nicotine dependence,All,A,8.8,7.8,9.9
+IED,Alcohol abuse,All,A,11.5,10.4,12.8
+IED,Alcohol dependence,All,A,16.5,14.2,19.1
+IED,Drug abuse,All,A,9.9,8.3,11.8
+IED,Drug dependence,All,A,13.5,10.7,17
+IED,MDE,All,B,7.6,6.7,8.7
+IED,Bipolar disorder,All,B,,,
+IED,Dysthymia,All,B,,,
+IED,Panic disorder,All,B,4.6,2.8,7.6
+IED,GAD,All,B,9.9,7.6,12.8
+IED,Social phobia,All,B,5.8,4.6,7.3
+IED,Specific Phobia,All,B,6.6,5.5,7.9
+IED,Agoraphobia,All,B,3.3,2.1,5.4
+IED,PTSD,All,B,5.8,4,8.3
+IED,OCD,All,B,10,6.3,15.7
+IED,Adult SAD,All,B,4.1,2.9,5.8
+IED,Child SAD,All,B,,,
+IED,Anorexia nervosa,All,B,,,
+IED,Bulimia nervosa,All,B,,,
+IED,Binge eating disorder,All,B,4.7,2.7,8.2
+IED,ADHD,All,B,,,
+IED,Conduct disorder,All,B,7,4.8,10.1
+IED,ODD,All,B,4.5,3.2,6.5
+IED,Nicotine dependence,All,B,5.5,4.6,6.7
+IED,Alcohol abuse,All,B,7.6,6.6,8.9
+IED,Alcohol dependence,All,B,7.8,5.8,10.6
+IED,Drug abuse,All,B,4,2.8,5.6
+IED,Drug dependence,All,B,5.5,3.2,9.3
+IED,MDE,F,A,20.4,18.5,22.4
+IED,Bipolar disorder,F,A,,,
+IED,Dysthymia,F,A,,,
+IED,Panic disorder,F,A,25.2,19.5,32.7
+IED,GAD,F,A,32,26.9,38
+IED,Social phobia,F,A,17.8,15.3,20.8
+IED,Specific Phobia,F,A,,,
+IED,Agoraphobia,F,A,29.3,22.6,38
+IED,PTSD,F,A,31.9,25.9,39.1
+IED,OCD,F,A,,,
+IED,Adult SAD,F,A,18.6,15,23
+IED,Child SAD,F,A,,,
+IED,Anorexia nervosa,F,A,,,
+IED,Bulimia nervosa,F,A,,,
+IED,Binge eating disorder,F,A,20.1,14.4,28.1
+IED,ADHD,F,A,,,
+IED,Conduct disorder,F,A,,,
+IED,ODD,F,A,,,
+IED,Nicotine dependence,F,A,6.7,5.8,7.8
+IED,Alcohol abuse,F,A,4,3.4,4.9
+IED,Alcohol dependence,F,A,6,4.7,7.6
+IED,Drug abuse,F,A,5.5,4.3,7
+IED,Drug dependence,F,A,7.8,5.5,10.9
+IED,MDE,M,A,12.6,11.1,14.3
+IED,Bipolar disorder,M,A,,,
+IED,Dysthymia,M,A,,,
+IED,Panic disorder,M,A,10.8,8.3,14
+IED,GAD,M,A,16.4,13.4,20
+IED,Social phobia,M,A,12.8,11,14.8
+IED,Specific Phobia,M,A,,,
+IED,Agoraphobia,M,A,,,
+IED,PTSD,M,A,12.6,9.7,16.3
+IED,OCD,M,A,20.3,15.2,27.1
+IED,Adult SAD,M,A,11.7,9.3,14.7
+IED,Child SAD,M,A,,,
+IED,Anorexia nervosa,M,A,,,
+IED,Bulimia nervosa,M,A,,,
+IED,Binge eating disorder,M,A,,,
+IED,ADHD,M,A,,,
+IED,Conduct disorder,M,A,14.3,11.3,18.1
+IED,ODD,M,A,12,9.4,15.4
+IED,Nicotine dependence,M,A,7.2,6.2,8.5
+IED,Alcohol abuse,M,A,10.5,9.3,11.8
+IED,Alcohol dependence,M,A,15.3,12.9,18.1
+IED,Drug abuse,M,A,8.8,7.1,10.9
+IED,Drug dependence,M,A,11.9,9.1,15.5
+IED,MDE,F,B,11.5,9.9,13.4
+IED,Bipolar disorder,F,B,,,
+IED,Dysthymia,F,B,,,
+IED,Panic disorder,F,B,7.8,4.4,14
+IED,GAD,F,B,15.9,11.2,22.5
+IED,Social phobia,F,B,6.1,4.6,8.2
+IED,Specific Phobia,F,B,,,
+IED,Agoraphobia,F,B,5.7,3.3,10
+IED,PTSD,F,B,12.3,8.3,18.4
+IED,OCD,F,B,,,
+IED,Adult SAD,F,B,5.3,3.6,7.7
+IED,Child SAD,F,B,,,
+IED,Anorexia nervosa,F,B,,,
+IED,Bulimia nervosa,F,B,,,
+IED,Binge eating disorder,F,B,7.7,4.1,14.6
+IED,ADHD,F,B,,,
+IED,Conduct disorder,F,B,,,
+IED,ODD,F,B,,,
+IED,Nicotine dependence,F,B,3.8,3,4.9
+IED,Alcohol abuse,F,B,2.5,2,3.2
+IED,Alcohol dependence,F,B,2.4,1.6,3.5
+IED,Drug abuse,F,B,2.4,1.6,3.5
+IED,Drug dependence,F,B,3.3,1.8,6.1
+IED,MDE,M,B,8.5,7.2,10.1
+IED,Bipolar disorder,M,B,,,
+IED,Dysthymia,M,B,,,
+IED,Panic disorder,M,B,4.8,3,7.7
+IED,GAD,M,B,10.8,8.2,14.1
+IED,Social phobia,M,B,6.6,5.3,8.3
+IED,Specific Phobia,M,B,,,
+IED,Agoraphobia,M,B,,,
+IED,PTSD,M,B,6,4.1,8.9
+IED,OCD,M,B,12.2,7.8,19.1
+IED,Adult SAD,M,B,4.1,2.8,6.1
+IED,Child SAD,M,B,,,
+IED,Anorexia nervosa,M,B,,,
+IED,Bulimia nervosa,M,B,,,
+IED,Binge eating disorder,M,B,,,
+IED,ADHD,M,B,,,
+IED,Conduct disorder,M,B,7,4.7,10.5
+IED,ODD,M,B,4.4,3,6.3
+IED,Nicotine dependence,M,B,5,4.1,6.1
+IED,Alcohol abuse,M,B,7.2,6.1,8.4
+IED,Alcohol dependence,M,B,7.7,5.6,10.4
+IED,Drug abuse,M,B,3.4,2.3,5
+IED,Drug dependence,M,B,4.8,2.7,8.4
+ADHD,MDE,All,A,18,16.3,20
+ADHD,Bipolar disorder,All,A,31.7,26.1,38.4
+ADHD,Dysthymia,All,A,29.2,23.2,36.7
+ADHD,Panic disorder,All,A,22.4,17.7,28.4
+ADHD,GAD,All,A,19.2,16.1,22.9
+ADHD,Social phobia,All,A,21,18.1,24.4
+ADHD,Specific Phobia,All,A,16.1,14.1,18.5
+ADHD,Agoraphobia,All,A,25.4,19.3,33.6
+ADHD,PTSD,All,A,20.4,16.3,25.4
+ADHD,OCD,All,A,,,
+ADHD,Adult SAD,All,A,23.3,19,28.5
+ADHD,Child SAD,All,A,22.1,17,28.7
+ADHD,Anorexia nervosa,All,A,,,
+ADHD,Bulimia nervosa,All,A,36.4,21.7,60.8
+ADHD,Binge eating disorder,All,A,,,
+ADHD,IED,All,A,20,16.3,24.7
+ADHD,Conduct disorder,All,A,34.9,27.4,44.5
+ADHD,ODD,All,A,43.4,35.1,53.6
+ADHD,Nicotine dependence,All,A,11.1,9.5,13
+ADHD,Alcohol abuse,All,A,13.5,11.6,15.8
+ADHD,Alcohol dependence,All,A,19.5,15.7,24.1
+ADHD,Drug abuse,All,A,14.7,12.1,17.9
+ADHD,Drug dependence,All,A,24.8,19,32.4
+ADHD,MDE,All,B,14.2,12.2,16.5
+ADHD,Bipolar disorder,All,B,25.5,19,34.2
+ADHD,Dysthymia,All,B,17.5,11.2,27.4
+ADHD,Panic disorder,All,B,16.4,10.4,25.8
+ADHD,GAD,All,B,14.4,10.7,19.4
+ADHD,Social phobia,All,B,15.6,12.8,19
+ADHD,Specific Phobia,All,B,13.1,10.7,15.9
+ADHD,Agoraphobia,All,B,13.4,8.2,21.9
+ADHD,PTSD,All,B,14.2,10.2,19.9
+ADHD,OCD,All,B,,,
+ADHD,Adult SAD,All,B,14.4,10.6,19.7
+ADHD,Child SAD,All,B,13.2,8.6,20.5
+ADHD,Anorexia nervosa,All,B,,,
+ADHD,Bulimia nervosa,All,B,19.4,8.2,45.8
+ADHD,Binge eating disorder,All,B,,,
+ADHD,IED,All,B,17.2,13.2,22.6
+ADHD,Conduct disorder,All,B,25.3,18.3,35
+ADHD,ODD,All,B,33,24.9,43.8
+ADHD,Nicotine dependence,All,B,8.9,7.1,11.2
+ADHD,Alcohol abuse,All,B,11,9,13.5
+ADHD,Alcohol dependence,All,B,13.3,9.4,18.8
+ADHD,Drug abuse,All,B,11.2,8.2,15.4
+ADHD,Drug dependence,All,B,15.4,9.3,25.6
+ADHD,MDE,F,A,26.3,23,30
+ADHD,Bipolar disorder,F,A,30.3,22.8,40.1
+ADHD,Dysthymia,F,A,43.4,31.5,60
+ADHD,Panic disorder,F,A,36.4,26.7,49.7
+ADHD,GAD,F,A,28.3,21.7,36.8
+ADHD,Social phobia,F,A,27.6,22.7,33.6
+ADHD,Specific Phobia,F,A,29,24.3,34.6
+ADHD,Agoraphobia,F,A,48.9,35,68.3
+ADHD,PTSD,F,A,43.5,34.6,54.8
+ADHD,OCD,F,A,,,
+ADHD,Adult SAD,F,A,30.9,23.8,40.1
+ADHD,Child SAD,F,A,34.5,24.1,49.5
+ADHD,Anorexia nervosa,F,A,,,
+ADHD,Bulimia nervosa,F,A,,,
+ADHD,Binge eating disorder,F,A,,,
+ADHD,IED,F,A,13.9,10.3,18.6
+ADHD,Conduct disorder,F,A,21.3,14.9,30.6
+ADHD,ODD,F,A,38.5,28.9,51.2
+ADHD,Nicotine dependence,F,A,6.9,5.5,8.8
+ADHD,Alcohol abuse,F,A,4.6,3.5,6
+ADHD,Alcohol dependence,F,A,6.1,4.3,8.6
+ADHD,Drug abuse,F,A,5.4,3.8,7.8
+ADHD,Drug dependence,F,A,8.6,5.6,13.3
+ADHD,MDE,M,A,21.8,19.1,24.9
+ADHD,Bipolar disorder,M,A,29.5,23.3,37.3
+ADHD,Dysthymia,M,A,36.1,26.5,49.3
+ADHD,Panic disorder,M,A,25.2,17.6,35.9
+ADHD,GAD,M,A,23.9,18.6,30.6
+ADHD,Social phobia,M,A,20.5,16.7,25.1
+ADHD,Specific Phobia,M,A,17.9,14.4,22.2
+ADHD,Agoraphobia,M,A,,,
+ADHD,PTSD,M,A,21.4,14.9,30.9
+ADHD,OCD,M,A,,,
+ADHD,Adult SAD,M,A,22.8,17.2,30.2
+ADHD,Child SAD,M,A,,,
+ADHD,Anorexia nervosa,M,A,,,
+ADHD,Bulimia nervosa,M,A,,,
+ADHD,Binge eating disorder,M,A,,,
+ADHD,IED,M,A,20.3,15.9,26
+ADHD,Conduct disorder,M,A,29.3,22.6,37.9
+ADHD,ODD,M,A,38.3,30.1,48.6
+ADHD,Nicotine dependence,M,A,10.2,8.7,12
+ADHD,Alcohol abuse,M,A,12.4,10.3,14.9
+ADHD,Alcohol dependence,M,A,18.6,14.7,23.7
+ADHD,Drug abuse,M,A,15.2,12.2,18.8
+ADHD,Drug dependence,M,A,26.1,19.5,34.8
+ADHD,MDE,F,B,20.4,17.2,24.3
+ADHD,Bipolar disorder,F,B,24.5,17.3,34.7
+ADHD,Dysthymia,F,B,25.5,15.5,42.2
+ADHD,Panic disorder,F,B,26.1,16,42.6
+ADHD,GAD,F,B,19.7,13.5,28.8
+ADHD,Social phobia,F,B,19.9,15.8,25.2
+ADHD,Specific Phobia,F,B,23.9,18.9,30.2
+ADHD,Agoraphobia,F,B,24.2,13.2,44.2
+ADHD,PTSD,F,B,29.5,20.7,42.1
+ADHD,OCD,F,B,,,
+ADHD,Adult SAD,F,B,19.7,13.7,28.1
+ADHD,Child SAD,F,B,20,11.4,35.2
+ADHD,Anorexia nervosa,F,B,,,
+ADHD,Bulimia nervosa,F,B,,,
+ADHD,Binge eating disorder,F,B,,,
+ADHD,IED,F,B,12.4,8.8,17.6
+ADHD,Conduct disorder,F,B,14,8.6,22.8
+ADHD,ODD,F,B,28.7,20,41.2
+ADHD,Nicotine dependence,F,B,5.7,4.3,7.7
+ADHD,Alcohol abuse,F,B,3.5,2.4,4.9
+ADHD,Alcohol dependence,F,B,3.9,2.4,6.2
+ADHD,Drug abuse,F,B,4.3,2.8,6.7
+ADHD,Drug dependence,F,B,5.5,2.7,11.2
+ADHD,MDE,M,B,17.2,14.5,20.4
+ADHD,Bipolar disorder,M,B,23.8,17,33.2
+ADHD,Dysthymia,M,B,21.9,12.9,37.2
+ADHD,Panic disorder,M,B,18.6,10.8,32.1
+ADHD,GAD,M,B,18.9,13.8,25.8
+ADHD,Social phobia,M,B,15.6,12.4,19.7
+ADHD,Specific Phobia,M,B,14.2,11,18.2
+ADHD,Agoraphobia,M,B,,,
+ADHD,PTSD,M,B,15.5,10.2,23.7
+ADHD,OCD,M,B,,,
+ADHD,Adult SAD,M,B,13.8,9.4,20.2
+ADHD,Child SAD,M,B,,,
+ADHD,Anorexia nervosa,M,B,,,
+ADHD,Bulimia nervosa,M,B,,,
+ADHD,Binge eating disorder,M,B,,,
+ADHD,IED,M,B,17.1,12.9,22.8
+ADHD,Conduct disorder,M,B,22.5,16.3,31
+ADHD,ODD,M,B,29.8,21.7,40.9
+ADHD,Nicotine dependence,M,B,8.1,6.4,10.2
+ADHD,Alcohol abuse,M,B,10.4,8.4,12.9
+ADHD,Alcohol dependence,M,B,13,9,18.8
+ADHD,Drug abuse,M,B,11.4,8.2,16
+ADHD,Drug dependence,M,B,16.1,9.7,26.7
+Conduct disorder,MDE,All,A,14.8,13.1,16.7
+Conduct disorder,Bipolar disorder,All,A,19.5,15.9,24
+Conduct disorder,Dysthymia,All,A,24.6,19.1,31.6
+Conduct disorder,Panic disorder,All,A,21.1,16.7,26.6
+Conduct disorder,GAD,All,A,18,15.1,21.5
+Conduct disorder,Social phobia,All,A,13.1,11.1,15.5
+Conduct disorder,Specific Phobia,All,A,12.5,11.1,14.1
+Conduct disorder,Agoraphobia,All,A,16.3,12.2,21.8
+Conduct disorder,PTSD,All,A,20.1,16.6,24.3
+Conduct disorder,OCD,All,A,14.6,9,23.5
+Conduct disorder,Adult SAD,All,A,23.2,19.2,28.1
+Conduct disorder,Child SAD,All,A,,,
+Conduct disorder,Anorexia nervosa,All,A,,,
+Conduct disorder,Bulimia nervosa,All,A,,,
+Conduct disorder,Binge eating disorder,All,A,12.9,8.8,19
+Conduct disorder,IED,All,A,16.1,13.3,19.5
+Conduct disorder,ADHD,All,A,,,
+Conduct disorder,ODD,All,A,44.3,35.7,55
+Conduct disorder,Nicotine dependence,All,A,13.3,11.7,15.3
+Conduct disorder,Alcohol abuse,All,A,18.1,15.9,20.7
+Conduct disorder,Alcohol dependence,All,A,27.9,23.3,33.3
+Conduct disorder,Drug abuse,All,A,24.2,20.4,28.7
+Conduct disorder,Drug dependence,All,A,34.4,27.4,43.2
+Conduct disorder,MDE,All,B,6.5,4.9,8.8
+Conduct disorder,Bipolar disorder,All,B,4.8,2.4,9.7
+Conduct disorder,Dysthymia,All,B,8.7,4.6,16.5
+Conduct disorder,Panic disorder,All,B,4.6,2.3,9.2
+Conduct disorder,GAD,All,B,7.6,4.8,12.2
+Conduct disorder,Social phobia,All,B,3.7,2.4,5.8
+Conduct disorder,Specific Phobia,All,B,6.1,4.4,8.4
+Conduct disorder,Agoraphobia,All,B,3.9,1.6,9.5
+Conduct disorder,PTSD,All,B,6.4,3.7,11.1
+Conduct disorder,OCD,All,B,12.2,3.3,45.2
+Conduct disorder,Adult SAD,All,B,8.9,6.1,12.9
+Conduct disorder,Child SAD,All,B,,,
+Conduct disorder,Anorexia nervosa,All,B,,,
+Conduct disorder,Bulimia nervosa,All,B,,,
+Conduct disorder,Binge eating disorder,All,B,6.4,2.7,15.2
+Conduct disorder,IED,All,B,9.3,6.5,13.2
+Conduct disorder,ADHD,All,B,,,
+Conduct disorder,ODD,All,B,19.7,13.5,28.9
+Conduct disorder,Nicotine dependence,All,B,8.9,6.8,11.7
+Conduct disorder,Alcohol abuse,All,B,11.6,9,14.9
+Conduct disorder,Alcohol dependence,All,B,14.1,9.6,20.5
+Conduct disorder,Drug abuse,All,B,13.3,9.7,18.2
+Conduct disorder,Drug dependence,All,B,15.6,9.8,25
+Conduct disorder,MDE,F,A,20.7,17.5,24.6
+Conduct disorder,Bipolar disorder,F,A,19.5,13.9,27.3
+Conduct disorder,Dysthymia,F,A,36.8,25.1,54.1
+Conduct disorder,Panic disorder,F,A,41.7,30.1,57.7
+Conduct disorder,GAD,F,A,35,26.9,45.6
+Conduct disorder,Social phobia,F,A,15.5,12,20.2
+Conduct disorder,Specific Phobia,F,A,,,
+Conduct disorder,Agoraphobia,F,A,,,
+Conduct disorder,PTSD,F,A,42.9,33.8,54.4
+Conduct disorder,OCD,F,A,,,
+Conduct disorder,Adult SAD,F,A,32.1,24.2,42.5
+Conduct disorder,Child SAD,F,A,,,
+Conduct disorder,Anorexia nervosa,F,A,,,
+Conduct disorder,Bulimia nervosa,F,A,,,
+Conduct disorder,Binge eating disorder,F,A,23.9,15.5,36.7
+Conduct disorder,IED,F,A,11.1,8.3,15
+Conduct disorder,ADHD,F,A,,,
+Conduct disorder,ODD,F,A,40.2,29.6,54.5
+Conduct disorder,Nicotine dependence,F,A,10.8,9.1,12.7
+Conduct disorder,Alcohol abuse,F,A,8.6,7,10.5
+Conduct disorder,Alcohol dependence,F,A,13.7,10.5,17.8
+Conduct disorder,Drug abuse,F,A,11.7,9,15.2
+Conduct disorder,Drug dependence,F,A,19.4,14.5,26
+Conduct disorder,MDE,M,A,17.2,14.7,20
+Conduct disorder,Bipolar disorder,M,A,17.7,14.2,22.2
+Conduct disorder,Dysthymia,M,A,27.6,20.2,37.7
+Conduct disorder,Panic disorder,M,A,17.8,12.4,25.7
+Conduct disorder,GAD,M,A,16,12.3,20.8
+Conduct disorder,Social phobia,M,A,13.6,11.1,16.6
+Conduct disorder,Specific Phobia,M,A,,,
+Conduct disorder,Agoraphobia,M,A,,,
+Conduct disorder,PTSD,M,A,20.1,14.9,27.1
+Conduct disorder,OCD,M,A,,,
+Conduct disorder,Adult SAD,M,A,21.8,17.2,27.5
+Conduct disorder,Child SAD,M,A,,,
+Conduct disorder,Anorexia nervosa,M,A,,,
+Conduct disorder,Bulimia nervosa,M,A,,,
+Conduct disorder,Binge eating disorder,M,A,,,
+Conduct disorder,IED,M,A,16.1,13.2,19.6
+Conduct disorder,ADHD,M,A,,,
+Conduct disorder,ODD,M,A,37.9,30.5,47
+Conduct disorder,Nicotine dependence,M,A,11.2,9.3,13.4
+Conduct disorder,Alcohol abuse,M,A,15.9,13.8,18.3
+Conduct disorder,Alcohol dependence,M,A,24.4,20,29.8
+Conduct disorder,Drug abuse,M,A,23,19.2,27.4
+Conduct disorder,Drug dependence,M,A,31.1,23.8,40.5
+Conduct disorder,MDE,F,B,8.6,6.2,11.8
+Conduct disorder,Bipolar disorder,F,B,4,1.9,8.5
+Conduct disorder,Dysthymia,F,B,11.2,5.4,23.1
+Conduct disorder,Panic disorder,F,B,7.6,3.5,16.7
+Conduct disorder,GAD,F,B,14.1,8.5,23.3
+Conduct disorder,Social phobia,F,B,3.9,2.4,6.5
+Conduct disorder,Specific Phobia,F,B,,,
+Conduct disorder,Agoraphobia,F,B,,,
+Conduct disorder,PTSD,F,B,12.9,7.4,22.6
+Conduct disorder,OCD,F,B,,,
+Conduct disorder,Adult SAD,F,B,11.3,7.3,17.4
+Conduct disorder,Child SAD,F,B,,,
+Conduct disorder,Anorexia nervosa,F,B,,,
+Conduct disorder,Bulimia nervosa,F,B,,,
+Conduct disorder,Binge eating disorder,F,B,11.3,4.4,29.1
+Conduct disorder,IED,F,B,5.9,3.8,9.1
+Conduct disorder,ADHD,F,B,,,
+Conduct disorder,ODD,F,B,16.5,11.1,24.6
+Conduct disorder,Nicotine dependence,F,B,6.8,5.4,8.7
+Conduct disorder,Alcohol abuse,F,B,5.2,3.9,6.8
+Conduct disorder,Alcohol dependence,F,B,6.2,4.2,9.2
+Conduct disorder,Drug abuse,F,B,5.8,4,8.5
+Conduct disorder,Drug dependence,F,B,8.3,5,13.6
+Conduct disorder,MDE,M,B,7.9,5.7,10.8
+Conduct disorder,Bipolar disorder,M,B,4.9,2.4,9.9
+Conduct disorder,Dysthymia,M,B,10.9,5.5,21.6
+Conduct disorder,Panic disorder,M,B,4.7,2.3,9.6
+Conduct disorder,GAD,M,B,7.1,4.2,12.1
+Conduct disorder,Social phobia,M,B,4.2,2.6,6.7
+Conduct disorder,Specific Phobia,M,B,,,
+Conduct disorder,Agoraphobia,M,B,,,
+Conduct disorder,PTSD,M,B,6.8,3.7,12.4
+Conduct disorder,OCD,M,B,,,
+Conduct disorder,Adult SAD,M,B,8.9,5.9,13.4
+Conduct disorder,Child SAD,M,B,,,
+Conduct disorder,Anorexia nervosa,M,B,,,
+Conduct disorder,Bulimia nervosa,M,B,,,
+Conduct disorder,Binge eating disorder,M,B,,,
+Conduct disorder,IED,M,B,9.6,6.7,13.7
+Conduct disorder,ADHD,M,B,,,
+Conduct disorder,ODD,M,B,18,12.1,26.6
+Conduct disorder,Nicotine dependence,M,B,7.8,5.7,10.6
+Conduct disorder,Alcohol abuse,M,B,10.4,8,13.4
+Conduct disorder,Alcohol dependence,M,B,12.7,8.4,19
+Conduct disorder,Drug abuse,M,B,13,9.4,17.9
+Conduct disorder,Drug dependence,M,B,14.6,8.9,23.7
+ODD,MDE,All,A,15.1,13.7,16.7
+ODD,Bipolar disorder,All,A,25.9,21.5,31.2
+ODD,Dysthymia,All,A,25.9,20.2,33.2
+ODD,Panic disorder,All,A,17.6,13.6,22.7
+ODD,GAD,All,A,18.8,15.8,22.5
+ODD,Social phobia,All,A,18.7,16.2,21.6
+ODD,Specific Phobia,All,A,15.5,13.4,18
+ODD,Agoraphobia,All,A,19.5,15.4,24.7
+ODD,PTSD,All,A,20.2,16.6,24.5
+ODD,OCD,All,A,,,
+ODD,Adult SAD,All,A,24,19.7,29.2
+ODD,Child SAD,All,A,18,13.4,24.2
+ODD,Anorexia nervosa,All,A,,,
+ODD,Bulimia nervosa,All,A,28.7,18,45.8
+ODD,Binge eating disorder,All,A,17.2,12.7,23.3
+ODD,IED,All,A,18.1,15.4,21.2
+ODD,ADHD,All,A,37.8,30,47.8
+ODD,Conduct disorder,All,A,44.5,36.6,54.2
+ODD,Nicotine dependence,All,A,13,11.6,14.5
+ODD,Alcohol abuse,All,A,16.6,14.9,18.4
+ODD,Alcohol dependence,All,A,23.7,20,28.1
+ODD,Drug abuse,All,A,21.6,18.5,25.2
+ODD,Drug dependence,All,A,32,25.5,40.1
+ODD,MDE,All,B,10.2,8.4,12.2
+ODD,Bipolar disorder,All,B,15.6,10.7,22.8
+ODD,Dysthymia,All,B,16.6,10.5,26.4
+ODD,Panic disorder,All,B,6.7,3.7,12.2
+ODD,GAD,All,B,12.1,8.8,16.7
+ODD,Social phobia,All,B,11.2,8.8,14.4
+ODD,Specific Phobia,All,B,10.6,8.3,13.4
+ODD,Agoraphobia,All,B,2.8,0.9,8.8
+ODD,PTSD,All,B,15.5,11.2,21.3
+ODD,OCD,All,B,,,
+ODD,Adult SAD,All,B,14.7,10.2,21.2
+ODD,Child SAD,All,B,7.7,4.3,14
+ODD,Anorexia nervosa,All,B,,,
+ODD,Bulimia nervosa,All,B,18.5,8,43.2
+ODD,Binge eating disorder,All,B,13.2,8.2,21.4
+ODD,IED,All,B,13.6,9.9,18.6
+ODD,ADHD,All,B,27.3,19,39.4
+ODD,Conduct disorder,All,B,30.9,23.6,40.4
+ODD,Nicotine dependence,All,B,10.3,8.6,12.4
+ODD,Alcohol abuse,All,B,12.2,10.4,14.3
+ODD,Alcohol dependence,All,B,16.4,12.8,21.1
+ODD,Drug abuse,All,B,15.3,12.1,19.4
+ODD,Drug dependence,All,B,20.2,13.9,29.4
+ODD,MDE,F,A,22,19.1,25.3
+ODD,Bipolar disorder,F,A,23.9,18.2,31.4
+ODD,Dysthymia,F,A,44.9,33.2,60.7
+ODD,Panic disorder,F,A,30.4,22.4,41.3
+ODD,GAD,F,A,29.9,24.1,37.1
+ODD,Social phobia,F,A,22.5,18.4,27.4
+ODD,Specific Phobia,F,A,25.5,20.9,31
+ODD,Agoraphobia,F,A,36.1,26,50.2
+ODD,PTSD,F,A,45.3,36.8,55.9
+ODD,OCD,F,A,,,
+ODD,Adult SAD,F,A,25.9,19.7,34.2
+ODD,Child SAD,F,A,,,
+ODD,Anorexia nervosa,F,A,,,
+ODD,Bulimia nervosa,F,A,,,
+ODD,Binge eating disorder,F,A,27.9,19,41.1
+ODD,IED,F,A,14.8,11.4,19.2
+ODD,ADHD,F,A,,,
+ODD,Conduct disorder,F,A,24.6,17.8,33.9
+ODD,Nicotine dependence,F,A,9.2,7.8,10.7
+ODD,Alcohol abuse,F,A,5.9,4.8,7.3
+ODD,Alcohol dependence,F,A,10.1,7.8,13.1
+ODD,Drug abuse,F,A,9.6,7.5,12.1
+ODD,Drug dependence,F,A,13.5,9,20.3
+ODD,MDE,M,A,18,15.8,20.6
+ODD,Bipolar disorder,M,A,24.3,19.5,30.5
+ODD,Dysthymia,M,A,,,
+ODD,Panic disorder,M,A,17.9,12.2,26.2
+ODD,GAD,M,A,21.9,17,28.1
+ODD,Social phobia,M,A,20,16.3,24.4
+ODD,Specific Phobia,M,A,19,15.5,23.3
+ODD,Agoraphobia,M,A,,,
+ODD,PTSD,M,A,20,14.3,28
+ODD,OCD,M,A,,,
+ODD,Adult SAD,M,A,29,22.9,36.8
+ODD,Child SAD,M,A,,,
+ODD,Anorexia nervosa,M,A,,,
+ODD,Bulimia nervosa,M,A,,,
+ODD,Binge eating disorder,M,A,17.8,12.2,26
+ODD,IED,M,A,16.2,13.3,19.7
+ODD,ADHD,M,A,,,
+ODD,Conduct disorder,M,A,41.8,34.1,51.2
+ODD,Nicotine dependence,M,A,10.9,9.4,12.6
+ODD,Alcohol abuse,M,A,14.9,13.1,16.8
+ODD,Alcohol dependence,M,A,20.5,16.7,25.2
+ODD,Drug abuse,M,A,21.1,17.7,25.1
+ODD,Drug dependence,M,A,32.5,25.4,41.7
+ODD,MDE,F,B,13.9,11.4,17.1
+ODD,Bipolar disorder,F,B,12.1,7.8,18.8
+ODD,Dysthymia,F,B,28.4,17.7,45.6
+ODD,Panic disorder,F,B,10.5,5.9,18.5
+ODD,GAD,F,B,15.5,10.5,23
+ODD,Social phobia,F,B,11.4,8.6,15.3
+ODD,Specific Phobia,F,B,17,13.3,21.9
+ODD,Agoraphobia,F,B,4.7,1.4,16.1
+ODD,PTSD,F,B,33.4,25.2,44.3
+ODD,OCD,F,B,,,
+ODD,Adult SAD,F,B,14.5,9.9,21.2
+ODD,Child SAD,F,B,,,
+ODD,Anorexia nervosa,F,B,,,
+ODD,Bulimia nervosa,F,B,,,
+ODD,Binge eating disorder,F,B,21.3,12,37.9
+ODD,IED,F,B,11.2,7.8,16.2
+ODD,ADHD,F,B,,,
+ODD,Conduct disorder,F,B,15.6,10.7,22.8
+ODD,Nicotine dependence,F,B,7.4,6,9
+ODD,Alcohol abuse,F,B,4.1,3.4,5.1
+ODD,Alcohol dependence,F,B,6.9,5,9.6
+ODD,Drug abuse,F,B,6.7,4.8,9.2
+ODD,Drug dependence,F,B,8.1,4.9,13.6
+ODD,MDE,M,B,12.6,10,15.8
+ODD,Bipolar disorder,M,B,16.6,11.2,24.5
+ODD,Dysthymia,M,B,,,
+ODD,Panic disorder,M,B,7.8,3.9,15.6
+ODD,GAD,M,B,16.5,11.7,23.5
+ODD,Social phobia,M,B,13.6,10.1,18.2
+ODD,Specific Phobia,M,B,13.1,9.8,17.5
+ODD,Agoraphobia,M,B,,,
+ODD,PTSD,M,B,16.2,10.1,26.1
+ODD,OCD,M,B,,,
+ODD,Adult SAD,M,B,18.7,12.6,27.9
+ODD,Child SAD,M,B,,,
+ODD,Anorexia nervosa,M,B,,,
+ODD,Bulimia nervosa,M,B,,,
+ODD,Binge eating disorder,M,B,13.8,8.1,23.4
+ODD,IED,M,B,12.1,8.7,16.9
+ODD,ADHD,M,B,,,
+ODD,Conduct disorder,M,B,30.4,23.5,39.2
+ODD,Nicotine dependence,M,B,8.7,7.2,10.6
+ODD,Alcohol abuse,M,B,11.3,9.5,13.4
+ODD,Alcohol dependence,M,B,14.4,10.8,19.1
+ODD,Drug abuse,M,B,15.1,11.8,19.3
+ODD,Drug dependence,M,B,20.8,14.2,30.5
+Nicotine dependence,MDE,All,A,7.5,6.9,8.2
+Nicotine dependence,Bipolar disorder,All,A,7.6,6.4,8.9
+Nicotine dependence,Dysthymia,All,A,7.7,6.6,9
+Nicotine dependence,Panic disorder,All,A,6.4,5.5,7.5
+Nicotine dependence,GAD,All,A,7.9,7,8.9
+Nicotine dependence,Social phobia,All,A,6.2,5.7,6.8
+Nicotine dependence,Specific Phobia,All,A,6.5,6,7.1
+Nicotine dependence,Agoraphobia,All,A,5.8,4.9,6.8
+Nicotine dependence,PTSD,All,A,5.8,5.2,6.5
+Nicotine dependence,OCD,All,A,5.3,4,6.9
+Nicotine dependence,Adult SAD,All,A,6.1,5.3,7
+Nicotine dependence,Child SAD,All,A,,,
+Nicotine dependence,Anorexia nervosa,All,A,,,
+Nicotine dependence,Bulimia nervosa,All,A,5.6,4.1,7.7
+Nicotine dependence,Binge eating disorder,All,A,5.2,4.4,6.2
+Nicotine dependence,IED,All,A,7.6,6.8,8.5
+Nicotine dependence,ADHD,All,A,,,
+Nicotine dependence,Conduct disorder,All,A,,,
+Nicotine dependence,ODD,All,A,,,
+Nicotine dependence,Alcohol abuse,All,A,7.6,6.9,8.4
+Nicotine dependence,Alcohol dependence,All,A,9.1,7.9,10.6
+Nicotine dependence,Drug abuse,All,A,6,5.3,6.9
+Nicotine dependence,Drug dependence,All,A,7.2,5.9,8.8
+Nicotine dependence,MDE,All,B,3.6,3.1,4.3
+Nicotine dependence,Bipolar disorder,All,B,2,1.5,2.6
+Nicotine dependence,Dysthymia,All,B,1.7,1.3,2.2
+Nicotine dependence,Panic disorder,All,B,1.7,1.3,2.3
+Nicotine dependence,GAD,All,B,3,2.3,3.8
+Nicotine dependence,Social phobia,All,B,2,1.7,2.3
+Nicotine dependence,Specific Phobia,All,B,3.2,2.7,3.7
+Nicotine dependence,Agoraphobia,All,B,1,0.8,1.2
+Nicotine dependence,PTSD,All,B,2.4,2,3
+Nicotine dependence,OCD,All,B,2.5,1.5,4.2
+Nicotine dependence,Adult SAD,All,B,1.8,1.5,2.1
+Nicotine dependence,Child SAD,All,B,,,
+Nicotine dependence,Anorexia nervosa,All,B,,,
+Nicotine dependence,Bulimia nervosa,All,B,1.6,1,2.3
+Nicotine dependence,Binge eating disorder,All,B,1.8,1.3,2.5
+Nicotine dependence,IED,All,B,3,2.4,3.9
+Nicotine dependence,ADHD,All,B,,,
+Nicotine dependence,Conduct disorder,All,B,,,
+Nicotine dependence,ODD,All,B,,,
+Nicotine dependence,Alcohol abuse,All,B,4.5,3.9,5.2
+Nicotine dependence,Alcohol dependence,All,B,3.4,2.7,4.4
+Nicotine dependence,Drug abuse,All,B,1.9,1.6,2.3
+Nicotine dependence,Drug dependence,All,B,1.5,1.1,2
+Nicotine dependence,MDE,F,A,12.2,10.9,13.6
+Nicotine dependence,Bipolar disorder,F,A,7.3,5.5,9.8
+Nicotine dependence,Dysthymia,F,A,14.2,11.5,17.5
+Nicotine dependence,Panic disorder,F,A,12,9.2,15.5
+Nicotine dependence,GAD,F,A,12.7,10.6,15.3
+Nicotine dependence,Social phobia,F,A,7.6,6.4,9
+Nicotine dependence,Specific Phobia,F,A,11.4,9.9,13.1
+Nicotine dependence,Agoraphobia,F,A,10.9,8,14.9
+Nicotine dependence,PTSD,F,A,12.5,10.7,14.6
+Nicotine dependence,OCD,F,A,,,
+Nicotine dependence,Adult SAD,F,A,8.2,6.7,10
+Nicotine dependence,Child SAD,F,A,,,
+Nicotine dependence,Anorexia nervosa,F,A,,,
+Nicotine dependence,Bulimia nervosa,F,A,,,
+Nicotine dependence,Binge eating disorder,F,A,7.5,5.4,10.3
+Nicotine dependence,IED,F,A,6.3,5.1,7.7
+Nicotine dependence,ADHD,F,A,,,
+Nicotine dependence,Conduct disorder,F,A,,,
+Nicotine dependence,ODD,F,A,,,
+Nicotine dependence,Alcohol abuse,F,A,2.3,2,2.6
+Nicotine dependence,Alcohol dependence,F,A,2.9,2.3,3.6
+Nicotine dependence,Drug abuse,F,A,2.3,1.9,2.8
+Nicotine dependence,Drug dependence,F,A,3.6,2.6,5
+Nicotine dependence,MDE,M,A,7.5,6.8,8.3
+Nicotine dependence,Bipolar disorder,M,A,7,5.7,8.6
+Nicotine dependence,Dysthymia,M,A,7.1,5.6,9
+Nicotine dependence,Panic disorder,M,A,5.7,4.6,6.9
+Nicotine dependence,GAD,M,A,8.3,7.1,9.6
+Nicotine dependence,Social phobia,M,A,6.2,5.6,6.8
+Nicotine dependence,Specific Phobia,M,A,6.7,6,7.5
+Nicotine dependence,Agoraphobia,M,A,,,
+Nicotine dependence,PTSD,M,A,5.3,4.4,6.5
+Nicotine dependence,OCD,M,A,,,
+Nicotine dependence,Adult SAD,M,A,5.8,4.8,6.9
+Nicotine dependence,Child SAD,M,A,,,
+Nicotine dependence,Anorexia nervosa,M,A,,,
+Nicotine dependence,Bulimia nervosa,M,A,,,
+Nicotine dependence,Binge eating disorder,M,A,5.3,4.2,6.5
+Nicotine dependence,IED,M,A,6.8,6,7.8
+Nicotine dependence,ADHD,M,A,,,
+Nicotine dependence,Conduct disorder,M,A,,,
+Nicotine dependence,ODD,M,A,,,
+Nicotine dependence,Alcohol abuse,M,A,7.4,6.6,8.2
+Nicotine dependence,Alcohol dependence,M,A,8.9,7.6,10.5
+Nicotine dependence,Drug abuse,M,A,6.2,5.3,7.2
+Nicotine dependence,Drug dependence,M,A,6.7,5.3,8.5
+Nicotine dependence,MDE,F,B,5.4,4.5,6.5
+Nicotine dependence,Bipolar disorder,F,B,1.7,1.2,2.6
+Nicotine dependence,Dysthymia,F,B,2.6,1.8,3.6
+Nicotine dependence,Panic disorder,F,B,2.8,2,4
+Nicotine dependence,GAD,F,B,4,3.1,5.3
+Nicotine dependence,Social phobia,F,B,2.2,1.8,2.7
+Nicotine dependence,Specific Phobia,F,B,5,4,6.2
+Nicotine dependence,Agoraphobia,F,B,1.5,1.1,2.1
+Nicotine dependence,PTSD,F,B,4.8,3.7,6.3
+Nicotine dependence,OCD,F,B,,,
+Nicotine dependence,Adult SAD,F,B,2.1,1.6,2.6
+Nicotine dependence,Child SAD,F,B,,,
+Nicotine dependence,Anorexia nervosa,F,B,,,
+Nicotine dependence,Bulimia nervosa,F,B,,,
+Nicotine dependence,Binge eating disorder,F,B,2.3,1.5,3.5
+Nicotine dependence,IED,F,B,2.4,1.7,3.2
+Nicotine dependence,ADHD,F,B,,,
+Nicotine dependence,Conduct disorder,F,B,,,
+Nicotine dependence,ODD,F,B,,,
+Nicotine dependence,Alcohol abuse,F,B,1.3,1.1,1.6
+Nicotine dependence,Alcohol dependence,F,B,1.1,0.8,1.4
+Nicotine dependence,Drug abuse,F,B,0.8,0.6,1
+Nicotine dependence,Drug dependence,F,B,0.8,0.5,1.2
+Nicotine dependence,MDE,M,B,4,3.4,4.7
+Nicotine dependence,Bipolar disorder,M,B,1.9,1.4,2.6
+Nicotine dependence,Dysthymia,M,B,2,1.5,2.8
+Nicotine dependence,Panic disorder,M,B,1.9,1.4,2.6
+Nicotine dependence,GAD,M,B,3.8,2.9,5
+Nicotine dependence,Social phobia,M,B,2.2,1.8,2.6
+Nicotine dependence,Specific Phobia,M,B,3.7,3.2,4.4
+Nicotine dependence,Agoraphobia,M,B,,,
+Nicotine dependence,PTSD,M,B,2.6,2,3.4
+Nicotine dependence,OCD,M,B,,,
+Nicotine dependence,Adult SAD,M,B,1.9,1.5,2.4
+Nicotine dependence,Child SAD,M,B,,,
+Nicotine dependence,Anorexia nervosa,M,B,,,
+Nicotine dependence,Bulimia nervosa,M,B,,,
+Nicotine dependence,Binge eating disorder,M,B,2.1,1.4,3
+Nicotine dependence,IED,M,B,2.8,2.2,3.6
+Nicotine dependence,ADHD,M,B,,,
+Nicotine dependence,Conduct disorder,M,B,,,
+Nicotine dependence,ODD,M,B,,,
+Nicotine dependence,Alcohol abuse,M,B,4.3,3.7,5.1
+Nicotine dependence,Alcohol dependence,M,B,3.4,2.6,4.3
+Nicotine dependence,Drug abuse,M,B,1.9,1.5,2.4
+Nicotine dependence,Drug dependence,M,B,1.3,1,1.8
+Alcohol abuse,MDE,All,A,8.6,8.1,9.1
+Alcohol abuse,Bipolar disorder,All,A,14,12.4,15.7
+Alcohol abuse,Dysthymia,All,A,11,9.6,12.5
+Alcohol abuse,Panic disorder,All,A,11.4,9.9,13
+Alcohol abuse,GAD,All,A,10.2,9.4,11.1
+Alcohol abuse,Social phobia,All,A,10.2,9.4,11
+Alcohol abuse,Specific Phobia,All,A,9.5,8.9,10.3
+Alcohol abuse,Agoraphobia,All,A,10,8.5,11.8
+Alcohol abuse,PTSD,All,A,12.2,11,13.7
+Alcohol abuse,OCD,All,A,5.3,4.4,6.4
+Alcohol abuse,Adult SAD,All,A,10.3,9.1,11.8
+Alcohol abuse,Child SAD,All,A,,,
+Alcohol abuse,Anorexia nervosa,All,A,,,
+Alcohol abuse,Bulimia nervosa,All,A,13.7,10.2,18.6
+Alcohol abuse,Binge eating disorder,All,A,11.5,9.9,13.3
+Alcohol abuse,IED,All,A,11.7,10.5,13.2
+Alcohol abuse,ADHD,All,A,,,
+Alcohol abuse,Conduct disorder,All,A,,,
+Alcohol abuse,ODD,All,A,,,
+Alcohol abuse,Nicotine dependence,All,A,10.5,9.8,11.4
+Alcohol abuse,Alcohol dependence,All,A,44.7,41.3,48.5
+Alcohol abuse,Drug abuse,All,A,23.9,22.3,25.6
+Alcohol abuse,Drug dependence,All,A,29.3,26.2,32.6
+Alcohol abuse,MDE,All,B,4.9,4.5,5.4
+Alcohol abuse,Bipolar disorder,All,B,5.8,4.7,7.1
+Alcohol abuse,Dysthymia,All,B,2.7,1.9,3.7
+Alcohol abuse,Panic disorder,All,B,4.5,3.5,5.8
+Alcohol abuse,GAD,All,B,5,4.3,5.9
+Alcohol abuse,Social phobia,All,B,4.7,4.2,5.4
+Alcohol abuse,Specific Phobia,All,B,5.5,4.9,6.1
+Alcohol abuse,Agoraphobia,All,B,3.1,2.4,4
+Alcohol abuse,PTSD,All,B,7,5.9,8.3
+Alcohol abuse,OCD,All,B,2.2,1.5,3.3
+Alcohol abuse,Adult SAD,All,B,2.8,2.1,3.9
+Alcohol abuse,Child SAD,All,B,,,
+Alcohol abuse,Anorexia nervosa,All,B,,,
+Alcohol abuse,Bulimia nervosa,All,B,2.6,1.4,4.7
+Alcohol abuse,Binge eating disorder,All,B,5.2,4,6.7
+Alcohol abuse,IED,All,B,5.8,4.7,7.2
+Alcohol abuse,ADHD,All,B,,,
+Alcohol abuse,Conduct disorder,All,B,,,
+Alcohol abuse,ODD,All,B,,,
+Alcohol abuse,Nicotine dependence,All,B,7.4,6.6,8.4
+Alcohol abuse,Alcohol dependence,All,B,29.7,26.7,33
+Alcohol abuse,Drug abuse,All,B,16.4,14.9,18
+Alcohol abuse,Drug dependence,All,B,13.5,11.1,16.6
+Alcohol abuse,MDE,F,A,13.7,12.5,14.9
+Alcohol abuse,Bipolar disorder,F,A,13.2,10.6,16.5
+Alcohol abuse,Dysthymia,F,A,19,15.2,23.8
+Alcohol abuse,Panic disorder,F,A,19.3,15.5,24
+Alcohol abuse,GAD,F,A,17.1,14.7,19.9
+Alcohol abuse,Social phobia,F,A,13.1,11.4,14.9
+Alcohol abuse,Specific Phobia,F,A,17.1,14.9,19.5
+Alcohol abuse,Agoraphobia,F,A,17.8,14,22.7
+Alcohol abuse,PTSD,F,A,24.8,20.7,29.6
+Alcohol abuse,OCD,F,A,6.1,4.2,8.8
+Alcohol abuse,Adult SAD,F,A,13.5,11.1,16.5
+Alcohol abuse,Child SAD,F,A,,,
+Alcohol abuse,Anorexia nervosa,F,A,,,
+Alcohol abuse,Bulimia nervosa,F,A,40.2,26.4,61.3
+Alcohol abuse,Binge eating disorder,F,A,20,15.7,25.4
+Alcohol abuse,IED,F,A,10.6,8.5,13.1
+Alcohol abuse,ADHD,F,A,,,
+Alcohol abuse,Conduct disorder,F,A,,,
+Alcohol abuse,ODD,F,A,,,
+Alcohol abuse,Nicotine dependence,F,A,8.7,7.8,9.7
+Alcohol abuse,Alcohol dependence,F,A,31.4,27.4,35.9
+Alcohol abuse,Drug abuse,F,A,15.3,13.5,17.5
+Alcohol abuse,Drug dependence,F,A,22.2,18.3,26.9
+Alcohol abuse,MDE,M,A,7.6,7.2,8.1
+Alcohol abuse,Bipolar disorder,M,A,11.7,10.4,13.2
+Alcohol abuse,Dysthymia,M,A,8.5,7.4,9.8
+Alcohol abuse,Panic disorder,M,A,9.1,7.9,10.6
+Alcohol abuse,GAD,M,A,8.8,8,9.6
+Alcohol abuse,Social phobia,M,A,8.5,7.8,9.3
+Alcohol abuse,Specific Phobia,M,A,8.2,7.5,8.9
+Alcohol abuse,Agoraphobia,M,A,8.2,6.9,9.8
+Alcohol abuse,PTSD,M,A,9.2,8.2,10.3
+Alcohol abuse,OCD,M,A,4.7,3.7,5.9
+Alcohol abuse,Adult SAD,M,A,8.5,7.4,9.9
+Alcohol abuse,Child SAD,M,A,,,
+Alcohol abuse,Anorexia nervosa,M,A,,,
+Alcohol abuse,Bulimia nervosa,M,A,,,
+Alcohol abuse,Binge eating disorder,M,A,8.7,7.3,10.3
+Alcohol abuse,IED,M,A,9.8,8.7,11.1
+Alcohol abuse,ADHD,M,A,,,
+Alcohol abuse,Conduct disorder,M,A,,,
+Alcohol abuse,ODD,M,A,,,
+Alcohol abuse,Nicotine dependence,M,A,8.8,8.1,9.6
+Alcohol abuse,Alcohol dependence,M,A,33.4,30.9,36
+Alcohol abuse,Drug abuse,M,A,19.8,18.5,21.3
+Alcohol abuse,Drug dependence,M,A,22.5,20.1,25.1
+Alcohol abuse,MDE,F,B,6.3,5.6,7.2
+Alcohol abuse,Bipolar disorder,F,B,4.5,3.4,5.9
+Alcohol abuse,Dysthymia,F,B,3.1,2,4.8
+Alcohol abuse,Panic disorder,F,B,6.2,4.4,8.6
+Alcohol abuse,GAD,F,B,6.7,5.4,8.3
+Alcohol abuse,Social phobia,F,B,4.7,3.9,5.7
+Alcohol abuse,Specific Phobia,F,B,8.2,6.8,9.7
+Alcohol abuse,Agoraphobia,F,B,4,2.8,5.9
+Alcohol abuse,PTSD,F,B,12.6,10,16.1
+Alcohol abuse,OCD,F,B,1.8,1,3
+Alcohol abuse,Adult SAD,F,B,2.7,1.9,3.8
+Alcohol abuse,Child SAD,F,B,,,
+Alcohol abuse,Anorexia nervosa,F,B,,,
+Alcohol abuse,Bulimia nervosa,F,B,5.7,2.7,11.9
+Alcohol abuse,Binge eating disorder,F,B,7.2,5.2,10
+Alcohol abuse,IED,F,B,4.6,3.4,6.2
+Alcohol abuse,ADHD,F,B,,,
+Alcohol abuse,Conduct disorder,F,B,,,
+Alcohol abuse,ODD,F,B,,,
+Alcohol abuse,Nicotine dependence,F,B,5.5,4.7,6.5
+Alcohol abuse,Alcohol dependence,F,B,17.8,15.1,20.9
+Alcohol abuse,Drug abuse,F,B,9,7.8,10.5
+Alcohol abuse,Drug dependence,F,B,8.3,6.4,10.8
+Alcohol abuse,MDE,M,B,5.1,4.6,5.6
+Alcohol abuse,Bipolar disorder,M,B,5.5,4.5,6.8
+Alcohol abuse,Dysthymia,M,B,2.9,2.1,4
+Alcohol abuse,Panic disorder,M,B,4.4,3.4,5.7
+Alcohol abuse,GAD,M,B,5.2,4.5,6.1
+Alcohol abuse,Social phobia,M,B,4.7,4.1,5.3
+Alcohol abuse,Specific Phobia,M,B,5.4,4.8,6.1
+Alcohol abuse,Agoraphobia,M,B,3.3,2.5,4.2
+Alcohol abuse,PTSD,M,B,6.2,5.2,7.4
+Alcohol abuse,OCD,M,B,2.3,1.5,3.4
+Alcohol abuse,Adult SAD,M,B,2.9,2.1,4
+Alcohol abuse,Child SAD,M,B,,,
+Alcohol abuse,Anorexia nervosa,M,B,,,
+Alcohol abuse,Bulimia nervosa,M,B,,,
+Alcohol abuse,Binge eating disorder,M,B,4.9,3.7,6.4
+Alcohol abuse,IED,M,B,5.2,4.3,6.5
+Alcohol abuse,ADHD,M,B,,,
+Alcohol abuse,Conduct disorder,M,B,,,
+Alcohol abuse,ODD,M,B,,,
+Alcohol abuse,Nicotine dependence,M,B,6.5,5.7,7.4
+Alcohol abuse,Alcohol dependence,M,B,24,21.7,26.6
+Alcohol abuse,Drug abuse,M,B,14.6,13.3,16.1
+Alcohol abuse,Drug dependence,M,B,11.8,9.7,14.5
+Alcohol dependence,MDE,All,A,12,11.1,13
+Alcohol dependence,Bipolar disorder,All,A,18.9,16.3,22
+Alcohol dependence,Dysthymia,All,A,17.5,14.8,20.8
+Alcohol dependence,Panic disorder,All,A,17.2,14.5,20.5
+Alcohol dependence,GAD,All,A,15.6,13.8,17.7
+Alcohol dependence,Social phobia,All,A,13.8,12.3,15.5
+Alcohol dependence,Specific Phobia,All,A,11.9,10.8,13.2
+Alcohol dependence,Agoraphobia,All,A,14.9,12.2,18.2
+Alcohol dependence,PTSD,All,A,19.9,17.2,23
+Alcohol dependence,OCD,All,A,,,
+Alcohol dependence,Adult SAD,All,A,13.8,11.5,16.6
+Alcohol dependence,Child SAD,All,A,,,
+Alcohol dependence,Anorexia nervosa,All,A,,,
+Alcohol dependence,Bulimia nervosa,All,A,16.3,11.4,23.2
+Alcohol dependence,Binge eating disorder,All,A,14.2,11.7,17.2
+Alcohol dependence,IED,All,A,13.8,11.9,16.1
+Alcohol dependence,ADHD,All,A,,,
+Alcohol dependence,Conduct disorder,All,A,,,
+Alcohol dependence,ODD,All,A,,,
+Alcohol dependence,Nicotine dependence,All,A,11.1,9.9,12.4
+Alcohol dependence,Alcohol abuse,All,A,,,
+Alcohol dependence,Drug abuse,All,A,26.8,24.1,29.8
+Alcohol dependence,Drug dependence,All,A,47.2,41.2,54
+Alcohol dependence,MDE,All,B,4.9,3.8,6.2
+Alcohol dependence,Bipolar disorder,All,B,4.9,2.9,8.5
+Alcohol dependence,Dysthymia,All,B,2.6,1.1,5.9
+Alcohol dependence,Panic disorder,All,B,2.3,1.2,4.4
+Alcohol dependence,GAD,All,B,4,2.6,6.1
+Alcohol dependence,Social phobia,All,B,4.5,3.2,6.4
+Alcohol dependence,Specific Phobia,All,B,5.1,3.9,6.7
+Alcohol dependence,Agoraphobia,All,B,2.1,1,4.3
+Alcohol dependence,PTSD,All,B,6.9,4.6,10.2
+Alcohol dependence,OCD,All,B,,,
+Alcohol dependence,Adult SAD,All,B,1.9,0.9,4.2
+Alcohol dependence,Child SAD,All,B,,,
+Alcohol dependence,Anorexia nervosa,All,B,,,
+Alcohol dependence,Bulimia nervosa,All,B,1.4,0.6,3.2
+Alcohol dependence,Binge eating disorder,All,B,3.4,1.8,6.6
+Alcohol dependence,IED,All,B,1.9,1.1,3.1
+Alcohol dependence,ADHD,All,B,,,
+Alcohol dependence,Conduct disorder,All,B,,,
+Alcohol dependence,ODD,All,B,,,
+Alcohol dependence,Nicotine dependence,All,B,4.7,3.5,6.2
+Alcohol dependence,Alcohol abuse,All,B,,,
+Alcohol dependence,Drug abuse,All,B,11.4,9,14.4
+Alcohol dependence,Drug dependence,All,B,10.4,6.6,16.3
+Alcohol dependence,MDE,F,A,17.2,15.1,19.6
+Alcohol dependence,Bipolar disorder,F,A,17.9,13.8,23.3
+Alcohol dependence,Dysthymia,F,A,26.6,19.6,36.1
+Alcohol dependence,Panic disorder,F,A,28.2,21.4,37.2
+Alcohol dependence,GAD,F,A,23.6,19.2,29
+Alcohol dependence,Social phobia,F,A,,,
+Alcohol dependence,Specific Phobia,F,A,,,
+Alcohol dependence,Agoraphobia,F,A,,,
+Alcohol dependence,PTSD,F,A,37.2,29.7,46.5
+Alcohol dependence,OCD,F,A,,,
+Alcohol dependence,Adult SAD,F,A,18.4,13.6,24.9
+Alcohol dependence,Child SAD,F,A,,,
+Alcohol dependence,Anorexia nervosa,F,A,,,
+Alcohol dependence,Bulimia nervosa,F,A,,,
+Alcohol dependence,Binge eating disorder,F,A,24.8,18.1,34
+Alcohol dependence,IED,F,A,,,
+Alcohol dependence,ADHD,F,A,,,
+Alcohol dependence,Conduct disorder,F,A,,,
+Alcohol dependence,ODD,F,A,,,
+Alcohol dependence,Nicotine dependence,F,A,8.7,7.4,10.2
+Alcohol dependence,Alcohol abuse,F,A,,,
+Alcohol dependence,Drug abuse,F,A,16.1,13.5,19.3
+Alcohol dependence,Drug dependence,F,A,34.1,27.1,43
+Alcohol dependence,MDE,M,A,12,11,13.2
+Alcohol dependence,Bipolar disorder,M,A,16.9,14.2,20.2
+Alcohol dependence,Dysthymia,M,A,16.9,14,20.5
+Alcohol dependence,Panic disorder,M,A,15.4,12.5,18.9
+Alcohol dependence,GAD,M,A,15.3,13.2,17.6
+Alcohol dependence,Social phobia,M,A,,,
+Alcohol dependence,Specific Phobia,M,A,,,
+Alcohol dependence,Agoraphobia,M,A,,,
+Alcohol dependence,PTSD,M,A,18.5,15.6,21.9
+Alcohol dependence,OCD,M,A,,,
+Alcohol dependence,Adult SAD,M,A,12.3,10,15
+Alcohol dependence,Child SAD,M,A,,,
+Alcohol dependence,Anorexia nervosa,M,A,,,
+Alcohol dependence,Bulimia nervosa,M,A,,,
+Alcohol dependence,Binge eating disorder,M,A,11.6,8.9,15
+Alcohol dependence,IED,M,A,,,
+Alcohol dependence,ADHD,M,A,,,
+Alcohol dependence,Conduct disorder,M,A,,,
+Alcohol dependence,ODD,M,A,,,
+Alcohol dependence,Nicotine dependence,M,A,9.7,8.6,11.1
+Alcohol dependence,Alcohol abuse,M,A,,,
+Alcohol dependence,Drug abuse,M,A,23.4,20.9,26.2
+Alcohol dependence,Drug dependence,M,A,37.7,32.7,43.5
+Alcohol dependence,MDE,F,B,6,4.5,8
+Alcohol dependence,Bipolar disorder,F,B,4.3,2.5,7.4
+Alcohol dependence,Dysthymia,F,B,2.7,1,7.2
+Alcohol dependence,Panic disorder,F,B,3.2,1.6,6.6
+Alcohol dependence,GAD,F,B,5.1,3.2,8.2
+Alcohol dependence,Social phobia,F,B,,,
+Alcohol dependence,Specific Phobia,F,B,,,
+Alcohol dependence,Agoraphobia,F,B,,,
+Alcohol dependence,PTSD,F,B,12.1,7.7,19.1
+Alcohol dependence,OCD,F,B,,,
+Alcohol dependence,Adult SAD,F,B,2.2,0.9,5.8
+Alcohol dependence,Child SAD,F,B,,,
+Alcohol dependence,Anorexia nervosa,F,B,,,
+Alcohol dependence,Bulimia nervosa,F,B,,,
+Alcohol dependence,Binge eating disorder,F,B,5.1,2.6,10
+Alcohol dependence,IED,F,B,,,
+Alcohol dependence,ADHD,F,B,,,
+Alcohol dependence,Conduct disorder,F,B,,,
+Alcohol dependence,ODD,F,B,,,
+Alcohol dependence,Nicotine dependence,F,B,3.5,2.5,5
+Alcohol dependence,Alcohol abuse,F,B,,,
+Alcohol dependence,Drug abuse,F,B,6.5,4.9,8.7
+Alcohol dependence,Drug dependence,F,B,7.4,4.5,11.9
+Alcohol dependence,MDE,M,B,5.3,4.2,6.7
+Alcohol dependence,Bipolar disorder,M,B,4.7,2.6,8.3
+Alcohol dependence,Dysthymia,M,B,3.2,1.5,7
+Alcohol dependence,Panic disorder,M,B,2.4,1.3,4.6
+Alcohol dependence,GAD,M,B,4.4,2.9,6.7
+Alcohol dependence,Social phobia,M,B,,,
+Alcohol dependence,Specific Phobia,M,B,,,
+Alcohol dependence,Agoraphobia,M,B,,,
+Alcohol dependence,PTSD,M,B,6.8,4.6,10.2
+Alcohol dependence,OCD,M,B,,,
+Alcohol dependence,Adult SAD,M,B,1.9,0.9,3.8
+Alcohol dependence,Child SAD,M,B,,,
+Alcohol dependence,Anorexia nervosa,M,B,,,
+Alcohol dependence,Bulimia nervosa,M,B,,,
+Alcohol dependence,Binge eating disorder,M,B,3.3,1.7,6.5
+Alcohol dependence,IED,M,B,,,
+Alcohol dependence,ADHD,M,B,,,
+Alcohol dependence,Conduct disorder,M,B,,,
+Alcohol dependence,ODD,M,B,,,
+Alcohol dependence,Nicotine dependence,M,B,4.2,3.2,5.6
+Alcohol dependence,Alcohol abuse,M,B,,,
+Alcohol dependence,Drug abuse,M,B,10.2,8,12.9
+Alcohol dependence,Drug dependence,M,B,8.7,5.6,13.5
+Drug abuse,MDE,All,A,11.1,10.3,12
+Drug abuse,Bipolar disorder,All,A,14.9,12.5,17.7
+Drug abuse,Dysthymia,All,A,16.1,13.6,19.2
+Drug abuse,Panic disorder,All,A,14.2,12.1,16.7
+Drug abuse,GAD,All,A,13.6,12.2,15.1
+Drug abuse,Social phobia,All,A,11.6,10.5,12.9
+Drug abuse,Specific Phobia,All,A,,,
+Drug abuse,Agoraphobia,All,A,13.9,11.5,16.9
+Drug abuse,PTSD,All,A,15.5,13.5,17.9
+Drug abuse,OCD,All,A,,,
+Drug abuse,Adult SAD,All,A,10.4,8.7,12.3
+Drug abuse,Child SAD,All,A,,,
+Drug abuse,Anorexia nervosa,All,A,,,
+Drug abuse,Bulimia nervosa,All,A,,,
+Drug abuse,Binge eating disorder,All,A,15,12.4,18.2
+Drug abuse,IED,All,A,9.8,8.4,11.6
+Drug abuse,ADHD,All,A,,,
+Drug abuse,Conduct disorder,All,A,,,
+Drug abuse,ODD,All,A,,,
+Drug abuse,Nicotine dependence,All,A,11.2,9.9,12.5
+Drug abuse,Alcohol abuse,All,A,21.2,19.9,22.6
+Drug abuse,Alcohol dependence,All,A,30.9,27.5,34.7
+Drug abuse,Drug dependence,All,A,66,57.9,75.1
+Drug abuse,MDE,All,B,3.6,2.9,4.5
+Drug abuse,Bipolar disorder,All,B,2.4,1.5,3.9
+Drug abuse,Dysthymia,All,B,1.1,0.8,1.7
+Drug abuse,Panic disorder,All,B,1.7,1,2.9
+Drug abuse,GAD,All,B,2.5,1.7,3.7
+Drug abuse,Social phobia,All,B,2.9,2.1,3.9
+Drug abuse,Specific Phobia,All,B,,,
+Drug abuse,Agoraphobia,All,B,3,1.6,5.6
+Drug abuse,PTSD,All,B,4,2.7,6
+Drug abuse,OCD,All,B,,,
+Drug abuse,Adult SAD,All,B,0.9,0.6,1.3
+Drug abuse,Child SAD,All,B,,,
+Drug abuse,Anorexia nervosa,All,B,,,
+Drug abuse,Bulimia nervosa,All,B,,,
+Drug abuse,Binge eating disorder,All,B,2.3,1.3,4
+Drug abuse,IED,All,B,1.1,0.8,1.6
+Drug abuse,ADHD,All,B,,,
+Drug abuse,Conduct disorder,All,B,,,
+Drug abuse,ODD,All,B,,,
+Drug abuse,Nicotine dependence,All,B,4.8,3.8,6
+Drug abuse,Alcohol abuse,All,B,13.4,12.2,14.7
+Drug abuse,Alcohol dependence,All,B,10.3,8,13.2
+Drug abuse,Drug dependence,All,B,24.8,19.6,31.2
+Drug abuse,MDE,F,A,17.4,15.5,19.7
+Drug abuse,Bipolar disorder,F,A,15.8,12,20.9
+Drug abuse,Dysthymia,F,A,26.9,20.1,36
+Drug abuse,Panic disorder,F,A,25.9,20,33.6
+Drug abuse,GAD,F,A,22.1,18.5,26.5
+Drug abuse,Social phobia,F,A,14.8,12.4,17.7
+Drug abuse,Specific Phobia,F,A,,,
+Drug abuse,Agoraphobia,F,A,23.4,16.7,32.7
+Drug abuse,PTSD,F,A,30.9,25.6,37.4
+Drug abuse,OCD,F,A,,,
+Drug abuse,Adult SAD,F,A,,,
+Drug abuse,Child SAD,F,A,,,
+Drug abuse,Anorexia nervosa,F,A,,,
+Drug abuse,Bulimia nervosa,F,A,,,
+Drug abuse,Binge eating disorder,F,A,26.4,19.6,35.5
+Drug abuse,IED,F,A,,,
+Drug abuse,ADHD,F,A,,,
+Drug abuse,Conduct disorder,F,A,,,
+Drug abuse,ODD,F,A,,,
+Drug abuse,Nicotine dependence,F,A,9.7,8.5,11
+Drug abuse,Alcohol abuse,F,A,12.3,11.1,13.7
+Drug abuse,Alcohol dependence,F,A,18.5,15.1,22.5
+Drug abuse,Drug dependence,F,A,47,38,58
+Drug abuse,MDE,M,A,10.9,10,11.9
+Drug abuse,Bipolar disorder,M,A,12.5,10.3,15
+Drug abuse,Dysthymia,M,A,14.2,11.7,17.1
+Drug abuse,Panic disorder,M,A,11.7,9.8,13.9
+Drug abuse,GAD,M,A,12.7,11.1,14.5
+Drug abuse,Social phobia,M,A,10.5,9.3,11.9
+Drug abuse,Specific Phobia,M,A,,,
+Drug abuse,Agoraphobia,M,A,13.6,11.2,16.6
+Drug abuse,PTSD,M,A,13.9,11.6,16.7
+Drug abuse,OCD,M,A,,,
+Drug abuse,Adult SAD,M,A,10.5,8.6,12.8
+Drug abuse,Child SAD,M,A,,,
+Drug abuse,Anorexia nervosa,M,A,,,
+Drug abuse,Bulimia nervosa,M,A,,,
+Drug abuse,Binge eating disorder,M,A,12.5,9.9,16
+Drug abuse,IED,M,A,8.8,7.3,10.8
+Drug abuse,ADHD,M,A,,,
+Drug abuse,Conduct disorder,M,A,,,
+Drug abuse,ODD,M,A,,,
+Drug abuse,Nicotine dependence,M,A,9.2,8,10.6
+Drug abuse,Alcohol abuse,M,A,17.4,16.3,18.4
+Drug abuse,Alcohol dependence,M,A,25,22.4,28
+Drug abuse,Drug dependence,M,A,51.8,45.6,58.8
+Drug abuse,MDE,F,B,4.7,3.6,6.1
+Drug abuse,Bipolar disorder,F,B,2.1,1.3,3.4
+Drug abuse,Dysthymia,F,B,1.5,0.9,2.3
+Drug abuse,Panic disorder,F,B,2.5,1.3,4.8
+Drug abuse,GAD,F,B,3.3,2.2,5.2
+Drug abuse,Social phobia,F,B,2.8,2,4
+Drug abuse,Specific Phobia,F,B,,,
+Drug abuse,Agoraphobia,F,B,3.5,1.7,7.3
+Drug abuse,PTSD,F,B,6.8,4.4,10.4
+Drug abuse,OCD,F,B,,,
+Drug abuse,Adult SAD,F,B,,,
+Drug abuse,Child SAD,F,B,,,
+Drug abuse,Anorexia nervosa,F,B,,,
+Drug abuse,Bulimia nervosa,F,B,,,
+Drug abuse,Binge eating disorder,F,B,3.3,1.7,6.3
+Drug abuse,IED,F,B,,,
+Drug abuse,ADHD,F,B,,,
+Drug abuse,Conduct disorder,F,B,,,
+Drug abuse,ODD,F,B,,,
+Drug abuse,Nicotine dependence,F,B,3.6,2.8,4.5
+Drug abuse,Alcohol abuse,F,B,7.1,6.2,8.1
+Drug abuse,Alcohol dependence,F,B,5.4,4,7.3
+Drug abuse,Drug dependence,F,B,16.3,12.3,21.6
+Drug abuse,MDE,M,B,4,3.2,5
+Drug abuse,Bipolar disorder,M,B,2.3,1.4,3.9
+Drug abuse,Dysthymia,M,B,1.3,0.9,2
+Drug abuse,Panic disorder,M,B,1.8,1,3
+Drug abuse,GAD,M,B,2.8,1.9,4.1
+Drug abuse,Social phobia,M,B,3.1,2.2,4.3
+Drug abuse,Specific Phobia,M,B,,,
+Drug abuse,Agoraphobia,M,B,4,2.3,7
+Drug abuse,PTSD,M,B,4.2,2.8,6.5
+Drug abuse,OCD,M,B,,,
+Drug abuse,Adult SAD,M,B,1.1,0.7,1.7
+Drug abuse,Child SAD,M,B,,,
+Drug abuse,Anorexia nervosa,M,B,,,
+Drug abuse,Bulimia nervosa,M,B,,,
+Drug abuse,Binge eating disorder,M,B,2.3,1.3,4.1
+Drug abuse,IED,M,B,1,0.7,1.6
+Drug abuse,ADHD,M,B,,,
+Drug abuse,Conduct disorder,M,B,,,
+Drug abuse,ODD,M,B,,,
+Drug abuse,Nicotine dependence,M,B,4.3,3.4,5.6
+Drug abuse,Alcohol abuse,M,B,11.6,10.6,12.7
+Drug abuse,Alcohol dependence,M,B,8.9,7,11.4
+Drug abuse,Drug dependence,M,B,20.9,16.6,26.4
+Drug dependence,MDE,All,A,13.2,11.7,14.9
+Drug dependence,Bipolar disorder,All,A,21,17.3,25.4
+Drug dependence,Dysthymia,All,A,22.8,18,28.8
+Drug dependence,Panic disorder,All,A,22.5,18.2,27.9
+Drug dependence,GAD,All,A,17.1,14.5,20.2
+Drug dependence,Social phobia,All,A,15.4,13.4,17.7
+Drug dependence,Specific Phobia,All,A,,,
+Drug dependence,Agoraphobia,All,A,18.7,14.8,23.6
+Drug dependence,PTSD,All,A,21.4,18,25.6
+Drug dependence,OCD,All,A,,,
+Drug dependence,Adult SAD,All,A,15,12.3,18.3
+Drug dependence,Child SAD,All,A,,,
+Drug dependence,Anorexia nervosa,All,A,,,
+Drug dependence,Bulimia nervosa,All,A,,,
+Drug dependence,Binge eating disorder,All,A,19.8,15.5,25.5
+Drug dependence,IED,All,A,,,
+Drug dependence,ADHD,All,A,,,
+Drug dependence,Conduct disorder,All,A,,,
+Drug dependence,ODD,All,A,,,
+Drug dependence,Nicotine dependence,All,A,12.7,11.1,14.7
+Drug dependence,Alcohol abuse,All,A,21.2,19.3,23.4
+Drug dependence,Alcohol dependence,All,A,45.8,39.4,53.4
+Drug dependence,Drug abuse,All,A,,,
+Drug dependence,MDE,All,B,1,0.6,1.5
+Drug dependence,Bipolar disorder,All,B,1.2,0.8,1.9
+Drug dependence,Dysthymia,All,B,0.7,0.5,1.1
+Drug dependence,Panic disorder,All,B,1.4,0.7,3
+Drug dependence,GAD,All,B,0.8,0.5,1.2
+Drug dependence,Social phobia,All,B,1.3,0.7,2.4
+Drug dependence,Specific Phobia,All,B,,,
+Drug dependence,Agoraphobia,All,B,1.1,0.4,3.2
+Drug dependence,PTSD,All,B,1.5,0.7,2.9
+Drug dependence,OCD,All,B,,,
+Drug dependence,Adult SAD,All,B,0.5,0.3,0.9
+Drug dependence,Child SAD,All,B,,,
+Drug dependence,Anorexia nervosa,All,B,,,
+Drug dependence,Bulimia nervosa,All,B,,,
+Drug dependence,Binge eating disorder,All,B,1.1,0.6,2.1
+Drug dependence,IED,All,B,,,
+Drug dependence,ADHD,All,B,,,
+Drug dependence,Conduct disorder,All,B,,,
+Drug dependence,ODD,All,B,,,
+Drug dependence,Nicotine dependence,All,B,1.4,0.7,2.6
+Drug dependence,Alcohol abuse,All,B,5.7,4.1,8
+Drug dependence,Alcohol dependence,All,B,5.5,3,9.9
+Drug dependence,Drug abuse,All,B,,,
+Drug dependence,MDE,F,A,19.4,16,23.5
+Drug dependence,Bipolar disorder,F,A,20,14.3,28
+Drug dependence,Dysthymia,F,A,,,
+Drug dependence,Panic disorder,F,A,38.1,28.4,51.2
+Drug dependence,GAD,F,A,25.7,20.1,32.9
+Drug dependence,Social phobia,F,A,,,
+Drug dependence,Specific Phobia,F,A,,,
+Drug dependence,Agoraphobia,F,A,,,
+Drug dependence,PTSD,F,A,45.6,36.1,57.6
+Drug dependence,OCD,F,A,,,
+Drug dependence,Adult SAD,F,A,,,
+Drug dependence,Child SAD,F,A,,,
+Drug dependence,Anorexia nervosa,F,A,,,
+Drug dependence,Bulimia nervosa,F,A,,,
+Drug dependence,Binge eating disorder,F,A,,,
+Drug dependence,IED,F,A,,,
+Drug dependence,ADHD,F,A,,,
+Drug dependence,Conduct disorder,F,A,,,
+Drug dependence,ODD,F,A,,,
+Drug dependence,Nicotine dependence,F,A,11.6,9.5,14.2
+Drug dependence,Alcohol abuse,F,A,12.7,11,14.7
+Drug dependence,Alcohol dependence,F,A,28.1,22.7,34.7
+Drug dependence,Drug abuse,F,A,,,
+Drug dependence,MDE,M,A,14.1,12.2,16.4
+Drug dependence,Bipolar disorder,M,A,19.1,15.4,23.8
+Drug dependence,Dysthymia,M,A,,,
+Drug dependence,Panic disorder,M,A,,,
+Drug dependence,GAD,M,A,18,14.2,22.9
+Drug dependence,Social phobia,M,A,,,
+Drug dependence,Specific Phobia,M,A,,,
+Drug dependence,Agoraphobia,M,A,,,
+Drug dependence,PTSD,M,A,19.1,14.6,24.8
+Drug dependence,OCD,M,A,,,
+Drug dependence,Adult SAD,M,A,,,
+Drug dependence,Child SAD,M,A,,,
+Drug dependence,Anorexia nervosa,M,A,,,
+Drug dependence,Bulimia nervosa,M,A,,,
+Drug dependence,Binge eating disorder,M,A,19,13.6,26.5
+Drug dependence,IED,M,A,,,
+Drug dependence,ADHD,M,A,,,
+Drug dependence,Conduct disorder,M,A,,,
+Drug dependence,ODD,M,A,,,
+Drug dependence,Nicotine dependence,M,A,10.2,8.4,12.2
+Drug dependence,Alcohol abuse,M,A,17,15.4,18.8
+Drug dependence,Alcohol dependence,M,A,36.9,31.5,43.3
+Drug dependence,Drug abuse,M,A,,,
+Drug dependence,MDE,F,B,1.4,0.8,2.3
+Drug dependence,Bipolar disorder,F,B,1,0.6,1.6
+Drug dependence,Dysthymia,F,B,,,
+Drug dependence,Panic disorder,F,B,2.2,1,5
+Drug dependence,GAD,F,B,1.1,0.7,1.7
+Drug dependence,Social phobia,F,B,,,
+Drug dependence,Specific Phobia,F,B,,,
+Drug dependence,Agoraphobia,F,B,,,
+Drug dependence,PTSD,F,B,3,1.5,6.1
+Drug dependence,OCD,F,B,,,
+Drug dependence,Adult SAD,F,B,,,
+Drug dependence,Child SAD,F,B,,,
+Drug dependence,Anorexia nervosa,F,B,,,
+Drug dependence,Bulimia nervosa,F,B,,,
+Drug dependence,Binge eating disorder,F,B,,,
+Drug dependence,IED,F,B,,,
+Drug dependence,ADHD,F,B,,,
+Drug dependence,Conduct disorder,F,B,,,
+Drug dependence,ODD,F,B,,,
+Drug dependence,Nicotine dependence,F,B,1,0.5,2
+Drug dependence,Alcohol abuse,F,B,3.2,2.2,4.6
+Drug dependence,Alcohol dependence,F,B,3,1.6,5.4
+Drug dependence,Drug abuse,F,B,,,
+Drug dependence,MDE,M,B,1,0.7,1.6
+Drug dependence,Bipolar disorder,M,B,1.2,0.7,2
+Drug dependence,Dysthymia,M,B,,,
+Drug dependence,Panic disorder,M,B,,,
+Drug dependence,GAD,M,B,0.9,0.6,1.4
+Drug dependence,Social phobia,M,B,,,
+Drug dependence,Specific Phobia,M,B,,,
+Drug dependence,Agoraphobia,M,B,,,
+Drug dependence,PTSD,M,B,1.4,0.7,2.8
+Drug dependence,OCD,M,B,,,
+Drug dependence,Adult SAD,M,B,,,
+Drug dependence,Child SAD,M,B,,,
+Drug dependence,Anorexia nervosa,M,B,,,
+Drug dependence,Bulimia nervosa,M,B,,,
+Drug dependence,Binge eating disorder,M,B,1.2,0.6,2.4
+Drug dependence,IED,M,B,,,
+Drug dependence,ADHD,M,B,,,
+Drug dependence,Conduct disorder,M,B,,,
+Drug dependence,ODD,M,B,,,
+Drug dependence,Nicotine dependence,M,B,1.2,0.6,2.2
+Drug dependence,Alcohol abuse,M,B,4.8,3.4,6.8
+Drug dependence,Alcohol dependence,M,B,4.7,2.6,8.5
+Drug dependence,Drug abuse,M,B,,,

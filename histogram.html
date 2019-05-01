@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<head>
+
+    <meta charset="utf-8">
+    <title>Comorbidity in the World Health Survey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Comorbidity in the World Health Survey">
+    <meta name="keywords" content="Mental, Disorders, Schizophrenia">
+    <meta name="author" content="Yan Holtz et al.">
+
+    <!-- Control appearance when share by social media -->
+    <meta property="og:title" content="Comorbidity in the World Health Survey" />
+    <meta property="og:image" content="img/TODO" />
+    <meta property="og:description" content="Comorbidity in the World Health Survey" />
+    <meta property='og:url' content="TODO.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- D3.JS -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- Load d3.js plugins -->
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+</head>
+
+<body id="page-top">
+
+
+
+
+<!-- =======================  MAIN MENU ON TOP ======================= -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a href="index.html">HOME</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav text-uppercase ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="map.html">Map</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="beeswarm.html">Distribution</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="heatmap.html">Heatmap</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="barplot.html">Symmetry</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sankey.html">Sankey</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- =======================  SIDE ARROW ======================= -->
+<a class="btn btn-primary leftLink" href="map.html">&#x2039; Map</a>
+<a class="btn btn-primary rightLink" href="heatmap.html">Heatmap &#x203A;</a>
+
+
+
+
+<!-- =======================  SECTION DOTPLOT ======================= -->
+
+<section id="part2">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-3 mx-auto" id="dataviz_dotplot" style="padding-top: 100px"></div>
+      <div class="col-md-7 mx-auto" style="text-align: right; height: 400px">
+        <h3>Como is pervasive</h3>
+        <hr>
+        <p>We estimated <u>hazard ratios</u> between each pair of disorders. Most of the estimates are <u>over 1</u>, meaning that being diagnosed with one of the disorders increased the risk of a subsequent diagnosis with each of the other disorders.</p>
+        <p><u>Note</u>: A few extreme hazard ratio were observed<br>between disorders intrinsically linked together. <span style="color: #DE4938" id="showExtreme">Show them</span>.</p>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+
+
+
+
+<!-- ======================= FOOTER SECTION ================================ -->
+    <footer class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright">Copyright &copy; The <a href="https://www.nbepi.com">Como project</a> 2018</span>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="https://www.nbepi.com">
+                  <i class="fa fa-home"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://github.com/holtzy">
+                  <i class="fa fa-github"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.linkedin.com/in/yan-holtz-2477534a/">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline quicklinks">
+              <li class="list-inline-item">
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">Terms of Use</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+<!-- ======================================================================= -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======================== JAVASCRIPT SECTION =========================== -->
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/agency.min.js"></script>
+
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- DATA -->
+    <script src="DATA/dataHistogram.js"></script>
+
+    <!-- Js code for histogram -->
+    <script src="js/histogram.js"></script>
+
+
+
+
+
+
+
+<!-- ======================================================================= -->
+  </body>
+
+</html>
