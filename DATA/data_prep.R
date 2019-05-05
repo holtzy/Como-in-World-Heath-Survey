@@ -1,9 +1,14 @@
 # ----------
-# A script that takes data from Carmen and transform it for the web application
+# A script that takes data from Carmen and 
+# transform it for the web application
+# Output .json files
 # ----------
 
 library(tidyverse)
+library(jsonlite)
 setwd("~/Desktop/Como-in-World-Heath-Survey/DATA")
+
+
 
 
 # ----------
@@ -51,11 +56,48 @@ close(fileConn)
 
 
 
+# ----------
+# Preparation for the heatmap
+# ----------
+
+# Filter model
+don <- data %>%
+  filter(Model == "A" & Sex == "All") %>%
+  
+  mutate(Prior_disorder = gsub("ODD", "Oppositional defiant disorder", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("ODD", "Oppositional defiant disorder", Later_disorder)) %>%
+
+  mutate(Prior_disorder = gsub("Child SAD", "Child separation anxiety disorder", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("Child SAD", "Child separation anxiety disorder", Later_disorder)) %>%
+
+  mutate(Prior_disorder = gsub("GAD", "Generalized anxiety disorder", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("GAD", "Generalized anxiety disorder", Later_disorder)) %>%
+
+  mutate(Prior_disorder = gsub("OCD", "Obsessive compulsive disorder", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("OCD", "Obsessive compulsive disorder", Later_disorder)) %>%
+  
+  mutate(Prior_disorder = gsub("IED", "Intermittent explosive disorder", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("IED", "Intermittent explosive disorder", Later_disorder)) %>%
+  
+  mutate(Prior_disorder = gsub("MDE", "Major depressive episode", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("MDE", "Major depressive episode", Later_disorder)) %>%
+  
+  mutate(Prior_disorder = gsub("Adult SAD", "Adult separation anxiety disorder", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("Adult SAD", "Adult separation anxiety disorder", Later_disorder))
+  
+# Write result at a .js object
+tosave <- paste("dataHeatmap = ", toJSON(don))
+fileConn<-file("dataHeatmap.js")
+writeLines(tosave, fileConn)
+close(fileConn)
 
 
+head(don)
+summary(don)
+unique(don$Prior_disorder)
 
-
-
+don %>% filter(Prior_disorder=="IED")
+don %>% filter(Later_disorder=="Intermittent explosive disorder")
 
 
 # ----------
