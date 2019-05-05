@@ -21,16 +21,38 @@ data <- read.table("COMO_W_longformat_Yan_02Apr19.csv", header=T, sep=",")
 # Change colnames
 colnames(data)[1:2] <- c("Prior_disorder", "Later_disorder")
 
-# Replace IED by Intermittent explosive disorder
-data <- data %>% mutate(Later_disorder = gsub("IED", "Intermittent explosive disorder", Later_disorder))
+# Upper / Lower case issues
+data <- data %>% 
+  mutate(Later_disorder = gsub("Specific Phobia", "Specific phobia", Later_disorder)) %>%
+  mutate(Later_disorder = gsub("Anorexia Nervosa", "Anorexia nervosa", Later_disorder))
 
-# Upper case in specific phobia..
-data <- data %>% mutate(Later_disorder = gsub("Specific Phobia", "Specific phobia", Later_disorder))
+# Change to have real name:
+data <- data %>%
+  mutate(Prior_disorder = gsub("ODD", "Oppositional defiant disorder", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("ODD", "Oppositional defiant disorder", Later_disorder)) %>%
+  
+  mutate(Prior_disorder = gsub("Child SAD", "Child separation anxiety disorder", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("Child SAD", "Child separation anxiety disorder", Later_disorder)) %>%
+  
+  mutate(Prior_disorder = gsub("GAD", "Generalized anxiety disorder", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("GAD", "Generalized anxiety disorder", Later_disorder)) %>%
+  
+  mutate(Prior_disorder = gsub("OCD", "Obsessive compulsive disorder", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("OCD", "Obsessive compulsive disorder", Later_disorder)) %>%
+  
+  mutate(Prior_disorder = gsub("IED", "Intermittent explosive disorder", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("IED", "Intermittent explosive disorder", Later_disorder)) %>%
+  
+  mutate(Prior_disorder = gsub("MDE", "Major depressive episode", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("MDE", "Major depressive episode", Later_disorder)) %>%
+  
+  mutate(Prior_disorder = gsub("Adult SAD", "Adult separation anxiety disorder", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("Adult SAD", "Adult separation anxiety disorder", Later_disorder))
 
 # List of Prior and Later disorder:
-levels(data$Prior_disorder) #24
-unique(data$Later_disorder) #25
-
+unique(data$Prior_disorder) %>% sort #24
+unique(data$Later_disorder) %>% sort #25
+unique(data$Prior_disorder) %>% sort ==  unique(data$Later_disorder) %>% sort
 
 
 
@@ -62,28 +84,7 @@ close(fileConn)
 
 # Filter model
 don <- data %>%
-  filter(Model == "A" & Sex == "All") %>%
-  
-  mutate(Prior_disorder = gsub("ODD", "Oppositional defiant disorder", Prior_disorder)) %>%
-  mutate(Later_disorder = gsub("ODD", "Oppositional defiant disorder", Later_disorder)) %>%
-
-  mutate(Prior_disorder = gsub("Child SAD", "Child separation anxiety disorder", Prior_disorder)) %>%
-  mutate(Later_disorder = gsub("Child SAD", "Child separation anxiety disorder", Later_disorder)) %>%
-
-  mutate(Prior_disorder = gsub("GAD", "Generalized anxiety disorder", Prior_disorder)) %>%
-  mutate(Later_disorder = gsub("GAD", "Generalized anxiety disorder", Later_disorder)) %>%
-
-  mutate(Prior_disorder = gsub("OCD", "Obsessive compulsive disorder", Prior_disorder)) %>%
-  mutate(Later_disorder = gsub("OCD", "Obsessive compulsive disorder", Later_disorder)) %>%
-  
-  mutate(Prior_disorder = gsub("IED", "Intermittent explosive disorder", Prior_disorder)) %>%
-  mutate(Later_disorder = gsub("IED", "Intermittent explosive disorder", Later_disorder)) %>%
-  
-  mutate(Prior_disorder = gsub("MDE", "Major depressive episode", Prior_disorder)) %>%
-  mutate(Later_disorder = gsub("MDE", "Major depressive episode", Later_disorder)) %>%
-  
-  mutate(Prior_disorder = gsub("Adult SAD", "Adult separation anxiety disorder", Prior_disorder)) %>%
-  mutate(Later_disorder = gsub("Adult SAD", "Adult separation anxiety disorder", Later_disorder))
+  filter(Model == "A" & Sex == "All")
   
 # Write result at a .js object
 tosave <- paste("dataHeatmap = ", toJSON(don))
@@ -95,9 +96,50 @@ close(fileConn)
 head(don)
 summary(don)
 unique(don$Prior_disorder)
+unique(don$Later_disorder)
 
 don %>% filter(Prior_disorder=="IED")
-don %>% filter(Later_disorder=="Intermittent explosive disorder")
+don %>% filter(Later_disorder=="Anorexia nervosa")
+
+
+
+
+
+
+# ----------
+# Preparation for symmetry chart
+# ----------
+
+# Watch an example
+#couple = c("Alcohol dependence", "Drug dependence")
+#data %>% filter(Later_disorder %in% couple & Prior_disorder %in% couple)
+
+# Merge with opposite direction
+tmp <- merge(data, data, by.x=c("Prior_disorder", "Later_disorder"), by.y=c("Later_disorder", "Prior_disorder")) %>%
+  mutate(coefVar = (HR.y - HR.x) / max(c(HR.y, HR.x),na.rm=T) * 100) 
+
+# Clean
+tmp <- tmp %>% select(-8, -9, -10, -11, -12)
+colnames(tmp) <- c(colnames(data), "coefvar")
+summary(tmp)
+dataReady <- tmp %>% 
+  filter(Model == "A" & Sex == "All")
+
+# Highest one?
+#dataReady %>% arrange(coefvar) %>% head()
+#dataReady %>% arrange(coefvar) %>% tail()
+
+# Write result at a .js object
+tosave <- paste("dataBarplot = ", toJSON(dataReady))
+fileConn<-file("dataBarplot.js")
+writeLines(tosave, fileConn)
+close(fileConn)
+
+
+
+
+
+
 
 
 # ----------
@@ -120,36 +162,6 @@ write.table(tmp, file="data_sankey.csv", quote=F, row.names=F, sep=",")
 
 
 
-
-
-
-# ----------
-# Preparation for symmetry chart
-# ----------
-
-# Read data
-data <- read.table("data.csv", header=T, sep=",")
-
-# Watch an example
-couple = c("Alcohol dependence", "Drug dependence")
-data %>% filter(Later_disorder %in% couple & Prior_disorder %in% couple)
-
-# Merge with opposite direction
-tmp <- merge(data, data, by.x=c("Prior_disorder", "Later_disorder"), by.y=c("Later_disorder", "Prior_disorder")) %>%
-  mutate(coefVar = (HR.y - HR.x) / max(c(HR.y, HR.x)) * 100)
-tmp %>% filter(Later_disorder %in% couple & Prior_disorder %in% couple)
-
-# Clean
-dataReady <- tmp %>% select(-7, -8, -9, -10)
-colnames(dataReady) <- c(colnames(data), "coefvar")
-dataReady %>% head()
-
-# Highest one?
-dataReady %>% arrange(coefvar) %>% head()
-dataReady %>% arrange(coefvar) %>% tail()
-
-# Export
-write.table(dataReady, file="data_bar.csv", quote=F, row.names=F, sep=",")
 
 
 
