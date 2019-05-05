@@ -13,6 +13,9 @@ setwd("~/Desktop/Como-in-World-Heath-Survey/DATA")
 # Load data
 data <- read.table("COMO_W_longformat_Yan_02Apr19.csv", header=T, sep=",")
 
+# Change colnames
+colnames(data)[1:2] <- c("Prior_disorder", "Later_disorder")
+
 # Replace IED by Intermittent explosive disorder
 data <- data %>% mutate(Later_disorder = gsub("IED", "Intermittent explosive disorder", Later_disorder))
 
@@ -20,9 +23,8 @@ data <- data %>% mutate(Later_disorder = gsub("IED", "Intermittent explosive dis
 data <- data %>% mutate(Later_disorder = gsub("Specific Phobia", "Specific phobia", Later_disorder))
 
 # List of Prior and Later disorder:
-levels(data$Prior.disorder) #24
-levels(data$Later.disorder) #26
-
+levels(data$Prior_disorder) #24
+unique(data$Later_disorder) #25
 
 
 
@@ -38,7 +40,8 @@ don <- data %>%
   filter(Model == "A" & Sex == "All") %>%
   arrange(HR) %>%
   mutate(HR_rounded = round(HR/bin)*bin ) %>%
-  mutate(y=ave(HR_rounded, HR_rounded, FUN=seq_along))
+  mutate(y=ave(HR_rounded, HR_rounded, FUN=seq_along)) %>%
+  filter(!is.na(HR))
 
 # Write result at a .js object
 tosave <- paste("dataHistogram = ", toJSON(don))
