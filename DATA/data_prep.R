@@ -114,30 +114,31 @@ don %>% filter(Later_disorder=="Anorexia nervosa")
 #couple = c("Alcohol dependence", "Drug dependence")
 #data %>% filter(Later_disorder %in% couple & Prior_disorder %in% couple)
 
-# Merge with opposite direction
-tmp <- merge(data, data, by.x=c("Prior_disorder", "Later_disorder"), by.y=c("Later_disorder", "Prior_disorder")) %>%
+# Merge with opposite direction. Expected length = 24*24 - 24 = 552
+tmp <- data %>% filter(Model == "A" & Sex == "All")
+tmp <- merge(tmp, tmp, by.x=c("Prior_disorder", "Later_disorder"), by.y=c("Later_disorder", "Prior_disorder")) %>%
   mutate(coefVar = (HR.y - HR.x) / max(c(HR.y, HR.x),na.rm=T) * 100) 
 
 # Clean
 tmp <- tmp %>% select(-8, -9, -10, -11, -12)
 colnames(tmp) <- c(colnames(data), "coefvar")
 summary(tmp)
-dataReady <- tmp %>% 
-  filter(Model == "A" & Sex == "All")
 
 # Highest one?
 #dataReady %>% arrange(coefvar) %>% head()
 #dataReady %>% arrange(coefvar) %>% tail()
 
 # Write result at a .js object
-tosave <- paste("dataBarplot = ", toJSON(dataReady))
+tosave <- paste("dataBarplot = ", toJSON(tmp))
 fileConn<-file("dataBarplot.js")
 writeLines(tosave, fileConn)
 close(fileConn)
 
 
 
-
+dataReady %>% 
+  filter(Later_disorder == "Adult separation anxiety disorder") %>%
+  head()
 
 
 

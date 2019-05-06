@@ -1,4 +1,3 @@
-
 // ------------------- //
 // Initialize symmetrical barplot
 // ------------------- //
@@ -94,7 +93,6 @@ var myLater = d3.map(data, function(d){return d.Later_disorder;}).keys()
 // ------------------- //
 // Create Symmetrical Barplot
 // ------------------- //
-
 
 // Set range and domain for Y axis
 var y = d3.scaleBand()
@@ -212,15 +210,20 @@ function update(variable) {
     .append("rect")
     .attr("class", "barleft")
     .merge(u1)
+    // Go to 0
     .transition()
     .duration(1000)
       .attr("x", function(d) { return x1(0) } )
-      .attr("y", function(d) { return y(d.Later_disorder); })
-      .attr("width", function(d) { return  0  })
+      .attr("width", function(d) { return  0} )
       .attr("height", y.bandwidth())
       .attr("rx", 2)
       .attr("opacity", 0.7)
       .style("fill", function(d){ return myColor(myGroup(d.Later_disorder)) })
+    // Go to right Y position
+    .transition()
+    .duration(0)
+      .attr("y", function(d) { return y(d.Later_disorder); })
+    // Go to new  X position
     .transition()
     .duration(1000)
       .attr("x", function(d) { return x1(d.HR) } )
@@ -240,16 +243,18 @@ function update(variable) {
     .transition()
     .duration(1000)
       .attr("x", function(d) { return x2(0) } )
-      .attr("y", function(d) { return y(d.Prior_disorder); })
       .attr("width", function(d) { return  0 })
       .attr("height", y.bandwidth())
       .attr("rx", 2)
       .attr("opacity", 0.7)
       .style("fill", function(d){ return myColor(myGroup(d.Prior_disorder)) })
+    // Go to right Y position
+    .transition()
+    .duration(0)
+      .attr("y", function(d) { return y(d.Prior_disorder); })
     .transition()
     .duration(1000)
       .attr("width", function(d) { return  x2(d.HR)-x2(0)  })
-
 
   u2.exit()
     .remove()
@@ -257,7 +262,7 @@ function update(variable) {
 }
 
 // Initialize with Alcohol abuse
-update("Bulimia nervosa")
+update("Alcohol dependence")
 
 // If user clicks on the show nicotine button
 d3.select("#linkShowNicotine")
