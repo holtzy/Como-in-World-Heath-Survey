@@ -120,8 +120,11 @@ tmp <- merge(tmp, tmp, by.x=c("Prior_disorder", "Later_disorder"), by.y=c("Later
   mutate(coefVar = (HR.y - HR.x) / max(c(HR.y, HR.x),na.rm=T) * 100) 
 
 # Clean
-tmp <- tmp %>% select(-8, -9, -10, -11, -12)
+tmp <- tmp %>% 
+  select(-8, -9, -10, -11, -12) 
 colnames(tmp) <- c(colnames(data), "coefvar")
+tmp <- tmp %>%
+  filter(!is.na(HR))
 summary(tmp)
 
 # Highest one?
@@ -134,9 +137,8 @@ fileConn<-file("dataBarplot.js")
 writeLines(tosave, fileConn)
 close(fileConn)
 
-
-
-dataReady %>% 
+# Check
+tmp %>% 
   filter(Later_disorder == "Adult separation anxiety disorder") %>%
   head()
 
@@ -150,8 +152,17 @@ dataReady %>%
 # Add space to outcome to make it different
 tmp <- data %>% mutate( Later_disorder = paste( Later_disorder, " ", sep=""))
 
+
+# Write result at a .js object
+tosave <- paste("dataSankey = ", toJSON(tmp))
+fileConn<-file("dataSankey.js")
+writeLines(tosave, fileConn)
+close(fileConn)
+
+
+
 # Save it
-write.table(tmp, file="data_sankey.csv", quote=F, row.names=F, sep=",")
+#write.table(tmp, file="data_sankey.csv", quote=F, row.names=F, sep=",")
 
 # Make a data frame with nodes
 #nodes = data.frame( ID = c(as.character(unique(tmp$Prior_disorder)), as.character(unique(tmp$Later_disorder)) ) ) %>%
