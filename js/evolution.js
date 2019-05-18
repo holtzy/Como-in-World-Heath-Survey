@@ -119,8 +119,8 @@ function updateChart(){
     .enter()
     .append("path")
       .attr("fill", "none")
-      .attr("stroke-width", 1.9)
-      .attr("stroke", "black")
+      .attr("stroke-width", function(d){ console.log(d) ; return 1})
+      .attr("stroke", d => myColor(myGroup(d.key)) )
       .attr("d", function(d){
         return d3.line()
           .x(function(d) { return x(+d.Time); })
@@ -138,7 +138,8 @@ function updateChart(){
     .append("circle")
       .attr("cx", function(d,i){ console.log(d); return(x(+d.Time)) } )
       .attr("cy", function(d,i){ return(y(+d.HR)) } )
-      .attr("r", 3)
+      .attr("r", 5)
+      .style("fill", d => myColor(myGroup(d.Later_disorder)) )
 
 
 }
