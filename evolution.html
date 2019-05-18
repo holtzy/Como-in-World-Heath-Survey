@@ -37,12 +37,11 @@
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
-    <!-- general environment -->
-    <script src="js/general_variable.js"></script>
-
 </head>
 
 <body id="page-top">
+
+
 
 
 
@@ -58,13 +57,13 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="map.html">Map</a>
+            <a class="nav-link active" href="map.html">Map</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="histogram.html">Distribution</a>
+            <a class="nav-link" href="histogram.html.html">Distribution</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="heatmap.html">Heatmap</a>
+            <a class="nav-link" href="heatmap.html">Heatmap</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="barplot.html">Symmetry</a>
@@ -82,11 +81,7 @@
 
 
 
-
-<!-- =======================  SIDE ARROW ======================= -->
-
-<a class="btn btn-primary leftLink" href="histogram.html">&#x2039; Distribution</a>
-<a class="btn btn-primary rightLink" href="barplot.html">Symmetry &#x203A;</a>
+  <a class="btn btn-primary leftLink" href="sankey.html">&#x2039; Sankey</a>
 
 
 
@@ -96,32 +91,45 @@
 
 
 
+<!-- =======================  SECTION MAP ======================= -->
 
-
-
-
-
-<!-- =======================  SECTION HEATMAP ======================= -->
-
-<section id="part2">
+<section id="map" class="bg">
   <div class="container">
-
-    <div class="row">
-      <div class="col-md-7 mx-auto" style="text-align: center">
-        <h3>Links between groups</h3>
-        <hr style="max-width: 100px">
-        <p>The following heatmap allows to highlight relationships <u>between</u> the four main groups of our analysis. For instance, it appears that comorbidity is very strong between substance-use disorders. </p>
+    <h3 style="text-align: center">Hazard ratio and absolute risk over time</h3>
+    <hr style="max-width: 100px">
+    <div class="row justify-content-md-center">
+      <div class="col-lg-5" style="text-align: right">
+        <p>THe last approach offered in our study allows to explore hzard ratio and abosulte risk evolution over time.</p>
+      </div>
+      <div class="col-lg-5">
+        <p>You can study the evolution of comorbidity depending on sex and age of onset.</p>
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <center><div id="dataviz_heatmap"></div></center>
-      </div>
-    </div>
-
   </div>
 </section>
+
+<section id="evolution-button" class="bg-light" style="margin-top: 0px; padding-top: 30px; height:40px; margin-bottom: 0px;">
+  <div class="container">
+    <p>here are the buttons</p>
+  </div>
+</section>
+
+<section id="evolution-chart" class="bg" style="margin-top: 0px; padding-top: 30px">
+  <div class="container">
+    <center><div id="dataviz_evolution" width="700" height="750"></div></center>
+  </div>
+</section>
+
+
+</section>
+
+
+
+
+
+
+
+
 
 
 <!-- ======================= FOOTER SECTION ================================ -->
@@ -182,9 +190,6 @@
 
 
 
-
-
-
 <!-- ======================== JAVASCRIPT SECTION =========================== -->
 
 
@@ -202,11 +207,19 @@
     <!-- Load d3.js -->
     <script src="https://d3js.org/d3.v4.min.js"></script>
 
+    <!-- general environment -->
+    <script src="js/general_variable.js"></script>
+
     <!-- DATA -->
-    <script src="DATA/dataHeatmap.js"></script>
+    <script src="DATA/dataEvolution.js"></script>
 
     <!-- Load heatmap code -->
-    <script src="js/heatmap.js"></script>"
+    <script src="js/evolution.js"></script>"
+
+
+
+
+
 
 
 
