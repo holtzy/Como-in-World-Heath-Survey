@@ -11,6 +11,11 @@ setwd("~/Desktop/Como-in-World-Heath-Survey/DATA")
 
 
 
+
+
+
+
+
 # ----------
 # Load data + General changes necessary for all charts
 # ----------
@@ -178,6 +183,71 @@ close(fileConn)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ----------
+# Lagged HR -> Load data / Clean / export
+# ----------
+
+# Load data
+data <- read.table("COMO_W_longformat_Yan_02April19_a.csv", header=T, sep=",")
+
+# Change colnames
+colnames(data)[1:2] <- c("Prior_disorder", "Later_disorder")
+
+# Upper / Lower case issues
+data <- data %>% 
+  mutate(Later_disorder = gsub("Specific Phobia", "Specific phobia", Later_disorder)) %>%
+  mutate(Later_disorder = gsub("Anorexia Nervosa", "Anorexia nervosa", Later_disorder))
+
+# Change to have real name:
+data <- data %>%
+  mutate(Prior_disorder = gsub("ODD", "Oppositional defiant disorder", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("ODD", "Oppositional defiant disorder", Later_disorder)) %>%
+  
+  mutate(Prior_disorder = gsub("Child SAD", "Child separation anxiety disorder", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("Child SAD", "Child separation anxiety disorder", Later_disorder)) %>%
+  
+  mutate(Prior_disorder = gsub("GAD", "Generalized anxiety disorder", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("GAD", "Generalized anxiety disorder", Later_disorder)) %>%
+  
+  mutate(Prior_disorder = gsub("OCD", "Obsessive compulsive disorder", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("OCD", "Obsessive compulsive disorder", Later_disorder)) %>%
+  
+  mutate(Prior_disorder = gsub("IED", "Intermittent explosive disorder", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("IED", "Intermittent explosive disorder", Later_disorder)) %>%
+  
+  mutate(Prior_disorder = gsub("MDE", "Major depressive episode", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("MDE", "Major depressive episode", Later_disorder)) %>%
+  
+  mutate(Prior_disorder = gsub("Adult SAD", "Adult separation anxiety disorder", Prior_disorder)) %>%
+  mutate(Later_disorder = gsub("Adult SAD", "Adult separation anxiety disorder", Later_disorder))
+
+# List of Prior and Later disorder:
+unique(data$Prior_disorder) %>% sort #24
+unique(data$Later_disorder) %>% sort #25
+unique(data$Prior_disorder) %>% sort ==  unique(data$Later_disorder) %>% sort
+
+# Write result at a .js object
+tosave <- paste("dataEvolution = ", toJSON(data))
+fileConn<-file("dataEvolution.js")
+writeLines(tosave, fileConn)
+close(fileConn)
 
 
 

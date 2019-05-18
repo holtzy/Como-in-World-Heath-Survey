@@ -39,3 +39,54 @@ svg
   .attr("x", 5)
   .text(function(d){ return( giveShortName(d) )})
   .style("fill", d => myColor(myGroup(d)) )
+
+
+
+
+
+
+// ======================= //
+// X SCALE AND AXIS
+// ======================= //
+
+// A scale that transform a number in a label
+var buildLabelFromId = d3.scaleOrdinal()
+  .domain([1,2,3,4,5,6])
+  .range(["0-1y", "1-2y", "2-5y", "5-10y", "10-15y", "15+y"]);
+
+// A scale for the X axis
+var x = d3.scaleLinear()
+  .domain([1, 6])
+  .range([ 0, width]);
+
+// Add the labels
+var xAxisLabels = svg
+  .filter(function(d){return (d=="Drug abuse" ) })
+  .selectAll("myXLabels")
+  .data([1,2,3,4,5,6])
+  .enter()
+  .append("text")
+    .attr('x', function(d){ return x(d) })
+    .attr('y', height+12)
+    .text( d => buildLabelFromId(d) )
+    .attr("text-anchor", "center")
+    .style("font-size", 9)
+    .style("fill", 'grey')
+
+
+
+
+// ======================= //
+// Y SCALE AND AXIS
+// ======================= //
+
+// A scale for the Y axis
+var y = d3.scaleLinear()
+  .domain([0, 250])
+  .range([ height, 0]);
+
+
+
+// ======================= //
+// SHAPE
+// ======================= //
