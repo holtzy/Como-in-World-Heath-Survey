@@ -150,8 +150,12 @@ tmp %>%
 # ----------
 
 # Add space to outcome to make it different
-tmp <- data %>% mutate( Later_disorder = paste( Later_disorder, " ", sep=""))
-
+tmp <- data %>% 
+  mutate( Later_disorder = paste( Later_disorder, " ", sep="")) %>%
+  filter(Model == "A" & Sex == "All") %>%
+  filter(!is.na(HR))
+head(tmp)
+dim(tmp)
 
 # Write result at a .js object
 tosave <- paste("dataSankey = ", toJSON(tmp))
