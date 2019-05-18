@@ -90,3 +90,58 @@ var y = d3.scaleLinear()
 // ======================= //
 // SHAPE
 // ======================= //
+
+
+function updateChart(){
+
+  // Filter data to keep focus disorder
+  var currentData = dataEvolution.filter(function(d){return (d.Prior_disorder=="Major depressive episode" && d.Model=="A") })
+
+  // Nest data:
+  var sumstat = d3.nest() // nest function allows to group the calculation per level of a factor
+    .key(function(d) { return d.Later_disorder;})
+    .entries(currentData);
+
+  // Update circle position
+  svg.selectAll('circle')
+    .data( function(d,i){ console.log(d + "-" + i) ; console.log(sumstat[i]) ; return(sumstat[i]) })
+    .enter()
+    .append("path")
+      .attr("fill", "none")
+      .attr("stroke-width", 1.9)
+      .attr("d", function(d){
+        return d3.line()
+          .x(function(d) { console.log(d) ; return x(d.HR); })
+          .y(function(d) { return y(d.Time); })
+          (d.values)
+      })
+  // u
+  //   .enter()
+  //   .append("circle")
+  //   .merge(u)
+  //   .transition()
+  //   .duration(1000)
+  //     .attr("class", "myLolliCircles")
+  //     .attr("cx", function(d) { return x(d.MRR); })
+  //     .attr("cy", function(d) { id = bothCOD.indexOf(d.COD) ; return posYaxis[id] + myPositionLolliSex(d.sex) })
+  //     .attr('r', function(d,i){ if(typeCOD.includes(d.COD)){size = 5}else{size=5} ; return size  })
+  //     .style("fill", function(d){ if(selectedSexOption!="both"){col=myColorLolliSex(d.sex)}else{col=myColorCOD(d.COD)} ; return col })
+  //     .attr("class", function(d) { return d.COD.replace(/\s/g, '') })
+  //     .style("display", function(d){
+  //       if(selectedSexOption=="both"){
+  //         if(d.sex=="both"){out="block"}else{out="none"}
+  //       }else{
+  //         if(d.sex=="both"){out="none"}else{out="block"}
+  //       } ;
+  //       return out })
+  // u
+  //   .exit()
+  //   .transition()
+  //   .duration(1000)
+  //   .style("opacity",0)
+  //   .remove()
+
+}
+
+
+updateChart()
