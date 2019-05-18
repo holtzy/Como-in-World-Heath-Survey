@@ -105,7 +105,17 @@ function updateChart(){
   // Add lines
   svg
     .selectAll("lines")
-    .data(function(d,i){return sumstat.slice(i,i+1)})
+    .data(function(d,i){
+      all = sumstat.map(function(l){return l.key})
+      index = all.indexOf(d)
+      if( index == -1){
+        return []
+      } else {
+        out = [sumstat[index]]
+        return out;
+      }
+    }
+    )
     .enter()
     .append("path")
       .attr("fill", "none")
@@ -118,21 +128,19 @@ function updateChart(){
           (d.values)
       })
 
-  // Add lines
+  // Add circles
   svg
     .selectAll("circle")
-    .data(function(d,i){return sumstat.slice(i,i+1)})
+    .data(function(d,i){
+      return(currentData.filter(function(c){return (c.Later_disorder==d)}))
+    })
     .enter()
-    .append("path")
-      .attr("fill", "none")
-      .attr("stroke-width", 1.9)
-      .attr("stroke", "black")
-      .attr("d", function(d){
-        return d3.line()
-          .x(function(d) { return x(+d.Time); })
-          .y(function(d) { return y(+d.HR); })
-          (d.values)
-      })
+    .append("circle")
+      .attr("cx", function(d,i){ console.log(d); return(x(+d.Time)) } )
+      .attr("cy", function(d,i){ return(y(+d.HR)) } )
+      .attr("r", 3)
+
+
 }
 
 
