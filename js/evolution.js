@@ -133,9 +133,8 @@ d3.select("#btnSexAOO")
 
 
 // ======================= //
-// SHAPE
+// WHICH CHART TO RUN - WITH WHAT FEATURES?
 // ======================= //
-
 
 function updateChart(){
 
@@ -161,21 +160,38 @@ function updateChart(){
     x.domain([1, 6])
     var currentData = dataEvolutionHR
       .filter(function(d){return (d.Prior_disorder==selectedMentalDisOption && d.Model==selectedModel ) })
+    buildChartHR(currentData)
   }
 
+  // If watching absolute
   if( selectedData=="dataEvolutionAbsolute"){
     y.domain([0, 100])
     x.domain([1,60])
-
     var currentData = dataEvolutionAbsolute.filter(function(d){return (d.Prior_disorder==selectedMentalDisOption) })
     switch (selectedSexAOO) {
       case 'All': currentData = currentData.filter( d => (d.Model=="All") ) ; break;
       case 'Sex': currentData = currentData.filter( d => (d.Model=="M" || d.Model=="F") ) ; break;
       case 'AOO': currentData = currentData.filter( d => (d.Model=="20to40" || d.Model=="above40" || d.Model=="below 20") ) ; break;
     }
+    buildChartAbsolute(currentData)
   }
 
-  // Filter data to keep focus disorder
+}
+
+
+
+
+
+
+// ======================= //
+// BUILD LINE CHART
+// ======================= //
+
+function buildChartAbsolute(currentData){
+
+  // Remove all circles and path
+  svg.selectAll("circle").remove()
+  svg.selectAll("path").remove()
 
   // Nest data:
   var sumstat = d3.nest() // nest function allows to group the calculation per level of a factor
@@ -183,7 +199,7 @@ function updateChart(){
     .key(function(d) { return d.Model;})
     .entries(currentData);
 
-  // Add lines
+  // --- Add lines
   var v = svg
     .selectAll(".myLines")
     .data(function(d,i){
@@ -221,6 +237,24 @@ function updateChart(){
     .style("opacity",0)
     .remove()
 
+}
+
+
+
+
+
+
+
+
+
+// ======================= //
+// BUILD CONNECTED SCATTERPLOT
+// ======================= //
+
+function buildChartHR(currentData){
+
+  // Remove all path
+  svg.selectAll("path").remove()
 
   // Add circles
   var u = svg
@@ -232,7 +266,7 @@ function updateChart(){
     .enter()
     .append("circle")
     .merge(u)
-    .style("opacity", selectedData=="dataEvolutionHR" ? 1:0)
+    .style("opacity", 1)
     .transition()
     .duration(1000)
       .attr("class", "myCircle")
@@ -247,16 +281,61 @@ function updateChart(){
     .style("opacity",0)
     .remove()
 
+  // Nest data:
+  var sumstat = d3.nest() // nest function allows to group the calculation per level of a factor
+    .key(function(d) { return d.Later_disorder;})
+    .key(function(d) { return d.Model;})
+    .entries(currentData);
+
+  // --- Add lines
+  var v = svg
+    .selectAll(".myLines")
+    .data(function(d,i){
+      all = sumstat.map(function(l){return l.key})
+      index = all.indexOf(d)
+      if( index == -1){
+        return []
+      } else {
+        out = [sumstat[index]][0].values
+        return out;
+      }
+    }
+    )
+  v
+    .enter()
+    .append("path")
+    .merge(v)
+    .transition()
+    .duration(1000)
+      .attr("class", "myLines")
+      .attr("fill", "none")
+      .style("opacity", 1)
+      .attr("stroke-width", function(d){ console.log(d) ; return 1})
+      .attr("stroke", d => myColor(myGroup(d.key)) )
+      .attr("d", function(d){
+        return d3.line()
+          .x(function(d) { return x(+d.Time); })
+          .y(function(d) { return y(+d.Value); })
+          (d.values)
+      })
+  v
+    .exit()
+    .transition()
+    .duration(1000)
+    .style("opacity",0)
+    .remove()
 }
 
 
-updateChart()
 
 
 
 // ======================= //
 // EVENT LISTENER
 // ======================= //
+
+// Initialize
+updateChart()
 
 // Listen to the mental disorder selection button
 d3.select("#btnFocusDisorder").on("change", updateChart)
