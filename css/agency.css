@@ -721,3 +721,22 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   max-width: 600px;
   padding: 2em 3em;
 }
+
+
+
+
+
+
+
+
+.persoBtn{
+  border: solid;
+  height: 40px;
+  border-color: black;
+  border-width: 0.7px;
+  border-radius: 3px;
+  padding: 3px;
+  color: black;
+  cursor: pointer;
+  background-color: white;
+}

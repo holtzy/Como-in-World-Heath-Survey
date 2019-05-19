@@ -156,6 +156,8 @@ function updateChart(){
 
   // If watching HR
   if( selectedData=="dataEvolutionHR"){
+    d3.select("#btnModel").style("display", "inline")
+    d3.select("#btnSexAOO").style("display", "none")
     y.domain([0, 250])
     x.domain([1, 6])
     var currentData = dataEvolutionHR
@@ -165,6 +167,8 @@ function updateChart(){
 
   // If watching absolute
   if( selectedData=="dataEvolutionAbsolute"){
+    d3.select("#btnModel").style("display", "none")
+    d3.select("#btnSexAOO").style("display", "inline")
     y.domain([0, 100])
     x.domain([1,60])
     var currentData = dataEvolutionAbsolute.filter(function(d){return (d.Prior_disorder==selectedMentalDisOption) })
