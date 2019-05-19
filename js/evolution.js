@@ -56,7 +56,6 @@ var buildLabelFromId = d3.scaleOrdinal()
 
 // A scale for the X axis
 var x = d3.scaleLinear()
-  .domain([1, 6])
   .range([ 10, width-10]);
 
 // Add the labels
@@ -82,7 +81,6 @@ var xAxisLabels = svg
 
 // A scale for the Y axis
 var y = d3.scaleLinear()
-  .domain([0, 250])
   .range([ height-10, 10]);
 
 
@@ -111,6 +109,15 @@ d3.select("#btnModel")
   .text(function (d) { return d }) // text showed in the menu
   .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
+// btn: Model
+d3.select("#btnData")
+  .selectAll('myOptions')
+  .data(["dataEvolutionHR", "dataEvolutionAbsolute"])
+  .enter()
+  .append('option')
+  .text(function (d) { return d }) // text showed in the menu
+  .attr("value", function (d) { return d; }) // corresponding value returned by the button
+
 
 
 
@@ -130,8 +137,23 @@ function updateChart(){
   var btnModel = document.getElementById('btnModel');
   var selectedModel = btnModel[btnModel.selectedIndex].value;
 
+  // Recover the kind of data: HR vs Absolute
+  var btnData = document.getElementById('btnData');
+  var selectedData = btnData[btnData.selectedIndex].value;
+  if( selectedData=="dataEvolutionHR"){
+    input = dataEvolutionHR
+    y.domain([0, 250])
+    x.domain([1, 6])
+
+  } else {
+    input = dataEvolutionAbsolute
+    selectedModel = "All"
+    y.domain([0, 100])
+    x.domain([1,74])
+  }
+
   // Filter data to keep focus disorder
-  var currentData = dataEvolution.filter(function(d){return (d.Prior_disorder==selectedMentalDisOption && d.Model==selectedModel) })
+  var currentData = input.filter(function(d){return (d.Prior_disorder==selectedMentalDisOption ) })
 
   // Nest data:
   var sumstat = d3.nest() // nest function allows to group the calculation per level of a factor
@@ -166,7 +188,7 @@ function updateChart(){
       .attr("d", function(d){
         return d3.line()
           .x(function(d) { return x(+d.Time); })
-          .y(function(d) { return y(+d.HR); })
+          .y(function(d) { return y(+d.Value); })
           (d.values)
       })
   v
@@ -176,31 +198,31 @@ function updateChart(){
     .style("opacity",0)
     .remove()
 
-  // Add circles
-  var u = svg
-    .selectAll(".myCircle")
-    .data(function(d,i){
-      return(currentData.filter(function(c){return (c.Later_disorder==d)}))
-    })
-  console.log(u)
-  u
-    .enter()
-    .append("circle")
-    .merge(u)
-    .transition()
-    .duration(1000)
-      .attr("class", "myCircle")
-      .attr("cx", function(d,i){ console.log(d); return(x(+d.Time)) } )
-      .attr("cy", function(d,i){ return(y(+d.HR)) } )
-      .attr("r", 5)
-      .style("opacity", 1)
-      .style("fill", d => myColor(myGroup(d.Later_disorder)) )
-  u
-    .exit()
-    .transition()
-    .duration(0)
-    .style("opacity",0)
-    .remove()
+  //
+  // // Add circles
+  // var u = svg
+  //   .selectAll(".myCircle")
+  //   .data(function(d,i){
+  //     return(currentData.filter(function(c){return (c.Later_disorder==d)}))
+  //   })
+  // u
+  //   .enter()
+  //   .append("circle")
+  //   .merge(u)
+  //   .transition()
+  //   .duration(1000)
+  //     .attr("class", "myCircle")
+  //     .attr("cx", function(d,i){ console.log(d); return(x(+d.Time)) } )
+  //     .attr("cy", function(d,i){ return(y(+d.Value)) } )
+  //     .attr("r", 5)
+  //     .style("opacity", 1)
+  //     .style("fill", d => myColor(myGroup(d.Later_disorder)) )
+  // u
+  //   .exit()
+  //   .transition()
+  //   .duration(0)
+  //   .style("opacity",0)
+  //   .remove()
 
 }
 
@@ -216,5 +238,8 @@ updateChart()
 // Listen to the mental disorder selection button
 d3.select("#btnFocusDisorder").on("change", updateChart)
 
-// Listen to the mental disorder selection button
+// Listen to the Model
 d3.select("#btnModel").on("change", updateChart)
+
+// Listen to the type: absolute vs HR
+d3.select("#btnData").on("change", updateChart)
