@@ -57,7 +57,7 @@ var buildLabelFromId = d3.scaleOrdinal()
 // A scale for the X axis
 var x = d3.scaleLinear()
   .domain([1, 6])
-  .range([ 0, width]);
+  .range([ 10, width-10]);
 
 // Add the labels
 var xAxisLabels = svg
@@ -83,7 +83,28 @@ var xAxisLabels = svg
 // A scale for the Y axis
 var y = d3.scaleLinear()
   .domain([0, 250])
-  .range([ height, 0]);
+  .range([ height-10, 10]);
+
+
+
+
+
+// ======================= //
+// BUILD BUTTON
+// ======================= //
+
+// add the options to the button
+d3.select("#btnFocusDisorder")
+  .selectAll('myOptions')
+  .data(allDisorder)
+  .enter()
+  .append('option')
+  .text(function (d) { return d }) // text showed in the menu
+  .attr("value", function (d) { return d; }) // corresponding value returned by the button
+
+
+
+
 
 
 
@@ -94,8 +115,12 @@ var y = d3.scaleLinear()
 
 function updateChart(){
 
+  // Recover the Mental Disorder option?
+  var selector = document.getElementById('btnFocusDisorder');
+  var selectedMentalDisOption = selector[selector.selectedIndex].value;
+
   // Filter data to keep focus disorder
-  var currentData = dataEvolution.filter(function(d){return (d.Prior_disorder=="Major depressive episode" && d.Model=="A") })
+  var currentData = dataEvolution.filter(function(d){return (d.Prior_disorder==selectedMentalDisOption && d.Model=="A") })
 
   // Nest data:
   var sumstat = d3.nest() // nest function allows to group the calculation per level of a factor
@@ -103,8 +128,8 @@ function updateChart(){
     .entries(currentData);
 
   // Add lines
-  svg
-    .selectAll("lines")
+  var v = svg
+    .selectAll(".myLines")
     .data(function(d,i){
       all = sumstat.map(function(l){return l.key})
       index = all.indexOf(d)
@@ -116,9 +141,15 @@ function updateChart(){
       }
     }
     )
+  v
     .enter()
     .append("path")
+    .merge(v)
+    .transition()
+    .duration(1000)
+      .attr("class", "myLines")
       .attr("fill", "none")
+      .style("opacity", 1)
       .attr("stroke-width", function(d){ console.log(d) ; return 1})
       .attr("stroke", d => myColor(myGroup(d.key)) )
       .attr("d", function(d){
@@ -127,22 +158,49 @@ function updateChart(){
           .y(function(d) { return y(+d.HR); })
           (d.values)
       })
+  v
+    .exit()
+    .transition()
+    .duration(1000)
+    .style("opacity",0)
+    .remove()
 
   // Add circles
-  svg
-    .selectAll("circle")
+  var u = svg
+    .selectAll(".myCircle")
     .data(function(d,i){
       return(currentData.filter(function(c){return (c.Later_disorder==d)}))
     })
+  console.log(u)
+  u
     .enter()
     .append("circle")
+    .merge(u)
+    .transition()
+    .duration(1000)
+      .attr("class", "myCircle")
       .attr("cx", function(d,i){ console.log(d); return(x(+d.Time)) } )
       .attr("cy", function(d,i){ return(y(+d.HR)) } )
       .attr("r", 5)
+      .style("opacity", 1)
       .style("fill", d => myColor(myGroup(d.Later_disorder)) )
-
+  u
+    .exit()
+    .transition()
+    .duration(1000)
+    .style("opacity",0)
+    .remove()
 
 }
 
 
 updateChart()
+
+
+
+// ======================= //
+// EVENT LISTENER
+// ======================= //
+
+// Listen to the mental disorder selection button
+d3.select("#btnFocusDisorder").on("change", updateChart)
