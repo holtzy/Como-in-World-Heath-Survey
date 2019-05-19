@@ -93,7 +93,7 @@ var y = d3.scaleLinear()
 // BUILD BUTTON
 // ======================= //
 
-// add the options to the button
+// btn: Disorder
 d3.select("#btnFocusDisorder")
   .selectAll('myOptions')
   .data(allDisorder)
@@ -102,7 +102,14 @@ d3.select("#btnFocusDisorder")
   .text(function (d) { return d }) // text showed in the menu
   .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
-
+// btn: Model
+d3.select("#btnModel")
+  .selectAll('myOptions')
+  .data(["A", "B"])
+  .enter()
+  .append('option')
+  .text(function (d) { return d }) // text showed in the menu
+  .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
 
 
@@ -119,8 +126,12 @@ function updateChart(){
   var selector = document.getElementById('btnFocusDisorder');
   var selectedMentalDisOption = selector[selector.selectedIndex].value;
 
+  // Recover the model used
+  var btnModel = document.getElementById('btnModel');
+  var selectedModel = btnModel[btnModel.selectedIndex].value;
+
   // Filter data to keep focus disorder
-  var currentData = dataEvolution.filter(function(d){return (d.Prior_disorder==selectedMentalDisOption && d.Model=="A") })
+  var currentData = dataEvolution.filter(function(d){return (d.Prior_disorder==selectedMentalDisOption && d.Model==selectedModel) })
 
   // Nest data:
   var sumstat = d3.nest() // nest function allows to group the calculation per level of a factor
@@ -187,7 +198,7 @@ function updateChart(){
   u
     .exit()
     .transition()
-    .duration(1000)
+    .duration(0)
     .style("opacity",0)
     .remove()
 
@@ -204,3 +215,6 @@ updateChart()
 
 // Listen to the mental disorder selection button
 d3.select("#btnFocusDisorder").on("change", updateChart)
+
+// Listen to the mental disorder selection button
+d3.select("#btnModel").on("change", updateChart)
