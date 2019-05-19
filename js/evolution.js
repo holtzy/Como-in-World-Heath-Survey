@@ -106,7 +106,7 @@ d3.select("#btnModel")
   .data(["A", "B"])
   .enter()
   .append('option')
-  .text(function (d) { return d }) // text showed in the menu
+  .text(function (d) { return "Model " + d }) // text showed in the menu
   .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
 // btn: HR or absolute
@@ -115,7 +115,7 @@ d3.select("#btnData")
   .data(["dataEvolutionHR", "dataEvolutionAbsolute"])
   .enter()
   .append('option')
-  .text(function (d) { return d }) // text showed in the menu
+  .text(function (d) { return d == "dataEvolutionHR"? "Hazard Ratio" : "Absolute %" }) // text showed in the menu
   .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
 // btn: sex, all, or AOO
@@ -126,7 +126,6 @@ d3.select("#btnSexAOO")
   .append('option')
   .text(function (d) { return d }) // text showed in the menu
   .attr("value", function (d) { return d; }) // corresponding value returned by the button
-
 
 
 
@@ -226,7 +225,7 @@ function buildChartAbsolute(currentData){
       .attr("class", "myLines")
       .attr("fill", "none")
       .style("opacity", 1)
-      .attr("stroke-width", function(d){ console.log(d) ; return 1})
+      .attr("stroke-width", 1)
       .attr("stroke", d => myColor(myGroup(d.key)) )
       .attr("d", function(d){
         return d3.line()
@@ -241,10 +240,63 @@ function buildChartAbsolute(currentData){
     .style("opacity",0)
     .remove()
 
+  // Add annotation
+  addAnnotation()
+
 }
 
 
 
+
+
+
+// ======================= //
+// TOOLTIP ABSOLUTE / LINE CHART
+// ======================= //
+
+function addAnnotation(){
+  console.log("hello")
+  // A rect that will track mouse position on chart
+  svg.append('rect')
+    .attr("class", d => d)
+    .style("fill", "none")
+    .style("pointer-events", "all")
+    .attr('width', width)
+    .attr('height', height)
+    .on('mouseover', mouseover)
+    .on('mousemove', mousemove)
+    .on('mouseout', mouseout);
+
+  // This allows to find the closest X index of the mouse:
+  var bisect = d3.bisector(function(d) { return d.Time; }).left;
+
+  // Circle that travels along the curve of right chart
+  var focus = svg.append('g')
+    .append('line')
+      .style("stroke", "#808080")
+      .style("opacity", 0)
+
+  // What happens when the mouse move -> show the annotations at the right positions.
+  function mouseover() {
+    focus.style("opacity", 1)
+  }
+  function mousemove() {
+    // recover coordinate we need
+    var x0 = x.invert(d3.mouse(this)[0]);
+    // Recover the disease = the class
+    selectedClass = d3.select(this).attr("class")
+    var i = bisect(dataEvolutionAbsolute, x0, 1);
+    selectedData = dataEvolutionAbsolute[i]
+    focus
+      .attr("x1", x(selectedData.Time))
+      .attr("x2", x(selectedData.Time))
+      .attr("y1", 30)
+      .attr("y2", height)
+  }
+  function mouseout() {
+    focus.style("opacity", 0)
+  }
+}
 
 
 
@@ -274,7 +326,7 @@ function buildChartHR(currentData){
     .transition()
     .duration(1000)
       .attr("class", "myCircle")
-      .attr("cx", function(d,i){ console.log(d); return(x(+d.Time)) } )
+      .attr("cx", function(d,i){ return(x(+d.Time)) } )
       .attr("cy", function(d,i){ return(y(+d.Value)) } )
       .attr("r", 5)
       .style("fill", d => myColor(myGroup(d.Later_disorder)) )
@@ -314,7 +366,7 @@ function buildChartHR(currentData){
       .attr("class", "myLines")
       .attr("fill", "none")
       .style("opacity", 1)
-      .attr("stroke-width", function(d){ console.log(d) ; return 1})
+      .attr("stroke-width", 1)
       .attr("stroke", d => myColor(myGroup(d.key)) )
       .attr("d", function(d){
         return d3.line()
