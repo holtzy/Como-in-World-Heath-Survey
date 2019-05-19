@@ -268,8 +268,43 @@ unique(data$Prior_disorder) %>% sort ==  unique(data$Later_disorder) %>% sort
 data <- data %>% filter(!is.na(Value))
 head(data)
 
+
+
+# ----------
+# Lagged ABSOLUTE
+# ----------
+
+# Load data
+don <- read.table("COMO_W_absRiskAOO.csv", header=T, sep=",")
+
+# Select columns
+don <- don %>% select(`prior.disorder`, `later.disorder`, tso, newf, newf_low, newf_high, model)
+
+# Change colnames
+colnames(don) <- c("Prior_disorder", "Later_disorder", "Time", "Value", "Low", "High", "Model")
+
+# Upper / Lower case issues + reformat names
+don <- reformatNames(don)
+
+# List of Prior and Later disorder:
+unique(don$Prior_disorder) %>% sort #24
+unique(don$Later_disorder) %>% sort #24
+unique(don$Prior_disorder) %>% sort ==  unique(don$Later_disorder) %>% sort
+
+# Remove missing data
+don <- don %>% filter(!is.na(Value))
+head(don, 15)
+
+
+# ----------
+# SAVE
+# ----------
+
+# Bind
+out <- rbind(data, don)
+
 # Write result at a .js object
-tosave <- paste("dataEvolutionAbsolute = ", toJSON(data))
+tosave <- paste("dataEvolutionAbsolute = ", toJSON(out))
 fileConn<-file("dataEvolutionAbsolute.js")
 writeLines(tosave, fileConn)
 close(fileConn)
@@ -279,7 +314,7 @@ close(fileConn)
 
 
 
-
+summary(data)
 
 
 

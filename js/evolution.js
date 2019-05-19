@@ -109,7 +109,7 @@ d3.select("#btnModel")
   .text(function (d) { return d }) // text showed in the menu
   .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
-// btn: Model
+// btn: HR or absolute
 d3.select("#btnData")
   .selectAll('myOptions')
   .data(["dataEvolutionHR", "dataEvolutionAbsolute"])
@@ -117,6 +117,16 @@ d3.select("#btnData")
   .append('option')
   .text(function (d) { return d }) // text showed in the menu
   .attr("value", function (d) { return d; }) // corresponding value returned by the button
+
+// btn: sex, all, or AOO
+d3.select("#btnSexAOO")
+  .selectAll('myOptions')
+  .data(["All", "Sex", "AOO"])
+  .enter()
+  .append('option')
+  .text(function (d) { return d }) // text showed in the menu
+  .attr("value", function (d) { return d; }) // corresponding value returned by the button
+
 
 
 
@@ -137,23 +147,35 @@ function updateChart(){
   var btnModel = document.getElementById('btnModel');
   var selectedModel = btnModel[btnModel.selectedIndex].value;
 
+  // Recover the model used
+  var btnSexAOO = document.getElementById('btnSexAOO');
+  var selectedSexAOO = btnSexAOO[btnSexAOO.selectedIndex].value;
+
   // Recover the kind of data: HR vs Absolute
   var btnData = document.getElementById('btnData');
   var selectedData = btnData[btnData.selectedIndex].value;
+
+  // If watching HR
   if( selectedData=="dataEvolutionHR"){
-    input = dataEvolutionHR
     y.domain([0, 250])
     x.domain([1, 6])
+    var currentData = dataEvolutionHR
+      .filter(function(d){return (d.Prior_disorder==selectedMentalDisOption && d.Model==selectedModel ) })
+  }
 
-  } else {
-    input = dataEvolutionAbsolute
-    selectedModel = "All"
+  if( selectedData=="dataEvolutionAbsolute"){
     y.domain([0, 100])
-    x.domain([1,74])
+    x.domain([1,60])
+
+    var currentData = dataEvolutionAbsolute.filter(function(d){return (d.Prior_disorder==selectedMentalDisOption) })
+    switch (selectedSexAOO) {
+      case 'All': currentData = currentData.filter( d => (d.Model=="All") ) ; break;
+      case 'Sex': currentData = currentData.filter( d => (d.Model=="M" || d.Model=="F") ) ; break;
+      case 'AOO': currentData = currentData.filter( d => (d.Model=="20to40" || d.Model=="above40" || d.Model=="below 20") ) ; break;
+    }
   }
 
   // Filter data to keep focus disorder
-  var currentData = input.filter(function(d){return (d.Prior_disorder==selectedMentalDisOption ) })
 
   // Nest data:
   var sumstat = d3.nest() // nest function allows to group the calculation per level of a factor
@@ -210,13 +232,13 @@ function updateChart(){
     .enter()
     .append("circle")
     .merge(u)
+    .style("opacity", selectedData=="dataEvolutionHR" ? 1:0)
     .transition()
     .duration(1000)
       .attr("class", "myCircle")
       .attr("cx", function(d,i){ console.log(d); return(x(+d.Time)) } )
       .attr("cy", function(d,i){ return(y(+d.Value)) } )
       .attr("r", 5)
-      .style("opacity", 1)
       .style("fill", d => myColor(myGroup(d.Later_disorder)) )
   u
     .exit()
@@ -244,3 +266,6 @@ d3.select("#btnModel").on("change", updateChart)
 
 // Listen to the type: absolute vs HR
 d3.select("#btnData").on("change", updateChart)
+
+// Listen to the type: absolute vs HR
+d3.select("#btnSexAOO").on("change", updateChart)
