@@ -158,6 +158,7 @@ function updateChart(){
   // Nest data:
   var sumstat = d3.nest() // nest function allows to group the calculation per level of a factor
     .key(function(d) { return d.Later_disorder;})
+    .key(function(d) { return d.Model;})
     .entries(currentData);
 
   // Add lines
@@ -169,7 +170,7 @@ function updateChart(){
       if( index == -1){
         return []
       } else {
-        out = [sumstat[index]]
+        out = [sumstat[index]][0].values
         return out;
       }
     }
@@ -198,31 +199,31 @@ function updateChart(){
     .style("opacity",0)
     .remove()
 
-  //
-  // // Add circles
-  // var u = svg
-  //   .selectAll(".myCircle")
-  //   .data(function(d,i){
-  //     return(currentData.filter(function(c){return (c.Later_disorder==d)}))
-  //   })
-  // u
-  //   .enter()
-  //   .append("circle")
-  //   .merge(u)
-  //   .transition()
-  //   .duration(1000)
-  //     .attr("class", "myCircle")
-  //     .attr("cx", function(d,i){ console.log(d); return(x(+d.Time)) } )
-  //     .attr("cy", function(d,i){ return(y(+d.Value)) } )
-  //     .attr("r", 5)
-  //     .style("opacity", 1)
-  //     .style("fill", d => myColor(myGroup(d.Later_disorder)) )
-  // u
-  //   .exit()
-  //   .transition()
-  //   .duration(0)
-  //   .style("opacity",0)
-  //   .remove()
+
+  // Add circles
+  var u = svg
+    .selectAll(".myCircle")
+    .data(function(d,i){
+      return(currentData.filter(function(c){return (c.Later_disorder==d)}))
+    })
+  u
+    .enter()
+    .append("circle")
+    .merge(u)
+    .transition()
+    .duration(1000)
+      .attr("class", "myCircle")
+      .attr("cx", function(d,i){ console.log(d); return(x(+d.Time)) } )
+      .attr("cy", function(d,i){ return(y(+d.Value)) } )
+      .attr("r", 5)
+      .style("opacity", 1)
+      .style("fill", d => myColor(myGroup(d.Later_disorder)) )
+  u
+    .exit()
+    .transition()
+    .duration(0)
+    .style("opacity",0)
+    .remove()
 
 }
 
