@@ -119,7 +119,13 @@ var mouseover = function(d) {
     .style("opacity", 1)
     .style("display", "block")
   tooltip
-      .html("<span style='color:grey'>Prior disorder: </span>" + d.Prior_disorder + "<br>" + "<span style='color:grey'>Later disorder: </span>" + d.Later_disorder + "<br>" + "HR: " + d.HR + " [" + d.Lower + "-" + d.Upper + "]")
+      .html(
+        "<span style='color:grey'>Prior disorder: </span>" + d.Prior_disorder +
+        "<br>" +
+        "<span style='color:grey'>Later disorder: </span>" + d.Later_disorder +
+        "<br>" +
+        "HR: " + d.HR + " [" + d.Lower + "-" + d.Upper + "]"
+      )
 }
 var mousemove = function(d) {
   tooltip

@@ -19,7 +19,7 @@ var myGroup = d3.scaleOrdinal()
 var giveShortName = d3.scaleOrdinal()
   .domain(allDisorder)
   .range([ "Depression","Bipolar","Dysthymia",
-                "Panic disorder","Anxiety","Social phobia","Specific phobia","Agoraphobia","PTSD","Obsessive compulsive","Adult separation anxiety","Child separation anxiety",
+                "Panic disorder","Anxiety","Social phobia","Specific phobia","Agoraphobia","PTSD","Obsessive compulsive","Adult sep. anxiety","Child sep. anxiety",
                 "Anorexia","Bulimia","Binge eating","Intermittent explosive","ADHD","Conduct disorder","Oppositional defiant",
                 "Nicotine dependence","Alcohol abuse","Alcohol dependence","Drug abuse","Drug dependence"]);
 

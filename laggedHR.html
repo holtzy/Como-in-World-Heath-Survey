@@ -95,14 +95,27 @@
 
 <section id="map" class="bg" style="margin-bottom: 0px; padding-bottom: 0px">
   <div class="container">
-    <h3 style="text-align: center">Hazard ratio and absolute<br>risk over time</h3>
+    <h3 style="text-align: center">Lagged Hazard Ratio</h3>
     <hr style="max-width: 100px">
     <div class="row justify-content-md-center">
       <div class="col-lg-5" style="text-align: right">
-        <p>THe last approach offered in our study allows to explore hzard ratio and abosulte risk evolution over time.</p>
+        <p>This line chart shows the hazard ratio of later disorder depending on a
+          previous onset of prior disorder and the time lagged since the onset of
+          the prior disorder. In general, respondents were most vulnerable in terms
+          of developing later disorder in the year following their prior disorder
+          onset. Their risk of developing later disorder dropped rapidly from
+          year 2 and flattens after
+        </p>
       </div>
       <div class="col-lg-5">
-        <p>You can study the evolution of comorbidity depending on sex and age of onset.</p>
+        <p>
+          10 years. For example, the risk of developing
+          bipolar disorder is 20 times greater in the initial year after developing
+          alcohol abuse compared to those without (HR = 20.1, 95% CI = 16.6-24.3).
+          Between 2 to 5 years, the risk decreased by half to about 10
+          (HR = 9.5, 95% CI = 7.8-11.6) and by 15 years, 3.5 times in those
+          with alcohol abuse compared to those without (HR = 3.5, 95% = 2.4-5.1).
+        </p>
       </div>
     </div>
   </div>
@@ -112,10 +125,8 @@
   <div class="container">
     <div class="row">
       <div class="mx-auto">
-        <select class="persoBtn" id="btnData"></select>
         <select class="persoBtn" id="btnFocusDisorder"></select>
         <select class="persoBtn" id="btnModel"></select>
-        <select class="persoBtn" id="btnSexAOO"></select>
       </div>
     </div>
   </div>
@@ -222,7 +233,7 @@
     <script src="DATA/dataEvolutionAbsolute.js"></script>
 
     <!-- Load heatmap code -->
-    <script src="js/evolution.js"></script>"
+    <script src="js/laggedHR.js"></script>"
 
 
 
