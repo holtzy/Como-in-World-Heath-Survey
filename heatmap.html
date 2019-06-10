@@ -107,23 +107,49 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-md-7 mx-auto" style="text-align: center">
+      <div class="col-md-9 mx-auto" style="text-align: center">
         <h3>Links between groups</h3>
         <hr style="max-width: 100px">
-        <p>The following heatmap allows to highlight relationships <u>between</u> the four main groups of our analysis. For instance, it appears that comorbidity is very strong between substance-use disorders. </p>
+        <p>The heatmap shows the estimates for pairwise comorbidity. These estimates
+          were computed using cox proportional hazards model with adjustment for age and country
+          (model A). Light color (i.e. yellow and orange) indicates strong association while darker
+          colors (i.e. purple) indicates weaker association between the pairs of
+          disorders. Estimates were not calculated for pairs where n< 30, these were indicated
+          in light grey on the heatmap.
+        </p>
       </div>
     </div>
 
     <div class="row">
       <div class="mx-auto">
+        <span>Sex: </span>
         <select class="persoBtn" id="btnHeatmapSex"></select>
+        <span style="margin-left: 30px">Model: </span>
         <select class="persoBtn" id="btnHeatmapModel"></select>
       </div>
     </div>
-    
+
     <div class="row">
       <div class="col-md-12">
         <center><div id="dataviz_heatmap"></div></center>
+      </div>
+    </div>
+
+    <br>
+    <div class="row justify-content-md-center">
+      <div class="col-md-8">
+        <p>We found that associations are particularly strong for the following pairs (yellow in the heatmap):</p>
+        <ul>
+          <li>Bulimia and binge eating disorder (HR: 110, 95% CI= 98.4-124.8)</li>
+          <li>Drug abuse and drug dependence (HR: 66, 95% CI = 57.9-75.1)</li>
+          <li>MDE and dysthymia (HR: 60.5, 95% CI = 55.1-66.4)</li>
+        </ul>
+        <p>There were moderate evidence of associations for the following pairs (purple in the heatmap):</p>
+        <ul>
+          <li>Nicotine dependence and OCD (HR: 5.3, 95% CI = 4-6.9)</li>
+          <li>Nicotine dependence and Bulimia nervosa (HR: 5.6, 95% CI = 4.1-7.7)</li>
+          <li>Alcohol dependence and OCD (HR: 5.3, 95% CI = 4.4-6.4)</li>
+        </ul>
       </div>
     </div>
 

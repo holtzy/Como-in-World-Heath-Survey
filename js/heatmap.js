@@ -3,7 +3,7 @@
 // ------------------------------------------------------------------------ //
 
 // set the dimensions and margins of the graph
-var margin = {top: 80, right: 210, bottom: 180, left: 210},
+var margin = {top: 20, right: 210, bottom: 180, left: 210},
   width = 1040 - margin.left - margin.right,
   height = 840 - margin.top - margin.bottom;
 
@@ -120,13 +120,11 @@ var mouseover = function(d) {
     .style("display", "block")
   tooltip
       .html("<span style='color:grey'>Prior disorder: </span>" + d.Prior_disorder + "<br>" + "<span style='color:grey'>Later disorder: </span>" + d.Later_disorder + "<br>" + "HR: " + d.HR + " [" + d.Lower + "-" + d.Upper + "]")
-      .style("left", (d3.mouse(this)[0]+150) + "px")
-      .style("top", (d3.mouse(this)[1]+100) + "px")
 }
 var mousemove = function(d) {
   tooltip
     .style("left", (d3.mouse(this)[0]+150) + "px")
-    .style("top", (d3.mouse(this)[1]+100) + "px")
+    .style("top", (d3.mouse(this)[1]+50) + "px")
 }
 var mouseleave = function(d) {
   tooltip
