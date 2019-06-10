@@ -76,6 +76,29 @@ svg_heatmap.selectAll("Ylabels")
 
 
 
+// ======================= //
+// BUILD BUTTON
+// ======================= //
+
+// btn: Sex
+d3.select("#btnHeatmapSex")
+  .selectAll('myOptions')
+  .data(['All', 'Male', 'Female'])
+  .enter()
+  .append('option')
+  .text(function (d) { return d }) // text showed in the menu
+  .attr("value", function (d) { return d; }) // corresponding value returned by the button
+
+// btn: Model
+d3.select("#btnHeatmapModel")
+  .selectAll('myOptions')
+  .data(['A', 'B'])
+  .enter()
+  .append('option')
+  .text(function (d) { return d }) // text showed in the menu
+  .attr("value", function (d) { return d; }) // corresponding value returned by the button
+
+
 // ------------------------------------------------------------------------ //
 // TOOLTIP
 // ------------------------------------------------------------------------ //
@@ -86,6 +109,7 @@ var tooltip = d3.select("#dataviz_heatmap")
     .style("opacity", 0)
     .attr("class", "tooltip")
     .style("font-size", "16px")
+    .style("display", "none")
 
 // Three function that change the tooltip when user hover / move / leave a cell
 var mouseover = function(d) {
@@ -93,6 +117,7 @@ var mouseover = function(d) {
     .transition()
     .duration(200)
     .style("opacity", 1)
+    .style("display", "block")
   tooltip
       .html("<span style='color:grey'>Prior disorder: </span>" + d.Prior_disorder + "<br>" + "<span style='color:grey'>Later disorder: </span>" + d.Later_disorder + "<br>" + "HR: " + d.HR + " [" + d.Lower + "-" + d.Upper + "]")
       .style("left", (d3.mouse(this)[0]+150) + "px")
@@ -108,6 +133,8 @@ var mouseleave = function(d) {
     .transition()
     .duration(200)
     .style("opacity", 0)
+    .style("display", "none")
+
 }
 
 
@@ -119,30 +146,77 @@ var mouseleave = function(d) {
 // SHAPES
 // ------------------------------------------------------------------------ //
 
-// add the squares
-svg_heatmap.selectAll()
-  .data(dataHeatmap, function(d) {return d.Prior_disorder+':'+d.Later_disorder;})
+// Initialize square:
+data = dataHeatmap.filter(function(d){ return (
+  d.Sex == "All" &&
+  d.Model == "A"
+)})
+svg_heatmap
+  .selectAll(".heatmapRect")
+  .data(data)
   .enter()
   .append("rect")
+    .attr("class", "heatmapRect")
     .attr("x", function(d) { return (x(d.Prior_disorder) + myPadding(myGroup(d.Prior_disorder))) })
-    .attr("y", function(d) { console.log(d.Later_disorder) ; console.log(y(d.Later_disorder)) ; return (y(d.Later_disorder) + myPaddingY(myGroup(d.Later_disorder))) })
+    .attr("y", function(d) { return (y(d.Later_disorder) + myPaddingY(myGroup(d.Later_disorder))) })
     .attr("rx", 0)
     .attr("ry", 0)
-    .attr("width", 0 )
-    .attr("height", 0 )
-    .style("fill", function(d) { return myColor2(d.HR)} )
-    .style("stroke-width", 4)
-    .style("stroke", "none")
-    .style("opacity", 0.8)
-  .on("mouseover", mouseover)
-  .on("mousemove", mousemove)
-  .on("mouseleave", mouseleave)
-
-// Animation at start
-svg_heatmap
-    .selectAll("rect")
-    .transition()
-    .duration(1000)
-    .delay(function(d,i){ return i*3 })
     .attr("width", x.bandwidth() )
     .attr("height", y.bandwidth() )
+    //.style("fill", "grey" )
+    .style("stroke-width", 4)
+    .style("stroke", "none")
+    .style("opacity", 0)
+    .on("mouseover", mouseover)
+    .on("mousemove", mousemove)
+    .on("mouseleave", mouseleave)
+  .transition()
+  .duration(200)
+   .style("opacity", 1)
+
+
+function updateChart(){
+
+  // Recover the Sex option
+  var selector = document.getElementById('btnHeatmapSex');
+  var selectedSex = selector[selector.selectedIndex].value;
+
+  // Recover the Sex option
+  var selector = document.getElementById('btnHeatmapModel');
+  var selectedModel = selector[selector.selectedIndex].value;
+
+  // filter appropriate data:
+  let data = dataHeatmap.filter(function(d){ return (
+    d.Sex == selectedSex &&
+    d.Model == selectedModel
+  )})
+
+  // add the squares
+  var v = svg_heatmap
+    .selectAll(".heatmapRect")
+    .data(data)
+  v
+    .enter()
+    .append("rect")
+    .merge(v)
+    .transition()
+    .duration(1000)
+      .attr("class", "heatmapRect")
+      .attr("x", function(d) { return (x(d.Prior_disorder) + myPadding(myGroup(d.Prior_disorder))) })
+      .attr("y", function(d) { return (y(d.Later_disorder) + myPaddingY(myGroup(d.Later_disorder))) })
+      .style("fill", function(d) { return d.HR === undefined ? "#DCDCDC" : myColor2(d.HR)} )
+      .style("opacity", 1)
+
+  v
+    .exit()
+    .transition()
+    .remove()
+}
+
+// Initialize
+updateChart()
+
+
+// Event listener
+d3.select("#btnHeatmapSex").on("change", updateChart)
+d3.select("#btnHeatmapModel").on("change", updateChart)

@@ -93,14 +93,33 @@ close(fileConn)
 
 
 
+
+
+
+
+
 # ----------
 # Preparation for the heatmap
 # ----------
 
-# Filter model
-don <- data %>%
-  filter(Model == "A" & Sex == "All")
+# No filter
+don <- data
+
+# Rename sex
+don <- don
+  mutate(Sex = gsub("M", "Male", Sex)) %>%
+  mutate(Sex = gsub("F", "Female", Sex))
   
+# Check evertyhing is OK
+head(don)
+summary(don)
+unique(don$Prior_disorder)
+unique(don$Later_disorder)
+unique(data$Prior_disorder) %>% sort ==  unique(data$Later_disorder) %>% sort
+don %>% filter(Prior_disorder=="IED")
+# Not a lot of data for Anorexia Nervosa for instance:
+don %>% filter(Later_disorder=="Anorexia nervosa")
+
 # Write result at a .js object
 tosave <- paste("dataHeatmap = ", toJSON(don))
 fileConn<-file("dataHeatmap.js")
@@ -108,13 +127,6 @@ writeLines(tosave, fileConn)
 close(fileConn)
 
 
-head(don)
-summary(don)
-unique(don$Prior_disorder)
-unique(don$Later_disorder)
-
-don %>% filter(Prior_disorder=="IED")
-don %>% filter(Later_disorder=="Anorexia nervosa")
 
 
 
