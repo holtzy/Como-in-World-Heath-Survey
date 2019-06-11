@@ -45,6 +45,8 @@ svg
 
 
 
+
+
 // ======================= //
 // X SCALE AND AXIS
 // ======================= //
@@ -59,20 +61,6 @@ var x = d3.scaleLinear()
   .domain([1,6])
   .range([ 10, width-10]);
 
-// Add the labels
-var xAxisLabels = svg
-  .filter(function(d){return (d=="Oppositional defiant disorder" || d=="Nicotine dependence" || d=="Alcohol abuse" || d=="Alcohol dependence" || d=="Drug abuse" || d=="Drug dependence" ) })
-  .selectAll("myXLabels")
-  .data([1,2,3,4,5,6])
-  .enter()
-  .append("text")
-    .attr('x', 0)
-    .attr('y', 0)
-    .style("text-anchor", "end")
-    .text( d => buildLabelFromId(d) )
-    .style("font-size", 9)
-    .style("fill", 'grey')
-    .attr("transform", function(d){ return( "translate(" + (x(d) + "," + (height+9) + ")rotate(-45)")) })
 
 
 
@@ -84,7 +72,21 @@ var xAxisLabels = svg
 // A scale for the Y axis
 var y = d3.scaleLinear()
   .domain([0,200])
-  .range([ height-10, 10]);
+  .range([ height-10, 40]);
+
+// Add the labels
+let myYaxis = svg.append("g")
+  .filter(function(d){return (d=="Depression" || d=="Specific Phobia" || d=="Anorexia" || d=="Oppositional defiant disorder" ) })
+  .call(d3.axisLeft(y).tickSize(0).ticks(4))
+myYaxis.selectAll("text")
+    .style("font-size", 9)
+    .style("fill", "grey")
+myYaxis.select(".domain").remove()
+
+
+
+
+
 
 
 
@@ -181,6 +183,29 @@ var mouseleave = function(d) {
 // ======================= //
 
 function updateChart(){
+
+  // How many cols am I gonna have? (depends on window width)
+  let currentWidth = document.getElementById("dataviz_evolution").offsetWidth
+  let colNumber = Math.floor( currentWidth / ( width + margin.left + margin.right) )
+
+  // Add the X axis labels
+  toDisplay = allDisorder.slice(1).slice(-colNumber)
+  if (typeof xAxisLabels != "undefined") {
+     xAxisLabels.remove();
+  }
+  xAxisLabels = svg
+    .filter(function(d){console.log(d) ;  console.log(toDisplay.includes(d)) ; return toDisplay.includes(d) })
+    .selectAll("myXLabels")
+    .data([1,2,3,4,5,6])
+    .enter()
+    .append("text")
+      .attr('x', 0)
+      .attr('y', 0)
+      .style("text-anchor", "end")
+      .text( d => buildLabelFromId(d) )
+      .style("font-size", 9)
+      .style("fill", 'grey')
+      .attr("transform", function(d){ return( "translate(" + (x(d) + "," + (height+9) + ")rotate(-45)")) })
 
   // Recover the Mental Disorder option?
   var selector = document.getElementById('btnFocusDisorder');
@@ -290,3 +315,6 @@ d3.select("#btnData").on("change", updateChart)
 
 // Listen to the type: absolute vs HR
 d3.select("#btnSexAOO").on("change", updateChart)
+
+// Add an event listener that run the function when dimension change
+window.addEventListener('resize', updateChart );
