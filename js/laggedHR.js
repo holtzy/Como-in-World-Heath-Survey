@@ -74,14 +74,6 @@ var y = d3.scaleLinear()
   .domain([0,200])
   .range([ height-10, 40]);
 
-// Add the labels
-let myYaxis = svg.append("g")
-  .filter(function(d){return (d=="Depression" || d=="Specific Phobia" || d=="Anorexia" || d=="Oppositional defiant disorder" ) })
-  .call(d3.axisLeft(y).tickSize(0).ticks(4))
-myYaxis.selectAll("text")
-    .style("font-size", 9)
-    .style("fill", "grey")
-myYaxis.select(".domain").remove()
 
 
 
@@ -194,7 +186,7 @@ function updateChart(){
      xAxisLabels.remove();
   }
   xAxisLabels = svg
-    .filter(function(d){console.log(d) ;  console.log(toDisplay.includes(d)) ; return toDisplay.includes(d) })
+    .filter(function(d){return toDisplay.includes(d) })
     .selectAll("myXLabels")
     .data([1,2,3,4,5,6])
     .enter()
@@ -206,6 +198,22 @@ function updateChart(){
       .style("font-size", 9)
       .style("fill", 'grey')
       .attr("transform", function(d){ return( "translate(" + (x(d) + "," + (height+9) + ")rotate(-45)")) })
+
+  // Add the Y Axis labels
+  var toDisplayY = [];
+  for (var i = 1; i <= allDisorder.length; i=i+colNumber) {
+   toDisplayY.push(allDisorder[i-1]);
+  }
+  if (typeof myYaxis != "undefined") {
+     myYaxis.remove();
+  }
+  myYaxis = svg.append("g")
+    .filter(function(d){return toDisplayY.includes(d) })
+    .call(d3.axisLeft(y).tickSize(0).ticks(4))
+  myYaxis.selectAll("text")
+      .style("font-size", 9)
+      .style("fill", "grey")
+  myYaxis.select(".domain").remove()
 
   // Recover the Mental Disorder option?
   var selector = document.getElementById('btnFocusDisorder');
