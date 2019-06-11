@@ -132,39 +132,43 @@ d3.select("#btnSexAOO")
 // TOOLTIP
 // ------------------------------------------------------------------------ //
 
-// create a tooltip
-var tooltip = d3.select("#dataviz_evolution")
-  .append("div")
-    .attr("class", "tooltip")
-    .style("font-size", "16px")
-    .style("display", "block")
-    .style("opacity", 1)
-
+// Time of transition
+let transitionTime = 500
 
 // Three function that change the tooltip when user hover / move / leave a cell
 var mouseover = function(d) {
-  tooltip
-    .style("display", "block")
-  tooltip
-    .html(
-      "<span style='color:grey'>Prior disorder: </span>" + d.Prior_disorder +
-      "<br>" +
-      "<span style='color:grey'>Later disorder: </span>" + d.Later_disorder +
-      "<br>" +
-      "<span style='color:grey'>HR: </span>" + d.Value + " [" + d.Low + "-" + d.High + "]" +
-      "<br>" +
-      "<span style='color:grey'>Time: </span>" + buildLabelFromId(d.Time)
-    )
+
+  // Recover the year that is hovered + Highlight it every where
+  currentYear = "time"+buildLabelFromId(d.Time)
+  d3.selectAll("."+currentYear)
+    .attr("r", 13)
+    .style("stroke-width", 2)
+
+  // Highlight the disease compared to others
+  currentDisease = d.Later_disorder.replace(/\s+/g, '')
+  d3.selectAll(".myCircle")
+    .style("opacity", 0.2)
+  d3.selectAll("."+currentDisease)
+    .style("opacity", 1)
+    .attr("r", 9)
+
+  // Add text to show exact value
+  d3.selectAll(".myText" + " " + "." + currentDisease)
+    .style("opacity", 1)
 }
-var mousemove = function(d) {
-  tooltip
-    .style("left", (d3.mouse(this)[0]+590) + "px")
-    .style("top", (d3.mouse(this)[1]+450) + "px")
-}
+
+// Back to normal
 var mouseleave = function(d) {
+  d3.selectAll(".myCircle")
+    .transition()
+    .duration(transitionTime)
+    .style("opacity", 1)
+    .attr("r", 5)
+    .style("stroke-width", 0)
+  d3.selectAll(".myText")
+    .style("opacity", 0)
   tooltip
     .style("display", "none")
-
 }
 
 
@@ -281,14 +285,15 @@ function updateChart(){
     .enter()
     .append("circle")
     .merge(u)
-      .attr("class", "myCircle")
+      .attr("class", function(d){ return "myCircle" + " time" + buildLabelFromId(d.Time) + " " + d.Later_disorder.replace(/\s+/g, '') })
       .attr("cx", function(d,i){ return(x(+d.Time)) } )
       .attr("cy", function(d,i){ return(y(+d.Value)) } )
       .attr("r", 5)
       .style("fill", d => myColor(myGroup(d.Later_disorder)) )
       .style("opacity",0)
+      .style("stroke", "black")
+      .style("stroke-width", 0)
     .on("mouseover", mouseover)
-    .on("mousemove", mousemove)
     .on("mouseleave", mouseleave)
     .transition()
     .duration(1000)
@@ -299,6 +304,29 @@ function updateChart(){
     .duration(0)
     .style("opacity",0)
     .remove()
+
+
+  // Add Text
+  var w = svg
+    .selectAll(".myText")
+    .data(function(d,i){
+      return(currentData.filter(function(c){return (c.Later_disorder==d)}))
+    })
+  w
+    .enter()
+    .append("text")
+    .merge(w)
+      .attr("class", function(d){ return "myText" + " " + d.Later_disorder.replace(/\s+/g, '') })
+      .attr("x", function(d){ return(x(+d.Time) ) } )
+      .attr("y", function(d){ return(y(+d.Value) - 16) } )
+      .text( d => d.Value )
+      .style("opacity", 0)
+      .style("text-anchor", "middle")
+      .style("font-size", 11)
+  w
+    .exit()
+    .remove()
+
 }
 
 
