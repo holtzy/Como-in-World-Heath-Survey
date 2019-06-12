@@ -71,7 +71,6 @@ var x = d3.scaleLinear()
 
 // A scale for the Y axis
 var y = d3.scaleLinear()
-  .domain([0,200])
   .range([ height-10, 40]);
 
 
@@ -106,36 +105,19 @@ d3.select("#btnModel")
   .text(function (d) { return "Model " + d }) // text showed in the menu
   .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
-// btn: HR or absolute
-d3.select("#btnData")
-  .selectAll('myOptions')
-  .data(["dataEvolutionHR", "dataEvolutionAbsolute"])
-  .enter()
-  .append('option')
-  .text(function (d) { return d == "dataEvolutionHR"? "Hazard Ratio" : "Absolute %" }) // text showed in the menu
-  .attr("value", function (d) { return d; }) // corresponding value returned by the button
-
-// btn: sex, all, or AOO
-d3.select("#btnSexAOO")
-  .selectAll('myOptions')
-  .data(["All", "Sex", "AOO"])
-  .enter()
-  .append('option')
-  .text(function (d) { return d }) // text showed in the menu
-  .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
 
 
 
 
 // ------------------------------------------------------------------------ //
-// TOOLTIP
+// HIGHLIGHTING ON HOVER
 // ------------------------------------------------------------------------ //
 
 // Time of transition
 let transitionTime = 500
 
-// Three function that change the tooltip when user hover / move / leave a cell
+// When user hover a dot
 var mouseover = function(d) {
 
   // Recover the year that is hovered + Highlight it every where
@@ -167,8 +149,6 @@ var mouseleave = function(d) {
     .style("stroke-width", 0)
   d3.selectAll(".myText")
     .style("opacity", 0)
-  tooltip
-    .style("display", "none")
 }
 
 
@@ -183,6 +163,28 @@ function updateChart(){
   // How many cols am I gonna have? (depends on window width)
   let currentWidth = document.getElementById("dataviz_evolution").offsetWidth
   let colNumber = Math.floor( currentWidth / ( width + margin.left + margin.right) )
+
+  // Recover the Mental Disorder option?
+  var selector = document.getElementById('btnFocusDisorder');
+  var selectedMentalDisOption = selector[selector.selectedIndex].value;
+
+  // Recover the model used
+  var btnModel = document.getElementById('btnModel');
+  var selectedModel = btnModel[btnModel.selectedIndex].value;
+
+  // Filter data
+  var currentData = dataEvolutionHR
+    .filter(function(d){return (d.Prior_disorder==selectedMentalDisOption && d.Model==selectedModel ) })
+
+  // Nest data:
+  var sumstat = d3.nest() // nest function allows to group the calculation per level of a factor
+    .key(function(d) { return d.Later_disorder;})
+    .key(function(d) { return d.Model;})
+    .entries(currentData);
+
+  // Update the Y domain depending on prior disorder
+  currentMax = d3.max(currentData, function(d) { return +d.Value; })
+  y.domain([0,currentMax])
 
   // Add the X axis labels
   toDisplay = allDisorder.slice(1).slice(-colNumber)
@@ -218,24 +220,6 @@ function updateChart(){
       .style("font-size", 9)
       .style("fill", "grey")
   myYaxis.select(".domain").remove()
-
-  // Recover the Mental Disorder option?
-  var selector = document.getElementById('btnFocusDisorder');
-  var selectedMentalDisOption = selector[selector.selectedIndex].value;
-
-  // Recover the model used
-  var btnModel = document.getElementById('btnModel');
-  var selectedModel = btnModel[btnModel.selectedIndex].value;
-
-  // Filter data
-  var currentData = dataEvolutionHR
-    .filter(function(d){return (d.Prior_disorder==selectedMentalDisOption && d.Model==selectedModel ) })
-
-  // Nest data:
-  var sumstat = d3.nest() // nest function allows to group the calculation per level of a factor
-    .key(function(d) { return d.Later_disorder;})
-    .key(function(d) { return d.Model;})
-    .entries(currentData);
 
   // --- Add lines
   var v = svg
@@ -275,7 +259,7 @@ function updateChart(){
     .style("opacity",0)
     .remove()
 
-  // Add circles
+  // -- Add circles
   var u = svg
     .selectAll(".myCircle")
     .data(function(d,i){
@@ -354,3 +338,9 @@ d3.select("#btnSexAOO").on("change", updateChart)
 
 // Add an event listener that run the function when dimension change
 window.addEventListener('resize', updateChart );
+
+// Show bipolar disorder:
+d3.select("#showAlcoholAbuse").on("click", function(){
+  document.getElementById("btnFocusDisorder").value = "Alcohol abuse"
+  updateChart()
+})
