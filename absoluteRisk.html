@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Comorbidity in the World Health Survey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Comorbidity in the World Health Survey">
+    <meta name="keywords" content="Mental, Disorders, Schizophrenia">
+    <meta name="author" content="Yan Holtz et al.">
+
+    <!-- Control appearance when share by social media -->
+    <meta property="og:title" content="Comorbidity in the World Health Survey" />
+    <meta property="og:image" content="img/TODO" />
+    <meta property="og:description" content="Comorbidity in the World Health Survey" />
+    <meta property='og:url' content="TODO.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- D3.JS -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- Load d3.js plugins -->
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+</head>
+
+<body id="page-top">
+
+
+
+
+
+
+  <!-- =======================  MAIN MENU ON TOP ======================= -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+      <a href="index.html">HOME</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="map.html">Map</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="histogram.html.html">Distribution</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="heatmap.html">Heatmap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="barplot.html">Symmetry</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sankey.html">Sankey</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="evolution.html">Evolution</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <a class="btn btn-primary leftLink" href="sankey.html">&#x2039; Sankey</a>
+
+
+
+
+
+
+
+
+
+<!-- =======================  SECTION MAP ======================= -->
+
+<section id="map" class="bg" style="margin-bottom: 0px; padding-bottom: 0px">
+  <div class="container">
+    <h3 style="text-align: center">Absolute risk</h3>
+    <hr style="max-width: 100px">
+    <div class="row justify-content-md-center">
+      <div class="col-lg-5" style="text-align: right">
+        <p>This plot shows the overall absolute risk of developing later
+          disorder among respondents with a prior mental disorder. Note:
+          the X-axis limits (time since onset) were restricted to 40 years.
+          In general,  the risk of developing later disorder ranges between
+          5-25%. Females had a greater risk of developing later disorder
+          compared to males with the exception of bipolar disorder, OCD
+          and substance-use disorder.
+        </p>
+      </div>
+      <div class="col-lg-5">
+        <p>The absolute risk is particularly high for the following pairs 40
+          years after the initial onset:</p>
+        <ul>
+          <li>Drug abuse and <a id="showAlcoholAbuse" class="persoBtn">nicotine dependance</a> (~75%)</li>
+          <li>Conduct disorder and nicotine dependence (~75%)</li>
+          <li>Dysthymia and MDE (~80%)</li>
+        </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="evolution-button" class="bg-light" style="margin-top: 0px; margin-bottom: 0px; padding-top: 30px; padding-bottom: 30px; ">
+  <div class="container">
+    <div class="row">
+      <div class="mx-auto">
+        <span>Prior disorder: </span>
+        <select class="persoBtn" id="btnFocusDisorder"></select>
+        <span style="margin-left: 10px">Model: </span>
+        <select class="persoBtn" id="btnModel"></select>
+        <span style="margin-left: 10px">Split by: </span>
+        <select class="persoBtn" id="btnSexAOO"></select>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="evolution-chart" class="bg" style="margin-top: 0px; padding-top: 30px">
+  <div class="container">
+    <div id="dataviz_evolution"></div>
+  </div>
+</section>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- ======================= FOOTER SECTION ================================ -->
+    <footer class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright">Copyright &copy; The <a href="https://www.nbepi.com">Como project</a> 2018</span>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="https://www.nbepi.com">
+                  <i class="fa fa-home"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://github.com/holtzy">
+                  <i class="fa fa-github"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.linkedin.com/in/yan-holtz-2477534a/">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline quicklinks">
+              <li class="list-inline-item">
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">Terms of Use</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+<!-- ======================================================================= -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======================== JAVASCRIPT SECTION =========================== -->
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/agency.min.js"></script>
+
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- general environment -->
+    <script src="js/general_variable.js"></script>
+
+    <!-- DATA -->
+    <script src="DATA/dataEvolutionHR.js"></script>
+    <script src="DATA/dataEvolutionAbsolute.js"></script>
+
+    <!-- Load heatmap code -->
+    <script src="js/absoluteRisk.js"></script>"
+
+
+
+
+
+
+
+
+
+<!-- ======================================================================= -->
+  </body>
+
+</html>
