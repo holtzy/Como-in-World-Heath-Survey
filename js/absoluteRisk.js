@@ -76,6 +76,21 @@ var y = d3.scaleLinear()
 
 
 
+// ======================= //
+// OTHER SCALES
+// ======================= //
+
+var reformatEndLabel = d3.scaleOrdinal()
+  .domain(["below 20","20to40","above40", "All", "M", "F"])
+  .range(["20-", "20-40", "40+", "All", "M", "F"]);
+
+var colorLine = d3.scaleOrdinal()
+  .domain(["below 20","20to40","above40", "All", "M", "F"])
+  .range(["#668B8B", "#33A1C9", "#344152", "black", "blue", "pink"]);
+
+
+
+
 
 
 
@@ -94,15 +109,6 @@ d3.select("#btnFocusDisorder")
   .enter()
   .append('option')
   .text(function (d) { return d }) // text showed in the menu
-  .attr("value", function (d) { return d; }) // corresponding value returned by the button
-
-// btn: Model
-d3.select("#btnModel")
-  .selectAll('myOptions')
-  .data(["A", "B"])
-  .enter()
-  .append('option')
-  .text(function (d) { return "Model " + d }) // text showed in the menu
   .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
 // btn: sex, all, or AOO
@@ -175,10 +181,6 @@ function updateChart(){
   // Recover the Mental Disorder option?
   var selector = document.getElementById('btnFocusDisorder');
   var selectedMentalDisOption = selector[selector.selectedIndex].value;
-
-  // Recover the model used
-  var btnModel = document.getElementById('btnModel');
-  var selectedModel = btnModel[btnModel.selectedIndex].value;
 
   // Recover if split by sex or Age of Onset (AOO)
   var btnSexAOO = document.getElementById('btnSexAOO');
@@ -256,8 +258,8 @@ function updateChart(){
       .attr("class", "myLines")
       .attr("fill", "none")
       .style("opacity", 1)
-      .attr("stroke-width", 1)
-      .attr("stroke", d => myColor(myGroup(d.key)) )
+      .attr("stroke-width", 2)
+      .attr("stroke", d => colorLine(d.key) )
       .attr("d", function(d){
         return d3.line()
           .x(function(d) { return x(+d.Time); })
@@ -271,7 +273,35 @@ function updateChart(){
     .style("opacity",0)
     .remove()
 
-
+  // --- Add labels at line end
+  var w = svg
+    .selectAll(".myEndLabels")
+    .data(function(d,i){
+      all = sumstat.map(function(l){return l.key})
+      index = all.indexOf(d)
+      if( index == -1){
+        return []
+      } else {
+        out = [sumstat[index]][0].values
+        return out;
+      }
+    }
+    )
+  w
+    .enter()
+    .append("text")
+    .merge(w)
+    .transition()
+    .duration(1000)
+      .attr("x", function(d){ len = d.values.length ; return x(d.values[len-1].Time)+ 5 })
+      .attr("y", function(d){ len = d.values.length ; return y(d.values[len-1].Value) })
+      .text(function(d){ len = d.values.length ; return reformatEndLabel(d.key) })
+      .style("fill", d => colorLine(d.key) )
+      .style("font-size", 10)
+      .attr("class", "myEndLabels")
+  w
+    .exit()
+    .remove()
 }
 
 
@@ -287,9 +317,6 @@ updateChart()
 
 // Listen to the mental disorder selection button
 d3.select("#btnFocusDisorder").on("change", updateChart)
-
-// Listen to the Model
-d3.select("#btnModel").on("change", updateChart)
 
 // Listen to the type: absolute vs HR
 d3.select("#btnData").on("change", updateChart)
