@@ -23,10 +23,17 @@ var giveShortName = d3.scaleOrdinal()
                 "Anorexia","Bulimia","Binge eating","Intermittent explosive","ADHD","Conduct disorder","Oppositional defiant",
                 "Nicotine dependence","Alcohol abuse","Alcohol dependence","Drug abuse","Drug dependence"]);
 
-// A set of 4 colors:
-var col1 = "#482677FF", col2 = "#2D708EFF", col3 = "#29AF7FFF", col4 = "#B8DE29FF"
+// A scale that returns the very short name of a disorder:
+var giveVeryShortName = d3.scaleOrdinal()
+  .domain(allDisorder)
+  .range([ "Depression","Bipolar","Dysthymia",
+                "Panic","Anxiety","Soc. phobia","Spe. phobia","Agoraphobia","PTSD","Obs. comp. dis.","Adult sep. anxiety","Child sep. anxiety",
+                "Anorexia","Bulimia","Binge eating","Int. explosive","ADHD","Conduct disorder","Oppositional defiant",
+                "Nicotine dep.","Alcohol abuse","Alcohol dep.","Drug abuse","Drug dep."]);
+
 
 // A color scale for groups: group -> color
+var col1 = "#482677FF", col2 = "#2D708EFF", col3 = "#29AF7FFF", col4 = "#B8DE29FF"
 var myColor = d3.scaleOrdinal()
   .domain(allGroup)
   .range([col1, col2, col3, col4]);
