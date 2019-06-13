@@ -64,11 +64,11 @@ d3.queue()
         .html(
           "<b>"+d.myDetail.country+"</b>" +
           "<br>" +
-          "Sample size: " + d.myDetail.sample_size1 +
+          "<span style='color:grey'>Sample size: </span>" + d.myDetail.sample_size1 +
           "<br>" +
-          "Response rate (%): " + d.myDetail.response_rate +
+          "<span style='color:grey'>Response rate (%): </span>" + d.myDetail.response_rate +
           "<br>" +
-          "Year: " + d.myDetail.year
+          "<span style='color:grey'>Year: </span>" + d.myDetail.year
         )
         .style("left", (d3.mouse(this)[0]+670) + "px")
         .style("top", (d3.mouse(this)[1]+500) + "px")
@@ -79,19 +79,19 @@ d3.queue()
           .html(
             "<b>"+d.myDetail.country+"</b>" +
             "<br>" +
-            "Sample size: " + d.myDetail.sample_size1 +
+            "<span style='color:grey'>Sample size: </span>" + d.myDetail.sample_size1 +
             "<br>" +
-            "Response rate (%): " + d.myDetail.response_rate +
+            "<span style='color:grey'>Response rate (%): </span>" + d.myDetail.response_rate +
             "<br>" +
-            "Year: " + d.myDetail.year +
+            "<span style='color:grey'>Year: </span>" + d.myDetail.year +
             "<br>" + "<br>" +
             "<b>"+"Colombia (Medellin)"+"</b>" +
             "<br>" +
-            "Sample size: " + "4261" +
+            "<span style='color:grey'>Sample size: </span>" + "4261" +
             "<br>" +
-            "Response rate (%): " + "97.2" +
+            "<span style='color:grey'>Response rate (%): </span>" + "97.2" +
             "<br>" +
-            "Year: " + "2011-12"
+            "<span style='color:grey'>Year: </span>" + "2011-12"
           )
       }
     }

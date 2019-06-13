@@ -2,10 +2,13 @@
 // SVG AREA
 // ------------------------------------------------------------------------ //
 
+// What is the current div width? Deduce a proper height
+let currentWidth = document.getElementById("dataviz_dotplot").offsetWidth
+
 // set the dimensions and margins of the graph
 var margin = {top: 0, right: 25, bottom: 50, left: 115},
-  width = 1180 - margin.left - margin.right,
-  height = 700 - margin.top - margin.bottom;
+  width = currentWidth - margin.left - margin.right,
+  height = currentWidth*1 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg_dotplot = d3.select("#dataviz_dotplot")
@@ -144,7 +147,7 @@ var dots = svg_dotplot.selectAll(".circle")
   .enter()
     .append("circle")
       .attr("class", "circle")
-      .attr("r", 7)
+      .attr("r", 4)
       .attr("cx", function(d) { return x(+d.HR_rounded); })
       .attr("cy", function(d) { return y(1) })
       .style("fill", function(d){ return myColor(d.HR)})

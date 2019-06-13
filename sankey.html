@@ -49,35 +49,45 @@
 
 
 
-  <!-- =======================  MAIN MENU ON TOP ======================= -->
-  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-    <div class="container">
-      <a href="index.html">HOME</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fa fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="map.html">Map</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="histogram.html">Distribution</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="heatmap.html">Heatmap</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="barplot.html">Symmetry</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="sankey.html">Sankey</a>
-          </li>
-        </ul>
+    <!-- =======================  MAIN MENU ON TOP ======================= -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+      <div class="container">
+        <a href="index.html">HOME</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="map.html">Map</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="histogram.html">Distribution</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="heatmap.html">Heatmap</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="barplot.html">Symmetry</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sankey.html">Sankey</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Evolution
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="laggedHR.html">Lagged HR</a>
+                <a class="dropdown-item" href="absoluteRisk.html">Absolute Risk</a>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+
 
 
 
@@ -87,6 +97,7 @@
   <!-- =======================  MENU AND SIDE ARROW ======================= -->
 
   <a class="btn btn-primary leftLink" href="barplot.html">&#x2039; barplot</a>
+  <a class="btn btn-primary rightLink" href="laggedHR.html">lagged HR &#x203A;</a>
 
 
 

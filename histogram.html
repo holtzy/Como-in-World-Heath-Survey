@@ -42,38 +42,46 @@
 
 
 
-<!-- =======================  MAIN MENU ON TOP ======================= -->
-<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-  <div class="container">
-    <a href="index.html">HOME</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      Menu
-      <i class="fa fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav text-uppercase ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="map.html">Map</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="histogram.html">Distribution</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="heatmap.html">Heatmap</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="barplot.html">Symmetry</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="sankey.html">Sankey</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="evolution.html">Evolution</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+
+    <!-- =======================  MAIN MENU ON TOP ======================= -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+      <div class="container">
+        <a href="index.html">HOME</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="map.html">Map</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="histogram.html">Distribution</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="heatmap.html">Heatmap</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="barplot.html">Symmetry</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sankey.html">Sankey</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Evolution
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="laggedHR.html">Lagged HR</a>
+                <a class="dropdown-item" href="absoluteRisk.html">Absolute Risk</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
 
 
 <!-- =======================  SIDE ARROW ======================= -->
@@ -90,7 +98,7 @@
 
     <div class="row">
       <div class="col-md-6 mx-auto" id="dataviz_dotplot" style="padding-top: 0px"></div>
-      <div class="col-md-6 mx-auto" style="text-align: right; height: 400px">
+      <div class="col-md-6 mx-auto" class="text-histogram">
         <h3>Como is pervasive</h3>
         <hr>
         <p>We estimated hazard ratios between each pair of disorders. Most of the estimates are over 1, meaning that being diagnosed with one of the disorders increased the risk of a subsequent diagnosis with each of the other disorders.</p>

@@ -46,42 +46,51 @@
 
 
 
-  <!-- =======================  MAIN MENU ON TOP ======================= -->
-  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-    <div class="container">
-      <a href="index.html">HOME</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fa fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase ml-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="map.html">Map</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="histogram.html.html">Distribution</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="heatmap.html">Heatmap</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="barplot.html">Symmetry</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sankey.html">Sankey</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="evolution.html">Evolution</a>
-          </li>
-        </ul>
+
+    <!-- =======================  MAIN MENU ON TOP ======================= -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+      <div class="container">
+        <a href="index.html">HOME</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="map.html">Map</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="histogram.html">Distribution</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="heatmap.html">Heatmap</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="barplot.html">Symmetry</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sankey.html">Sankey</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Evolution
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="laggedHR.html">Lagged HR</a>
+                <a class="dropdown-item" href="absoluteRisk.html">Absolute Risk</a>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
 
 
-  <a class="btn btn-primary leftLink" href="sankey.html">&#x2039; Sankey</a>
+
+  <a class="btn btn-primary leftLink" href="sankey.html">&#x2039; Flow</a>
+  <a class="btn btn-primary rightLink" href="absoluteRisk.html">Absolute Risk &#x203A;</a>
 
 
 
@@ -98,20 +107,22 @@
     <h3 style="text-align: center">Lagged Hazard Ratio</h3>
     <hr style="max-width: 100px">
     <div class="row justify-content-md-center">
-      <div class="col-lg-5" style="text-align: right">
+      <div class="col-lg-5" style="text-align: justify">
         <p>This line chart shows the hazard ratio of later disorder depending on a
           previous onset of prior disorder and the time lagged since the onset of
-          the prior disorder. In general, respondents were most vulnerable in terms
+          the prior disorder.
+          <br>
+          In general, respondents were most vulnerable in terms
           of developing later disorder in the year following their prior disorder
           onset. Their risk of developing later disorder dropped rapidly from
-          year 2 and flattens after
+          year 2 and flattens after 10 years.
         </p>
       </div>
-      <div class="col-lg-5">
+      <div class="col-lg-5" style="text-align: justify">
         <p>
-          10 years. For example, the risk of developing
+          For example, the risk of developing
           bipolar disorder is 20 times greater in the initial year after developing
-          <a id="showAlcoholAbuse" class="persoBtn">alcohol abuse</a> compared to those without (HR = 20.1, 95% CI = 16.6-24.3).
+          <a href="javascript:void(0)" id="showAlcoholAbuse" class="linkAction">alcohol abuse</a> compared to those without (HR = 20.1, 95% CI = 16.6-24.3).
           Between 2 to 5 years, the risk decreased by half to about 10
           (HR = 9.5, 95% CI = 7.8-11.6) and by 15 years, 3.5 times in those
           with alcohol abuse compared to those without (HR = 3.5, 95% = 2.4-5.1).

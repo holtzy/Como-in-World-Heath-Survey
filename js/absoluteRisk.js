@@ -206,8 +206,8 @@ function updateChart(){
 
   // Add the X axis labels
   toDisplay = allDisorder.slice(1).slice(-colNumber)
-  if (typeof xAxisLabels != "undefined") {
-     xAxisLabels.remove();
+  if (typeof myXaxis != "undefined") {
+     myXaxis.remove();
   }
   myXaxis = svg.append("g")
     .attr("transform", "translate(0,"+height+")")
@@ -328,7 +328,19 @@ d3.select("#btnSexAOO").on("change", updateChart)
 window.addEventListener('resize', updateChart );
 
 // Show bipolar disorder:
-d3.select("#showAlcoholAbuse").on("click", function(){
-  document.getElementById("btnFocusDisorder").value = "Alcohol abuse"
+d3.select("#showDrugAbuse").on("click", function(){
+  document.getElementById("btnFocusDisorder").value = "Drug abuse"
+  updateChart()
+})
+
+// Show bipolar disorder:
+d3.select("#showConductDisorder").on("click", function(){
+  document.getElementById("btnFocusDisorder").value = "Conduct disorder"
+  updateChart()
+})
+
+// Show bipolar disorder:
+d3.select("#showDysthymia").on("click", function(){
+  document.getElementById("btnFocusDisorder").value = "Dysthymia"
   updateChart()
 })
