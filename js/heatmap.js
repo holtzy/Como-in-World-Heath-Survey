@@ -2,10 +2,13 @@
 // SVG AREA
 // ------------------------------------------------------------------------ //
 
+// Get div size
+let currentWidth = document.getElementById("dataviz_heatmap").offsetWidth
+
 // set the dimensions and margins of the graph
-var margin = {top: 20, right: 210, bottom: 180, left: 210},
-  width = 1040 - margin.left - margin.right,
-  height = 840 - margin.top - margin.bottom;
+var margin = {top: 20, right: currentWidth*0.19, bottom: 180, left: currentWidth*0.19},
+  width = currentWidth - margin.left - margin.right,
+  height = currentWidth - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg_heatmap = d3.select("#dataviz_heatmap")
@@ -53,7 +56,7 @@ var xLabels = svg_heatmap.selectAll("Xlabels")
   .data(allDisorder)
   .enter()
   .append("text")
-    .text(function(d){ return d})
+    .text(function(d){ return (currentWidth < 800)? giveVeryShortName(d) : d})
     .attr("x", 0)
     .attr("y", 0)
     .style("font-size", 12)
@@ -66,7 +69,7 @@ svg_heatmap.selectAll("Ylabels")
   .data(allDisorder)
   .enter()
   .append("text")
-    .text(function(d){ return d})
+    .text(function(d){ return (currentWidth < 800)? giveVeryShortName(d) : d})
     .attr("x", -10 )
     .attr("y", function(d) { return (y(d) + myPaddingY(myGroup(d)) + 15) })
     .style("font-size", 12)
