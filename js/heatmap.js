@@ -8,7 +8,7 @@ let currentWidth = document.getElementById("dataviz_heatmap").offsetWidth
 // set the dimensions and margins of the graph
 var margin = {top: 20, right: currentWidth*0.19, bottom: 180, left: currentWidth*0.19},
   width = currentWidth - margin.left - margin.right,
-  height = currentWidth - margin.top - margin.bottom;
+  height = currentWidth*0.9 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg_heatmap = d3.select("#dataviz_heatmap")
