@@ -36,6 +36,7 @@
     <!-- Load d3.js plugins -->
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
 
     <!-- general environment -->
     <script src="js/general_variable.js"></script>
@@ -109,7 +110,7 @@
 
 <!-- =======================  SECTION HEATMAP ======================= -->
 
-<section id="part2">
+<section id="part2" style="margin-bottom: 10px; padding-bottom: 10px;">
   <div class="container">
 
     <div class="row">
@@ -125,16 +126,35 @@
         </p>
       </div>
     </div>
+  </div>
+</section>
 
+<!-- Buttons -->
+<section class="bg-light" style="margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; ">
+  <div class="container">
     <div class="row">
       <div class="mx-auto">
         <span>Sex: </span>
         <select class="persoBtn" id="btnHeatmapSex"></select>
         <span style="margin-left: 30px">Model: </span>
         <select class="persoBtn" id="btnHeatmapModel"></select>
+        <span class="v-align"><svg id="heatmapLegend"></svg></span>
       </div>
     </div>
+  </div>
+</section>
 
+<style>
+.v-align {
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+</style>
+
+<!-- Chart -->
+<section id="evolution-chart" class="bg" style="margin-top: 0px; padding-top: 30px">
+  <div class="container">
     <div class="row">
       <div class="col-md-12">
         <center><div id="dataviz_heatmap"></div></center>

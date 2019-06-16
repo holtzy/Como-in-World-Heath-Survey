@@ -8,7 +8,7 @@ let currentWidth = document.getElementById("dataviz_heatmap").offsetWidth
 // set the dimensions and margins of the graph
 var margin = {top: 20, right: currentWidth*0.19, bottom: 180, left: currentWidth*0.19},
   width = currentWidth - margin.left - margin.right,
-  height = currentWidth*0.9 - margin.top - margin.bottom;
+  height = currentWidth*0.75 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg_heatmap = d3.select("#dataviz_heatmap")
@@ -223,7 +223,39 @@ function updateChart(){
 // Initialize
 updateChart()
 
-
 // Event listener
 d3.select("#btnHeatmapSex").on("change", updateChart)
 d3.select("#btnHeatmapModel").on("change", updateChart)
+
+
+
+
+
+// ------------------------------------------------------------------------ //
+// HEATMAP LEGEND
+// ------------------------------------------------------------------------ //
+
+// Use d3.legend by Susie Lu.
+// https://d3-legend.susielu.com
+
+// Create svg object
+var svgLegend = d3.select("#heatmapLegend")
+  .attr("height", 150)
+  .attr("width", 300)
+
+svgLegend.append("g")
+    .attr("class", "legendQuant")
+    .attr("transform", "translate(40,47)");
+
+var legend = d3.legendColor()
+  .labelFormat(d3.format(".0f"))
+  .title("Hazard Ratio:")
+  .scale(myColor2)
+  .orient('horizontal')
+  .shapeWidth(40)
+  .cells([0, 10, 20, 30, 40, 50])
+
+// Call the legend
+svgLegend
+  .select(".legendQuant")
+  .call(legend);
