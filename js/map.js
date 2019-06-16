@@ -1,13 +1,30 @@
+// ======================= //
+// GLOBAL INITIALIZATION
+// ======================= //
 
 // set the graph margins:
-var margin = {top: 80, right: 25, bottom: 30, left: 40};
-
+var margin = {top: 20, right: 20, bottom: 20, left: 20};
 
 // Data and color scale
 var data = d3.map();
 var colorScale = d3.scaleThreshold()
   .domain([30, 40, 50, 60, 70, 80])
   .range(d3.schemeBlues[7]);
+
+// append the svg object to the body of the page
+var svg = d3.select("#dataviz_worldmap")
+  .append("svg")
+
+// Translate for margin
+svg
+  .append("g")
+  .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")");
+
+// Map and projection
+var path = d3.geoPath();
+
+
 
 
 
@@ -82,33 +99,21 @@ var mouseleave = function(d) {
 
 
 
-  // append the svg object to the body of the page
-  var svg = d3.select("#dataviz_worldmap")
-    .append("svg")
 
 
-// A function that draws the map
+
+// ======================= //
+// FUNCTION THAT DRAWS THE CHART
+// ======================= //
+
 function ready(error, topo) {
   //if (error) throw error;
 
-
-     svg.remove();
+  // Remove current content of the svg element
+  svg.selectAll("*").remove()
 
   // Compute current width
   let currentWidth = document.getElementById("dataviz_worldmap").offsetWidth
-
-  var svg = d3.select("#dataviz_worldmap")
-    .append("svg")
-
-
-  // Translate for margin
-  svg
-    .append("g")
-    .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
-
-  // Map and projection
-  var path = d3.geoPath();
 
   // What is width and height of the chart:
   let width = currentWidth - margin.left - margin.right;
@@ -125,14 +130,11 @@ function ready(error, topo) {
     .translate([width / 2, height / 2]);
 
   // Draw the map
-  let w = svg.append("g")
-    .selectAll(".countryPath")
+  svg.append("g")
+    .selectAll("path")
     .data(topo.features)
-  w
     .enter()
     .append("path")
-    .merge(w)
-    .attr("class", "countryPath")
     // draw each country
     .attr("d", d3.geoPath()
         .projection(projection)
@@ -146,13 +148,7 @@ function ready(error, topo) {
     .on("mouseover", mouseover)
     .on("mousemove", mousemove)
     .on("mouseleave", mouseleave)
-  w
-    .exit()
-    .remove()
-
-
 }
-
 
 
 // Load external data and boot = initialization
