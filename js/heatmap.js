@@ -102,6 +102,9 @@ d3.select("#btnHeatmapModel")
   .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
 
+
+
+
 // ------------------------------------------------------------------------ //
 // TOOLTIP
 // ------------------------------------------------------------------------ //
@@ -121,13 +124,16 @@ var mouseover = function(d) {
     .duration(200)
     .style("opacity", 1)
     .style("display", "block")
+  toRenderHR = d.HR ?
+    d.HR + " [" + d.Lower + "-" + d.Upper + "]" :
+    "No data"
   tooltip
       .html(
         "<span style='color:grey'>Prior disorder: </span>" + d.Prior_disorder +
         "<br>" +
         "<span style='color:grey'>Later disorder: </span>" + d.Later_disorder +
         "<br>" +
-        "HR: " + d.HR + " [" + d.Lower + "-" + d.Upper + "]"
+        "<span style='color:grey'>HR: </span>" + toRenderHR
       )
 }
 var mousemove = function(d) {
