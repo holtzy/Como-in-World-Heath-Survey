@@ -1,13 +1,18 @@
+// Get div size
+let currentWidth = document.getElementById("dataviz_sankey").offsetWidth;
+
 // ------------------------------------------------------------------------ //
 // TOP BUTTONS FOR DISORDER SELECTION
 // ------------------------------------------------------------------------ //
 let allOption = allGroup;
 allGroup.push("All");
 
+let btnMaxWidth = currentWidth < 600 ? "90px" : "200px";
 var selectPrior = d3
   .select("#dataviz_sankey")
   .append("select")
-  .attr("class", "myPersoBtn")
+  .style("max-width", btnMaxWidth)
+  .style("font-size", "13px")
   .style("margin-left", "100px");
 
 var optionsPrior = selectPrior
@@ -25,7 +30,8 @@ var optionsPrior = selectPrior
 var selectLater = d3
   .select("#dataviz_sankey")
   .append("select")
-  .attr("class", "myPersoBtn")
+  .style("max-width", btnMaxWidth)
+  .style("font-size", "13px")
   .attr("id", "selectLaterId")
   .style("float", "right")
   .style("margin-right", "100px");
@@ -48,9 +54,11 @@ document.getElementById("selectLaterId").value = "All";
 // ------------------------------------------------------------------------ //
 // SVG element
 // ------------------------------------------------------------------------ //
+
 // set the dimensions and margins of the graph
-var margin = { top: 15, right: 200, bottom: 0, left: 200 },
-  width = 850 - margin.left - margin.right,
+let sideMar = currentWidth < 600 ? 100 : 200;
+var margin = { top: 15, right: sideMar, bottom: 0, left: sideMar },
+  width = currentWidth - margin.left - margin.right,
   height = 600 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -143,7 +151,7 @@ function createChart(graph) {
   svg.selectAll("path").remove();
   svg.selectAll("text").remove();
 
-  // Explain HR = 1
+  // Explanation
   svg
     .append("text")
     .attr("class", "textExplanation")
@@ -258,7 +266,7 @@ function createChart(graph) {
     .attr("text-anchor", "start")
     .attr("transform", null)
     .text(function(d) {
-      return d.name;
+      return currentWidth < 600 ? giveVeryShortName(d.name) : d.name;
     })
     .on("click", highlightLinks)
     .on("mouseover", function(d) {
