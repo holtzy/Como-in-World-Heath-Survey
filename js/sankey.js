@@ -1,6 +1,9 @@
 // ------------------------------------------------------------------------ //
 // TOP BUTTONS FOR DISORDER SELECTION
 // ------------------------------------------------------------------------ //
+let allOption = allGroup;
+allGroup.push("All");
+
 var selectPrior = d3
   .select("#dataviz_sankey")
   .append("select")
@@ -9,7 +12,7 @@ var selectPrior = d3
 
 var optionsPrior = selectPrior
   .selectAll("optionPrior")
-  .data(allGroup)
+  .data(allOption)
   .enter()
   .append("option")
   .text(function(d) {
@@ -23,12 +26,13 @@ var selectLater = d3
   .select("#dataviz_sankey")
   .append("select")
   .attr("class", "myPersoBtn")
+  .attr("id", "selectLaterId")
   .style("float", "right")
   .style("margin-right", "100px");
 
 var optionsLater = selectLater
   .selectAll("optionPrior")
-  .data(allGroup)
+  .data(allOption)
   .enter()
   .append("option")
   .text(function(d) {
@@ -37,6 +41,9 @@ var optionsLater = selectLater
   .attr("value", function(d) {
     return d;
   });
+
+// Initialize with later disorder= ALL
+document.getElementById("selectLaterId").value = "All";
 
 // ------------------------------------------------------------------------ //
 // SVG element
@@ -64,18 +71,24 @@ function prepareData(data) {
   var selectValuePrior = selectPrior.property("value");
   var selectValueLater = selectLater.property("value");
 
-  // Filter: input is a specific group
-  var data = data.filter(function(d) {
-    return (
-      myGroup(d.Prior_disorder) == selectValuePrior &&
-      myGroup(d.Later_disorder) == selectValueLater
-    );
-  });
+  // Filter: prior disorder
+  if (selectValuePrior !== "All") {
+    var data = data.filter(function(d) {
+      return myGroup(d.Prior_disorder) === selectValuePrior;
+    });
+  }
+
+  // Filter: later disorder
+  if (selectValueLater !== "All") {
+    var data = data.filter(function(d) {
+      return myGroup(d.Later_disorder) === selectValueLater;
+    });
+  }
 
   // Sort data: group by group
   var data = data.sort(function(a, b) {
     return (
-      d3.ascending(myGroup(a.Prior_disorder), myGroup(b.Prior_disorder)) ||
+      d3.ascending(myGroup(a.Prior_disorder), myGroup(b.Prior_disorder)) &&
       d3.ascending(myGroup(a.Later_disorder), myGroup(b.Later_disorder))
     );
   });
