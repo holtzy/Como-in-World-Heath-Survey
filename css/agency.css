@@ -109,6 +109,16 @@ u {
   }
 }
 
+/* ---------- Intro text on homepage----------------- */
+.introText {
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .introText {
+    text-align: left;
+  }
+}
+
 /* ---------- Button ----------------- */
 .btn {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -432,7 +442,9 @@ ul.social-buttons li a:hover {
   .portfolio-link
   .portfolio-hover
   .portfolio-hover-content {
-  font-size: 22px;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 14px;
   position: absolute;
   top: 20%;
   width: 100%;
