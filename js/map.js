@@ -65,7 +65,7 @@ var mousemove = function(d) {
       "<br>" +
       "<span style='color:grey'>Survey code: </span>" + d.myDetail.survey
     )
-    .style("left", (d3.mouse(this)[0]+270) + "px")
+    .style("left", (d3.mouse(this)[0]+310) + "px")
     .style("top", (d3.mouse(this)[1]+400) + "px")
     .style("display", "block")
 
