@@ -119,19 +119,23 @@ var tooltip = d3.select("#dataviz_dotplot")
     .style("display", "none")
     .style("opacity", 1)
     .style("font-size", "16px")
+    .style("width", "350px")
     .attr("class", "tooltip")
+    .style("overflow", "visible")
 
 // Three function that change the tooltip when user hover / move / leave a cell
 var mouseover = function(d) {
   tooltip
     .style("display", "block");
   tooltip
-    .html("<span style='color:grey'>Prior disorder: </span>" + d.Prior_disorder + "<br>" + "<span style='color:grey'>Later disorder: </span>" + d.Later_disorder + "<br>" + "HR: " + d.HR + " [" + d.Lower + "-" + d.Upper + "]") // + d.Prior_disorder + "<br>" + "HR: " +  d.HR)
+    .html("<span style='color:grey'>Prior disorder: </span>" +
+      d.Prior_disorder + "<br>" + "<span style='color:grey'>Later disorder: </span>" +
+      d.Later_disorder + "<br>" + "HR: " + d.HR + " [" + d.Lower + "-" + d.Upper + "]") // + d.Prior_disorder + "<br>" + "HR: " +  d.HR)
   }
 var mousemove = function(d) {
   tooltip
-    .style("left", (d3.mouse(this)[0]+70) + "px")
-    .style("top", (d3.mouse(this)[1]-120) + "px")
+    .style("left", (d3.mouse(this)[0]+160) + "px")
+    .style("top", (d3.mouse(this)[1]-50) + "px")
 }
 var mouseleave = function(d) {
   tooltip
