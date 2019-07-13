@@ -92,7 +92,7 @@ svg_dotplot
     .attr("x", x(1)-9)
     .attr("y", 20+20)
     .attr("width", 90)
-    .html("expect a hazar ratio of 1, represented")
+    .html("expect a hazard ratio of 1, represented")
 svg_dotplot
   .append("text")
     .attr("class", "textExplanation")
@@ -101,7 +101,7 @@ svg_dotplot
     .attr("x", x(1)-9)
     .attr("y", 20+20*2)
     .attr("width", 90)
-    .html("by this verticla bar")
+    .html("by this vertical bar")
 
 
 

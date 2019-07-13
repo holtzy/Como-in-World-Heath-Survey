@@ -66,24 +66,6 @@ var x = d3.scaleLinear()
 
 
 // ======================= //
-// Y SCALE AND AXIS
-// ======================= //
-
-// A scale for the Y axis
-var y = d3.scaleLinear()
-  .range([ height-10, 40]);
-
-
-
-
-
-
-
-
-
-
-
-// ======================= //
 // BUILD BUTTON
 // ======================= //
 
@@ -103,6 +85,15 @@ d3.select("#btnModel")
   .enter()
   .append('option')
   .text(function (d) { return "Model " + d }) // text showed in the menu
+  .attr("value", function (d) { return d; }) // corresponding value returned by the button
+
+// btn: Scale
+d3.select("#btnScale")
+  .selectAll('myOptions')
+  .data(["Log", "Linear"])
+  .enter()
+  .append('option')
+  .text(function (d) { return d }) // text showed in the menu
   .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
 
@@ -172,6 +163,10 @@ function updateChart(){
   var btnModel = document.getElementById('btnModel');
   var selectedModel = btnModel[btnModel.selectedIndex].value;
 
+  // Recover the scale used
+  var btnScale = document.getElementById('btnScale');
+  var selectedScale = btnScale[btnScale.selectedIndex].value;
+
   // Filter data
   var currentData = dataEvolutionHR
     .filter(function(d){return (d.Prior_disorder==selectedMentalDisOption && d.Model==selectedModel ) })
@@ -182,9 +177,17 @@ function updateChart(){
     .key(function(d) { return d.Model;})
     .entries(currentData);
 
-  // Update the Y domain depending on prior disorder
+  // Update the Y Scale and domain depending on prior disorder
   currentMax = d3.max(currentData, function(d) { return +d.Value; })
-  y.domain([0,currentMax])
+  var y = selectedScale === "Log" ?
+    ( d3.scaleLog()
+        .range([ height-10, 40])
+        .domain([1,currentMax])
+    ) : (
+      d3.scaleLinear()
+        .range([ height-10, 40])
+        .domain([0,currentMax])
+    )
 
   // Add the X axis labels
   toDisplay = allDisorder.slice(1).slice(-colNumber)
@@ -213,9 +216,10 @@ function updateChart(){
   if (typeof myYaxis != "undefined") {
      myYaxis.remove();
   }
+  let tickNum = selectedScale === "Log" ? 2 : 4
   myYaxis = svg.append("g")
     .filter(function(d){return toDisplayY.includes(d) })
-    .call(d3.axisLeft(y).tickSize(0).ticks(4))
+    .call(d3.axisLeft(y).tickSize(0).tickFormat(d3.format("1")).ticks(tickNum) )
   myYaxis.selectAll("text")
       .style("font-size", 9)
       .style("fill", "grey")
@@ -330,11 +334,8 @@ d3.select("#btnFocusDisorder").on("change", updateChart)
 // Listen to the Model
 d3.select("#btnModel").on("change", updateChart)
 
-// Listen to the type: absolute vs HR
-d3.select("#btnData").on("change", updateChart)
-
-// Listen to the type: absolute vs HR
-d3.select("#btnSexAOO").on("change", updateChart)
+// Listen to the Scale
+d3.select("#btnScale").on("change", updateChart)
 
 // Add an event listener that run the function when dimension change
 window.addEventListener('resize', updateChart );
