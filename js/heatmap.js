@@ -229,12 +229,23 @@ function updateChart(){
 // Initialize
 updateChart()
 
-// Event listener
+
+// ------------------------------------------------------------------------ //
+// EVENT LISTENER
+// ------------------------------------------------------------------------ //
+
 d3.select("#btnHeatmapSex").on("change", updateChart)
 d3.select("#btnHeatmapModel").on("change", updateChart)
 
-
-
+// Show bipolar disorder:
+d3.select("#showModelA").on("click", function(){
+  document.getElementById("btnHeatmapModel").value = "A"
+  updateChart()
+})
+d3.select("#showModelB").on("click", function(){
+  document.getElementById("btnHeatmapModel").value = "B"
+  updateChart()
+})
 
 
 // ------------------------------------------------------------------------ //
