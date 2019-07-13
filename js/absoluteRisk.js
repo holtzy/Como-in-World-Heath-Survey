@@ -75,7 +75,7 @@ var reformatEndLabel = d3.scaleOrdinal()
 
 var colorLine = d3.scaleOrdinal()
   .domain(["below 20","20to40","above40", "All", "M", "F"])
-  .range(["#668B8B", "#33A1C9", "#344152", "black", "blue", "pink"]);
+  .range(["#668B8B", "#33A1C9", "#344152", "black", "#7C616C", "#D1B1CB"]);
 
 
 

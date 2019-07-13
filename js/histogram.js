@@ -8,7 +8,7 @@ let currentWidth = document.getElementById("dataviz_dotplot").offsetWidth
 // set the dimensions and margins of the graph
 var margin = {top: 0, right: 25, bottom: 50, left: 115},
   width = currentWidth - margin.left - margin.right,
-  height = currentWidth*1 - margin.top - margin.bottom;
+  height = currentWidth*.8 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg_dotplot = d3.select("#dataviz_dotplot")
@@ -78,6 +78,7 @@ var verticalLine = svg_dotplot
 svg_dotplot
   .append("text")
     .attr("class", "textExplanation")
+    .style("font-size", "12px")
     .attr("text-anchor", "end")
     .style("fill", "#B8B8B8")
     .attr("x", x(1)-9)
@@ -87,6 +88,7 @@ svg_dotplot
 svg_dotplot
   .append("text")
     .attr("class", "textExplanation")
+    .style("font-size", "12px")
     .attr("text-anchor", "end")
     .style("fill", "#B8B8B8")
     .attr("x", x(1)-9)
@@ -96,6 +98,7 @@ svg_dotplot
 svg_dotplot
   .append("text")
     .attr("class", "textExplanation")
+    .style("font-size", "12px")
     .attr("text-anchor", "end")
     .style("fill", "#B8B8B8")
     .attr("x", x(1)-9)
