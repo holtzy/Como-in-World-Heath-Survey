@@ -61,7 +61,9 @@ var mousemove = function(d) {
       "<br>" +
       "<span style='color:grey'>Response rate (%): </span>" + d.myDetail.response_rate +
       "<br>" +
-      "<span style='color:grey'>Year: </span>" + d.myDetail.year
+      "<span style='color:grey'>Year: </span>" + d.myDetail.year +
+      "<br>" +
+      "<span style='color:grey'>Survey code: </span>" + d.myDetail.survey
     )
     .style("left", (d3.mouse(this)[0]+670) + "px")
     .style("top", (d3.mouse(this)[1]+500) + "px")
@@ -77,6 +79,8 @@ var mousemove = function(d) {
         "<span style='color:grey'>Response rate (%): </span>" + d.myDetail.response_rate +
         "<br>" +
         "<span style='color:grey'>Year: </span>" + d.myDetail.year +
+        "<br>" +
+        "<span style='color:grey'>Survey code: </span>" + d.myDetail.survey +
         "<br>" + "<br>" +
         "<b>"+"Colombia (Medellin)"+"</b>" +
         "<br>" +
@@ -84,7 +88,9 @@ var mousemove = function(d) {
         "<br>" +
         "<span style='color:grey'>Response rate (%): </span>" + "97.2" +
         "<br>" +
-        "<span style='color:grey'>Year: </span>" + "2011-12"
+        "<span style='color:grey'>Year: </span>" + "2011-12" +
+        "<br>" +
+        "<span style='color:grey'>Survey code: </span>" + "MMHHS"
       )
   }
 }
@@ -160,7 +166,8 @@ function updateChart(){
       response_rate: +d.response_rate,
       country: d.country,
       sample_size1: d.sample_size1,
-      year: d.field_date
+      year: d.field_date,
+      survey: d.survey
     });
   })
   .await(ready);
