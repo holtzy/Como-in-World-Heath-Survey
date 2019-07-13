@@ -49,7 +49,7 @@
   <!-- =======================  MAIN MENU ON TOP ======================= -->
   <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
     <div class="container">
-      <a href="index.html">HOME</a>
+      <a href="index.html">&larr; HOME</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fa fa-bars"></i>
@@ -57,7 +57,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="map.html">Map</a>
+            <a class="nav-link active" href="map.html" >Map</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="histogram.html">Distribution</a>
@@ -103,35 +103,42 @@
 
 <!-- =======================  SECTION MAP ======================= -->
 
-<section id="map" class="bg">
+<section id="map" class="bg" style="margin-bottom: 0px; padding-bottom: 0px;">
   <div class="container">
     <h3 style="text-align: center">The World Mental Health Survey</h3>
     <hr style="max-width: 100px">
     <div class="row justify-content-md-center">
-      <div class="col-lg-6" style="text-align: justify">
+      <div class="col-lg-4" style="text-align: justify">
         <p>Data came from 29 <a href="https://www.hcp.med.harvard.edu/wmh/index.php">World Mental Health Surveys</a> conducted in 27
           countries, 19 which were nationally representative and several
           focussed on selected urban or metropolitan area within the
           country.
           <br><br>
-          Sample sizes of these surveys ranged from 2,357
-          (Romania) to 12,790 (New Zealand). A total of 145,990 respondents
-          completed part 1 of the interview and 80,190 completed part 2 of
-          the interview with an average response rate of 69.5%.
-
+          Sample sizes of these surveys ranged from 2,357 (Romania) to 12,790 (New Zealand). A total of 145,990 respondents completed part 1 of the
         </p>
       </div>
-      <div class="col-lg-6" style="text-align: justify">
-        <p>Twenty four DSM-IV disorders were used for this analysis:</p>
-        <p><ul style="font-size: 14px;">
-          <li><span style="color: #482677FF">Mood disorder</span>: MDE, bipolar disorder, dysthymia</li>
-          <li><span style="color: #2D708EFF">Anxiety disorder</span>: panic disorder, anxiety, social phobia, specific phobia, agoraphobia, PTSD,
-          OCD, child and adult separation anxiety disorder</li>
-          <li><span style="color: #29AF7FFF">Impulse-control disorder</span>: IED, conduct disorder, ADHD, ODD, anorexia nervosa, bulimia nervosa, binge
+      <div class="col-lg-4" style="text-align: justify">
+        <p>interview and 80,190 completed part 2 of
+        the interview with an average response rate of 69.5%.
+        <br><br>
+        Twenty four DSM-IV disorders were used for this analysis:
+        <br>
+        &rarr; <span style="color: #482677FF">Mood disorder</span>: MDE, bipolar disorder, dysthymia
+        <br>
+        &rarr; <span style="color: #2D708EFF">Anxiety disorder</span>: panic disorder, anxiety, social phobia, specific phobia, agoraphobia,
+      </p>
+      </div>
+      <div class="col-lg-4" style="text-align: justify">
+        <p>
+          PTSD,
+          OCD, child and adult separation anxiety disorder
+          <br>
+          &rarr; <span style="color: #29AF7FFF">Impulse-control disorder</span>: IED, conduct disorder, ADHD, ODD, anorexia nervosa, bulimia nervosa, binge
           eating disorder
-          <li><span style="color: #B8DE29FF">Substance-use disorder</span>: Alcohol abuse and dependence, drug abuse and
-          dependence, and nicotine dependence</li>
-        </ul></p>
+          <br>
+          &rarr; <span style="color: #B8DE29FF">Substance-use disorder</span>: Alcohol abuse and dependence, drug abuse and
+          dependence, and nicotine dependence
+        </p>
       </div>
     </div>
     <center><div id="dataviz_worldmap" width="700" height="750"></div></center>

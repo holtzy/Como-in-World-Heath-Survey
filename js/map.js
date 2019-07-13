@@ -3,7 +3,7 @@
 // ======================= //
 
 // set the graph margins:
-var margin = {top: 20, right: 20, bottom: 20, left: 20};
+var margin = {top: 20, right: 20, bottom: 0, left: 20};
 
 // Data and color scale
 var data = d3.map();
@@ -40,7 +40,7 @@ var tooltip = d3.select("#dataviz_worldmap")
   .style("border", "none")
   .style("border-radius", "5px")
   .style("padding", "15px")
-  .style("min-width", 150)
+  .style("min-width", 250)
   .style("display", "none")
 
 // Three function that change the tooltip when user hover / move / leave a cell
@@ -48,7 +48,13 @@ var mouseover = function(d) {
   if (d.myDetail.response_rate == null) { return }
   tooltip
     .style("opacity", 1)
+  d3.selectAll(".countries")
+    .transition()
+    .duration(500)
+    .style("opacity", .3)
   d3.select(this)
+    .transition()
+    .duration(500)
     .style("stroke", "black")
     .style("opacity", 1)
 }
@@ -98,7 +104,9 @@ var mouseleave = function(d) {
   tooltip
     .style("opacity", 0)
     .style("display", "none")
-  d3.select(this)
+  d3.selectAll(".countries")
+    .transition()
+    .duration(500)
     .style("stroke", "none")
     .style("opacity", 0.8)
   }
@@ -141,6 +149,7 @@ function ready(error, topo) {
     .data(topo.features)
     .enter()
     .append("path")
+    .attr("class", "countries")
     // draw each country
     .attr("d", d3.geoPath()
         .projection(projection)

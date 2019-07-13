@@ -69,7 +69,6 @@ u {
   border: none;
   border-radius: 5px;
   padding: 15px;
-  min-width: 400px;
   text-align: left;
   color: white;
 }
@@ -235,7 +234,7 @@ img::-moz-selection {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-#mainNav .navbar-nav .nav-item .nav-link.active,
+#mainNav .navbar-nav .nav-item .active,
 #mainNav .navbar-nav .nav-item .nav-link:hover {
   color: #de4938;
   background-color: white;
