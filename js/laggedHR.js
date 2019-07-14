@@ -322,6 +322,37 @@ function updateChart(){
 
 
 // ======================= //
+// Axis titles
+// ======================= //
+
+svg
+  .filter(function(d){ return d == allDisorder.slice(-1) })
+  .append("text")
+    .attr('x', width)
+    .attr('y', height + 50)
+    .style("text-anchor", "end")
+    .html( "Time after onset &rarr;" )
+    .style("font-size", 13)
+    .style("fill", 'grey')
+
+svg
+  .filter(function(d){ return d == allDisorder[0] })
+  .append("text")
+    .attr('x', 0)
+    .attr('y', 0)
+    .style("text-anchor", "end")
+    .html( "Hazard Ratio &rarr;" )
+    .style("font-size", 13)
+    .style("fill", 'grey')
+    .attr("transform", "translate(-30,0)rotate(-90)")
+
+
+
+
+
+
+
+// ======================= //
 // EVENT LISTENER
 // ======================= //
 
