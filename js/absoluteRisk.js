@@ -123,49 +123,6 @@ d3.select("#btnScale")
 
 
 
-// ------------------------------------------------------------------------ //
-// HIGHLIGHTING ON HOVER
-// ------------------------------------------------------------------------ //
-//
-// // Time of transition
-// let transitionTime = 500
-//
-// // When user hover a dot
-// var mouseover = function(d) {
-//
-//   // Recover the year that is hovered + Highlight it every where
-//   currentYear = "time"+buildLabelFromId(d.Time)
-//   d3.selectAll("."+currentYear)
-//     .attr("r", 13)
-//     .style("stroke-width", 2)
-//
-//   // Highlight the disease compared to others
-//   currentDisease = d.Later_disorder.replace(/\s+/g, '')
-//   d3.selectAll(".myCircle")
-//     .style("opacity", 0.2)
-//   d3.selectAll("."+currentDisease)
-//     .style("opacity", 1)
-//     .attr("r", 9)
-//
-//   // Add text to show exact value
-//   d3.selectAll(".myText" + " " + "." + currentDisease)
-//     .style("opacity", 1)
-// }
-//
-// // Back to normal
-// var mouseleave = function(d) {
-//   d3.selectAll(".myCircle")
-//     .transition()
-//     .duration(transitionTime)
-//     .style("opacity", 1)
-//     .attr("r", 5)
-//     .style("stroke-width", 0)
-//   d3.selectAll(".myText")
-//     .style("opacity", 0)
-// }
-
-
-
 
 // ======================= //
 // A function that builds the chart
@@ -314,6 +271,67 @@ function updateChart(){
   w
     .exit()
     .remove()
+
+
+
+
+  // ======================= //
+  // ANNOTATION ON HOVER
+  // ======================= //
+
+  // Recover mouse position using a rect
+  svg
+      .append("rect")
+        .attr("width",width)
+        .attr("height",height)
+        .style("pointer-events", "all")
+        .style("fill", "none")
+        .on('mouseover', mouseover )
+        .on('mousemove',  mousemove )
+        .on('mouseout', mouseout );
+
+  // This allows to find the closest X index of the mouse:
+  var bisect = d3.bisector(function(d) { return d.Time; }).left;
+
+  // Circle that shows where mouse is
+  var focusCircle = svg.append('g')
+    .append('circle')
+      .style("fill", "black")
+      .attr("stroke", "black")
+      .attr('r', 8.5)
+      .style("opacity", 1)
+      .attr("x", 0)
+      .attr("y", 0)
+
+  // What happens when the mouse move -> show the annotations at the right positions.
+  function mouseover() {
+    focusCircle.style("opacity", 1)
+  }
+  function mousemove() {
+    let x0 = x.invert(d3.mouse(this)[0]);
+    //let i = Math.floor(x0)
+    //selectedData = diseaseData.filter(d => d.Time == i)
+    //console.log(selectedData)
+    focusCircle
+       .attr("cx",  d => {
+         let tempData = currentData.filter(row => row.Later_disorder == d)
+         var i = bisect(tempData, x0, 0);
+         return(x(i))
+       })
+       .attr("cy", d => {
+         let tempData = currentData.filter(row => row.Later_disorder == d)
+         var i = bisect(tempData, x0, 0);
+         let data = tempData.filter(row => row.Time == i)
+         console.log(data[0])
+         return data[0] ? y(data[0].Value) : 0
+       })
+  }
+  function mouseout() {
+  }
+
+
+
+// Close the updateChart function
 }
 
 
