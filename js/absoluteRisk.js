@@ -278,57 +278,62 @@ function updateChart(){
   // ======================= //
   // ANNOTATION ON HOVER
   // ======================= //
-
-  // Recover mouse position using a rect
-  svg
-      .append("rect")
-        .attr("width",width)
-        .attr("height",height)
-        .style("pointer-events", "all")
-        .style("fill", "none")
-        .on('mouseover', mouseover )
-        .on('mousemove',  mousemove )
-        .on('mouseout', mouseout );
-
-  // This allows to find the closest X index of the mouse:
-  var bisect = d3.bisector(function(d) { return d.Time; }).left;
-
-  // Circle that shows where mouse is
-  var focusCircle = svg.append('g')
-    .append('circle')
-      .style("fill", "black")
-      .attr("stroke", "black")
-      .attr('r', 8.5)
-      .style("opacity", 1)
-      .attr("x", 0)
-      .attr("y", 0)
-
-  // What happens when the mouse move -> show the annotations at the right positions.
-  function mouseover() {
-    focusCircle.style("opacity", 1)
-  }
-  function mousemove() {
-    let x0 = x.invert(d3.mouse(this)[0]);
-    //let i = Math.floor(x0)
-    //selectedData = diseaseData.filter(d => d.Time == i)
-    //console.log(selectedData)
-    focusCircle
-       .attr("cx",  d => {
-         let tempData = currentData.filter(row => row.Later_disorder == d)
-         var i = bisect(tempData, x0, 0);
-         return(x(i))
-       })
-       .attr("cy", d => {
-         let tempData = currentData.filter(row => row.Later_disorder == d)
-         var i = bisect(tempData, x0, 0);
-         let data = tempData.filter(row => row.Time == i)
-         console.log(data[0])
-         return data[0] ? y(data[0].Value) : 0
-       })
-  }
-  function mouseout() {
-  }
-
+  //
+  // // Recover mouse position using a rect
+  // svg
+  //     .append("rect")
+  //       .attr("width",width)
+  //       .attr("height",height)
+  //       .style("pointer-events", "all")
+  //       .style("fill", "none")
+  //       .on('mouseover', mouseover )
+  //       .on('mousemove',  mousemove )
+  //       .on('mouseout', mouseout );
+  //
+  // // This allows to find the closest X index of the mouse:
+  // var bisect = d3.bisector(function(d) { return d.Time; }).right;
+  //
+  // // Circle that shows where mouse is
+  // var focusCircle = svg.append('g')
+  //   .append('circle')
+  //     .style("fill", "black")
+  //     .attr("stroke", "black")
+  //     .attr('r', 8.5)
+  //     .style("opacity", 1)
+  //     .attr("x", 0)
+  //     .attr("y", 0)
+  //
+  // // What happens when the mouse move -> show the annotations at the right positions.
+  // function mouseover() {
+  //   focusCircle.style("opacity", 1)
+  // }
+  // function mousemove() {
+  //   let xPos = x.invert(d3.mouse(this)[0]);
+  //   //let i = Math.floor(x0)
+  //   //selectedData = diseaseData.filter(d => d.Time == i)
+  //   //console.log(selectedData)
+  //   focusCircle
+  //      .attr("cx",  d => {
+  //          let tempData = currentData.filter(row => row.Later_disorder == d)
+  //          var i = bisect(tempData, xPos);
+  //          let data = tempData[i]
+  //          return data ? x(data.Time) : 0
+  //      })
+  //      .attr("cy", d => {
+  //          let tempData = currentData.filter(row => row.Later_disorder == d)
+  //          var i = bisect(tempData, xPos);
+  //          let data = tempData[i]
+  //          return data ? y(data.Value) : 0
+  //      })
+  //      .style("opacity", d => {
+  //          let tempData = currentData.filter(row => row.Later_disorder == d)
+  //          var i = bisect(tempData, xPos);
+  //          let data = tempData[i]
+  //          return data ? 1 : 0
+  //      })
+  // }
+  // function mouseout() {
+  // }
 
 
 // Close the updateChart function
