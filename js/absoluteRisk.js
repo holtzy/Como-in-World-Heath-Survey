@@ -362,7 +362,7 @@ svg
     .attr('x', 0)
     .attr('y', 0)
     .style("text-anchor", "end")
-    .html( "Hazard Ratio &rarr;" )
+    .html( "Absolute risk (%) &rarr;" )
     .style("font-size", 13)
     .style("fill", 'grey')
     .attr("transform", "translate(-30,0)rotate(-90)")
