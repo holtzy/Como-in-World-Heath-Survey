@@ -99,6 +99,30 @@ var mousemove = function(d) {
         "<span style='color:grey'>Survey code: </span>" + "MMHHS"
       )
   }
+  if(d.myDetail.country==="Spain"){
+    tooltip
+      .html(
+        "<b>"+d.myDetail.country+"</b>" +
+        "<br>" +
+        "<span style='color:grey'>Sample size: </span>" + d.myDetail.sample_size1 +
+        "<br>" +
+        "<span style='color:grey'>Response rate (%): </span>" + d.myDetail.response_rate +
+        "<br>" +
+        "<span style='color:grey'>Year: </span>" + d.myDetail.year +
+        "<br>" +
+        "<span style='color:grey'>Survey code: </span>" + d.myDetail.survey +
+        "<br>" + "<br>" +
+        "<b>"+"Spain (Murcia)"+"</b>" +
+        "<br>" +
+        "<span style='color:grey'>Sample size: </span>" + "2621" +
+        "<br>" +
+        "<span style='color:grey'>Response rate (%): </span>" + "67.4" +
+        "<br>" +
+        "<span style='color:grey'>Year: </span>" + "2010-12" +
+        "<br>" +
+        "<span style='color:grey'>Survey code: </span>" + "PEGASUS-Murcia"
+      )
+  }
 }
 var mouseleave = function(d) {
   tooltip
