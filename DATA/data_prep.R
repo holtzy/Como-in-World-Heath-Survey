@@ -325,9 +325,3 @@ close(fileConn)
 
 
 
-
-
-summary(data)
-
-
-

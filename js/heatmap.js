@@ -193,8 +193,9 @@ function updateChart(){
   // Recover the Sex option
   var selector = document.getElementById('btnHeatmapSex');
   var selectedSex = selector[selector.selectedIndex].value;
+console.log(selectedSex)
 
-  // Recover the Sex option
+  // Recover the Model option
   var selector = document.getElementById('btnHeatmapModel');
   var selectedModel = selector[selector.selectedIndex].value;
 
@@ -203,7 +204,7 @@ function updateChart(){
     d.Sex == selectedSex &&
     d.Model == selectedModel
   )})
-
+console.log(data)
   // add the squares
   var v = svg_heatmap
     .selectAll(".heatmapRect")
